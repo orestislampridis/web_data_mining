@@ -1,27 +1,19 @@
 import json
 import pymongo
 import datetime
-import instaloader
+from math import ceil
+from itertools import islice
 
 import time
+import numpy as np
 
-
-def on_data(data):
-    try:
-        datajson = json.loads(data)
-
-        created_at = datajson['created_at']
-        dt = datetime.datetime.strptime(created_at, '%a %b %d %H: %M: %S +0000 %Y')
-        datajson['created_at'] = dt
-        coll.insert('datajson')
-        print('tweet inserted')
-    except Exception as e:
-        print(e)
+import instaloader
+from instaloader import Profile
 
 
 
 def start_stream(coll):
-    for i in range(0, 10):
+    for i in range(0, 1000):
         try:
             # code for instaloader
             L = instaloader.Instaloader()
@@ -40,11 +32,14 @@ def start_stream(coll):
                     print("===================================================================================")
                     print("start")
                     print("===================================================================================")
-                    L.download_post(post, '#' + hashtag)
+#                    L.download_post(post, '#' + hashtag)
                     users.add(post.owner_profile)
 
                     print()
 
+                    print("===================================================================================")
+                    print("TEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEST: _location")
+                    print(post._location)
                     print("===================================================================================")
                     print("get_comments")
                     print(post.get_comments())
@@ -86,6 +81,9 @@ def start_stream(coll):
                     print("video_view_count")
                     print(post.video_view_count)
                     print("===================================================================================")
+                    print("post.is_video")
+                    print(post.is_video)
+                    print("===================================================================================")
 
                     print("owner_id")
                     # The ID of the Post’s owner.
@@ -99,6 +97,359 @@ def start_stream(coll):
                     # The Post’s lowercase owner name.
                     print(post.owner_username)
 
+# ======================================================================================================================
+                    # used for avg likes-comments-video_views calculation
+                    profile = Profile.from_username(L.context, post.owner_username)  # get the profile of the user of the current post
+# ======================================================================================================================
+
+                    start_time = time.time()
+
+                    print("===================================================================================")
+
+                    # get statistics for all posts
+                    photos_likes_all = []
+                    photos_comments_all = []
+
+                    videos_likes_all = []
+                    videos_comments_all = []
+                    videos_views_all = []
+                    for profile_post in profile.get_posts():
+                        if profile_post.is_video:  # if the post is video
+                            # videos_likes_all
+                            if profile_post.likes is not None:
+                                videos_likes_all.append(profile_post.likes)
+                            else:  # if there are no likes on the post
+                                videos_likes_all.append(0)
+
+                            # videos_comments_all
+                            if profile_post.comments is not None:
+                                videos_comments_all.append(profile_post.comments)
+                            else:  # if there are no comments on the post
+                                videos_comments_all.append(0)
+
+                            # videos_views_all
+                            if profile_post.video_view_count is not None:
+                                videos_views_all.append(profile_post.video_view_count)
+                            else:  # if there are no views on the post
+                                videos_views_all.append(0)
+                        else:    # if the post is photo
+                            # photos_likes_all
+                            if profile_post.likes is not None:
+                                photos_likes_all.append(profile_post.likes)
+                            else:  # if there are no likes on the post
+                                photos_likes_all.append(0)
+
+                            # photos_comments_all
+                            if profile_post.comments is not None:
+                                photos_comments_all.append(profile_post.comments)
+                            else:  # if there are no comments on the post
+                                photos_comments_all.append(0)
+
+
+                    print("likes_all_photos ", photos_likes_all)
+                    print("comments_all_photos ", photos_comments_all)
+                    print("likes_all_videos ", videos_likes_all)
+                    print("comments_all_videos ", videos_comments_all)
+
+
+                    print("===================================================================================")
+                    # count the number of posts that are videos
+                    videos_count_all = len(videos_likes_all)
+                    print("videos_count_all ", videos_count_all)
+
+                    # count the number of posts that are photos
+                    photos_count_all = len(photos_likes_all)
+                    print("photos_count_all ", photos_count_all)
+
+                    if not photos_count_all:  # in case the user does not have uploaded a photo
+                        # ===================================================================================
+                        all_photos_avg_likes = 0
+                        all_photos_stdev_likes = 0
+                        # ===================================================================================
+                        all_photos_avg_comments = 0
+                        all_photos_stdev_comments = 0
+                    elif photos_count_all == 1:  # in case the user has uploaded just one photo
+                        # ===================================================================================
+                        all_photos_avg_likes = photos_likes_all[0]
+                        all_photos_stdev_likes = 0
+                        # ===================================================================================
+                        all_photos_avg_comments = photos_comments_all[0]
+                        all_photos_stdev_comments = 0
+                    else:  # in case the user has uploaded more than one photo
+                        print("===================================================================================")
+                        print("all_photos_avg_likes")
+                        # dtype=np.float64 -> more accurate results
+                        all_photos_avg_likes = np.mean(photos_likes_all, dtype=np.float64)
+                        print(all_photos_avg_likes)
+
+                        print("all_photos_stdev_likes")
+                        # dtype=np.float64 -> more accurate results
+                        # ddof=0 -> default, interprete data as population, ddof=1 -> interprete data as samples, i.e. estimate true variance
+                        all_photos_stdev_likes = np.std(photos_likes_all, dtype=np.float64, ddof=0)
+                        print(all_photos_stdev_likes)
+
+                        print("===================================================================================")
+                        print("all_photos_avg_comments")
+                        # dtype=np.float64 -> more accurate results
+                        all_photos_avg_comments = np.mean(photos_comments_all, dtype=np.float64)
+                        print(all_photos_avg_comments)
+
+                        print("all_photos_stdev_comments")
+                        # dtype=np.float64 -> more accurate results
+                        # ddof=0 -> default, interprete data as population, ddof=1 -> interprete data as samples, i.e. estimate true variance
+                        all_photos_stdev_comments = np.std(photos_comments_all, dtype=np.float64, ddof=0)
+                        print(all_photos_stdev_comments)
+
+
+                    if not videos_count_all:  # in case the user does not have uploaded a video
+                        # ===================================================================================
+                        all_videos_avg_likes = all_videos_stdev_likes = 0
+                        # ===================================================================================
+                        all_videos_avg_comments = all_videos_stdev_comments = 0
+                        # ===================================================================================
+                        all_videos_avg_views = all_videos_stdev_views = 0
+                    elif videos_count_all == 1:  # in case the user has uploaded just one video
+                        # ===================================================================================
+                        all_videos_avg_likes = videos_likes_all[0]
+                        all_videos_stdev_likes = 0
+                        # ===================================================================================
+                        all_videos_avg_comments = videos_comments_all[0]
+                        all_videos_stdev_comments = 0
+                        # ===================================================================================
+                        all_videos_avg_views = videos_views_all[0]
+                        all_videos_stdev_views = 0
+                    else:  # in case the user has uploaded more than one video
+                        print("===================================================================================")
+                        print("all_videos_avg_likes")
+                        # dtype=np.float64 -> more accurate results
+                        all_videos_avg_likes = np.mean(videos_likes_all, dtype=np.float64)
+                        print(all_videos_avg_likes)
+
+                        print("all_videos_stdev_likes")
+                        # dtype=np.float64 -> more accurate results
+                        # ddof=0 -> default, interprete data as population, ddof=1 -> interprete data as samples, i.e. estimate true variance
+                        all_videos_stdev_likes = np.std(videos_likes_all, dtype=np.float64, ddof=0)
+                        print(all_videos_stdev_likes)
+                        print("===================================================================================")
+                        print("all_videos_avg_comments")
+                        # dtype=np.float64 -> more accurate results
+                        all_videos_avg_comments = np.mean(videos_comments_all, dtype=np.float64)
+                        print(all_videos_avg_comments)
+
+                        print("all_videos_stdev_comments")
+                        # dtype=np.float64 -> more accurate results
+                        # ddof=0 -> default, interprete data as population, ddof=1 -> interprete data as samples, i.e. estimate true variance
+                        all_videos_stdev_comments = np.std(videos_comments_all, dtype=np.float64, ddof=0)
+                        print(all_videos_stdev_comments)
+                        print("===================================================================================")
+                        print("all_videos_avg_views")
+                        # dtype=np.float64 -> more accurate results
+                        all_videos_avg_views = np.mean(videos_views_all, dtype=np.float64)
+                        print(all_videos_avg_views)
+
+                        print("all_videos_stdev_views")
+                        # dtype=np.float64 -> more accurate results
+                        # ddof=0 -> default, interprete data as population, ddof=1 -> interprete data as samples, i.e. estimate true variance
+                        all_videos_stdev_views = np.std(videos_views_all, dtype=np.float64, ddof=0)
+                        print(all_videos_stdev_views)
+
+
+                    print("--- %.2f seconds ALL ---" % (time.time() - start_time))
+
+# ======================================================================================================================
+
+                    start_time1 = time.time()
+
+                    print("===================================================================================")
+                    print("user_profile_avg_10_percent_most_liked_commented_posts")
+
+                    X_percentage = 30  # percentage of posts that should be downloaded
+
+                    # sort post depending on like count
+                    posts_sorted_by_likes = sorted(profile.get_posts(),
+                                                   key=lambda p: p.likes,
+                                                   reverse=True)
+
+                    # get statistics of 30% of most liked-commented posts
+                    photos_likes_top_30_percent = []
+                    photos_comments_top_30_percent = []
+
+                    videos_likes_top_30_percent = []
+                    videos_comments_top_30_percent = []
+                    videos_views_top_30_percent = []
+                    for profile_posts in islice(posts_sorted_by_likes, ceil(profile.mediacount * X_percentage / 100)):
+                        #L.download_post(profile_posts, post.owner_username)
+                        if profile_posts.is_video:  # if the post is video
+                            # videos_likes_top_30_percent
+                            if profile_posts.likes is not None:
+                                videos_likes_top_30_percent.append(profile_posts.likes)
+                            else:  # if there are no likes on the post
+                                videos_likes_top_30_percent.append(0)
+
+                            # videos_comments_top_30_percent
+                            if profile_posts.comments is not None:
+                                videos_comments_top_30_percent.append(profile_posts.comments)
+                            else:  # if there are no comments on the post
+                                videos_comments_top_30_percent.append(0)
+
+                            # videos_views_top_30_percent
+                            if profile_posts.video_view_count is not None:
+                                videos_views_top_30_percent.append(profile_posts.video_view_count)
+                            else:  # if there are no views on the post
+                                videos_views_top_30_percent.append(0)
+                        else:    # if the post is photo
+                            # photos_likes_top_30_percent
+                            if profile_posts.likes is not None:
+                                photos_likes_top_30_percent.append(profile_posts.likes)
+                            else:  # if there are no likes on the post
+                                photos_likes_top_30_percent.append(0)
+
+                            # photos_comments_top_30_percent
+                            if profile_posts.comments is not None:
+                                photos_comments_top_30_percent.append(profile_posts.comments)
+                            else:  # if there are no comments on the post
+                                photos_comments_top_30_percent.append(0)
+
+
+
+                    print("likes_30_photos ", photos_likes_top_30_percent)
+                    print("comments_30_photos ", photos_comments_top_30_percent)
+                    print("likes_30_videos ", videos_likes_top_30_percent)
+                    print("comments_30_videos ", videos_comments_top_30_percent)
+
+
+                    print("===================================================================================")
+                    # count the number of posts that are videos
+                    videos_count_top_30_percent = len(videos_likes_top_30_percent)
+                    print("videos_count_top_30_percent ", videos_count_top_30_percent)
+
+                    # count the number of posts that are photos
+                    photos_count_top_30_percent = len(photos_likes_top_30_percent)
+                    print("photos_count_top_30_percent ", photos_count_top_30_percent)
+
+
+                    if not photos_count_top_30_percent:  # in case the user does not have uploaded a photo
+                        # ===================================================================================
+                        photos_top_30_percent_avg_likes = 0
+                        photos_top_30_percent_stdev_likes = 0
+                        # ===================================================================================
+                        photos_top_30_percent_avg_comments = 0
+                        photos_top_30_percent_stdev_comments = 0
+                        # ===================================================================================
+                        photos_top_30_percent_avg_fan_engagement = 0
+                    elif photos_count_top_30_percent == 1:  # in case the user has uploaded just one photo
+                        # ===================================================================================
+                        photos_top_30_percent_avg_likes = photos_likes_top_30_percent[0]
+                        photos_top_30_percent_stdev_likes = 0
+                        # ===================================================================================
+                        photos_top_30_percent_avg_comments = photos_comments_top_30_percent[0]
+                        photos_top_30_percent_stdev_comments = 0
+                        # ===================================================================================
+                        photos_top_30_percent_avg_fan_engagement = (photos_top_30_percent_avg_likes + photos_top_30_percent_avg_comments) / 2
+                    else:  # in case the user has uploaded more than one photo
+                        print("===================================================================================")
+                        print("photos_top_30_percent_avg_likes")
+                        # dtype=np.float64 -> more accurate results
+                        photos_top_30_percent_avg_likes = np.mean(photos_likes_top_30_percent, dtype=np.float64)
+                        print(photos_top_30_percent_avg_likes)
+
+                        print("photos_top_30_percent_stdev_likes")
+                        # dtype=np.float64 -> more accurate results
+                        # ddof=0 -> default, interprete data as population, ddof=1 -> interprete data as samples, i.e. estimate true variance
+                        photos_top_30_percent_stdev_likes = np.std(photos_likes_top_30_percent, dtype=np.float64, ddof=1)
+                        print(photos_top_30_percent_stdev_likes)
+
+                        print("===================================================================================")
+                        print("photos_top_30_percent_avg_comments")
+                        # dtype=np.float64 -> more accurate results
+                        photos_top_30_percent_avg_comments = np.mean(photos_comments_top_30_percent, dtype=np.float64)
+                        print(photos_top_30_percent_avg_comments)
+
+                        print("photos_top_30_percent_stdev_comments")
+                        # dtype=np.float64 -> more accurate results
+                        # ddof=0 -> default, interprete data as population, ddof=1 -> interprete data as samples, i.e. estimate true variance
+                        photos_top_30_percent_stdev_comments = np.std(photos_comments_top_30_percent, dtype=np.float64, ddof=1)
+                        print(photos_top_30_percent_stdev_comments)
+
+                        print("===================================================================================")
+                        print("photos_top_30_percent_avg_fan_engagement")
+                        # calculate a profile's popularity and human involvement by taking into account number of likes and comments of 30% of posts
+                        photos_top_30_percent_avg_fan_engagement = (photos_top_30_percent_avg_likes + photos_top_30_percent_avg_comments) / 2
+                        print(photos_top_30_percent_avg_fan_engagement)
+
+
+                    if not videos_count_top_30_percent:  # in case the user does not have uploaded a video
+                        # ===================================================================================
+                        videos_top_30_percent_avg_likes = 0
+                        videos_top_30_percent_stdev_likes = 0
+                        # ===================================================================================
+                        videos_top_30_percent_avg_comments = 0
+                        videos_top_30_percent_stdev_comments = 0
+                        # ===================================================================================
+                        videos_top_30_percent_avg_views = 0
+                        videos_top_30_percent_stdev_views = 0
+                        # ===================================================================================
+                        videos_top_30_percent_avg_fan_engagement = 0
+                    elif videos_count_top_30_percent == 1:  # in case the user has uploaded just one video
+                        # ===================================================================================
+                        videos_top_30_percent_avg_likes = videos_likes_top_30_percent[0]
+                        print("TESTING ", videos_top_30_percent_avg_likes, " here ", videos_likes_top_30_percent)
+                        videos_top_30_percent_stdev_likes = 0
+                        # ===================================================================================
+                        videos_top_30_percent_avg_comments = videos_comments_top_30_percent[0]
+                        videos_top_30_percent_stdev_comments = 0
+                        # ===================================================================================
+                        videos_top_30_percent_avg_views = videos_views_top_30_percent[0]
+                        videos_top_30_percent_stdev_views = 0
+                        # ===================================================================================
+                        videos_top_30_percent_avg_fan_engagement = (videos_top_30_percent_avg_likes + videos_top_30_percent_avg_comments) / 2
+                    else:  # in case the user has uploaded more than one video
+                        print("===================================================================================")
+                        print("videos_top_30_percent_avg_likes")
+                        # dtype=np.float64 -> more accurate results
+                        videos_top_30_percent_avg_likes = np.mean(videos_likes_top_30_percent, dtype=np.float64)
+                        print(videos_top_30_percent_avg_likes)
+
+                        print("videos_top_30_percent_stdev_likes")
+                        # dtype=np.float64 -> more accurate results
+                        # ddof=0 -> default, interprete data as population, ddof=1 -> interprete data as samples, i.e. estimate true variance
+                        videos_top_30_percent_stdev_likes = np.std(videos_likes_top_30_percent, dtype=np.float64, ddof=1)
+                        print(videos_top_30_percent_stdev_likes)
+                        print("===================================================================================")
+                        print("videos_top_30_percent_avg_comments")
+                        # dtype=np.float64 -> more accurate results
+                        videos_top_30_percent_avg_comments = np.mean(videos_comments_top_30_percent, dtype=np.float64)
+                        print(videos_top_30_percent_avg_comments)
+
+                        print("videos_top_30_percent_stdev_comments")
+                        # dtype=np.float64 -> more accurate results
+                        # ddof=0 -> default, interprete data as population, ddof=1 -> interprete data as samples, i.e. estimate true variance
+                        videos_top_30_percent_stdev_comments = np.std(videos_comments_top_30_percent, dtype=np.float64, ddof=1)
+                        print(videos_top_30_percent_stdev_comments)
+                        print("===================================================================================")
+                        print("videos_top_30_percent_avg_views")
+                        # dtype=np.float64 -> more accurate results
+                        videos_top_30_percent_avg_views = np.mean(videos_views_top_30_percent, dtype=np.float64)
+                        print(videos_top_30_percent_avg_views)
+
+                        print("videos_top_30_percent_stdev_views")
+                        # dtype=np.float64 -> more accurate results
+                        # ddof=0 -> default, interprete data as population, ddof=1 -> interprete data as samples, i.e. estimate true variance
+                        videos_top_30_percent_stdev_views = np.std(videos_views_top_30_percent, dtype=np.float64, ddof=1)
+                        print(videos_top_30_percent_stdev_views)
+
+                        print("===================================================================================")
+                        print("videos_top_30_percent_avg_fan_engagement")
+                        # calculate a profile's popularity and human involvement by taking into account number of likes and comments of 30% of posts
+                        videos_top_30_percent_avg_fan_engagement = (videos_top_30_percent_avg_likes + videos_top_30_percent_avg_comments) / 2
+                        print(videos_top_30_percent_avg_fan_engagement)
+
+
+
+                    print("--- %.2f seconds 30 ---" % (time.time() - start_time1))
+
+# ======================================================================================================================
+
                     print()
 
                     print("===================================================================================")
@@ -110,14 +461,12 @@ def start_stream(coll):
     # ======================================================================================================================
 
                     # get the like the posts of the owner take on average, e.g. last 10 posts
-                    post.owner_profile.get_posts()
-
-                    # download the last 5 pictures with given hashtag
-                    #           L.download_hashtag(hashtag, max_count=5)
-
 
                     # put post date and the date of mining to compare in how many days the post collected these likes
 
+                    video_views = 0  # if there are no comments on the post
+                    if post.video_view_count is not None:
+                        video_views = post.video_view_count
 
                     # put the MongoDB document body together
                     doc_body = {
@@ -131,10 +480,42 @@ def start_stream(coll):
                         "caption_hashtags": post.caption_hashtags,
                         "tagged_users": post.tagged_users,
                         "location": post.location,
-                        "video_view_count": post.video_view_count,
+                        "_location": post._location,
+                        "video_view_count": video_views,
+                        "is_video":  post.is_video,
                         "owner_private": post.owner_profile.is_private,
                         "owner_viewable_story": post.owner_profile.has_viewable_story,
                         "owner_verified": post.owner_profile.is_verified,
+
+                        "total_posts": videos_count_all + photos_count_all,
+                        "videos_count_all": videos_count_all,
+                        "photos_count_all": photos_count_all,
+                        "all_photos_avg_likes": all_photos_avg_likes,
+                        "all_photos_stdev_likes": all_photos_stdev_likes,
+                        "all_photos_avg_comments": all_photos_avg_comments,
+                        "all_photos_stdev_comments": all_photos_stdev_comments,
+                        "all_videos_avg_likes": all_videos_avg_likes,
+                        "all_videos_stdev_likes": all_videos_stdev_likes,
+                        "all_videos_avg_comments": all_videos_avg_comments,
+                        "all_videos_stdev_comments": all_videos_stdev_comments,
+                        "all_videos_avg_views": all_videos_avg_views,
+                        "all_videos_stdev_views": all_videos_stdev_views,
+
+                        "top_30_percent_total_posts": videos_count_top_30_percent + photos_count_top_30_percent,
+                        "videos_count_top_30_percent": videos_count_top_30_percent,
+                        "photos_count_top_30_percent": photos_count_top_30_percent,
+                        "photos_top_30_percent_avg_likes": photos_top_30_percent_avg_likes,
+                        "photos_top_30_percent_stdev_likes": photos_top_30_percent_stdev_likes,
+                        "photos_top_30_percent_avg_comments": photos_top_30_percent_avg_comments,
+                        "photos_top_30_percent_stdev_comments": photos_top_30_percent_stdev_comments,
+                        "videos_top_30_percent_avg_likes": videos_top_30_percent_avg_likes,
+                        "videos_top_30_percent_stdev_likes": videos_top_30_percent_stdev_likes,
+                        "videos_top_30_percent_avg_comments": videos_top_30_percent_avg_comments,
+                        "videos_top_30_percent_stdev_comments": videos_top_30_percent_stdev_comments,
+                        "videos_top_30_percent_avg_views": videos_top_30_percent_avg_views,
+                        "videos_top_30_percent_stdev_views": videos_top_30_percent_stdev_views,
+                        "photos_top_30_percent_avg_fan_engagement": photos_top_30_percent_avg_fan_engagement,
+                        "videos_top_30_percent_avg_fan_engagement": videos_top_30_percent_avg_fan_engagement,
 
                         "owner_igtvcount": post.owner_profile.igtvcount,
                         "date": post.date,
@@ -156,30 +537,6 @@ def start_stream(coll):
                 else:
                     print("{} from {} skipped.".format(post, post.owner_profile))
 
-            # get number of likes
-            likes = set()
-            for post in posts:
-                print(post)
-                likes = likes | set(post.get_likes())
-
-            # sort post depending on their popularity and human involvement by taking into account number of likes and comments
-            posts_sorted_by_likes = sorted(posts,
-                                           key=lambda p: p.likes + p.comments,
-                                           reverse=True)
-
-            filename = 'instadata.json'
-
-            # Saves a Post, Profile or StoryItem to a ‘.json’ or ‘.json.xz’ file such that it can later be loaded by load_structure_from_file().
-            # If the specified filename ends in ‘.xz’, the file will be LZMA compressed. Otherwise, a pretty-printed JSON file will be created.
-            # structure (Union[Post, Profile, StoryItem]) – Post, Profile or StoryItem
-            # filename (str) – Filename, ends in ‘.json’ or ‘.json.xz’
-        #            L.save_structure_to_file(structure, filename)
-
-        # Loads a Post, Profile or StoryItem from a ‘.json’ or ‘.json.xz’ file that has been saved by save_structure_to_file().
-        # context (InstaloaderContext) – Instaloader.context linked to the new object, used for additional queries if neccessary.
-        # filename (str) – Filename, ends in ‘.json’ or ‘.json.xz’
-        #           L.load_structure_from_file(L.context, filename)
-
         except Exception as e:
             print(e)
 
@@ -193,71 +550,6 @@ db = conn['Instagram_Data'] # client['countries_db']
 coll = db['post_data']
 
 start_stream(coll)
-
-
-
-
-'''
-with open('currencies.json') as f:
-    file_data = json.load(f)
-
-# if pymongo >= 3.0 use insert_one() for inserting one document
-coll.insert_one(file_data)
-
-# if pymongo >= 3.0 use insert_many() for inserting many documents
-coll.insert_many(file_data)
-
-
-# ======================================================================================================================
-
-
-# Insert many with custom id, if no id is given the mongoDB assigns one
-mylist = [
-  { "_id": 1, "name": "John", "address": "Highway 37"},
-  { "_id": 2, "name": "Peter", "address": "Lowstreet 27"},
-  { "_id": 3, "name": "Amy", "address": "Apple st 652"},
-  { "_id": 4, "name": "Hannah", "address": "Mountain 21"},
-  { "_id": 5, "name": "Michael", "address": "Valley 345"},
-  { "_id": 6, "name": "Sandy", "address": "Ocean blvd 2"},
-  { "_id": 7, "name": "Betty", "address": "Green Grass 1"},
-  { "_id": 8, "name": "Richard", "address": "Sky st 331"},
-  { "_id": 9, "name": "Susan", "address": "One way 98"},
-  { "_id": 10, "name": "Vicky", "address": "Yellow Garden 2"},
-  { "_id": 11, "name": "Ben", "address": "Park Lane 38"},
-  { "_id": 12, "name": "William", "address": "Central st 954"},
-  { "_id": 13, "name": "Chuck", "address": "Main Road 989"},
-  { "_id": 14, "name": "Viola", "address": "Sideway 1633"}
-]
-
-coll.insert_many(mylist)
-
-
-# ======================================================================================================================
-
-
-# data to pass into the Python dictionary object
-all_ages = [23, 45, 10, 56, 32]
-datetime_now = datetime.datetime # pass this to a MongoDB doc
-print("datetime_now:", datetime_now)
-
-# put the MongoDB document body together
-doc_body = {
-"timestamp" : time.time(), # returns float of epoch time
-"median age" : sum(all_ages)/len(all_ages),
-"date" : datetime_now
-}
-
-# update dictionary keys to add new fields for the MongoDB document body
-doc_body.update({"field int": 1234})
-doc_body.update({"field str": "I am a string, yo!"})
-
-# Insert data to mongoDB
-print("ndocument body:", doc_body)
-result = coll.insert_one(doc_body)
-
-# just print the result if using 2.x or older of PyMongo
-print("nresult _id:", result.inserted_id)
-'''
 
 # ======================================================================================================================
 
