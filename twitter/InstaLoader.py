@@ -14,6 +14,7 @@ from instaloader import Profile
 
 def start_stream(coll):
     for i in range(0, 1000):
+        print("REP %d FROM 1000" % i)
         try:
             # code for instaloader
             L = instaloader.Instaloader()
@@ -97,10 +98,13 @@ def start_stream(coll):
                     # The Post’s lowercase owner name.
                     print(post.owner_username)
 
-# ======================================================================================================================
+                    # ======================================================================================================================
                     # used for avg likes-comments-video_views calculation
                     profile = Profile.from_username(L.context, post.owner_username)  # get the profile of the user of the current post
-# ======================================================================================================================
+
+                    # get the profile posts of the owner of the post
+                    owner_profile_post = profile.get_posts()
+                    # ======================================================================================================================
 
                     start_time = time.time()
 
@@ -113,7 +117,7 @@ def start_stream(coll):
                     videos_likes_all = []
                     videos_comments_all = []
                     videos_views_all = []
-                    for profile_post in profile.get_posts():
+                    for profile_post in owner_profile_post:
                         if profile_post.is_video:  # if the post is video
                             # videos_likes_all
                             if profile_post.likes is not None:
@@ -132,7 +136,7 @@ def start_stream(coll):
                                 videos_views_all.append(profile_post.video_view_count)
                             else:  # if there are no views on the post
                                 videos_views_all.append(0)
-                        else:    # if the post is photo
+                        else:  # if the post is photo
                             # photos_likes_all
                             if profile_post.likes is not None:
                                 photos_likes_all.append(profile_post.likes)
@@ -145,12 +149,10 @@ def start_stream(coll):
                             else:  # if there are no comments on the post
                                 photos_comments_all.append(0)
 
-
                     print("likes_all_photos ", photos_likes_all)
                     print("comments_all_photos ", photos_comments_all)
                     print("likes_all_videos ", videos_likes_all)
                     print("comments_all_videos ", videos_comments_all)
-
 
                     print("===================================================================================")
                     # count the number of posts that are videos
@@ -199,7 +201,6 @@ def start_stream(coll):
                         # ddof=0 -> default, interprete data as population, ddof=1 -> interprete data as samples, i.e. estimate true variance
                         all_photos_stdev_comments = np.std(photos_comments_all, dtype=np.float64, ddof=0)
                         print(all_photos_stdev_comments)
-
 
                     if not videos_count_all:  # in case the user does not have uploaded a video
                         # ===================================================================================
@@ -253,10 +254,9 @@ def start_stream(coll):
                         all_videos_stdev_views = np.std(videos_views_all, dtype=np.float64, ddof=0)
                         print(all_videos_stdev_views)
 
-
                     print("--- %.2f seconds ALL ---" % (time.time() - start_time))
 
-# ======================================================================================================================
+                    # ======================================================================================================================
 
                     start_time1 = time.time()
 
@@ -266,7 +266,7 @@ def start_stream(coll):
                     X_percentage = 30  # percentage of posts that should be downloaded
 
                     # sort post depending on like count
-                    posts_sorted_by_likes = sorted(profile.get_posts(),
+                    posts_sorted_by_likes = sorted(owner_profile_post,
                                                    key=lambda p: p.likes,
                                                    reverse=True)
 
@@ -278,7 +278,7 @@ def start_stream(coll):
                     videos_comments_top_30_percent = []
                     videos_views_top_30_percent = []
                     for profile_posts in islice(posts_sorted_by_likes, ceil(profile.mediacount * X_percentage / 100)):
-                        #L.download_post(profile_posts, post.owner_username)
+                        # L.download_post(profile_posts, post.owner_username)
                         if profile_posts.is_video:  # if the post is video
                             # videos_likes_top_30_percent
                             if profile_posts.likes is not None:
@@ -297,7 +297,7 @@ def start_stream(coll):
                                 videos_views_top_30_percent.append(profile_posts.video_view_count)
                             else:  # if there are no views on the post
                                 videos_views_top_30_percent.append(0)
-                        else:    # if the post is photo
+                        else:  # if the post is photo
                             # photos_likes_top_30_percent
                             if profile_posts.likes is not None:
                                 photos_likes_top_30_percent.append(profile_posts.likes)
@@ -310,13 +310,10 @@ def start_stream(coll):
                             else:  # if there are no comments on the post
                                 photos_comments_top_30_percent.append(0)
 
-
-
                     print("likes_30_photos ", photos_likes_top_30_percent)
                     print("comments_30_photos ", photos_comments_top_30_percent)
                     print("likes_30_videos ", videos_likes_top_30_percent)
                     print("comments_30_videos ", videos_comments_top_30_percent)
-
 
                     print("===================================================================================")
                     # count the number of posts that are videos
@@ -326,7 +323,6 @@ def start_stream(coll):
                     # count the number of posts that are photos
                     photos_count_top_30_percent = len(photos_likes_top_30_percent)
                     print("photos_count_top_30_percent ", photos_count_top_30_percent)
-
 
                     if not photos_count_top_30_percent:  # in case the user does not have uploaded a photo
                         # ===================================================================================
@@ -345,7 +341,8 @@ def start_stream(coll):
                         photos_top_30_percent_avg_comments = photos_comments_top_30_percent[0]
                         photos_top_30_percent_stdev_comments = 0
                         # ===================================================================================
-                        photos_top_30_percent_avg_fan_engagement = (photos_top_30_percent_avg_likes + photos_top_30_percent_avg_comments) / 2
+                        photos_top_30_percent_avg_fan_engagement = (
+                                                                               photos_top_30_percent_avg_likes + photos_top_30_percent_avg_comments) / 2
                     else:  # in case the user has uploaded more than one photo
                         print("===================================================================================")
                         print("photos_top_30_percent_avg_likes")
@@ -356,7 +353,8 @@ def start_stream(coll):
                         print("photos_top_30_percent_stdev_likes")
                         # dtype=np.float64 -> more accurate results
                         # ddof=0 -> default, interprete data as population, ddof=1 -> interprete data as samples, i.e. estimate true variance
-                        photos_top_30_percent_stdev_likes = np.std(photos_likes_top_30_percent, dtype=np.float64, ddof=1)
+                        photos_top_30_percent_stdev_likes = np.std(photos_likes_top_30_percent, dtype=np.float64,
+                                                                   ddof=1)
                         print(photos_top_30_percent_stdev_likes)
 
                         print("===================================================================================")
@@ -368,15 +366,16 @@ def start_stream(coll):
                         print("photos_top_30_percent_stdev_comments")
                         # dtype=np.float64 -> more accurate results
                         # ddof=0 -> default, interprete data as population, ddof=1 -> interprete data as samples, i.e. estimate true variance
-                        photos_top_30_percent_stdev_comments = np.std(photos_comments_top_30_percent, dtype=np.float64, ddof=1)
+                        photos_top_30_percent_stdev_comments = np.std(photos_comments_top_30_percent, dtype=np.float64,
+                                                                      ddof=1)
                         print(photos_top_30_percent_stdev_comments)
 
                         print("===================================================================================")
                         print("photos_top_30_percent_avg_fan_engagement")
                         # calculate a profile's popularity and human involvement by taking into account number of likes and comments of 30% of posts
-                        photos_top_30_percent_avg_fan_engagement = (photos_top_30_percent_avg_likes + photos_top_30_percent_avg_comments) / 2
+                        photos_top_30_percent_avg_fan_engagement = (
+                                                                               photos_top_30_percent_avg_likes + photos_top_30_percent_avg_comments) / 2
                         print(photos_top_30_percent_avg_fan_engagement)
-
 
                     if not videos_count_top_30_percent:  # in case the user does not have uploaded a video
                         # ===================================================================================
@@ -444,11 +443,9 @@ def start_stream(coll):
                         videos_top_30_percent_avg_fan_engagement = (videos_top_30_percent_avg_likes + videos_top_30_percent_avg_comments) / 2
                         print(videos_top_30_percent_avg_fan_engagement)
 
-
-
                     print("--- %.2f seconds 30 ---" % (time.time() - start_time1))
 
-# ======================================================================================================================
+                    # ======================================================================================================================
 
                     print()
 
@@ -456,21 +453,17 @@ def start_stream(coll):
                     print("END")
                     print("===================================================================================")
 
-    # ======================================================================================================================
-    # Insert data to mongoDB
-    # ======================================================================================================================
+                    # ======================================================================================================================
+                    # Insert data to mongoDB
+                    # ======================================================================================================================
 
-                    # get the like the posts of the owner take on average, e.g. last 10 posts
-
-                    # put post date and the date of mining to compare in how many days the post collected these likes
-
-                    video_views = 0  # if there are no comments on the post
+                    video_views = 0  # if the post is not a video, handle the none value
                     if post.video_view_count is not None:
                         video_views = post.video_view_count
 
                     # put the MongoDB document body together
                     doc_body = {
-#                        "owner_profile": post.owner_profile,
+                        #                        "owner_profile": post.owner_profile,
                         "owner_followers": post.owner_profile.followers,
                         "followees": post.owner_profile.followees,
                         "comments": post.comments,
@@ -482,7 +475,7 @@ def start_stream(coll):
                         "location": post.location,
                         "_location": post._location,
                         "video_view_count": video_views,
-                        "is_video":  post.is_video,
+                        "is_video": post.is_video,
                         "owner_private": post.owner_profile.is_private,
                         "owner_viewable_story": post.owner_profile.has_viewable_story,
                         "owner_verified": post.owner_profile.is_verified,
@@ -532,7 +525,7 @@ def start_stream(coll):
                     # just print the result if using 2.x or older of PyMongo
                     print("nresult _id:", result.inserted_id)
 
-    # ======================================================================================================================
+# ======================================================================================================================
 
                 else:
                     print("{} from {} skipped.".format(post, post.owner_profile))
