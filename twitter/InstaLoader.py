@@ -1,8 +1,8 @@
 import json
 import pymongo
-import datetime
 from math import ceil
-from itertools import islice
+from itertools import islice, dropwhile, takewhile
+import datetime
 
 import time
 import numpy as np
@@ -13,8 +13,8 @@ from instaloader import Profile
 
 
 def start_stream(coll):
-    for i in range(0, 1000):
-        print("REP %d FROM 1000" % i)
+    for i in range(0, 10000):
+        print("REP %d FROM 10000" % i)
         try:
             # code for instaloader
             L = instaloader.Instaloader()
@@ -26,9 +26,16 @@ def start_stream(coll):
             print("GOT POSTS")
             print("===================================================================================")
 
+            # SINCE is the most recent date and UNTIL is the oldest
+            SINCE = datetime.datetime.now() - datetime.timedelta(days=1)  # until the day before today (yesterday)
+            UNTIL = datetime.datetime(2020, 1, 1)
+            print("SINCE", SINCE)
+            print("UNTIL", UNTIL)
+
+
             # get just one post from each user
             users = set()
-            for post in posts:
+            for post in takewhile(lambda p: p.date > UNTIL, dropwhile(lambda p: p.date > SINCE, posts)):
                 if not post.owner_profile in users:
                     print("===================================================================================")
                     print("start")
@@ -261,7 +268,6 @@ def start_stream(coll):
                     start_time1 = time.time()
 
                     print("===================================================================================")
-                    print("user_profile_avg_10_percent_most_liked_commented_posts")
 
                     X_percentage = 30  # percentage of posts that should be downloaded
 
@@ -341,8 +347,7 @@ def start_stream(coll):
                         photos_top_30_percent_avg_comments = photos_comments_top_30_percent[0]
                         photos_top_30_percent_stdev_comments = 0
                         # ===================================================================================
-                        photos_top_30_percent_avg_fan_engagement = (
-                                                                               photos_top_30_percent_avg_likes + photos_top_30_percent_avg_comments) / 2
+                        photos_top_30_percent_avg_fan_engagement = (photos_top_30_percent_avg_likes + photos_top_30_percent_avg_comments) / 2
                     else:  # in case the user has uploaded more than one photo
                         print("===================================================================================")
                         print("photos_top_30_percent_avg_likes")
@@ -353,8 +358,7 @@ def start_stream(coll):
                         print("photos_top_30_percent_stdev_likes")
                         # dtype=np.float64 -> more accurate results
                         # ddof=0 -> default, interprete data as population, ddof=1 -> interprete data as samples, i.e. estimate true variance
-                        photos_top_30_percent_stdev_likes = np.std(photos_likes_top_30_percent, dtype=np.float64,
-                                                                   ddof=1)
+                        photos_top_30_percent_stdev_likes = np.std(photos_likes_top_30_percent, dtype=np.float64, ddof=1)
                         print(photos_top_30_percent_stdev_likes)
 
                         print("===================================================================================")
@@ -366,15 +370,13 @@ def start_stream(coll):
                         print("photos_top_30_percent_stdev_comments")
                         # dtype=np.float64 -> more accurate results
                         # ddof=0 -> default, interprete data as population, ddof=1 -> interprete data as samples, i.e. estimate true variance
-                        photos_top_30_percent_stdev_comments = np.std(photos_comments_top_30_percent, dtype=np.float64,
-                                                                      ddof=1)
+                        photos_top_30_percent_stdev_comments = np.std(photos_comments_top_30_percent, dtype=np.float64, ddof=1)
                         print(photos_top_30_percent_stdev_comments)
 
                         print("===================================================================================")
                         print("photos_top_30_percent_avg_fan_engagement")
                         # calculate a profile's popularity and human involvement by taking into account number of likes and comments of 30% of posts
-                        photos_top_30_percent_avg_fan_engagement = (
-                                                                               photos_top_30_percent_avg_likes + photos_top_30_percent_avg_comments) / 2
+                        photos_top_30_percent_avg_fan_engagement = (photos_top_30_percent_avg_likes + photos_top_30_percent_avg_comments) / 2
                         print(photos_top_30_percent_avg_fan_engagement)
 
                     if not videos_count_top_30_percent:  # in case the user does not have uploaded a video
@@ -449,10 +451,6 @@ def start_stream(coll):
 
                     print()
 
-                    print("===================================================================================")
-                    print("END")
-                    print("===================================================================================")
-
                     # ======================================================================================================================
                     # Insert data to mongoDB
                     # ======================================================================================================================
@@ -524,6 +522,12 @@ def start_stream(coll):
 
                     # just print the result if using 2.x or older of PyMongo
                     print("nresult _id:", result.inserted_id)
+
+
+
+                    print("===================================================================================")
+                    print("END")
+                    print("===================================================================================")
 
 # ======================================================================================================================
 
