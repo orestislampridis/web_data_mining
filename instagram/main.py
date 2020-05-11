@@ -44,3 +44,9 @@ clist = list(test.columns)  # list of all column names
 print(clist)
 print(len(clist))  # number of all columns
 
+# save cleaned data, from dataframe, to csv
+test.to_csv('test_cleaned.csv', index=False, encoding='utf-8')
+
+data = pd.read_csv("test_cleaned.csv", index_col=False)
+
+print("NEW CSV:\n", data["date"])
