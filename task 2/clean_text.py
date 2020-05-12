@@ -6,6 +6,8 @@ from nltk import word_tokenize
 from nltk.corpus import stopwords
 
 stop_words = set(stopwords.words('english'))
+stop_words.update(['zero','one','two','three','four','five','six','seven','eight','nine','ten','may','also','across','among','beside','however','yet','within'])
+
 
 # Happy Emoticons
 emoticons_happy = {':-)', ':)', ';)', ':o)', ':]', ':3', ':c)', ':>', '=]', '8)', '=)', ':}', ':^)', ':-D', ':D', '8-D',
@@ -51,6 +53,26 @@ def strip_all_entities(text):
                 words.append(word)
     return ' '.join(words)
 
+#fumction for stemming
+def stemming(text):
+    stemmer = PorterStemmer()
+    stemmed_text = ""
+    for word in text.split():
+        stem = stemmer.stem(word)
+        stemmed_text += stem
+        stemmed_text += " "
+    stemmed_text = stemmed_text.strip()
+    return stemmed_text
+
+#function to keep only alpharethmetic values
+def only_alpha(text):
+    text_alpha = ""
+    for word in text.split():
+        word_alpha = re.sub('[^a-z A-Z]+', ' ', word)
+        text_alpha += word_alpha
+        text_alpha += " "
+    text_alpha = text_alpha.strip()
+    return text_alpha
 
 # Method to clean tweets
 def clean_tweets(tweet):
