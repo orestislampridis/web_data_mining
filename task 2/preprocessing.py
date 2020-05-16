@@ -117,22 +117,33 @@ def strip_all_entities(text):
                 words.append(word)
     return ' '.join(words)
 
-#fumction for stemming
+
+# function for stemming
 def stemming(text):
     # stemmer = PorterStemmer()
-    # stemmer = SnowballStemmer("english")
-    lemmatizer = WordNetLemmatizer()
+    stemmer = SnowballStemmer("english")
     stemmed_text = ""
     for word in text.split():
-        # stem = stemmer.stem(word)
-        # stemmed_text += stem
-        lemma = lemmatizer.lemmatize(word)
-        stemmed_text += lemma
+        stem = stemmer.stem(word)
+        stemmed_text += stem
         stemmed_text += " "
     stemmed_text = stemmed_text.strip()
     return stemmed_text
 
-#function to keep only alpharethmetic values
+
+# function for lemmatazing
+def lemmatizing(text):
+    lemmatizer = WordNetLemmatizer()
+    lemma_text = ""
+    for word in text.split():
+        lemma = lemmatizer.lemmatize(word)
+        lemma_text += lemma
+        lemma_text += " "
+    lemma_text = lemma_text.strip()
+    return lemma_text
+
+
+# function to keep only alpharethmetic values
 def only_alpha(text):
     text_alpha = ""
     for word in text.split():
@@ -142,56 +153,34 @@ def only_alpha(text):
     text_alpha = text_alpha.strip()
     return text_alpha
 
-# Method to clean tweets
-def clean_tweets(tweet):
+
+# Method to clean tweets and instagram posts
+def clean_text(text):
     # remove entities and links
-    tweet = strip_all_entities(strip_links(tweet))
+    text = strip_all_entities(strip_links(text))
 
     # remove rt and via in case of tweet data
-    tweet = tweet.lower()
-    tweet = re.sub(r"rt", "", tweet)
-    tweet = re.sub(r"via", "", tweet)
+    text = text.lower()
+    text = re.sub(r"rt", "", text)
+    text = re.sub(r"via", "", text)
+
+    # remove repost in case of instagram data
+    text = re.sub(r"repost", "", text)
 
     # replace consecutive non-ASCII characters with a space
-    tweet = re.sub(r'[^\x00-\x7F]+',' ', tweet)
+    text = re.sub(r'[^\x00-\x7F]+', ' ', text)
 
     # substitute contractions with full words
-    tweet = replace_contractions(tweet)
+    text = replace_contractions(text)
 
-    # remove emojis from tweet
-    tweet = emoji_pattern.sub(r'', tweet)
-    word_tokens = word_tokenize(tweet)
+    # remove emojis from text
+    text = emoji_pattern.sub(r'', text)
+    word_tokens = word_tokenize(text)
 
-    filtered_tweet = []
+    filtered_text = []
     # looping through conditions
     for w in word_tokens:
         # check tokens against stop words, emoticons and punctuations
         if (w not in stop_words and w not in emoticons and w not in string.punctuation) or w in whitelist:
-            filtered_tweet.append(w)
-    return ' '.join(filtered_tweet)
-
-
-# Method to clean insta posts
-def clean_insta_posts(post):
-    # remove entities and links
-    post = strip_all_entities(strip_links(post))
-
-    # remove repost in case of instagram data
-    post = post.lower().split()
-    post = [w for w in post]
-    post = " ".join(post)
-    post = re.sub(r"repost", "", post)
-
-    # replace consecutive non-ASCII characters with a space
-    post = re.sub(r'[^\x00-\x7F]+', ' ', post)
-
-    # remove emojis
-    post = emoji_pattern.sub(r'', post)
-    word_tokens = word_tokenize(post)
-    filtered_post = []
-    # looping through conditions
-    for w in word_tokens:
-        # check tokens against stop words, emoticons and punctuations
-        if w not in stop_words and w not in emoticons and w not in string.punctuation:
-            filtered_post.append(w)
-    return ' '.join(filtered_post)
+            filtered_text.append(w)
+    return ' '.join(filtered_text)
