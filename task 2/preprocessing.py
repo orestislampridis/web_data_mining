@@ -1,12 +1,17 @@
 # pre-process and clean data
-
 import string
 import re
 import string
 
+import nltk
+nltk.download('wordnet')
+
 from nltk.stem import *  # from nltk.stem.porter import *
 from nltk.stem.snowball import SnowballStemmer
-from nltk import wordnet  # used for lemmatizer
+
+from nltk import pos_tag
+from nltk.corpus import wordnet
+from nltk.stem.wordnet import WordNetLemmatizer  # used for lemmatizer
 
 from nltk import word_tokenize
 from nltk.corpus import stopwords
@@ -68,8 +73,9 @@ def replace_contractions(text):
 
 
 whitelist = ["n't", "not", 'nor', "nt"]  # Keep the words "n't" and "not", 'nor' and "nt"
-stop_words = set(list(stopwords.words('english')) + ['"', '|'])
-stop_words.update(['zero','one','two','three','four','five','six','seven','eight','nine','ten','may','also','across','among','beside','however','yet','within'])
+stopwords_verbs = ['say', 'get', 'go', 'know', 'may', 'need', 'like', 'make', 'see', 'want', 'come', 'take', 'use', 'would', 'can']
+stopwords_other = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'may', 'also', 'across', 'among', 'beside', 'however', 'yet', 'within', 'mr', 'bbc', 'image', 'getty', 'de', 'en', 'caption', 'copyright', 'something']
+stop_words = set(list(stopwords.words('english')) + ['"', '|'] + stopwords_verbs + stopwords_other)
 
 
 # Happy Emoticons
@@ -107,7 +113,7 @@ def strip_links(text):
 def strip_all_entities(text):
     entity_prefixes = ['@', '#']
     for separator in string.punctuation:
-        if separator not in entity_prefixes :
+        if separator not in entity_prefixes:
             text = text.replace(separator, ' ')
     words = []
     for word in text.split():
@@ -118,39 +124,57 @@ def strip_all_entities(text):
     return ' '.join(words)
 
 
-# function for stemming
-def stemming(text):
-    # stemmer = PorterStemmer()
-    stemmer = SnowballStemmer("english")
-    stemmed_text = ""
-    for word in text.split():
-        stem = stemmer.stem(word)
-        stemmed_text += stem
-        stemmed_text += " "
-    stemmed_text = stemmed_text.strip()
-    return stemmed_text
+# convert POS tag to wordnet tag in order to use in lemmatizer
+def get_wordnet_pos(treebank_tag):
+
+    if treebank_tag.startswith('J'):
+        return wordnet.ADJ
+    elif treebank_tag.startswith('V'):
+        return wordnet.VERB
+    elif treebank_tag.startswith('N'):
+        return wordnet.NOUN
+    elif treebank_tag.startswith('R'):
+        return wordnet.ADV
+    else:
+        return ''
 
 
 # function for lemmatazing
-def lemmatizing(text):
+def lemmatizing(tokenized_text):
     lemmatizer = WordNetLemmatizer()
-    lemma_text = ""
-    for word in text.split():
-        lemma = lemmatizer.lemmatize(word)
-        lemma_text += lemma
-        lemma_text += " "
-    lemma_text = lemma_text.strip()
+    lemma_text = []
+
+    # annotate words with Part-of-Speech tags, format: ((word1, post_tag), (word2, post_tag), ...)
+    word_pos_tag = pos_tag(tokenized_text)
+    print("word_pos_tag", word_pos_tag)
+
+    for word_tag in word_pos_tag:  # word_tag[0]: word, word_tag[1]: tag
+        # Lemmatizing each word with its POS tag, in each sentence
+        if get_wordnet_pos(word_tag[1]) != '':  # if the POS tagger annotated the given word, lemmatize the word using its POS tag
+            lemma = lemmatizer.lemmatize(word_tag[0], get_wordnet_pos(word_tag[1]))
+        else:  # if the post tagger did NOT annotate the given word, lemmatize the word WITHOUT POS tag
+            lemma = lemmatizer.lemmatize(word_tag[0])
+        lemma_text.append(lemma)
     return lemma_text
 
 
+# function for stemming
+def stemming(tokenized_text):
+    # stemmer = PorterStemmer()
+    stemmer = SnowballStemmer("english")
+    stemmed_text = []
+    for word in tokenized_text:
+        stem = stemmer.stem(word)
+        stemmed_text.append(stem)
+    return stemmed_text
+
+
 # function to keep only alpharethmetic values
-def only_alpha(text):
-    text_alpha = ""
-    for word in text.split():
+def only_alpha(tokenized_text):
+    text_alpha = []
+    for word in tokenized_text:
         word_alpha = re.sub('[^a-z A-Z]+', ' ', word)
-        text_alpha += word_alpha
-        text_alpha += " "
-    text_alpha = text_alpha.strip()
+        text_alpha.append(word_alpha)
     return text_alpha
 
 
@@ -170,17 +194,32 @@ def clean_text(text):
     # replace consecutive non-ASCII characters with a space
     text = re.sub(r'[^\x00-\x7F]+', ' ', text)
 
+    # remove emojis from text
+    text = emoji_pattern.sub(r'', text)
+
     # substitute contractions with full words
     text = replace_contractions(text)
 
-    # remove emojis from text
-    text = emoji_pattern.sub(r'', text)
-    word_tokens = word_tokenize(text)
+    # tokenize text
+    tokenized_text = word_tokenize(text)
+
+    # remove all non alpharethmetic values
+    tokenized_text = only_alpha(tokenized_text)
+
+    print("tokenized_text", tokenized_text)
 
     filtered_text = []
     # looping through conditions
-    for w in word_tokens:
+    for word in tokenized_text:
         # check tokens against stop words, emoticons and punctuations
-        if (w not in stop_words and w not in emoticons and w not in string.punctuation) or w in whitelist:
-            filtered_text.append(w)
-    return ' '.join(filtered_text)
+        if (word not in stop_words and word not in emoticons and word not in string.punctuation and not word.isspace() and len(word)>1) or word in whitelist:
+            print("word", word)
+            filtered_text.append(word)
+
+    # lemmatize / stem words
+    tokenized_text = lemmatizing(filtered_text)
+    # text = stemming(filtered_text)
+
+    print("tokenized_text 2", tokenized_text)
+
+    return tokenized_text  #' '.join(tokenized_text)
