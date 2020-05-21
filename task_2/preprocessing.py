@@ -2,7 +2,6 @@
 import re
 import string
 
-import nltk
 import pkg_resources
 from nltk import pos_tag
 from nltk import word_tokenize
@@ -13,7 +12,8 @@ from nltk.stem.snowball import SnowballStemmer
 from nltk.stem.wordnet import WordNetLemmatizer  # used for lemmatizer
 from symspellpy.symspellpy import SymSpell  # import the module
 
-nltk.download('wordnet')
+
+# nltk.download('wordnet')
 
 
 class preprocessing:
