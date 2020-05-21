@@ -153,7 +153,13 @@ class preprocessing:
         for word_tag in word_pos_tag:  # word_tag[0]: word, word_tag[1]: tag
             # Lemmatizing each word with its POS tag, in each sentence
             if self.get_wordnet_pos(word_tag[1]) != '':  # if the POS tagger annotated the given word, lemmatize the word using its POS tag
-                lemma = lemmatizer.lemmatize(word_tag[0], self.get_wordnet_pos(word_tag[1]))
+                if self.only_verbs_nouns:  # if the only_verbs_nouns is True, get only verbs and nouns
+                    if self.get_wordnet_pos(word_tag[1]) in [wordnet.NOUN, wordnet.VERB]:
+                        lemma = lemmatizer.lemmatize(word_tag[0], self.get_wordnet_pos(word_tag[1]))
+                    else:  # if word non noun or verb, then return empty string
+                        lemma = ''
+                else:  # if only_verbs_nouns is disabled (False), keep all words
+                    lemma = lemmatizer.lemmatize(word_tag[0], self.get_wordnet_pos(word_tag[1]))
             else:  # if the post tagger did NOT annotate the given word, lemmatize the word WITHOUT POS tag
                 lemma = lemmatizer.lemmatize(word_tag[0])
             lemma_text.append(lemma)
@@ -182,10 +188,11 @@ class preprocessing:
 
 
     # initiate whether to use and spell corrector when the class object is created
-    def __init__(self, convert_lower=True, use_spell_corrector=False):
+    def __init__(self, convert_lower=True, use_spell_corrector=False, only_verbs_nouns=False):
         """
         :param convert_lower: whether to convert to lower case or not
         :param use_spell_corrector: boolean to select whether to use spell corrector or not
+        :param only_verbs_nouns: whether to filter words to keep only verbs and nouns
         """
 
         # set boolean to select whether to use spell corrector or not
@@ -193,6 +200,9 @@ class preprocessing:
 
         # set boolean to select whether to convert text to lower case
         self.convert_lower = convert_lower
+
+        # whether to filter words to keep only verbs and nouns
+        self.only_verbs_nouns = only_verbs_nouns
 
         if self.use_spell_corrector:
             # maximum edit distance per dictionary precalculation
@@ -246,7 +256,7 @@ class preprocessing:
         #print(suggestions[0].term)
 
         # return the most probable (first) recommendation
-        return corrected_posts #suggestions[0].term
+        return corrected_posts  #suggestions[0].term
 
 
 
