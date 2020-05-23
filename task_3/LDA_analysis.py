@@ -12,6 +12,11 @@ from gensim.models.coherencemodel import CoherenceModel
 from wordcloud import WordCloud
 import matplotlib.colors as mcolors
 
+# Plotly imports - HTML plots
+import plotly.offline as py
+import plotly.graph_objs as go
+import plotly.tools as tls
+
 
 # ======================================================================================================================
 # LDA
@@ -42,10 +47,11 @@ def LDA_analysis(data, pyLDAvis_show=False, plot_graphs=False):
     dictionary_LDA = corpora.Dictionary(list_of_list_of_tokens)
     print("dictionary_LDA", dictionary_LDA)
 
-    # no_below: Filter words that appear in less than 3 posts
-    # no_above: more than 0.5 documents (fraction of total corpus size, not absolute number)
+    # no_below: Filter words that appear in less than 2 posts
+    # no_above: more than 0.8 documents (fraction of total corpus size, not absolute number)
     # keep_n: keep only the first 100000 most frequent tokens
-    dictionary_LDA.filter_extremes(no_below=3, no_above=0.5, keep_n=100000)
+    dictionary_LDA.filter_extremes(no_below=2, no_above=0.8, keep_n=100000)
+    print("FILTERED dictionary_LDA", dictionary_LDA)
     corpus = [dictionary_LDA.doc2bow(list_of_tokens) for list_of_tokens in list_of_list_of_tokens]
     print("corpus", corpus)
 
@@ -116,33 +122,52 @@ def LDA_analysis(data, pyLDAvis_show=False, plot_graphs=False):
 
     # ======================================================================================================================
 
+        # The distribution of posts per topic
+
         sns.set(rc={'figure.figsize': (10, 5)})
         document_topic.idxmax(axis=1).value_counts().plot.bar(color='lightblue')
         plt.show()
+
+
+
+        data = [go.Bar(
+            x=document_topic.columns.unique(),
+            y=document_topic.idxmax(axis=1).value_counts().values,
+            marker=dict(colorscale='Jet',
+                        color=document_topic.idxmax(axis=1).value_counts().values
+                        ),
+            text='Text posts attributed to Topic'
+        )]
+
+        layout = go.Layout(
+            title='Topics distribution'
+        )
+
+        fig = go.Figure(data=data, layout=layout)
+
+        py.plot(fig, filename='topics-distribution.html')
 
     # ======================================================================================================================
         # Wordcloud of Top N words in each topic
 
         cols = [color for name, color in mcolors.TABLEAU_COLORS.items()]  # more colors: 'mcolors.XKCD_COLORS'
 
-        cloud = WordCloud(background_color='white',
-                          width=2500,
-                          height=1800,
-                          max_words=10,
+        cloud = WordCloud(width=1600,
+                          height=800,
                           colormap='tab10',
                           color_func=lambda *args, **kwargs: cols[i],
                           prefer_horizontal=1.0)
 
         topics = lda_model.show_topics(formatted=False)
 
-        fig, axes = plt.subplots(2, 3, figsize=(10, 10), sharex=True, sharey=True)  # set the number of plots
+        fig, axes = plt.subplots(1, 3, figsize=(20, 10), facecolor='k', sharex=True, sharey=True)  # set the number of plots
 
         for i, ax in enumerate(axes.flatten()):
             fig.add_subplot(ax)
             topic_words = dict(topics[i][1])
             cloud.generate_from_frequencies(topic_words, max_font_size=300)
             plt.gca().imshow(cloud)
-            plt.gca().set_title('Topic ' + str(i), fontdict=dict(size=16))
+            plt.gca().set_title('Topic ' + str(i), fontdict=dict(size=16), color='white')
             plt.gca().axis('off')
 
         plt.subplots_adjust(wspace=0, hspace=0)
