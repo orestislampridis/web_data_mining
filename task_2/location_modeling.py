@@ -8,7 +8,6 @@ page that contains a Folium map with all the coordinates plotted
 """
 import time
 
-import folium
 import pandas as pd
 from geopy.exc import GeocoderTimedOut
 from geopy.geocoders import Nominatim
@@ -146,20 +145,3 @@ BBox = ((merged_df['longitude'].min(), merged_df['longitude'].max(),
          merged_df['latitude'].min(), merged_df['latitude'].max()))
 
 print(BBox)
-
-# Plot the long and lat coordinates as scatter points
-# on the map image. It is important to set up the X-axis
-# and Y-axis as per the bounding box ‘BBox’
-
-folium_map = folium.Map(
-    location=[40.736851, 22.920227],
-    tiles='CartoDB dark_matter',
-    zoom_start=4,
-    max_zoom=20
-)
-# FastMarkerCluster(data=list(zip(geo_df['latitude'].values, geo_df['longitude'].values))).add_to(folium_map)
-# folium.LayerControl().add_to(folium_map)
-merged_df.apply(
-    lambda row: folium.CircleMarker(location=[row["latitude"], row["longitude"]], radius=1).add_to(folium_map),
-    axis=1)
-folium_map.save('map.html')
