@@ -43,31 +43,27 @@ class GroupedColorFunc(object):
 
 def emerg_topics_wordcloud(words_per_emergin_topic, words_freq):
     # Since the text is small collocations are turned off and text is lower-cased
-    wc = WordCloud(collocations=False).generate_from_frequencies(words_freq)
+    wc = WordCloud(width=1600, height=800, collocations=False).generate_from_frequencies(words_freq)
 
-    color_to_words = dict()
+    numb_emerg_topics = len(words_per_emergin_topic)
+    color_to_words = dict()  # pic random distinct colors to the human eye for each different emerging topics
     for topic in words_per_emergin_topic:
-        '''
-        r = random.random()
-        b = random.random()
-        g = random.random()
-        color = (r, g, b)
-        '''
-        color = ["#" + ''.join([random.choice('0123456789ABCDEF') for j in range(6)])]  # generate random colors
-        color_to_words[color[0]] = topic
+        r = int(random.random() * 256)
+        g = int(random.random() * 256)
+        b = int(random.random() * 256)
+        step = 256 / numb_emerg_topics
 
-    '''
-    color_to_words = {
-        # words below will be colored with a green single color function
-        '#00ff00': ['beautiful', 'explicit', 'simple', 'sparse',
-                    'readability', 'rules', 'practicality',
-                    'explicitly', 'one', 'now', 'easy', 'obvious', 'better'],
-        # will be colored with a red single color function
-        'red': ['ugly', 'implicit', 'complex', 'complicated', 'nested',
-                'dense', 'special', 'errors', 'silently', 'ambiguity',
-                'guess', 'hard']
-    }
-    '''
+        r += step
+        g += step
+        b += step
+        r = int(r) % 256
+        g = int(g) % 256
+        b = int(b) % 256
+        color = ['#%02x%02x%02x' % (r, g, b)]  # convert RGB to HEX value
+
+        #color = ["#" + ''.join([random.choice('0123456789ABCDEF') for j in range(6)])]  # generate random colors
+
+        color_to_words[color[0]] = topic
 
     # Words that are not in any of the color_to_words values
     # will be colored with a grey single color function
@@ -80,7 +76,9 @@ def emerg_topics_wordcloud(words_per_emergin_topic, words_freq):
     wc.recolor(color_func=grouped_color_func)
 
     # Plot
-    plt.figure()
+    plt.figure(figsize=(20, 10), facecolor='k')
     plt.imshow(wc, interpolation="bilinear")
     plt.axis("off")
     plt.show()
+
+    #plt.savefig('wordcloud.png', facecolor='k', bbox_inches='tight')  # save the wordcloud
