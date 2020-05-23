@@ -98,7 +98,7 @@ for data in tqdm(data_per_day):
             # save the most emerging keywords
             for words in wordValue:
                 scaled_wordValue = (wordValue[words] - min_val) / (max_val - min_val)  # MinMax Scaling
-                if scaled_wordValue >= 0.2:
+                if scaled_wordValue >= 0.3:
                     emergingWords.append((words, scaled_wordValue))
 
             print("emergingWords", emergingWords)
