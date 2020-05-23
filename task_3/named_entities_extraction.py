@@ -14,6 +14,8 @@ from nltk.tree import Tree
 from nltk import ne_chunk_sents, ne_chunk, pos_tag, word_tokenize
 import matplotlib.pyplot as plt
 # from preprocessing import clean_text
+from wordcloud import WordCloud
+
 import task_2.preprocessing
 from twitter.connect_mongo import read_mongo
 
@@ -153,6 +155,26 @@ named_entities_counts = sorted(named_entities_counts.items(), key=operator.itemg
 print("named_entities_counts 2: ", named_entities_counts)
 print("len 2: ", len(named_entities_counts))
 
+
+# ======================================================================================================================
+
+# wordcloud of the most common entities
+wordcloud_words_freq = dict()
+for tupl in named_entities_counts:
+    wordcloud_words_freq[tupl[0]] = tupl[1]
+
+plt.figure(figsize=(20, 10), facecolor='k')
+wc = WordCloud(width=1600, height=800, background_color="black")
+wc.generate_from_frequencies(wordcloud_words_freq)
+plt.title("Most common entities", fontsize=20)
+plt.imshow(wc.recolor(colormap='Pastel2', random_state=17), alpha=0.98, interpolation="bilinear")
+plt.axis('off')
+plt.tight_layout()
+plt.show()
+
+# ======================================================================================================================
+
+
 # Create final list of 60% most occurring named entities to remove from text
 common_entities = []
 for i in np.arange(0, int(0.6 * len(named_entities_counts))):
@@ -162,12 +184,15 @@ for i in np.arange(0, int(0.6 * len(named_entities_counts))):
 print("common_entities: ", common_entities)
 print("len common_entities: ", len(common_entities))
 
+
 entities_to_remove = common_entities[: int(0.7 * len(common_entities))]  # get the first 70% of most common entities to remove
 print(entities_to_remove)
 print(len(entities_to_remove))
+
 entities_to_remove = sorted(entities_to_remove)
 print(entities_to_remove)
 print(len(entities_to_remove))
+
 
 # Function for removal
 def remove_entities(post):
