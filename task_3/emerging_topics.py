@@ -35,7 +35,9 @@ print(data.shape)
 
 
 # further filter stopwords
-more_stopwords = ['tag', 'not', 'let', 'wait', 'set', 'put', 'add', 'post', 'give', 'way', 'check', 'think', 'www', 'must', 'look', 'call', 'minute', 'com', 'thing', 'much', 'happen', 'hahaha']
+more_stopwords = ['tag', 'not', 'let', 'wait', 'set', 'put', 'add', 'post', 'give', 'way', 'check', 'think', 'www',
+                  'must', 'look', 'call', 'minute', 'com', 'thing', 'much', 'happen', 'hahaha', 'quaranotine',
+                  'everyone', 'day', 'time', 'week', 'amp', 'find', 'BTu']
 data['clean_text'] = data['clean_text'].map(lambda clean_text: [word for word in clean_text if word not in more_stopwords])
 
 
@@ -108,7 +110,7 @@ for data in tqdm(data_per_day):
 wordcloud_words = []  # list of lists of all words that are product from the temporal analysis of the lda topics, per slice of topic
 wordcloud_words_freq = dict()  # dictionary of all temporal analysis words, as keys, and their frequency as values
 for elem in emerging_topics_per_period:
-    print("Get only the date, instead of tuple: ", next(iter(elem[0])))
+    #print("Get only the date, instead of tuple: ", next(iter(elem[0])))
     print("emerging_topics_per_period: ", elem)
 
     words_per_emergin_topic = []
