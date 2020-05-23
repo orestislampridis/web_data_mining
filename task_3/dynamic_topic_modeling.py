@@ -126,7 +126,7 @@ for topic_no in range(num_topics):
         print(model.show_topic(topic_no, time, topn=10))
 
 # Save output to file for later use
-with open('output2.csv', 'w') as csvfile:
+with open('dtp_output.csv', 'w') as csvfile:
     csvwriter = csv.writer(csvfile)
     for topic_no in range(num_topics):
         csvwriter.writerow(str(topic_no))
