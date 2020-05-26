@@ -1,6 +1,6 @@
 import pandas as pd
 import task_2.preprocessing
-from twitter.connect_mongo import read_mongo
+from connect_mongo import read_mongo
 import task_3.LDA_analysis
 import task_3.emerging_topics_wordcloud
 
@@ -38,17 +38,21 @@ print(data.shape)
 more_stopwords = ['tag', 'not', 'let', 'wait', 'set', 'put', 'add', 'post', 'give', 'way', 'check', 'think', 'www',
                   'must', 'look', 'call', 'minute', 'com', 'thing', 'much', 'happen', 'hahaha', 'quaranotine',
                   'everyone', 'day', 'time', 'week', 'amp', 'find', 'BTu']
-data['clean_text'] = data['clean_text'].map(lambda clean_text: [word for word in clean_text if word not in more_stopwords])
+data['clean_text'] = data['clean_text'].progress_map(lambda clean_text: [word for word in clean_text if word not in more_stopwords])
 
 
-# drop the rows that contain empty captions
+# Drop the rows that contain empty captions
 # inplace=True: modify the DataFrame in place (do not create a new object) - returns None
+data.drop(data[data['clean_text'].progress_map(lambda d: len(d)) < 1].index, inplace=True)  # drop the rows that contain empty captions
 # data[data['clean_text'].str.len() < 1]  # alternative way
-data.drop(data[data['clean_text'].map(lambda d: len(d)) < 1].index, inplace=True)  # drop the rows that contain empty captions
 data.reset_index(drop=True, inplace=True)  # reset index needed for dataframe access with indices
 
 
 print(data)  # use to clean non-english posts
+
+
+# keep the whole dataset intact, without categorizing it in time sections, in order to find topics from all data
+whole_dataset = data
 
 
 # ======================================================================================================================
@@ -73,8 +77,8 @@ data_per_day = [group[1] for group in data.groupby(data.index.date)]
 # LDA analysis using temporal information (find topics per day)
 # ======================================================================================================================
 
-prev_word_freq = {}
-emerging_topics_per_period = []
+prev_word_freq = {}  # the frequency of the words of the previous iteration - previous day
+emerging_topics_per_period = []  # save the topics per time period
 for data in tqdm(data_per_day):
     print("ALL DATES: ", set(data.index.date))
     if len(data.index) > 20:  # Check if dataframe has more than 20 posts  # data['clean_text'].empty
@@ -119,4 +123,12 @@ for elem in emerging_topics_per_period:
         wordcloud_words_freq[tupl[0]] = tupl[1]
     wordcloud_words.append(words_per_emergin_topic)
 
+# create one wordcloud for each emerging topics per time period, where the color of the words signifies a specific emerging topic, where they belong to
 task_3.emerging_topics_wordcloud.emerg_topics_wordcloud(wordcloud_words, wordcloud_words_freq)
+
+
+# ======================================================================================================================
+# Topic extraction for the whole dataset
+# ======================================================================================================================
+
+task_3.LDA_analysis.LDA_analysis(whole_dataset, pyLDAvis_show=True, plot_graphs=True)

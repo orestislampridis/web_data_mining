@@ -13,11 +13,10 @@ import numpy as np
 from nltk.tree import Tree
 from nltk import ne_chunk_sents, ne_chunk, pos_tag, word_tokenize
 import matplotlib.pyplot as plt
-# from preprocessing import clean_text
 from wordcloud import WordCloud
 
 import task_2.preprocessing
-from twitter.connect_mongo import read_mongo
+from connect_mongo import read_mongo
 
 from tqdm import tqdm
 tqdm.pandas()
@@ -52,7 +51,7 @@ print(data.shape)
 # drop the rows that contain empty captions
 # inplace=True: modify the DataFrame in place (do not create a new object) - returns None
 # data[data['clean_text'].str.len() < 1]  # alternative way
-data.drop(data[data['clean_text'].map(lambda d: len(d)) < 1].index, inplace=True)  # drop the rows that contain empty captions
+data.drop(data[data['clean_text'].progress_map(lambda d: len(d)) < 1].index, inplace=True)  # drop the rows that contain empty captions
 data.reset_index(drop=True, inplace=True)  # reset index needed for dataframe access with indices
 
 # ======================================================================================================================
@@ -137,11 +136,9 @@ def get_entities(text):
 
 # Get list of all named entities in posts
 named_entities = []
-post = 0
-for clean_text in data['clean_text']:
+for clean_text in tqdm(data['clean_text']):
     named_entities += get_entities(clean_text)
     #named_entities += get_continuous_chunks(named_entities, text)
-    post = clean_text
 print("named_entities: ", named_entities)
 
 #named_entities = np.array(named_entities)
@@ -174,6 +171,7 @@ plt.show()
 
 # ======================================================================================================================
 
+'''
 
 # Create final list of 60% most occurring named entities to remove from text
 common_entities = []
@@ -244,3 +242,5 @@ def remove_entities(post):
 data['clean_text'] = [remove_entities(x) for x in data['clean_text']]
 
 print(data['clean_text'])
+
+'''

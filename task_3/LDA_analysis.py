@@ -65,7 +65,7 @@ def LDA_analysis(data, pyLDAvis_show=False, plot_graphs=False):
     # alpha: the [distribution of the] number of topics per document
     lda_model = models.LdaModel(corpus, num_topics=num_topics,
                                 id2word=dictionary_LDA,
-                                passes=20,
+                                passes=100,
                                 alpha=[0.01] * num_topics,
                                 eta=[0.01] * len(dictionary_LDA.keys()))
 
@@ -238,6 +238,5 @@ def LDA_analysis(data, pyLDAvis_show=False, plot_graphs=False):
     for i, topic in topics:
         for word, weight in topic:
             word_freq[word] = counter[word]
-
 
     return word_freq
