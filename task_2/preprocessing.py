@@ -1,17 +1,17 @@
 # pre-process and clean data
 import re
-import string
-
 import nltk
+import string
 import pkg_resources
+from nltk.stem import *
 from nltk import pos_tag
 from nltk import word_tokenize
 from nltk.corpus import stopwords
 from nltk.corpus import wordnet
-from nltk.stem import *  # from nltk.stem.porter import *
 from nltk.stem.snowball import SnowballStemmer
 from nltk.stem.wordnet import WordNetLemmatizer  # used for lemmatizer
-from symspellpy.symspellpy import SymSpell, Verbosity  # import the module
+from symspellpy.editdistance import DistanceAlgorithm
+from symspellpy.symspellpy import SymSpell, Verbosity
 
 nltk.download('wordnet')
 
@@ -70,6 +70,7 @@ class preprocessing:
 
         return contractions_re.sub(replace, text)
 
+
     whitelist = ["n't", "not", 'nor', "nt"]  # Keep the words "n't" and "not", 'nor' and "nt"
     stopwords_verbs = ['say', 'get', 'go', 'know', 'may', 'need', 'like', 'make', 'see', 'want', 'come', 'take', 'use',
                        'would', 'can']
@@ -78,13 +79,11 @@ class preprocessing:
                        'de', 'en', 'caption', 'copyright', 'something']
     stop_words = set(list(stopwords.words('english')) + ['"', '|'] + stopwords_verbs + stopwords_other)
 
+
     # Happy Emoticons
-    emoticons_happy = {':-)', ':)', ';)', ':o)', ':]', ':3', ':c)', ':>', '=]', '8)', '=)', ':}', ':^)', ':-D', ':D',
-                       '8-D',
-                       '8D', 'x-D', 'xD', 'X-D', 'XD', '=-D', '=D', '=-3', '=3', ':-))', ":'-)", ":')", ':*', ':^*',
-                       '>:P',
-                       ':-P', ':P', 'X-P', 'x-p', 'xp', 'XP', ':-p', ':p', '=p', ':-b', ':b', '>:)', '>;)', '>:-)',
-                       '<3'}
+    emoticons_happy = {':-)', ':)', ';)', ':o)', ':]', ':3', ':c)', ':>', '=]', '8)', '=)', ':}', ':^)', ':-D', ':D', '8-D',
+                       '8D', 'x-D', 'xD', 'X-D', 'XD', '=-D', '=D', '=-3', '=3', ':-))', ":'-)", ":')", ':*', ':^*', '>:P',
+                       ':-P', ':P', 'X-P', 'x-p', 'xp', 'XP', ':-p', ':p', '=p', ':-b', ':b', '>:)', '>;)', '>:-)', '<3'}
 
     # Sad Emoticons
     emoticons_sad = {':L', ':-/', '>:/', ':S', '>:[', ':@', ':-(', ':[', ':-||', '=L', ':<', ':-[', ':-<', '=\\', '=/',
@@ -103,6 +102,8 @@ class preprocessing:
     # Combine sad and happy emoticons
     emoticons = emoticons_happy.union(emoticons_sad)
 
+
+
     def strip_links(self, text):
         all_links_regex = re.compile('http\S+|www.\S+', re.DOTALL)
         text = re.sub(all_links_regex, '', text)
@@ -114,10 +115,10 @@ class preprocessing:
         '''
         return text
 
+
     def remove_punctuation(self, text):
         text = re.sub(r'@\S+', '', text)  # Delete Usernames
-        text = re.sub(r'#quarantine', '',
-                      text)  # Replace hashtag quarantine with space, as it was used for data scraping
+        text = re.sub(r'#quarantine', '', text)  # Replace hashtag quarantine with space, as it was used for data scraping
 
         # remove punctuation from each word (Replace hashtags with space, keeping hashtag context)
         for separator in string.punctuation:
@@ -126,9 +127,9 @@ class preprocessing:
 
         return text
 
+
     # convert POS tag to wordnet tag in order to use in lemmatizer
     def get_wordnet_pos(self, treebank_tag):
-
         if treebank_tag.startswith('J'):
             return wordnet.ADJ
         elif treebank_tag.startswith('V'):
@@ -140,6 +141,7 @@ class preprocessing:
         else:
             return ''
 
+
     # function for lemmatazing
     def lemmatizing(self, tokenized_text):
         lemmatizer = WordNetLemmatizer()
@@ -147,12 +149,11 @@ class preprocessing:
 
         # annotate words with Part-of-Speech tags, format: ((word1, post_tag), (word2, post_tag), ...)
         word_pos_tag = pos_tag(tokenized_text)
-        # print("word_pos_tag", word_pos_tag)
+        #print("word_pos_tag", word_pos_tag)
 
         for word_tag in word_pos_tag:  # word_tag[0]: word, word_tag[1]: tag
             # Lemmatizing each word with its POS tag, in each sentence
-            if self.get_wordnet_pos(word_tag[
-                                        1]) != '':  # if the POS tagger annotated the given word, lemmatize the word using its POS tag
+            if self.get_wordnet_pos(word_tag[1]) != '':  # if the POS tagger annotated the given word, lemmatize the word using its POS tag
                 if self.only_verbs_nouns:  # if the only_verbs_nouns is True, get only verbs and nouns
                     if self.get_wordnet_pos(word_tag[1]) in [wordnet.NOUN, wordnet.VERB]:
                         lemma = lemmatizer.lemmatize(word_tag[0], self.get_wordnet_pos(word_tag[1]))
@@ -165,6 +166,7 @@ class preprocessing:
             lemma_text.append(lemma)
         return lemma_text
 
+
     # function for stemming
     def stemming(self, tokenized_text):
         # stemmer = PorterStemmer()
@@ -175,6 +177,7 @@ class preprocessing:
             stemmed_text.append(stem)
         return stemmed_text
 
+
     # function to keep only alpharethmetic values
     def only_alpha(self, tokenized_text):
         text_alpha = []
@@ -182,6 +185,8 @@ class preprocessing:
             word_alpha = re.sub('[^a-z A-Z]+', ' ', word)
             text_alpha.append(word_alpha)
         return text_alpha
+
+
 
     # initiate whether to use and spell corrector when the class object is created
     def __init__(self, convert_lower=True, use_spell_corrector=False, only_verbs_nouns=False):
@@ -226,10 +231,12 @@ class preprocessing:
                 print("Custom bi-gram dictionary file not found")
 
             # add words from the post we scraped from Twitter/Instagram
-            # for word, frequency in corpus_freq:
-            # self.sym_spell.create_dictionary_entry(word, frequency)
+            #for word, frequency in corpus_freq:
+                #self.sym_spell.create_dictionary_entry(word, frequency)
 
-            # self.sym_spell._distance_algorithm = DistanceAlgorithm.LEVENSHTEIN
+            #self.sym_spell._distance_algorithm = DistanceAlgorithm.LEVENSHTEIN
+
+
 
     # spell check phrases and correct them
     def spell_corrector(self, post_text):
@@ -237,21 +244,22 @@ class preprocessing:
         # max edit distance per lookup (per single word, not per whole input string)
         # max_edit_distance_lookup <= max_edit_distance_dictionary
         # ignore_non_words : determine whether numbers and acronyms are left alone during the spell checking process
-        #        suggestions = self.sym_spell.lookup_compound(post_text, max_edit_distance=2, ignore_non_words=True, transfer_casing=True)  # keep original casing
+#        suggestions = self.sym_spell.lookup_compound(post_text, max_edit_distance=2, ignore_non_words=True, transfer_casing=True)  # keep original casing
 
         # Verbosity: TOP, CLOSEST, ALL
         corrected_posts = []
         for post in post_text:
-            suggestions = self.sym_spell.lookup(post, Verbosity.CLOSEST, max_edit_distance=2, include_unknown=True,
-                                                transfer_casing=True)
+            suggestions = self.sym_spell.lookup(post, Verbosity.CLOSEST, max_edit_distance=2, include_unknown=True, transfer_casing=True)
             corrected_posts.append(suggestions[0].term)
 
-        #        print(post_text)
-        #        print(corrected_posts)
-        # print(suggestions[0].term)
+#        print(post_text)
+#        print(corrected_posts)
+        #print(suggestions[0].term)
 
         # return the most probable (first) recommendation
-        return corrected_posts  # suggestions[0].term
+        return corrected_posts  #suggestions[0].term
+
+
 
     # Method to clean tweets and instagram posts
     def clean_text(self, text):
@@ -275,6 +283,15 @@ class preprocessing:
         # remove repost in case of instagram data
         text = re.sub(r"repost|REPOST", "", text)
 
+        # format contractions without apostrophe in order to use for contraction replacement
+        text = re.sub(r"\b( s| 's)\b", " is ", text)
+        text = re.sub(r"\b( ve| 've)\b", " have ", text)
+        text = re.sub(r"\b( nt| 'nt| 't)\b", " not ", text)
+        text = re.sub(r"\b( re| 're)\b", " are ", text)
+        text = re.sub(r"\b( d| 'd)\b", " would ", text)
+        text = re.sub(r"\b( ll| 'll)\b", " will ", text)
+        text = re.sub(r"\b( m| 'm)\b", " am", text)
+
         # replace consecutive non-ASCII characters with a space
         text = re.sub(r'[^\x00-\x7F]+', ' ', text)
 
@@ -290,7 +307,7 @@ class preprocessing:
         # remove all non alpharethmetic values
         tokenized_text = self.only_alpha(tokenized_text)
 
-        # print("tokenized_text", tokenized_text)
+        #print("tokenized_text", tokenized_text)
 
         # correct the spelling of the text - need full sentences (not tokens)
         if self.use_spell_corrector:
@@ -311,6 +328,6 @@ class preprocessing:
                 # print("word", word)
                 filtered_text.append(word)
 
-        # print("filtered_text 2", filtered_text)
+        #print("filtered_text 2", filtered_text)
 
         return filtered_text
