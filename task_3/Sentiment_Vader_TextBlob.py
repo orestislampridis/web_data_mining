@@ -13,12 +13,12 @@ file1="../dataset/test_cleaned.csv"
 insta=pd.read_csv(file1, encoding="utf8")
 
 tweets = read_mongo(db='twitter_db', collection='twitter_collection', query={'text': 1})
-tweets = tweets.sample(n=500, random_state=42)
+#tweets = tweets.sample(n=1000, random_state=42)
 
-# print(tweets)
+print(len(tweets))
 
 insta = insta[['_id', 'caption' ]] #this is all I need
-#tweets= tweets[['_id','text']]
+#tweets= tweets[['text']]
 
 vader = SentimentIntensityAnalyzer()
 
@@ -53,12 +53,11 @@ for i in range(0, len(tweets)):
 
 vader_score_tweets=pd.DataFrame.from_dict(vader_score)
 textblob_score_tweets=pd.DataFrame.from_dict(textblob_score)
-print(textblob_score_tweets['polarity'])
+
 tweets['VADER compound score'] = vader_score_tweets['compound'].to_list()
 tweets['TextBlob polarity score']=textblob_score_tweets['polarity'].to_list()
-print(tweets['TextBlob polarity score'])
 
-# http://comp.social.gatech.edu/papers/icwsm14.vader.hutto.pdf
+
 
 #Predict sentiment in INSTAGRAM POSTS with Vader and TextBlob
 pred_V_insta = []
@@ -82,8 +81,7 @@ for i in range(0, len(insta)):
 
     elif ((insta.iloc[i]['TextBlob polarity score'] <= -0.1)):
         pred_B_insta.append('negative')
-print(len(pred_V_insta))
-print(len(insta))
+
 insta['VADER predicted sentiment'] = pred_V_insta
 insta['TextBlob predicted sentiment'] = pred_B_insta
 
@@ -147,7 +145,7 @@ plt.title('Instagram/n TextBlob predicted sentiment', bbox={'facecolor':'0.8', '
 plt.show()
 
 
-#Pie plots for TWEETER
+#Pie plots for TWITTER
 fig = plt.figure(figsize=(10,10))
 ax_insta_V = fig.add_axes([0,0,1,1])
 ax_insta_V.axis('equal')
@@ -164,3 +162,6 @@ colors = ['#ff9999','#66b3ff','#99ff99']
 ax_insta_B.pie(tweets.groupby('TextBlob predicted sentiment').size(),colors=colors, autopct='%1.1f%%',labels=tweets.groupby('VADER predicted sentiment').size().index, shadow=True, startangle=90,textprops={'fontsize': 14})
 plt.title('Instagram/n TextBlob predicted sentiment', bbox={'facecolor':'0.8', 'pad':5})
 plt.show()
+
+#save sentiment Tweets for later task
+tweets.to_csv('sentiment_tweets.csv')
