@@ -8,9 +8,6 @@ sentiment_df = pd.read_csv('sentiment_tweets.csv')
 merged_df.set_index('id', inplace=True)
 sentiment_df.set_index('id', inplace=True)
 
-print(merged_df)
-print(sentiment_df)
-
 joined_loc_sent_df = pd.merge(merged_df, sentiment_df, on='id', how='inner')
 
 print(joined_loc_sent_df)
