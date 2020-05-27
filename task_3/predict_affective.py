@@ -6,7 +6,7 @@ import seaborn as sns
 import task_2.preprocessing
 from tqdm import tqdm
 tqdm.pandas()
-from twitter.connect_mongo import read_mongo
+from connect_mongo import read_mongo
 
 
 #get categories
@@ -16,7 +16,7 @@ file1="../dataset/test_cleaned.csv"
 insta=pd.read_csv(file1, encoding="utf8")
 
 tweets = read_mongo(db='twitter_db', collection='twitter_collection', query={'text': 1})
-tweets = tweets.sample(n=100, random_state=42)
+tweets = tweets.sample(n=1000, random_state=42)
 
 
 
