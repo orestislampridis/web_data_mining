@@ -3,7 +3,7 @@ import pandas as pd
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from textblob import TextBlob
 
-from twitter.connect_mongo import read_mongo
+from connect_mongo import read_mongo
 
 
 
@@ -13,7 +13,7 @@ file1="../dataset/test_cleaned.csv"
 insta=pd.read_csv(file1, encoding="utf8")
 
 tweets = read_mongo(db='twitter_db', collection='twitter_collection', query={'text': 1})
-tweets = tweets.sample(n=135, random_state=42)
+tweets = tweets.sample(n=500, random_state=42)
 
 # print(tweets)
 
@@ -34,10 +34,10 @@ for i in range(0, len(insta)):
 
 vader_score_insta=pd.DataFrame.from_dict(vader_score)
 textblob_score_insta=pd.DataFrame.from_dict(textblob_score)
-
+#print(textblob_score_insta['polarity'])
 insta['VADER compound score'] = vader_score_insta['compound']
 insta['TextBlob polarity score']=textblob_score_insta['polarity']
-
+#print(insta['TextBlob polarity score'])
 
 
 
@@ -53,10 +53,10 @@ for i in range(0, len(tweets)):
 
 vader_score_tweets=pd.DataFrame.from_dict(vader_score)
 textblob_score_tweets=pd.DataFrame.from_dict(textblob_score)
-
-tweets['VADER compound score'] = vader_score_tweets['compound']
-tweets['TextBlob polarity score']=textblob_score_tweets['polarity']
-
+print(textblob_score_tweets['polarity'])
+tweets['VADER compound score'] = vader_score_tweets['compound'].to_list()
+tweets['TextBlob polarity score']=textblob_score_tweets['polarity'].to_list()
+print(tweets['TextBlob polarity score'])
 
 # http://comp.social.gatech.edu/papers/icwsm14.vader.hutto.pdf
 
@@ -82,7 +82,8 @@ for i in range(0, len(insta)):
 
     elif ((insta.iloc[i]['TextBlob polarity score'] <= -0.1)):
         pred_B_insta.append('negative')
-
+print(len(pred_V_insta))
+print(len(insta))
 insta['VADER predicted sentiment'] = pred_V_insta
 insta['TextBlob predicted sentiment'] = pred_B_insta
 
@@ -111,6 +112,7 @@ for i in range(0, len(tweets)):
 
     elif ((tweets.iloc[i]['TextBlob polarity score'] <= -0.1)):
         pred_B_tweets.append('negative')
+
 
 tweets['VADER predicted sentiment'] = pred_V_tweets
 tweets['TextBlob predicted sentiment'] = pred_B_tweets
