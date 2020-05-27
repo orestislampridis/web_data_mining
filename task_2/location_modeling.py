@@ -145,7 +145,7 @@ merged_df = merged_df.groupby(merged_df.index).first()
 print(merged_df)
 
 # Save unified locations to csv file
-merged_df.to_csv('../task_4/merged.csv')
+merged_df.to_csv('../task_4/merged_locations.csv')
 
 # To plot to a map we have to define the Bounding Box. Bounding Box is the area defined
 # by two longitudes and two latitudes that will include all spatial points required.
