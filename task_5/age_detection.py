@@ -1,3 +1,11 @@
+"""
+Script used for age detection and for plotting
+
+Uses regular expressions to extract the year either from
+user's username or their bio. Then subtracts current year
+and plots the results
+"""
+
 import matplotlib.pyplot as plt
 import pandas as pd
 from pandas import json_normalize
@@ -14,7 +22,7 @@ pd.set_option('display.max_columns', None)
 
 print(data)
 
-# get the nested fields screen_name, description from field user
+# Get the nested fields screen_name, description from field user
 nested_data = json_normalize(data['user'])
 
 author_df = (data['original author'])
