@@ -89,6 +89,8 @@ for index, value in geo_dict.items():
 geo_df = pd.DataFrame(list(geo_dict.items()), columns=['id', 'coordinates'])
 geo_df['longitude'] = long
 geo_df['latitude'] = lat
+geo_df.set_index('id', inplace=True)
+
 print(geo_df)
 # geo_df.to_csv('geo.csv', index=False)
 
@@ -127,16 +129,22 @@ def convert(string):
 
 new_loc_df = pd.read_csv('loc.csv')
 new_loc_df = new_loc_df.dropna()
-print(new_loc_df)
 
 new_loc_df['coordinates'] = new_loc_df.coordinates.apply(lambda x: convert(x))
 new_loc_df['longitude'] = new_loc_df.coordinates.apply(lambda x: x[1])
 new_loc_df['latitude'] = new_loc_df.coordinates.apply(lambda x: x[0])
+new_loc_df.set_index('id', inplace=True)
+
 print(new_loc_df)
 
-merged_df = pd.concat([geo_df, new_loc_df], axis=0, sort=False)
+# Append one dataframe to the other to unify the locations
+merged_df = new_loc_df.append(geo_df).sort_index()
+
+# Drop duplicates from above procedure
+merged_df = merged_df.groupby(merged_df.index).first()
 print(merged_df)
 
+# Save unified locations to csv file
 merged_df.to_csv('../task_4/merged.csv')
 
 # To plot to a map we have to define the Bounding Box. Bounding Box is the area defined
