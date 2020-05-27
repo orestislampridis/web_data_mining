@@ -8,8 +8,6 @@ page that contains a Folium map with all the coordinates plotted
 """
 import time
 
-import folium
-import matplotlib.pyplot as plt
 import pandas as pd
 from geopy.exc import GeocoderTimedOut
 from geopy.geocoders import Nominatim
@@ -30,6 +28,22 @@ def swapCoords(x):
         else:
             return [x[1], x[0]]
     return out
+
+
+def get_coords_and_save_to_csv(dict):
+    # For each location send a request to Nomatim geolocator. Wrap it with a try except clause
+    # to catch if the location given by the user doesn't exist e.g. "Moon", "somewhere", etc.
+    for index, value in dict.items():
+        print(index)
+        location = recursive_geocode(value)
+        dict[index] = location
+
+    # Convert to dataframe and save output to csv as the task takes a long time to complete
+    print(dict)
+    loc_df = pd.DataFrame(list(dict.items()), columns=['id', 'coordinates'])
+    # loc_df['longitude'] = loc_df.coordinates.apply(lambda x: x[1])
+    # loc_df['latitude'] = loc_df.coordinates.apply(lambda x: x[0])
+    loc_df.to_csv('loc.csv', index=False)
 
 
 def recursive_geocode(location, recursion=0):
@@ -76,7 +90,7 @@ geo_df = pd.DataFrame(list(geo_dict.items()), columns=['id', 'coordinates'])
 geo_df['longitude'] = long
 geo_df['latitude'] = lat
 print(geo_df)
-geo_df.to_csv('geo.csv', index=False)
+# geo_df.to_csv('geo.csv', index=False)
 
 # Because we don't have many users' coordinates, we will try to convert the locations taken
 # from the users profiles into cooordinates. For this task we will use the Nomatim geocoder
@@ -99,49 +113,35 @@ mapping = {'Los Angeles, CA': 'Los Angeles',
 
 df['location'] = df['location'].apply(lambda x: mapping[x] if x in mapping.keys() else x)
 loc_dict = (df['location'].dropna().to_dict())
-print(loc_dict)
 
-# For each location send a request to Nomatim geolocator. Wrap it with a try except clause
-# to catch if the location given by the user doesn't exist e.g. "Moon", "somewhere", etc.
-for index, value in loc_dict.items():
-    print(index)
-    location = recursive_geocode(value)
-    loc_dict[index] = location
 
-# Convert to dataframe and save output to csv as the task takes a long time to complete
-print(loc_dict)
-loc_df = pd.DataFrame(list(loc_dict.items()), columns=['id', 'coordinates'])
-loc_df['longitude'] = loc_df.coordinates.apply(lambda x: x[1])
-loc_df['latitude'] = loc_df.coordinates.apply(lambda x: x[0])
-loc_df.to_csv('loc.csv', index=False)
+# get_coords_and_save_to_csv(loc_dict)
 
-# Calculate counts of locations and print top
-locs = df["location"].value_counts()
-print(locs[locs >= 10])
+def convert(string):
+    string = (string.replace('(', ''))
+    string = (string.replace(')', ''))
+    li = [float(i) for i in string.split(",")]
 
-# Keep only the city names
-locs = list(locs.index)
+    return li
+
+
+new_loc_df = pd.read_csv('loc.csv')
+new_loc_df = new_loc_df.dropna()
+print(new_loc_df)
+
+new_loc_df['coordinates'] = new_loc_df.coordinates.apply(lambda x: convert(x))
+new_loc_df['longitude'] = new_loc_df.coordinates.apply(lambda x: x[1])
+new_loc_df['latitude'] = new_loc_df.coordinates.apply(lambda x: x[0])
+print(new_loc_df)
+
+merged_df = pd.concat([geo_df, new_loc_df], axis=0, sort=False)
+print(merged_df)
+
+merged_df.to_csv('../task_4/merged.csv')
 
 # To plot to a map we have to define the Bounding Box. Bounding Box is the area defined
 # by two longitudes and two latitudes that will include all spatial points required.
-BBox = ((geo_df['longitude'].min(), geo_df['longitude'].max(),
-         geo_df['latitude'].min(), geo_df['latitude'].max()))
+BBox = ((merged_df['longitude'].min(), merged_df['longitude'].max(),
+         merged_df['latitude'].min(), merged_df['latitude'].max()))
 
 print(BBox)
-
-ruh_m = plt.imread('map.png')
-
-# Plot the long and lat coordinates as scatter points
-# on the map image. It is important to set up the X-axis
-# and Y-axis as per the bounding box ‘BBox’
-
-folium_map = folium.Map(
-    location=[40.736851, 22.920227],
-    tiles='CartoDB dark_matter',
-    zoom_start=4
-)
-# FastMarkerCluster(data=list(zip(geo_df['latitude'].values, geo_df['longitude'].values))).add_to(folium_map)
-# folium.LayerControl().add_to(folium_map)
-geo_df.apply(lambda row: folium.CircleMarker(location=[row["latitude"], row["longitude"]], radius=1).add_to(folium_map),
-             axis=1)
-folium_map.save('map.html')

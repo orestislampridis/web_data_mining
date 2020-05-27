@@ -1,19 +1,18 @@
 # pre-process and clean data
-import string
 import re
+import nltk
 import string
-from nltk.stem import *  # from nltk.stem.porter import *
-from nltk.stem.snowball import SnowballStemmer
+import pkg_resources
+from nltk.stem import *
 from nltk import pos_tag
-from nltk.corpus import wordnet
-from nltk.stem.wordnet import WordNetLemmatizer  # used for lemmatizer
 from nltk import word_tokenize
 from nltk.corpus import stopwords
-import pkg_resources
+from nltk.corpus import wordnet
+from nltk.stem.snowball import SnowballStemmer
+from nltk.stem.wordnet import WordNetLemmatizer  # used for lemmatizer
 from symspellpy.editdistance import DistanceAlgorithm
-from symspellpy.symspellpy import SymSpell, Verbosity  # import the module
+from symspellpy.symspellpy import SymSpell, Verbosity
 
-import nltk
 nltk.download('wordnet')
 
 
@@ -73,8 +72,11 @@ class preprocessing:
 
 
     whitelist = ["n't", "not", 'nor', "nt"]  # Keep the words "n't" and "not", 'nor' and "nt"
-    stopwords_verbs = ['say', 'get', 'go', 'know', 'may', 'need', 'like', 'make', 'see', 'want', 'come', 'take', 'use', 'would', 'can']
-    stopwords_other = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'may', 'also', 'across', 'among', 'beside', 'however', 'yet', 'within', 'mr', 'bbc', 'image', 'getty', 'de', 'en', 'caption', 'copyright', 'something']
+    stopwords_verbs = ['say', 'get', 'go', 'know', 'may', 'need', 'like', 'make', 'see', 'want', 'come', 'take', 'use',
+                       'would', 'can']
+    stopwords_other = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'may',
+                       'also', 'across', 'among', 'beside', 'however', 'yet', 'within', 'mr', 'bbc', 'image', 'getty',
+                       'de', 'en', 'caption', 'copyright', 'something']
     stop_words = set(list(stopwords.words('english')) + ['"', '|'] + stopwords_verbs + stopwords_other)
 
 
@@ -128,7 +130,6 @@ class preprocessing:
 
     # convert POS tag to wordnet tag in order to use in lemmatizer
     def get_wordnet_pos(self, treebank_tag):
-
         if treebank_tag.startswith('J'):
             return wordnet.ADJ
         elif treebank_tag.startswith('V'):
@@ -281,6 +282,15 @@ class preprocessing:
 
         # remove repost in case of instagram data
         text = re.sub(r"repost|REPOST", "", text)
+
+        # format contractions without apostrophe in order to use for contraction replacement
+        text = re.sub(r"\b( s| 's)\b", " is ", text)
+        text = re.sub(r"\b( ve| 've)\b", " have ", text)
+        text = re.sub(r"\b( nt| 'nt| 't)\b", " not ", text)
+        text = re.sub(r"\b( re| 're)\b", " are ", text)
+        text = re.sub(r"\b( d| 'd)\b", " would ", text)
+        text = re.sub(r"\b( ll| 'll)\b", " will ", text)
+        text = re.sub(r"\b( m| 'm)\b", " am", text)
 
         # replace consecutive non-ASCII characters with a space
         text = re.sub(r'[^\x00-\x7F]+', ' ', text)
