@@ -32,8 +32,7 @@ reading = task_2.preprocessing.preprocessing(convert_lower=False, use_spell_corr
 # description: bio
 # original author: username
 # screen_name: full user name
-data = read_mongo(db='twitter_db', collection='twitter_collection',
-                  query={'original author': 1, 'user': 1})
+data = read_mongo(db='twitter_db', collection='twitter_collection', query={'original author': 1, 'user': 1})
 data = data.sample(n=1000, random_state=42)
 pd.set_option('display.max_columns', None)
 
@@ -198,6 +197,11 @@ for i in range(len(original_author_gender_list)):
         final_gender_list.append(None)
     '''
 print("final_gender_list: ", final_gender_list)
+
+
+# write genders to file
+genders_to_file = pd.DataFrame(final_gender_list)
+genders_to_file.to_csv('genders.csv', header=False, index=True, encoding='utf-8', sep=' ')
 
 
 
