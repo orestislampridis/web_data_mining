@@ -17,7 +17,7 @@ from connect_mongo import read_mongo
 # original author: username
 # screen_name: full user name
 data = read_mongo(db='twitter_db', collection='twitter_collection',
-                  query={'original author': 1, 'user': 1})
+                  query={'original author': 1, 'user': 1,'text': 1})
 pd.set_option('display.max_columns', None)
 
 print(data)
@@ -27,6 +27,7 @@ nested_data = json_normalize(data['user'])
 
 author_df = (data['original author'])
 desc_df = (nested_data['description'])
+text_df = (data['text'])
 
 concat_df = pd.concat([author_df, desc_df], axis=1, sort=False)
 
@@ -50,6 +51,12 @@ print(merged_df)
 
 # Substract from current year to get age
 merged_df["age"] = merged_df["year"].apply(lambda x: 2020 - x)
+
+#save age tweets to use as ground truth
+age_tweets = pd.concat([merged_df, text_df,desc_df], axis=1, sort=False, join='inner')
+age_tweets= age_tweets[['text', 'description', 'age']]
+print(age_tweets)
+age_tweets.to_csv('age_tweets.csv')
 
 # Create beautiful plots
 print(merged_df)

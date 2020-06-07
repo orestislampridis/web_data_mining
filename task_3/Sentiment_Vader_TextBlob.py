@@ -15,7 +15,7 @@ insta=pd.read_csv(file1, encoding="utf8")
 tweets = read_mongo(db='twitter_db', collection='twitter_collection', query={'text': 1})
 #tweets = tweets.sample(n=1000, random_state=42)
 
-print(len(tweets))
+
 
 insta = insta[['_id', 'caption' ]] #this is all I need
 #tweets= tweets[['text']]
