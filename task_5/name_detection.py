@@ -53,7 +53,6 @@ print(nested_data['description'])
 '''
 # Read Instagram data
 # data = pd.read_csv("../dataset/test_cleaned.csv", index_col=False)
-
 # clean text using preprocessing.py (clean_Text function)
 data['clean_text'] = data.caption.progress_map(reading.clean_text)
 '''
@@ -203,9 +202,9 @@ print("final_gender_list: ", final_gender_list)
 
 
 # write genders to file
-genders_to_file = pd.DataFrame(final_gender_list)
-genders_to_file = genders_to_file[genders_to_file.gender.notnull() ]#new
-genders_to_file = pd.concat([genders_to_file, text_df,desc_df], axis=1, sort=False, join='inner') #new
+genders_to_file = pd.DataFrame(final_gender_list, columns=["gender"])
+genders_to_file = genders_to_file[genders_to_file.gender.notnull()]  #new
+genders_to_file = pd.concat([genders_to_file, text_df,desc_df], axis=1, sort=False, join='inner')  #new
 genders_to_file.to_csv('genders.csv', header=False, index=True, encoding='utf-8', sep=' ')
 
 

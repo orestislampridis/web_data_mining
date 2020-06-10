@@ -1,1000 +1,1575 @@
-0 female
-1 female
-2 female
-3 female
-4 male
-5 male
-6 male
-7 male
-8 female
-9 male
-10 female
-11 male
-12 
-13 
-14 male
-15 male
-16 male
-17 female
-18 male
-19 male
-20 
-21 
-22 male
-23 male
-24 female
-25 male
-26 
-27 
-28 female
-29 female
-30 male
-31 male
-32 male
-33 male
-34 female
-35 male
-36 male
-37 
-38 male
-39 
-40 male
-41 female
-42 male
-43 male
-44 female
-45 female
-46 female
-47 female
-48 
-49 
-50 female
-51 female
-52 
-53 female
-54 
-55 female
-56 
-57 female
-58 
-59 
-60 male
-61 male
-62 male
-63 
-64 
-65 male
-66 female
-67 male
-68 
-69 male
-70 female
-71 
-72 female
-73 female
-74 female
-75 
-76 female
-77 
-78 male
-79 male
-80 female
-81 
-82 
-83 female
-84 female
-85 female
-86 male
-87 female
-88 male
-89 
-90 male
-91 
-92 
-93 
-94 
-95 male
-96 female
-97 
-98 
-99 male
-100 male
-101 
-102 male
-103 female
-104 
-105 female
-106 female
-107 
-108 female
-109 male
-110 
-111 male
-112 male
-113 
-114 male
-115 
-116 male
-117 male
-118 female
-119 male
-120 male
-121 female
-122 male
-123 female
-124 
-125 male
-126 male
-127 
-128 
-129 female
-130 
-131 male
-132 
-133 female
-134 male
-135 female
-136 male
-137 
-138 female
-139 
-140 female
-141 
-142 male
-143 male
-144 male
-145 female
-146 male
-147 female
-148 
-149 male
-150 male
-151 female
-152 
-153 female
-154 female
-155 male
-156 
-157 
-158 male
-159 male
-160 
-161 male
-162 male
-163 
-164 
-165 male
-166 female
-167 male
-168 male
-169 male
-170 
-171 male
-172 male
-173 male
-174 female
-175 female
-176 
-177 
-178 female
-179 female
-180 female
-181 male
-182 
-183 female
-184 female
-185 female
-186 
-187 
-188 female
-189 
-190 female
-191 male
-192 
-193 male
-194 female
-195 female
-196 female
-197 male
-198 female
-199 female
-200 
-201 female
-202 
-203 female
-204 male
-205 
-206 female
-207 male
-208 male
-209 female
-210 
-211 female
-212 
-213 female
-214 male
-215 male
-216 male
-217 male
-218 female
-219 male
-220 male
-221 
-222 
-223 male
-224 
-225 
-226 female
-227 female
-228 female
-229 
-230 female
-231 female
-232 female
-233 male
-234 
-235 male
-236 
-237 
-238 female
-239 male
-240 
-241 
-242 male
-243 
-244 female
-245 
-246 
-247 male
-248 
-249 female
-250 male
-251 female
-252 female
-253 female
-254 
-255 
-256 male
-257 
-258 
-259 male
-260 female
-261 female
-262 male
-263 male
-264 male
-265 female
-266 female
-267 male
-268 
-269 
-270 male
-271 male
-272 female
-273 
-274 
-275 female
-276 female
-277 female
-278 female
-279 
-280 
-281 
-282 female
-283 female
-284 male
-285 
-286 female
-287 male
-288 male
-289 female
-290 male
-291 female
-292 
-293 male
-294 female
-295 female
-296 male
-297 female
-298 
-299 
-300 male
-301 
-302 male
-303 male
-304 female
-305 female
-306 female
-307 female
-308 female
-309 male
-310 female
-311 
-312 
-313 male
-314 
-315 
-316 female
-317 female
-318 
-319 
-320 
-321 male
-322 female
-323 male
-324 
-325 female
-326 
-327 
-328 female
-329 male
-330 
-331 male
-332 
-333 
-334 
-335 
-336 female
-337 female
-338 female
-339 female
-340 female
-341 female
-342 male
-343 
-344 male
-345 male
-346 
-347 male
-348 
-349 female
-350 
-351 female
-352 female
-353 
-354 male
-355 female
-356 male
-357 female
-358 
-359 
-360 
-361 male
-362 
-363 
-364 male
-365 male
-366 female
-367 
-368 
-369 male
-370 female
-371 female
-372 
-373 
-374 female
-375 female
-376 female
-377 male
-378 
-379 
-380 female
-381 
-382 female
-383 
-384 female
-385 male
-386 female
-387 male
-388 female
-389 male
-390 female
-391 
-392 female
-393 male
-394 
-395 male
-396 
-397 male
-398 female
-399 
-400 male
-401 female
-402 female
-403 male
-404 female
-405 
-406 
-407 
-408 male
-409 male
-410 male
-411 male
-412 male
-413 
-414 male
-415 
-416 
-417 
-418 female
-419 male
-420 female
-421 male
-422 
-423 
-424 male
-425 male
-426 female
-427 male
-428 female
-429 male
-430 female
-431 male
-432 female
-433 female
-434 male
-435 female
-436 
-437 male
-438 female
-439 male
-440 male
-441 
-442 female
-443 
-444 male
-445 female
-446 
-447 male
-448 male
-449 
-450 male
-451 female
-452 
-453 female
-454 female
-455 male
-456 male
-457 male
-458 
-459 male
-460 male
-461 male
-462 male
-463 
-464 
-465 male
-466 female
-467 female
-468 female
-469 
-470 female
-471 male
-472 female
-473 
-474 
-475 female
-476 female
-477 female
-478 female
-479 female
-480 female
-481 female
-482 male
-483 male
-484 male
-485 
-486 male
-487 female
-488 
-489 male
-490 
-491 female
-492 
-493 female
-494 
-495 male
-496 male
-497 female
-498 female
-499 male
-500 
-501 female
-502 male
-503 
-504 female
-505 
-506 
-507 male
-508 
-509 male
-510 
-511 male
-512 male
-513 female
-514 female
-515 
-516 male
-517 male
-518 
-519 male
-520 female
-521 female
-522 male
-523 male
-524 female
-525 male
-526 female
-527 female
-528 female
-529 female
-530 
-531 
-532 female
-533 male
-534 female
-535 male
-536 female
-537 male
-538 male
-539 male
-540 
-541 female
-542 female
-543 
-544 male
-545 female
-546 female
-547 male
-548 female
-549 
-550 male
-551 
-552 female
-553 male
-554 
-555 female
-556 female
-557 male
-558 female
-559 female
-560 male
-561 female
-562 
-563 female
-564 
-565 male
-566 
-567 
-568 
-569 
-570 female
-571 male
-572 male
-573 female
-574 female
-575 
-576 male
-577 female
-578 
-579 male
-580 female
-581 male
-582 female
-583 
-584 
-585 female
-586 female
-587 female
-588 male
-589 female
-590 
-591 male
-592 male
-593 female
-594 male
-595 male
-596 male
-597 
-598 
-599 
-600 female
-601 female
-602 female
-603 female
-604 
-605 male
-606 female
-607 female
-608 male
-609 
-610 male
-611 male
-612 female
-613 male
-614 female
-615 
-616 female
-617 male
-618 male
-619 female
-620 female
-621 male
-622 
-623 
-624 female
-625 
-626 female
-627 female
-628 female
-629 
-630 female
-631 male
-632 female
-633 
-634 male
-635 male
-636 
-637 female
-638 male
-639 male
-640 female
-641 
-642 female
-643 
-644 female
-645 
-646 female
-647 female
-648 female
-649 male
-650 male
-651 female
-652 
-653 male
-654 male
-655 female
-656 
-657 male
-658 female
-659 female
-660 female
-661 
-662 
-663 
-664 female
-665 male
-666 female
-667 
-668 female
-669 female
-670 female
-671 female
-672 
-673 
-674 male
-675 female
-676 female
-677 
-678 male
-679 female
-680 female
-681 
-682 
-683 female
-684 male
-685 male
-686 
-687 male
-688 female
-689 male
-690 
-691 
-692 
-693 
-694 
-695 female
-696 
-697 female
-698 female
-699 male
-700 
-701 male
-702 female
-703 female
-704 male
-705 female
-706 female
-707 
-708 female
-709 
-710 
-711 female
-712 female
-713 male
-714 
-715 male
-716 female
-717 female
-718 female
-719 male
-720 
-721 female
-722 
-723 female
-724 male
-725 male
-726 female
-727 
-728 male
-729 female
-730 male
-731 male
-732 female
-733 female
-734 male
-735 female
-736 female
-737 female
-738 male
-739 
-740 male
-741 
-742 male
-743 female
-744 
-745 male
-746 
-747 female
-748 female
-749 female
-750 female
-751 
-752 male
-753 male
-754 male
-755 female
-756 male
-757 male
-758 female
-759 
-760 male
-761 
-762 female
-763 
-764 
-765 female
-766 male
-767 
-768 male
-769 
-770 
-771 female
-772 male
-773 male
-774 male
-775 female
-776 
-777 female
-778 
-779 female
-780 female
-781 
-782 
-783 female
-784 
-785 female
-786 female
-787 female
-788 female
-789 
-790 female
-791 male
-792 female
-793 male
-794 female
-795 
-796 
-797 male
-798 
-799 female
-800 
-801 female
-802 female
-803 female
-804 
-805 
-806 male
-807 female
-808 female
-809 female
-810 
-811 male
-812 female
-813 male
-814 female
-815 male
-816 female
-817 female
-818 male
-819 
-820 
-821 male
-822 
-823 female
-824 female
-825 
-826 female
-827 female
-828 
-829 
-830 female
-831 male
-832 
-833 male
-834 female
-835 female
-836 female
-837 
-838 male
-839 
-840 female
-841 
-842 female
-843 female
-844 female
-845 male
-846 male
-847 female
-848 
-849 
-850 
-851 male
-852 male
-853 
-854 female
-855 male
-856 female
-857 
-858 
-859 male
-860 female
-861 male
-862 
-863 male
-864 female
-865 female
-866 male
-867 male
-868 
-869 male
-870 
-871 male
-872 male
-873 male
-874 male
-875 
-876 male
-877 female
-878 male
-879 female
-880 female
-881 female
-882 male
-883 male
-884 
-885 male
-886 female
-887 
-888 female
-889 
-890 male
-891 
-892 male
-893 
-894 male
-895 
-896 
-897 female
-898 male
-899 male
-900 female
-901 female
-902 male
-903 
-904 
-905 male
-906 
-907 female
-908 female
-909 
-910 female
-911 female
-912 
-913 
-914 
-915 
-916 male
-917 male
-918 
-919 
-920 
-921 
-922 male
-923 male
-924 female
-925 female
-926 female
-927 male
-928 male
-929 female
-930 
-931 male
-932 
-933 male
-934 female
-935 female
-936 female
-937 female
-938 female
-939 
-940 male
-941 male
-942 
-943 
-944 male
-945 female
-946 male
-947 
-948 female
-949 female
-950 
-951 male
-952 
-953 male
-954 female
-955 
-956 male
-957 
-958 
-959 male
-960 female
-961 
-962 female
-963 female
-964 female
-965 
-966 female
-967 
-968 
-969 
-970 female
-971 female
-972 
-973 female
-974 female
-975 male
-976 male
-977 female
-978 
-979 
-980 
-981 
-982 female
-983 female
-984 male
-985 
-986 female
-987 female
-988 male
-989 
-990 female
-991 
-992 male
-993 female
-994 male
-995 male
-996 female
-997 male
-998 female
-999 male
+35 male "RT @shefali_bagga: Which one is your favourite game? 😍😋Comment and tell me and Tag your player friends/cousins. 
+Ab sab pubg mat kehne lag…" "Pro-Brexit, Pro-Trump. Anti EU, BBC, SKY NEWS and have no time for leftard bullshit 🇬🇧🇺🇸"
+44 female "Media Confirmation of “#Moscow’s #Coronavirus #Quarantine” April 2020 – as predicted by Cl... https://t.co/bZI69yp4Ni via @weebly" "Live to die another day,Not today."
+70 female "Who else had the Neopets videogame for the PS2? #quarantine" "Bloqueado x Bichiyal @sabrina_dla y x un blogger @TorresGotay y followed x @CucusaHernandez Vivo en este islote Army Vet. IG: ElLiderComunitarioPR 🇵🇷🇺🇸🗽🗼"
+87 female "There are people talking about ""returning to normal"" who apparently haven't put it together that ""normal"" got us he… https://t.co/OAy6KO3LT7" 
+142 male "#life in #quarantine. My laundry room in the triage station, and I lived with Dr. Glenn, so even the mail gets trea… https://t.co/b2E1TiIpYm" "🌟🦋🌟 Yuki and Hana🌟🦋🌟                  
+  🌟🌠🌟 Shine on my Little Star.🌟💫 💫My love to my Angels Little Star,          
+ Pesto and Borzi. 💫 💫💫💫💫"
+144 male "i can feel my ingrown..😠😣
+#quarantine" "I cover Earth Changing Extremities Worldwide - Please Donate  To Support My Work http://tinyurl.com/ybafu4hx Thank you with gratitude 🙏🏽"
+149 male "RT @shefali_bagga: Which one is your favourite game? 😍😋Comment and tell me and Tag your player friends/cousins. 
+Ab sab pubg mat kehne lag…" "Physics Networks Complexity Coding
+Freedom Decentralisation Innovation
+Python Blockchain CryptoCurrencies
+Ecology ClimateJustice Nature Peace"
+190 female "Follow my Kung Fu corner 💪☯️🥊" "{READ PINNED TWEET}
+ATLANTA, GA  | A.R.M.Y #BTSinAtlanta (fan account)
+Paypal: http://paypal.me/KimberlyStrong
+Cashapp: $kimirs15
+Venmo: @kimirs15"
+201 female "Sunday inspiration. 
+
+#sundayinspiration #luke137 #bibleverse #biblical #biblememes #faith #possiblenoteasy… https://t.co/zGTEPFFIFi" "@rediandev Bot
+Please follow my real account @rediandev"
+213 female "RT @jr_goldenticket: #goldenflight the album out now!
+https://t.co/MOVZbVVZpW
+@DMVs_Pilot #makeyourownlane #defstar5 #newmusic #album #hiph…" "Folk-punk act based in Athens, GA.   Catch these bands at: https://open.spotify.com/artist/2JyHvS2WhFZDc1c9FmlE9S"
+264 male "Hades' haven will give you a warm welcome down there.
+
+#StayAtHome #StaySafe #WorkFromHome #Quarantine https://t.co/JHJchGBG8U" "Mac Daddy Daddy Mac. Teenage heart throb. President of the Jonas Bros fan club. PHD. 3 time Tony award winner. Steal from the rich! #Welder #hamont"
+270 male "Sounds about right... 🍻🥂🍷🥃🍸
+(via @bella_vida_b via IG)
+#stayhome
+#staysafe
+#quarantine 
+#zippyjamz https://t.co/HMQeXF2c3t" 
+278 female "Whether it is through ZOOM or FaceTime, or you are actually quarantined together, this challenging time would not b… https://t.co/UFBbes2W4o" "A sonic trip. R.I.P D. Mag. magnombeats@gmail.com"
+297 female "Family’s that TikTok together stay together 🤣🤣
+
+What a video 🤣" "Pissed off 100% of time . Makeup 💕 . Anything Lady Gaga. Still emo 💀"
+304 female "“make up w no filta on - that’s when you’re the prettiest” - or whatever @Drake said 💫
+.
+.
+.
+.
+.
+#carquarantine… https://t.co/emjKy6vbM3" "𝙞 𝙠𝙣𝙤𝙬 𝙞 𝙡𝙤𝙤𝙠 𝙛𝙡𝙮 𝙗𝙪𝙩 𝙨𝙝𝙞𝙩 / fan account / bulgarian public relations student"
+317 female "Stocking up my #Kindle for #quarantine season.
+#plantbased 
+#buildyourimmunesystem https://t.co/KlgRX36zlE" "Adults Only 19+‼️#Canadian Casual Non Conformist/
+Eclectic Enigma/ Flirty Fellatrix/ Usually Nude/ Deviant Mad Doctor of Dixk
+http://Onlyfans.com/msmandahfx"
+323 male "Lockdown has got me like..
+🙈🙉🙊☀️☀️☀️
+#samsung #samsunggalaxys10 #london #clapham #hammock #sunnyday #selfie… https://t.co/Z37GVjdcL4" "Veryyyy filthy man absolutely anything goes, ALL kinds of content posted DM very welcome.            KIK paul90164676"
+342 male "Oh child.. 💛💚💙
+
+#samsung #samsunggalaxys10 #london #clapham #hammock #sunnyday #selfie #isolation #quarantine… https://t.co/ulUBIxyzyS" "Noah. He/Him."
+401 female "Spring #clamps are perfect for holding things down, including the #blanketfort! Fun to see how people are spending… https://t.co/h8zMOmWhzY" "LIFE is BETTER in Flip Flops! #Travel #Blogger #Writer #LSU #Wifie #Louisiana #Christian #Mama. #RVOwner #FamilyTravel #Disney #Youtuber #TravelVlogger"
+457 male "RT @ParisHilton: This #Quarantine is not hot.🙅🏼‍♀️ #StayHome #SaveLives and watch #TheSimpleLife. 👯‍♀️ https://t.co/tCOitdBzm1" "Time is short......so slow down."
+460 male "RT @MyGovArunachal: The District Administration of Namsai has built #quarantine centre to house #Covid19 patients.
+
+#Arunachallockdown #cor…" "çhãsê yøür pâssïoñ līkê is thé lást bùs of the night 
+#Gêntle mønstër
+#1realchase 
+#Pretty💍 Chase"
+466 female "I JUST NEED SOME DICK. I JUST NEED SOME LOVE. 
+#Quarantine #Lockdown #Covi19 https://t.co/BgJyoQMW0J" "Author of FINDING MRS. FORD, a literary thriller named one of Forbes’s Top 5, GMA’s Top 10, & bookRiot’s Top 50 summer books of 2019!"
+470 female "Stay home but don’t stay fat, make that body work 💪🏿🤸🏿‍♂️
+
+#stayhomechallenge #stayhome #quarantine… https://t.co/i30DhG0SnI" "Registered Independent,  #Resist"
+476 female "Today I'm thankful for my health, work, little rays of sunshine through the window, and little brown cats.… https://t.co/0iB9QnMCzA" 
+478 female "RT @reba: Felt cute. Might gel my hair and stare out the window while I wait for my grocery delivery. IDK. #istherelifeoutthere #quarantine…" "👇 Watch my latest video! http://bit.ly/2CnjyZW Fusion of 80s rock blended with modern rock & pop music. New song/video/book/poem released every month!😎"
+491 female "10 hours in to my first attempt in a while at a #24hour stream! #Quarantine #boredom https://t.co/cysQl1X18t" "#SVT #NCT #KARD #THEROSE #THEBOYZ #STRAYKIDS #ONEUS #ATEEZ #1TEAM #AB6IX #EVERGLOW #HINAPIA #MCND #TREASURE #CRAVITY #TOO #MARTINGARRIX = meus amores 💌"
+502 male "RT @SoulCraftswoman: On the brink and bored with board games?
+
+Join “Help! Cooped Up Together and #....”
+
+Virtual #designthinking workshop…" "Girls support girls"
+546 female "Detroit is following NY for high covid cases, idiots meet at gas stations and actually fb live their gatherings to… https://t.co/ue71pWJjza" "All about me. All about YOU."
+550 male "RT @FamilyKabs: What part of “The kitchen is CLOSED” do these girls not understand 🤷🏾‍♂️😒 
+
+Lol follow us on @tiktok_us “@TheKabsFamily”…" "Stock picking genius and a few other qualities."
+572 male "RT @geeta_phogat: Click photo with mister and sister❣️@pawankumar86kg @sangeeta_phogat 
+#stayhome #staysafe #Quarantine https://t.co/Zjui9Q…" "Clothing Brand | Made with Love 
+A part of the benefits are destinated to Hospitals & Homeless people
+WorldwideShipping📦
+#weareone🌏❤️"
+593 female "Check out this kid😭🔥he nice widdit let's RT and help him grow🇿🇦🌍
+#TrevorNoah 
+#DearMrPresident 
+#Covid19SA… https://t.co/i5rOqWxm40" "A #travelblog devoted entirely to the overindulgence of #wanderlust. 🗺 52 countries & all 50 states. 📌: DC. Next up: #Australia 🇦🇺."
+614 female "Today’s vibes after having been to the supermarket #TikTok #frozen #fuckitall #todaysvibes #wineoclock #quarantine… https://t.co/CuXCqLToc3" "We're 5-Star Accredited by the U.S. Chamber of Commerce and are the premier business advocate for economic development in South Central Kentucky."
+616 female "RT @hello_lee_hi: Check this now on YouTube #quarantine #homealone 🦋 https://t.co/PrvrWKL58k" 
+646 female "RT @BreugelMarike: What are you #creating in #quarantine?  Great time to finetune your #craft!  https://t.co/bUs0SAuQbZ  #cannabis for bett…" 
+647 female "RT @hello_lee_hi: Check this now on YouTube #quarantine #homealone 🦋 https://t.co/PrvrWKL58k" "Ontario, Canada 🇨🇦
+Mother & Daughter Publishing #DreamBelieveAchieve #ShatteredDeniseByers
+Now Available 
+Shop Here For All of Our Books 📚"
+651 female "Lovely day!
+
+#MarissaJuneCooperKnight #MJ #LittleGirlGinge #OurBabyGirl #TinyHuman #13MonthsOld #Parenthood… https://t.co/a1i2QJaP6C" artist.
+653 male "Morning Bible reading reminds me that a house divided can’t stand. 
+
+Pray about everything. Fear nothing but God.… https://t.co/eV8guu0mr3" 
+655 female "Are you as bored as I am ???
+Now read it backwards..🤪❤️
+p.s: Stay home and tonight @9pm Diya jale 🪔 
+#sundayfunday… https://t.co/YIF88eknap" "IG:_jade.elise_ | ualbany’22💛💜"
+674 male "RT @hello_lee_hi: Check this now on YouTube #quarantine #homealone 🦋 https://t.co/PrvrWKL58k" "Latin/Brazilian/chart! QUALIFIED DJ G.GUZMAN #salsa classes, dance demos, wedding choreos, party nights BOOK NOW"
+698 female "When i see Salman fan saying @MoneyHeistFans is overrate 
+#quarantine #corona #humor #sagarcasm https://t.co/vbKErBDFgn" "Mom. Reader. Mystery Suspense Writer.  Loving life on my terms. #amwriting #suspense #thriller #romance #whateverifeellikewriting"
+713 male "RT @BigBeefyBear1: Y’all sick of all the jerking off yet? Me neither. #Quarantine 
+https://t.co/8PqwE9L7Vn https://t.co/Nc0TvgiQcx" "Brownstein, a two-time finalist for the Pulitzer Prize, is a senior editor at The Atlantic & a senior political analyst for CNN."
+742 male "RT @hello_lee_hi: Check this now on YouTube #quarantine #homealone 🦋 https://t.co/PrvrWKL58k" "BTS My Happiness💜🤗
+@Bts_twt"
+787 female "@VancityReynolds @AviationGin I have two teens in the house. Their favorite #quarantine past time is fighting. At t… https://t.co/Kdg5g4vtxP" "Poetry © https://twitter.com/search/from:@Eve_Castle love & RT #haiku #tanka #mpy #haibun sun moon wind earth art empathy #TankaThursday 💙#VotingBlue"
+811 male "RT @vashonsss: #Memes #Quarantine 
+Drake: makes a 2020 song with a dance with footwork considered a shuffle 
+
+Futsal Shuffle 2020: https://…" "Profe. Operador Radio-tv. Periodista Deportivo. Sobre todo Papá, Hincha de Chaca y admirador del feminismo."
+812 female """Breathe next to me. And I will capture a piece of your soul along with mine."" 
+
+Be productive during quarantine...… https://t.co/fdaclDKbZr" "People who allow their pasts to cloud their futures are too blinded to see their own potential. 💫 #dinkfam #neatdude #throwingظل"
+821 male "Days like these❤️
+
+Rice bondaa🔥
+
+#PerfectEveSnacks
+#LockDownDays
+#Quarantine https://t.co/GwFmMRmFxj" "‘If you ain't got no giddy up then giddy out my way’ II TAMU ‘21 ONLINE"
+830 female "“make up w no filta on - that’s when you’re the prettiest” - or whatever @Drake said 💫
+.
+.
+.
+.
+.
+#carquarantine… https://t.co/J2ZzjOWUF1" "Fiction writer, crafter, gamer, and lover of ice cream!"
+838 male "Bhakti making the best of quarantine days.
+
+#music is #life 🎻🎹
+
+#songs #quarantine #quarantinelife… https://t.co/dyGtILla0L" "ARMY FOREVER 💜dear Bangtan Many many"
+856 female "RT @KmRinos: While we are in Home #quarantine  Make the Time Useful.  It’s happy &amp; calm indeed   My companion has a big role on this nowada…" "Proud Deplorable"
+876 male "RT @hello_lee_hi: Check this now on YouTube #quarantine #homealone 🦋 https://t.co/PrvrWKL58k" "Plastic is still getting in the ocean. A LOT. We have to do more."
+883 male "RT @NYCDemonDiva: Me when the #Quarantine ends  #COVID2019 #COVID19Pandemic #Wrestlemania https://t.co/ViDO7FPZRc" "I cover Earth Changing Extremities Worldwide - Please Donate  To Support My Work http://tinyurl.com/ybafu4hx Thank you with gratitude 🙏🏽"
+886 female "RT @WilsonTheBully: I thought #Quarantine would keep me safe from baths, but Nooooooo! 😒💦🛁
+
+#Bulldog
+#DogsOfTwitter
+#QuarantinePets https:/…" "Magazine Glamour Model, Playboy TV Hostess, Online Adult Starlet, business owner & fitness whore http://amzn.com/w/1I3TV8DUOH2QG Bday is Dec 1st! I gift back!"
+948 female "We Are Here To Help You Get Thru This ✊🏾
+Get Your Kit By 4/11 And Join Our Live Or Your Friends On Zoom...… https://t.co/b8c9yfpVvH" 방단💜💜_JIN🐳_KOOKIE🐰_YOONIE🐱_JIMINIE🐥_JOONIE🐨_TAETAE🐻_HOSEOKIE🐴
+949 female "RT @Je_ffree: How much longer ⁉️😩🤣
+- 
+#life #kingN #humor #comedy #jeffecomedy #quarantine #barbershop #whatdayisit https://t.co/adSM0QjKZn" "Egypt's #1 Hit Music Station! Bringing you the world's biggest artists and songs, the hottest DJs, and all the entertainment news since 2003! #NileFM"
+954 female "RT @ParisHilton: This #Quarantine is not hot.🙅🏼‍♀️ #StayHome #SaveLives and watch #TheSimpleLife. 👯‍♀️ https://t.co/tCOitdBzm1" "Artist, Mixed Media Art, 
+Digital Story Teller
+Discover my Art - Artist Profile: http://linayoart.blogspot.com"
+962 female "RT @hello_lee_hi: Check this now on YouTube #quarantine #homealone 🦋 https://t.co/PrvrWKL58k" "Addicted to rebahan.
+I love my body weight in chocolate and ice cream 🍫🍦"
+963 female "🚨Every color on sale $39.99🚨 
+#quarantine no better time for organization!
+https://t.co/RjwWEt4Tdd
+Follow… https://t.co/Wn5NGJuRXj" "The #counterculture, #Aquarius & #loveandpeace .. never went away. #karma #cnd #banthebomb #peace #love #music #art #hippie #Woodstock #poetry #antiwar"
+1002 female "RT @hello_lee_hi: Check this now on YouTube #quarantine #homealone 🦋 https://t.co/PrvrWKL58k" "B-army 😊❤"
+1025 female "I’ll watch church on tv at home and in my pajamas but I’m not doing Palm Sunday without palms #standards… https://t.co/3N2jeEM2zo" "Psychotherapist, Author, Educator & Co-Creator #JoYTrain http://JoYTrain.org Transform Your Life to #JoY Overcome Stress, Anxiety, Depression & Abuse issues"
+1061 male "i need some dick and ass... i‘m horny🍆🔞
+gostava de gaita ou de cu no dm... estou horny🍑🔞
+#gay #bi #bisexual… https://t.co/LauGw23sj4" "Father, husband, sports fan and big wine and food guy!"
+1064 male "#Quarantine proved that we didn't want to change instead we were blaming our life problems.
+#lockdown #Covid19India" "maybe someone will get me, meh, maybe not. http://www.youtube.com/thecjbrady1"
+1091 male "RT @hello_lee_hi: Check this now on YouTube #quarantine #homealone 🦋 https://t.co/PrvrWKL58k" 
+1108 female "bingoo 🤣😂🤣😂🤣😍
+#AaoPhirSeDiyaJalayen 
+#Quarantine" 
+1137 male "RT @hello_lee_hi: Check this now on YouTube #quarantine #homealone 🦋 https://t.co/PrvrWKL58k" Realist.
+1155 male "Bengaluru techie Venkara Raghav recovers from #COVID_19. Raghav self-quarantined himself at home upon his arrival f… https://t.co/nlblnfDqeh" 
+1199 female "I miss being kissed by the sun 😢 #quarantine got me on #lockdown @ Four Seasons,Cape town https://t.co/ON8Qw3XDhJ" 
+1219 female "RT @king_caylo: lockdown isn’t that boring after all 🏀 @holaitsleighlax ❤️
+#quarantine https://t.co/DC5C3As5z0" "“I won't see it, you'll get sued. It's a win-win situation."" -  Min Yoongi"
+1230 female "RT @JaniChiragjani: Hey Amigos.. Here is the Sunday surprise for you all.   💥💥
+How many of You Remember This scene From #Kaappaan ??? 
+I Tr…" "Part 2, they cancelled part 1 on me"
+1235 female "#Breaking: Tablighis flout quarantine norms. 
+
+Caught on camera: Social distancing norms being violated by Tablighi… https://t.co/qFvXvNpPBz" "Wasteland Adventurer Extraordinaire ☠😼"
+1273 female "Love him so much
+Miss him so bad
+
+#LoveBTS #TaehyungYouArePerfect #TaehyungStyle #TaehyungOurPride #Quarantine… https://t.co/EMB9ghsKZM" "I'm happy here, because this is my world
+@bts_twt"
+1315 female "RT @LethalBizzle: Kyle Walker #quarantine https://t.co/fTIamitSwH" 
+1370 female "RT @cuppymusic: Egungun Be Careful! 😩 #Quarantine https://t.co/QESBd9Odh7" 
+1384 female "P-town Moe sharing his journey while battling Covid-19.. the city is praying with you and for you Moe!!… https://t.co/S5iqW5CUjA" "mutualan kuyy💜😊"
+1387 female "RT @hello_lee_hi: Check this now on YouTube #quarantine #homealone 🦋 https://t.co/PrvrWKL58k" "Authentic Italian Cooking since the 1920s 
+#LCIgoestotheUSA"
+1405 male "RT @reba: Felt cute. Might gel my hair and stare out the window while I wait for my grocery delivery. IDK. #istherelifeoutthere #quarantine…" "A native North Dakotan, a geek in all sense of the word, and a hopeless dreamer"
+1413 female "RT @cyanidedansen: FR media when talking abt people being outside in badly-seen, multicultural areas : ""disobedience, rebellion""
+
+FR media…" "CEO TMC: #Futurist #Influencer #Keynote #Speaker #Cloud #IoT #Blockchain #Cybersecurity #VoIP #CRM #UCaaS #BigData #Analytics #AI #MachineLearning #SDWAN #IIoT"
+1443 male "Oh good. #ECQ #Quarantine #Lockdown #Philippines https://t.co/oQRiUD83KB" 
+1449 female "RT @07JustKat: First official review regarding my blog.😍😍😍 positive, I’m so damn happy 💃🏻💃🏻💃🏻
+
+https://t.co/NgyhRNgFN7
+
+#LockdownSA 
+#Quara…" "Common Public"
+1472 male "lunch is the new breakfast #quarantine" "“Qué suerte tengo de tener algo que me obligue a decir adiós.”"
+1478 female "RT @hvgoenka: Wonders of #quarantine- grey hornbills seen next to home #Mumbai https://t.co/9IUQlZYlTC" "nda usah iat-iat! kalo mau temenan ya sini kenalan🌳🐨fan account of @BTS_twt"
+1507 male "Yas my 592 ladies" "#teamsometimesfollowback - Promoter/Fan :) Follow if you wanna discover new #music #retweets #bands YOLO - You Oughta Look Out. DM me your songs and I'll share."
+1517 male "RT @Exxotic_Artist: Horny af! I need to cum ASAP! retweet if u wanna see me shoot my load! #Quarantine #QuarantineLife #QuarantineAndChill…" 
+1522 female "Why I'm staying in shape during quarantine:
+Just in case this whole #COVID19 thing takes a left turn into Zombievil… https://t.co/m1lj4lAvFY" 
+1540 male "RT @Da_StormtroopeR: When the #Quarantine #lockdown is over. https://t.co/tWLFVINl2x" Male
+1549 male "RT @hello_lee_hi: Check this now on YouTube #quarantine #homealone 🦋 https://t.co/PrvrWKL58k" "20 LATINO !! OnlyFans ⬇️ https://onlyfans.com/latincouple3"
+1574 male "Paid #Quarantine facility available at #noidahotels . Administration has fixed rates. #StayHomeIndia #COVID2019 https://t.co/9CKw69EUf7" "Fun loving down to earth Baltimore guy"
+1592 female "RT @StayViagem: We offer long term and short term rentals, just contact us and we will help you to find the best location for you! 
+https:/…" "Baseball, football, basketball card collector. Observationalist.  Padres, Mets, Titans, Grizz. #Grindcity Xbox one = Mattikaze"
+1599 male "RT @DebbieSorensen: I found out today my kids won't be back in school until next fall - A LOT of family togetherness time in the many month…" "@downtheparkway ✍️. @midwestsports Pure Tennis✍️ #ripMac                                                              Bellarmine U grad"
+1635 male "RT @reba: Felt cute. Might gel my hair and stare out the window while I wait for my grocery delivery. IDK. #istherelifeoutthere #quarantine…" "do you like #cheese? then check out @daiyafoods! live #dairyfree"
+1641 female "RT @HolyCannoli86: What is with these ignorant motherf__kers! First ice cream, now THIS?! I hope he gets arrested! What a douche! #challeng…" "Come have fun at Emma's Den"
+1644 female "RT @ParisHilton: This #Quarantine is not hot.🙅🏼‍♀️ #StayHome #SaveLives and watch #TheSimpleLife. 👯‍♀️ https://t.co/tCOitdBzm1" "seamos amigos..."
+1673 female "Boys In #Quarantine...Girl's in #Quarantine https://t.co/HQCoujXevZ" "YVGG loyalty is everything. Money,Gunz,Drugz: Tha Mixtape out now!!!Booking/Contact Info: yvggent@gmail.com FOLLOW US ON Instagram: @yvgg_muzik CLICK THE LINK🔽"
+1692 female "RT @freecoins24: 🚨https://t.co/ZPGGL9T1oi vs. #COVID19🚨
+
+We will remind everyone to #Stayathome in this hard days, we share 100 BTT token t…" "Baltimore’s bearded cosplay queen! #LushLife Voted Baltimore's Drag Queen of the year 2017!"
+1718 male "use the #quarantine to educate yourself on #Bitcoin 
+
+Jameson @lopp has created a great list of resources dedicated… https://t.co/wnAPXm6gn7" "Just a Soul in a crazy world!"
+1738 male "Even my #thesims guy knows how ro wash his hands. #quarantine  #PS4share https://t.co/nOaqL3V7D9" "Universality, deep thinking , social activist and thiest person ..."
+1749 female "Here comes the next level! 
+Grab a screenshot and share it with us when you see 2 same packs of Wai Wai align.… https://t.co/5denM4uhr1" "just here to interact and learn about this great big world and it's awesome people!!"
+1761 male "Day 12- (day 17 for me)
+#21DaysChallenge #LockdownChallenge 
+I made clay trinket dishes with leaf imprints. Mulberr… https://t.co/XNDMUheGd8" 
+1763 female "Quarantine has got me upto things I'd never bother with
+#mewgulf #mewsuppasit #gulfkanawut #quicksketch #sketch… https://t.co/RfRaBMN9TY" "-RT account -fan account-
+Foll0w this base: @BTSARMYBaltics
+Do not follow this account? Literally why?"
+1764 female "RT @YeardleySmith: It’s #SimpsonsSunday ! 
+Before the 💩 hit the fan w/ the #coronavirus I was in Portland doing a movie &amp; I found out there…" "Roses are red... Violets are blue... I made this account 'cause I have nothing to do"
+1770 male "RT @Damii_aros: I will never understand why DJ Cuppy has haters...." "for fun"
+1792 male "RT @FamilyKabs: What part of “The kitchen is CLOSED” do these girls not understand 🤷🏾‍♂️😒 
+
+Lol follow us on @tiktok_us “@TheKabsFamily”…" "Sóc mestre. Vingut a+. Entrepanador. Insubmís de diacrítics. Equip #Trailflipats Toffee."
+1801 female "day five, ‘bottled’ 🏠 // #aprilartchallenge #artchallenge #drawing #drawingchallenge #30daychallenge… https://t.co/fydBPaj2gJ" "~Reagan Conservative ~Love Jesus~ ~ProIsrael~ProLife~ProPolice/Mil~ ~Pro-CONSTITUTION~  ~Pro-2A GOA NRA  #RenewUS  #Pray4USA  #PJNET   #TRUMP2020 #VoteRED"
+1815 male "RT @2Heidishattuck7: There’s 30 songs from the 80s in here. Find them #Quarantine https://t.co/2ZfHSaKRES" "Actress. Model. Casting Director. producer. Wifey. Mommy of 3."
+1820 male "RT @jayemulaa: Meet me in the bedroom it’s going up. #Quarantine https://t.co/xxQrlOB05j" "in the castle with @Nasrian_"
+1841 female "RT @cheyenne_jewel: And coffee of course🌞☕🍵 #goodmorning 
+
+repost: @TokyoBagsCo 
+#vegan #vegans #sex #quarantine #vgang #vegansofinstagram…" "法蒂瑪🐉💮//
+
+𝕋𝕨𝕚𝕥𝕖𝕠 𝒎𝒊𝒔 𝑠𝑒𝑛𝑡𝑖𝑚𝑖𝑒𝑛𝑡𝑜𝑠 ᴏ ᴄᴏsᴀs 𝓆𝓊ℯ 𝓝𝓞 𝘱𝘶𝘦𝘥𝘰 Ⓓ︎Ⓔ︎Ⓒ︎Ⓘ︎Ⓡ︎ //
+
+Jungkook biased💘"
+1860 female "Why bring #populationcontrollaw 
+Population is cause of many problems. Italy Germany has low population hence bette… https://t.co/ignNICEpdw" "BTS, Monsta X , Kpop e Asian culture in general, Drawing, Geography, Tolkien, Darth Vader ❤️, Music, Photography, Series, Movies, Books..."
+1864 female "RT @waiwaiindia: Here comes the next level! 
+Grab a screenshot and share it with us when you see 2 same packs of Wai Wai align.
+#WaiWaiKhao…" "120126 || BABY since 2013 || Always with B.A.P 💚 || 🇹🇭🇯🇵 ミカです^ - ^ or f4, whichever you prefer lol || disclaimer: i rt a lot of bap, cats, memes."
+1866 male "How To Learn Programming 💻During The Covid-19 🦠 😷 Outbreak
+
+Will you learn?
+
+All the slides are here:… https://t.co/xAvXg30Zbg" #oxfordstadium
+1870 female "RT @RobertoBolle: Sunday smile. With beard 🧔🏻 #quarantine #buonadomenica https://t.co/YYchSQkmYx" "my reality is my Royalty"
+1874 female "RT @georgeservos: “The Real Path to Responsibility Goes Through Your Mindset” https://t.co/YGBUsbvfUy
+#Mindset #COVIDー19 #Quarantine #psych…" "objecteur de conscience..terrien d'abord,français de souche ensuite,raciste non envers la couleur mais plutot envers les cons et les ennemis de la France ."
+1879 female "#CoronaVirus A crew member on the Celebrity Infinity, part of #RoyalCaribbean, told CNN that one crew member died o… https://t.co/N4L7NrpMKO" 
+1880 male "Such wholesome fun 😂😂😂😂" "Super, Hyper & Muscle Cars, M’bike pics, vids & Funny stuff. Checkout & Subscribe to my Instagram, Tumblr & YouTube. Thanks for popping by☕️🍪😂"
+1923 female "And here is my dog’s reaction when he saw my the NYC #lego set #Quarantine https://t.co/MS9qWXnSqT" "Ideas, analysis, and concrete intelligence from the world’s foremost experts. We seek actionable insights to help you navigate our complex world."
+1966 male "Happy Palm Sunday!
+You watching #ChurchOnline? Gotta swing by grocery store afterwards #justGoingToTheStore?… https://t.co/H88YN7Emqe" "I don’t expect you to understand me. GOD didn’t give this vision to you, he gave it to me & remember perception only insults your intelligence. 🦍"
+1983 male "#SBHatHome: Brothers Yuriel (4th) and Gianny Mariano (1st) are taking advantage of this beautiful weather by making… https://t.co/yeTLHXAwVO" "....💜*
+@BTS_twt"
+2037 male "RT @hvgoenka: Wonders of #quarantine- grey hornbills seen next to home #Mumbai https://t.co/9IUQlZYlTC" 
+2040 male "RT @hello_lee_hi: Check this now on YouTube #quarantine #homealone 🦋 https://t.co/PrvrWKL58k" "The Maxwell's Madness! What's going on in our life: Our Babies, Our Excursions, Our Happiness, and Our MADNESS!
+
+OH: And Product Reviews and Giveaways too!"
+2054 female "RT @GorillaMamaWho: Lmfaoooo #Quarantine https://t.co/hVkzOcqClc" 
+2062 male "Watch out streaming video! Ant farms will be having their own moment in this #Quarantine. https://t.co/FRzy8YEDaQ" "Husband. Father. WH reporter. Writer. podcast host. Seen on TV. Author of a few books. Sings.
+""All I want is the truth. Just gimme some truth,"" - John Lennon."
+2071 female "RT @BigBeefyBear1: Y’all sick of all the jerking off yet? Me neither. #Quarantine 
+https://t.co/8PqwE9L7Vn https://t.co/Nc0TvgiQcx" "Melissa on #diaryofafuturepresident on #disneyplus ~ Tamika on #nogoodnick on #Netflix and more ~Exclusively ran by mom🎬🎙"
+2104 female "Don't let #QuarantineLife stop reggae for you, tune into @switchtvkenya for #Switchboard with @foi_wambui_ ,… https://t.co/JDNgeZF9HX" "I ship fictional characters, fictional characters are so much better than real people, books are part of my life and I Fangirl over millions of things :)"
+2110 female "@BrandFactoryIND Here's my entry with my favourite Outfit
+#TimeOutWithBF #ContestAlert #Contest #Quarantine… https://t.co/UWuk0GSuga" "I love and respect  👉Ajay sir 👈
+@devgun world group"
+2113 male "RT @Meizzzzzzzzz: Pano sumali??
+-Subscribe this https://t.co/Vwi245qmnh
+-like &amp; Comment ""done""
+-Retweet (#Competition)
+🍑430subscribers more…" "Discover beautiful Peru with Dos Manos: Tours, Treks & personalized itineraries exploring #Peru! Adventure│Culture│Outdoor #Cusco
+https://t.co/br11AXPHef…"
+2143 female "Folding clothes during the #Quarantine to the greatest song ever https://t.co/LZ40PUOlq8" *****
+2152 female "My quarantine menu has ranged from frozen White Castle cheeseburgers for lunch one day to baked Brie with honey and… https://t.co/oC1veDURoV" "Happy world full of vibrant colours with an eclectic mix of style & tradition."
+2158 male "RT @ParisHilton: This #Quarantine is not hot.🙅🏼‍♀️ #StayHome #SaveLives and watch #TheSimpleLife. 👯‍♀️ https://t.co/tCOitdBzm1" "Downtown Dayton’s craft beer and wine oasis. Twenty highly curated taps of beer, wine, and cider. Fully stocked carry out. Fluffy couch lounge area. 🍻❤️👐"
+2173 female "I know I’m not famous yet, but @TheEllenShow you can FaceTime me too. #justsaying #quarantine" "You are my earth. I'm just a moon to you. I'll orbit around you, I'll stay by your side, I'll be your light, All for you - Moon 🌑
+~ᶠᵃᶰ ᵃᶜᶜᵒᵘᶰᵗ"
+2184 female "😆😆🤣🤣😭💀
+
+#Repost authormeldau
+• • • • • •
+#Quarantine has me silly as hell...actually this is just me now others can… https://t.co/GgYPP5rDgF" "Futura Diplomata, apaixonada por series, dramas, kpop e cultura asiática. 😉😉😘😘"
+2194 male "The first part of a series of videos, for you'r viewing pleasure!
+
+#h2oindustries #h2ofam #proridermag #coronavirus… https://t.co/9T8pnZbf55" 
+2201 female "RT @Zimbo_Son: Such wholesome fun 😂😂😂😂" 
+2211 male "RT @ParisHilton: This #Quarantine is not hot.🙅🏼‍♀️ #StayHome #SaveLives and watch #TheSimpleLife. 👯‍♀️ https://t.co/tCOitdBzm1" "“Yeah, well, you know, that's just, like, your opinion, man.”"
+2231 male "Any ideas? #school #memes #funny #quarantine #coronaoutbreak #coronavirus #selfisolation https://t.co/COEiYBMYFB" "God, Family, Money, Man Utd, Bvb, Black Clothes...In that order"
+2259 male "RT @aggiepatriot: Great time to #COVID19Pandemic #Quarantine is great time to “build a better boat.” #PalmSunday.          Kenny Chesney -…" "Stan | #HalaMadrid"
+2271 female "If you are bored in #Quarantine, try solving this simple math quiz https://t.co/kDodU679q1" 
+2285 female "RT @hello_lee_hi: Check this now on YouTube #quarantine #homealone 🦋 https://t.co/PrvrWKL58k" "Remember who you were, before everything 💙✨"
+2296 female "RT @davidecancarini: I believe that my greatest contribution to #CentralAsia|n studies will remain the discovery, made this morning after a…" "Student news source of Oakwood High School"
+2298 female "True friends are NEVER apart maybe in distant but never in HEART!❤️
+Thanks for the photo __.beeeeee.__… https://t.co/kvTBVb1ejq" "music addict (trance) | WoW, Destiny 2, Pokemon | a bookwyrm | Saishi on EU-Azshara | trans woman (she/her) | banner by @nidarosisart"
+2320 female "Made a quick introduction so you could meet my gorgeous friends @xlyxslw @hdrnini #dontrushchallenge #Quarantine https://t.co/694cYWzQUY" "Michelle Kinsman | Real-World Feminist
+I help women build badass careers.
+⬇️Learn how I can help you.⬇️"
+2323 female "When we get to take Bella for a walk and deliver food to Mom #quarantine #quarantineanddogwalks   #quarantine2020😷… https://t.co/9ZYM2r0I0A" 
+2327 male "RT @ChathurangaHapu: 8 #COVID19 patients identified in the country as at 16.30. 
+1 from Puttalam #Quarantine Centre
+1 from Matara (Has asso…" "❝I'm an Actress, artist, dancer, editor, gamer, motivational speaker, photographer, video creator, writer and film director of my life.❞ -Me 2019."
+2338 male "RT @imtabishk: @poojansahil @UmarKhalidJNU Do watch and share 
+
+https://t.co/hOXhvU38XO" "I'm a storyteller that believes there is goodness in everyone, we just have to cultivate it and help it grow. 2 Tim 1:7"
+2339 female "RT @meera_mitun: My Quarantine Goes nonstop forever dreams ✨
+#quarantine #quarantinelife #quarantineandchill #quarantinestories #quarantine…" "Economics, Politics and Public Policy in East Asia and the Pacific."
+2357 male "Why aren't people learning and still going outside 🤦🤦🤦 
+#StayHome #Selfisolation 
+#Covid-19 #Coronavirus
+#Staysafe… https://t.co/cboklkpiZH" "Described as “the conversations overheard from geeks sitting at the end of the bar”, we talk film, comics & some plain weird stuff! Member of @The_GWW network!"
+2371 male "RT @ParisHilton: This #Quarantine is not hot.🙅🏼‍♀️ #StayHome #SaveLives and watch #TheSimpleLife. 👯‍♀️ https://t.co/tCOitdBzm1" "I'm a Military Science Fiction author and a little bit of Erotica, my books are at Amazon: https://t.co/MNN1mjgnn7 and Smashwords: https://t.co/eQcHRbvOCE        US Army #veteran"
+2372 male "RT @herfinestwork: Love the part where sis is pouring 5 year old rum 🔥" "RATED 'R' FOR ROTTEN:
+SOME MATERiAL MAY BE INAPPROPRiATE
+FOR YOUNG ViEWERS. PARENTS & PRUDES
+STRONGLY CAUTiONED🚨🚧🛑
+
+1)CLiCK:MEDiA
+2)HiT:LiKE ON EVERYTHiNG"
+2375 female "Stuck in #Quarantine but my girl #Dancing and #cookingbreakfast makes this #QuarantineLife ok. https://t.co/jcuRYZYRVe" "love myself"
+2385 male "Definitely sir 🤤" "tweet me with bio ideas"
+2391 female "A perfect blend to make your Sunday.
+#InternationalSoupDay
+
+#SayHelloToPerfection #HamiltonBeachIndia #CookLikeAPro… https://t.co/zGgSD4z2jd" "@OlivierDion @Amir_Off @guillaumepley  @BTS_twt #ARMYs  #Kpop  ❤❤❤❤❤"
+2392 female "RT @TheHitterSports: Apparently everyone in my neighborhood believes #coronavirus is a hoax cuz they are observing ZERO #Quarantine etiquet…" "American Patriot - America’s favorite pastime - If I bleed, it’s red, white and blue, charcoal, sulfur and saltpeter! Wig-wag the flag! RTBG!"
+2394 male "Enjoying this sunny Sunday in Paris gregoryhalpern #gregoryhalpern #confinement #quarantine #stayathome à 9eme arro… https://t.co/2WcI1SFgFD" 💪💪💪
+2403 male "During this #Quarantine , “Going outside to relieve oneself” takes on a whole new meaning." 
+2409 male "RT @jayemulaa: Meet me in the bedroom it’s going up. #Quarantine https://t.co/xxQrlOB05j" "|| No Religion || Neither Atheist nor Theist || Dedicated towards Life on this planet ||"
+2436 female "This lockdown has made me realise how i have wasted all my years being single. What if this is the end, meri toh sh… https://t.co/Q66zpkWQOp" "irreverent Mentalist: Behavioral Data hActivist, investigative writer monitoring data-driven political & social PsyOPs #dataprivacy protect Animal/Human Rights"
+2439 female "RT @ParisHilton: This #Quarantine is not hot.🙅🏼‍♀️ #StayHome #SaveLives and watch #TheSimpleLife. 👯‍♀️ https://t.co/tCOitdBzm1" "Have empathy and compassion for others.   Intolerant of sociopaths and  psychopaths."
+2442 male "@waiwaiindia Here is my perfect screenshot
+
+#WaiWaiKhaoMoodBanao #waiwai 
+#quarantine #noodles #soup #munch #lunch… https://t.co/GNZ919zpfx" "방탄소년단 ♡
+ARMY ♡"
+2447 male "RT @waiwaiindia: Level up! 
+Grab a screenshot and share it with us when you see 3 packs of Wai Wai.
+#WaiWaiKhaoMoodBanao
+.
+.
+#waiwai #quara…" "How you do anything is how you do everything."
+2448 male "RT @imbradmiller: Los Angeles before stay at home orders and after. We should consider doing more staying at home to heal our planet. 
+
+#co…" 
+2450 female "RT @Amber02150: Happy week at home Twitterworld 
+#StaySafe #StayAtHomeStayStrong 
+
+💞
+
+💞Battle for the window seat😅🐾 #Quarantine 
+📹by Anlyin…" "Ex Accountant turned Rapper, Writer, Singer, Model, Producer. 4 more details /to book pls contact: natasharapper@gmail.com Notorious T = Passion Personified xXx"
+2495 male "Goa Govt Launches 'COVID-Locator' App to Track Home Quarantine People
+https://t.co/zMCqFwJTNv
+#Goa #COVIDLocator… https://t.co/GfVuNEtP4H" 
+2538 female "RT @switchtvkenya: Don't let #QuarantineLife stop reggae for you, tune into @switchtvkenya for #Switchboard with @foi_wambui_ , @manasseh_K…" "Mom of 3/Nan to 5/wife to G/CAF reservist/musician🎷/educator/Manta Pro Team Pickleballer/"
+2540 male "RT @SciFiMom13: Anatomy of a Quiche - #Quarantine day 23 https://t.co/8ZsoXfNqOn" "A media company bridging the gap between generation x,y, and z through visual artistry. We create web-series, shorts, and more for you to obsess over!"
+2542 female "When I said I want two baby girls this is what I meant" "“LIVING MY LIFE TO THE FULLEST✨”. 20 yrs old | Cebu Ph 🇵🇭 | Leo ♌️ | Taken❤️ | Gym 🏋️‍♀️ | Nature Lover 🍃 |"
+2584 female "RT @michidee_: Cool &amp; deadly https://t.co/QddDJI14OF have a song you want to see me dance to? 🎶 🎵 subscribe to have some fun during #quaran…" "BTS are my happy thoughts 🇵🇭 #BTSARMY"
+2623 male "@waiwaiindia Here is my perfect screenshot Team #WaiWaiKhaoMoodBanao
+#waiwai #quarantine #pass #noodles #soup… https://t.co/Jw3j3v9Mts" "Hip Hop saved my life."
+2633 female "New Video Guys!! More fun DIYs you can do at Home!! Go watch💁🏻‍♀️ https://t.co/tqDIaPUd7T
+via @YouTubeIndia… https://t.co/iDnVk9frCI" "love 💖 to read books 📚 and play video games 🎮 when I am not working"
+2657 male "Watching @SHO_Homeland during the Covid-19 #Quarantine and it's just making me dislike politicians more and want to… https://t.co/cxI8csX078" "Professional @E.U.C,, God Above all.."
+2683 female "Morning shave clitty😘" "i love #SidNaaz 😍😘😘😘
+yahan pe aake  unke baare mai bolne ki jarurat nai hai😏😏😏"
+2685 female "RT @Sandeepsplr: Day 8 to 10 
+Desgined a web page using mapbox to visualise the corona positive cases in the world. And completed the week…" "hi. i’m a fan acc. what a surprise. oh n i stan multiple people☁︎"
+2687 female "V confused why y’all think your priorities are more important than the rest of us who are following the rules. #quarantine #StayHome" 
+2724 male "What a great time to be alive as an introvert person. #quarantine" "CANSAVE is a distributor and manufacturer of Building Materials, Cabinetsmith, and Doorsmith for new construction and renovation projects."
+2741 female "#Quarantine got my siblings😍😜😘 IG@abiodunmodelz
+#PalmSunday #StayHomeSaveLives #StayHome #StayAtHome… https://t.co/zupOvydsyn" Nirmalan
+2744 male "RT @karen_hobbs: This is what I'm isolating with." "Aspiring Actor/Music&Movie lover/Businessman/Love Life & the Celebrities in it/WWE Supporter/Credits: starred in Spike Lee's movie Red Hook Summer"
+2756 male "RT @hello_lee_hi: Check this now on YouTube #quarantine #homealone 🦋 https://t.co/PrvrWKL58k" "6 years to #Yaariyan...#Yaariyan #JeenaIsiKaNaamHai #SweetieeWedsNri #RanchiDiaries #DilJoNaKehSaka Himansh you have done a fabulous job..hats off to your work"
+2783 female "RT @SidRothTV: Take Supernatural Communion with Sid Every Day!
+Download Your Free Psalm 91—Prayer of Protection PDF:  https://t.co/ot6GgTqH…" "Vjs❤Trish Fan😍"
+2787 male "#RefrigeratorChallenge w/ my friends🤣 #Quarantine #QuarantineLife https://t.co/C5iyepAz6j" "The PARTY STARTER. Known by most people and the President as The Big Brucebowski. I enjoy a Packer win, Tequila, and most of all kissin lips and workin hips!!"
+2797 female "@waiwaiindia #WaiWaiKhaoMoodBanao
+#waiwai #quarantine #pass #noodles #soup #munch #lunch #contest #game #fun… https://t.co/KheElX1jdH" "j ♡"
+2805 female "Quarantine is not as bad as I thought it would be
+#Quarantine 
+#Covid_19" "Dictionary emergency first-responder #HandMarkedPaperBallots"
+2815 male "RT @PeeSafe: It’s our birthday! Tell us what hygiene means to you and get a chance to win a Pee Safe gift card worth Rs. 2000. You can avai…" "I am an inspired song writer and vocalist. I have recently have been scouting for band members to journey with me in creation of our sound. self-taught G."
+2818 male "I MISS THE GYM SOOOO MUCH RN!!! Not just calisthenics and plyometrics workouts which I did before and doing more of… https://t.co/Id0uNaneLs" "Son of a Fauji | Huge admirer of MSD & kohli | Cricket b4 everything | Fan of #AsimRiaz | 
+Jai hind🇮🇳  http://quizprank.xyz/message.php?id=f"
+2849 female "RT @MTKsf: #Quarantine Poll
+Mortality Over Next Two Months
+
+Today we are at 8,500 dead
+from #coronavirus in the US.
+
+What will the death to…" 
+2854 female "#PalmSunday May the spirit of this holy occasion, the warmth of the season make your heart bloom with joy and happi… https://t.co/oVb3WRmZlz" 
+2874 female "RT @chewziyue: hihi its RAFFLE TIME✨#quarantine themed
+winner will get their character drawn in the YCH!! 
+
+🌸 must rt + following! 
+🌸 must…" "eLearning Designer  | Video & Podcast Editor | Cohost @captionedlife | Disney & comics lover | Training to be the next Santa Claus 🎅"
+2875 female "RT @ParisHilton: This #Quarantine is not hot.🙅🏼‍♀️ #StayHome #SaveLives and watch #TheSimpleLife. 👯‍♀️ https://t.co/tCOitdBzm1" "Art Music and Science."
+2888 female "RT @cuppymusic: Egungun Be Careful! 😩 #Quarantine https://t.co/QESBd9Odh7" "IG: RoyalVibess_ • #DSUAlum"
+2891 male ".⁦@TuckerCarlson⁩ calling a spade ♠️ a spade 👏🏼👏🏼👏🏼
+
+#FauciFraud 
+#Fauci
+#Quarantine https://t.co/GYbEmWLItF" "Hi There! This is Rocky. I’m a graphic designer. Here's my portfolio link: https://t.co/QygzgZfODP https://t.co/tJvl72gNSl"
+2968 female "RT @HealingSoundsTx: How to Cope with the Mental Health Impacts of COVID-19 https://t.co/1taQ22V4fY #mentalhealth #wellness #selfhelp #self…" "living curiously 🐣 CEO @getpresently, startup advisor and #DEI speaker. previously @Princeton @deloitte @thuzio @DoblinGlobal @Ibm"
+2975 male "RT @ChathurangaHapu: 21 people from Orugodawatta in #Colombo taken to the Punanai #Quarantine Centre, including the driver of the patient t…" "WADDUP! I'm Dexter Darden from films such as,Joyful Noise, Cadillac Records,Disney's Minutemen,Standing Ovation,and Maze Runner! Please follow"
+2989 female "RT @JaniChiragjani: Hey Amigos.. Here is the Sunday surprise for you all.   💥💥
+How many of You Remember This scene From #Kaappaan ??? 
+I Tr…" "Yalla Cash! Sell Your Old Phone & Get Paid Instantly at your doorstep! Yalla, lets get paid!"
+3010 male "I went outside for a car ride in Basra City, it was empty and the streets had little to no cars and the army is eve… https://t.co/Cf0kaLHveg" "Rapper. 🇺🇬🌍 #VROOM!"
+3016 female "RT @Bellaasays2: Meet little Taco🐶
+
+#forgetcorona #iBella #Quarantine https://t.co/lIcvvogXDW" "#BTS #ARMY 💜💜"
+3027 male "RT @SUPASTARRELL: Follow @WeAreWYND on all apps
+#WYND" "Emperor/Strategist. Conquering the Wrestling world, one ring at a time. Raising an army #napolegion Bookings: fklonig@gmail.com"
+3049 female "RT @chewziyue: hihi its RAFFLE TIME✨#quarantine themed
+winner will get their character drawn in the YCH!! 
+
+🌸 must rt + following! 
+🌸 must…" 
+3050 female "Meanwhile in India..
+
+#Modi #modiji #ModiMadeDiwali #cleancomedy #CommonSense #Comedy #comicsense #Diwali… https://t.co/Qk7cHc6cAS" "P31 Woman of God...She is energetic and strong, a hard worker... Pastor, Mother, Wife, Musician, CNA"
+3054 female "Spotted this cheeky peacock butterfly posing, on our govt approved walk today #Quarantine https://t.co/j0bNYSWLJn" "i love dick ,man sex , fucking n sucking"
+3095 male "Bored in #Quarantine there are thousands of things you can do online right now.... 
+
+1. Masterbate 
+2. Repeat step… https://t.co/X7YMbKI8fT" "🥾🍒 I’m Alex, writer of kinky, fun #ballbusting fiction & producer of #maleballbusting videos. Let‘s crack some nuts! 😀 18+ 🥳"
+3102 female "Raise your hand 🤚🏼 if your determined to come out of #Quarantine looking better than before! Let’s get it!
+.
+.
+Modi… https://t.co/yUOhnmz56L" 
+3137 male "A man and his #cat in #quarantine 
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+#editorrico #quarantinelife #blackcatsofinstagram… https://t.co/9VvJ3kNFsK" they/them
+3182 male "#KanikaKapoor #Coronavirus #Quarantine #fifafooz
+
+Mahira Sharma Ka gambheer aarop !!
+
+Watch the full video here 👇… https://t.co/b0jBdCAEyy" "Life-long Blues Fan, Communications Professional, Mizzou Grad and Mom"
+3183 male "RT @Madonna: Mood today.!! ................ #quarantine #covid_19 #staysafe #becreative #fridakahlo https://t.co/jmAO19jEsm" "#momlife of #benjaminlee and #asherfavel, #wifelife of @Adammiller_ 💜"
+3221 female "Slept to much this week
+Sundayis not Sunday anymore #SundayThoughts
+#Quarantine" 🥺👉🏻👈🏼
+3235 female "@Mate_Tongola @deejaypatiz @radiomaisha #Quarantine to the show from Tuffgong shauri moyo" """어제의 나 오늘의 나 내일의 나""🙆🏻‍♀️"
+3241 male "RT @FamilyKabs: What part of “The kitchen is CLOSED” do these girls not understand 🤷🏾‍♂️😒 
+
+Lol follow us on @tiktok_us “@TheKabsFamily”…" 
+3242 female "Stay safe everyone #SocialDistance #Quarantine #coronavirus https://t.co/hZE3ujvaVO" "If you spend your time thinking about all the things you should do, then we should be friends."
+3253 male "They taking chairs &amp; crates 👀 Act up &amp; u gettin hogtied n tossed n the back 😭 #quarantine https://t.co/6K72vyhXd1" "🌮Tacos are a force for good.🌮@RepGonzalez comms. #ForTheH🤘⚾️Opinions mine. RT+L≠E"
+3299 male "RT @karolynsherwood: I have a grey baseball #hat. Until further notice, I will be wearing it during all waking hours. I think that will eas…" 
+3313 female "I’m the hardest working person in the room. 😂😂 
+#quarantine #stayathome #covi̇d_19 #corona
+
+ *Darshan_Doddamani* @… https://t.co/DTMstaYxhW" "Social Media Evangelist. Optimist.Foodie for life. |  Love travelling| Busy | Energetic | Reader | Travel and Lifestyle blogger"
+3337 male "RT @cuppymusic: Egungun Be Careful! 😩 #Quarantine https://t.co/QESBd9Odh7" "My Tweets are very random"
+3395 male "Happy pam Sunday fam #Quarantine  #lockdown https://t.co/at8u8FFght" "Advocate for prison reform. End mass incarceration, excessive sentencing. Justice4JuliusJones. Justice & Truth seeker.  Insta:@facts4justicee"
+3416 male "Set the alarm #COVID19" 
+3418 male "RT @_madeleineblair: 📸 by the magical @starkitty_XXX in the final moments before #quarantine got REAL real. (Right is the face I make when…" gossiping
+3473 male "RT @MaestroClaudio: Happy #quarantine #Saturday everyone from #MaestroClaudio’s sister Claudia 😁 https://t.co/c9bNGehEfN" "I'm a siren, or a Mermaid – I know I'm fearfully & wonderfully made while basking on the ocean’s waves knowing I'll eat flesh & bones at the bottom of the sea."
+3494 female "RT @Damii_aros: I will never understand why DJ Cuppy has haters...." "#BTSARMY  Fan Acc | 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+I'm only here to vote and support #BTS 
+Teamwork makes the dream work 
+
+
+
+
+(@molidebon)"
+3511 female "How the Hell do you #Quarantine the whole world...
+
+This shit got evil written all over it..." "Siempre se puede más"
+3517 male "The darkness of Covid-19 can only be dispensed when we act together by staying home and keeping ourselves safe. Let… https://t.co/LYTqcvpH5Z" "Me canse de Facebook, vuelvo después de años. Una buena cerveza para celebrar las pequeñas victorias con uno mismo, es lo mejor."
+3522 female "RT @ExtraCreditFS: #quarantine Finances:  Thank you @GMA and @RachelCruze for breaking down the essentials during these times. Income needs…" 
+3548 female "Grandma Mimi with the Amazing Breakfast this morning. 🤤🤤 #breakfast #glazedham #quarantine #sunday https://t.co/SUpqtIYgJK" http://yevanyberry.com
+3557 male """If you gotta stay in, be fancy."" #Quarantine #TheExpanse" "Learning as we go, every interaction is an intervention."
+3580 male "No promises 🤞🏼… {follow me on @tiktok_us @emmasglasses}
+
+📸 via @quentin.quarantino 🔛 #Instagram
+
+#repost #reshare… https://t.co/6MqkC4b8sh" "Conservative from MN, let's turn the state red 2020!"
+3600 male "@nadimgemayel Crazy #Quarantine 
+https://t.co/ldrxWNtZ2g" "Creative Director for Lou Reda Productions #mufc"
+3614 male "RT @falamb3: Saw a big HEART lit up in my neighborhood....just brought a smile on so many faces....in these trying times small gestures mea…" Vlogger🇵🇭
+3660 male "RT @catsofinstagram: From @catmantoo: “Are you with me kitties? 🌏 We’re all in this together! Bindi, Jeb, Boomer &amp; Didga #WeCanBeatThis #se…" "Young, dumb and not full of cum. Lets fix that."
+3676 female "Back at it." "email t975beats@gmail.com for info on purchasing #beats #highdemand"
+3690 male "#Birthday #compassion #selflove #beingfilmmaker #likeforlikes #experience #everything #crisis #quarantine #happy… https://t.co/BOuJ7OZO3B" "kritischer parlamentarischer Saaldiener ♔ Frühstücksphilosoph ♔ Hashtag-Aktivist ♔ Europäer ♔ Mensch ♔ Fotografie♔ Satire & Cartoon ♔ Fernsehschläfer"
+3705 female "@tomhanks we hope you are recovering well from the corona virus! #corona #virus #quarantine #tomhanks… https://t.co/E7CzsEE6xl" "☸MechanicalEngineer #STEM #3DAfrica Ambassador @Youthfortech ♥️Autodeskinventor lover/🛠Fabricator/Basicon intern/👩‍💻code."
+3733 female "RT @JaniChiragjani: Hey Amigos.. Here is the Sunday surprise for you all.   💥💥
+How many of You Remember This scene From #Kaappaan ??? 
+I Tr…" "America’s Voice News• obsessed w/ the human psyche• Jesus🇮🇱• MAMA💞 #MadPolitics: http://www.DrGinaLoudon.com Nat’l CoChair, Women4Trump •🐾rescue• E/INTJ"
+3737 male "RT @quantal_packet: Mexico does not have the infrastructure to handle this and I’m terrified. The majority of my family is there. Please do…" 
+3767 male "#TrueStory #RETWEET #Quarantine time https://t.co/qddvKbaC9a" "III.XII.MMXVI 🖤💍"
+3789 female "RT @MokgoroJob: I will be on Newzroom Afrika (Dstv channel 405) tonight at 20h00 to outline plans to roll out large scale screening, testin…" 💜
+3802 female "His &amp; hers🤣 #blue #pink #protection #rona #newnorm #quarantine @ West Covina, California https://t.co/RUXGghvgBx" "Just wanna be pegged on a regular. #FEMDOM #DOMINATRIX #DOMINATED #PEGGING #PUSSYEATING #MISTRESS #PORTHARCOURT #PEGGING"
+3804 female "RT @RoarinRoss: I’m fine. #Quarantine #30moredays https://t.co/0MjgRqc3tC" 
+3807 female "RT @ParisHilton: This #Quarantine is not hot.🙅🏼‍♀️ #StayHome #SaveLives and watch #TheSimpleLife. 👯‍♀️ https://t.co/tCOitdBzm1" "pics for sale."
+3818 female "LET'S US LIGHT FOR UNITY
+9PM FOR 9 MINUTES
+
+#Ferrouscrete #9pm9minutes #lighttofight #covid #pandemic… https://t.co/ht4vulbPr6" "Keeping you up to date with all the #Gamedev tweets you can handle. Part of Grander Scheme Creative, supporting indie creators everywhere!"
+3821 female "RT @Lawrence_Leung: I drew this cartoon because of all those inspirational isolation memes telling me I should to find my genius with all t…" "BTS ⟭⟬ and ⟬⟭ ARMY one family 💜"
+3885 male "RT @igneiudicium: So I redecorated my #quarantine cell with a Memento Mori flare.
+
+Do you like? https://t.co/is80SI8cBK" "🖖🖖Condemnant Quo Non Intellegunt🖖🖖"
+3896 male "Thanks for tuning into #hazedbass 🎧your love is appreciated 🤟🏻🔥 #d3c4y #dj #producer #producerlife #musicproducer… https://t.co/obBHUEmUVt" "Dance  l  Music  l  Photography
+                                                                  Flyin' Jalapeños l Kriu
+
+
+🇱🇹 🏴󠁧󠁢󠁳󠁣󠁴󠁿 🇬🇧 🇷🇺"
+3903 male "I mean, gotta pay them bills. Hit me up. #sellnudes #Quarantine" "Rida is a tested and trusted brand of Products produced in Nigeria."
+3915 female "RT @adamjohnsonNYC: PSA - if you need some #good #quarantine #content @drdrew is having a two day twitter meltdown because people are upset…" "CEO TMC: #Futurist #Influencer #Keynote #Speaker #Cloud #IoT #Blockchain #Cybersecurity #VoIP #CRM #UCaaS #BigData #Analytics #AI #MachineLearning #SDWAN #IIoT"
+3935 male "So, please stay home, stay safe and regularly wash your hands as much as possible. Don't panic, stay positive. We c… https://t.co/KptI79WAOv" "she/her (ela/dela) pansexual 🔞"
+3951 female "Aye, y'all think I can learn to drum while we're stuck in the house? #springcleaning #metalhead #letmeknow 
+.
+.
+.… https://t.co/fX8E5rSEOF" "time a the master"
+3955 male "RT @JaniChiragjani: Hey Amigos.. Here is the Sunday surprise for you all.   💥💥
+How many of You Remember This scene From #Kaappaan ??? 
+I Tr…" "I am a student of The Most Honourable Elijah Muhammad through the Honorable Minister Louis Farrakhan"
+3995 female "I’m there! How about you?! #covid19 #stayhome #stayhealthy #staysafe #coronavirus #jewelrydesigner #pearlgirl… https://t.co/S07ngLiuA8" "living in my own fantasy world~ i hate to do bad with ppl- passionate Disney lover"
+4007 male "RT @Thakur509: Fitness is a lifestyle not a cause 🤔
+#WrestleMania 
+#COVID2019 
+#lockdown 
+#9baje9mintues 
+#COVID 
+#CurfewInIndia 
+#Quaranti…" "Master Surrealist, Climate Change Artist, ArtActivist, Curator, Artist Consultant, Photographer. Husband of award winning author Poppy Z Brite."
+4009 male "RT @MSArenaOfficial: Switch to the hope of a better tomorrow. Raise a candle, diya or a flashlight and stand together as one.
+
+#GearUpForTo…" "BTS '-'"
+4022 male "People are so creative! I love this 
+
+#creativity #CreateAtHome #hilarious #teen #teens #scam #scamdemic #ScamAware… https://t.co/YUey1mAokd" "Underground Label : http://instagram.com/dj_hellblazer https://twitter.com/DJ_Hellblazer   http://facebook.com/DjHellblazer  http://facebook.com/Sinoptic"
+4040 female "RT @UberSlutMother: Best way to spend the #Quarantine is to break it a little with a big #blackcock and #pussyfarts 😋 this #hotwife loves i…" 
+4051 female "That was delicious! 🤤 Check out the full video: https://t.co/4nppsFfAQb
+•
+•
+#breakfast #brunch #healthy #tasty… https://t.co/67ftlskkFY" 
+4058 female "A silly moment based on world news and imagining my #luxury #hotel  #Quarantine in view of #coronavirus . In fact,… https://t.co/67VA6QL1OL" "career coaching for moms, by moms"
+4059 female "J.K. Rowling Announces ‘Harry Potter at Home’ Site With Magical Crafts and Activities for Everyone Stuck Inside… https://t.co/9fARY9QYMk" "Front-End Designer and Developer, and all-purpose nerd at @TB_Times. All opinions are my own. ALL of them... including yours. Thee/Thine."
+4080 female "Thanks for the entertainment!" "teamwork makes the dream work        -FANACCOUNT-
+layout pic from : @BTSorbit"
+4081 female "RT @ccdemented1: At times like these I think we all need a happy place. #poetry #poem #happyplace #ccdemented #life #Quarantine #corvid19 h…" "ARMY fan account for @bts_twt 💜OT7 will forever support each of them, and continue to spread the message of self love and respect. #EndViolence"
+4083 female "RT @KiranRathOffici: Get up n pose #actorslife #bollywood #pose #midnightclub #kiki #throwback ✌️😍🤓🤩 
+#Quarantine #kiranrathore https://t.c…" "Me gusta Dibujar 🌺Soy Army🌺"
+4103 male "RT @dsimons1: @NatashaBertrand Does @realDonaldtRUmp not understand that #quarantine actually allows us all to sit here with absolute clari…" "Worship with Mind; Engage with Heart
+
+Author of:
+
+• Series Assignment Q-Sigma
+• A commentary on the Book of Job
+• Dabbler in YouTube comedy & philosophy"
+4106 male "quarantine life day 22: just deleted 5600 unimportant emails
+#Quarantine #Corona #coronavirus #bored" "Taciturn Bastard - Doomstruck Gimp - Fresh Idiot (kinki) - Masturbation Gangster - Wind Ninja - Muted Mutant - K-Pop Catfish - Small Teeth"
+4118 male "#NYC #coronavirus #NakedCowboy #NY #Quarantine NYC 's living landmark still goes to Times Square. Please support th… https://t.co/X9sFDUQzR6" 
+4129 female "What my fridge sees every 2 minutes all #quarantine ! #PandaLift #WYM #WYMfit #AlphaPack #NothingNewInTheFridge
+-
+-… https://t.co/p0sVeHliIb" "My opinion is the only one 
+that matters to me
+Mom, NP, Animal Rescuer"
+4143 male "RT @hello_lee_hi: Check this now on YouTube #quarantine #homealone 🦋 https://t.co/PrvrWKL58k" "Designer | Drummer"
+4148 female "RT @Ben__Hutchison: Potty training is going fine for 2.5 year old #CarterHutch...minus the fact he doesn’t like to get off the toilet. 
+
+We…" "Cinema is Therapy for most of us. Here to admire all kinds of Cinema, actors, actresses and People who make such cinema possible. FAN ACCOUNT"
+4157 male "#Quarantine #DAYS #Like #photographer #photography .....!!
+
+Follow me on insta 👉👇 @_sonu._.sherazi._.official_1 https://t.co/UW01DzGrDH" "Podcast, Interviews, Reviews, & more on Dream Theater, Neal Morse, Spock's Beard, Big Big Train, Steven Wilson, Mike Portnoy and the latest in Prog."
+4162 female "#scrabble beat Ged!! #bestgame never again! #quarantine #life #love https://t.co/uXqZzjPXTR" "Co-Founder, CTO @ Quick Dry Cleaning Software
+10 Years Domain experience, Result focused execution specialist, Hardcore tech guy. Previously worked in Sapient"
+4184 male "RT @FitFanatic_Kego: Join our live class training @ignitefitnessglobal - Tuesday from 08:00am
+#StayAtHomeSA #quarantine #workoutathome #str…" 
+4189 male "RT @cuppymusic: Egungun Be Careful! 😩 #Quarantine https://t.co/QESBd9Odh7" 
+4193 female "RT @Marfoogle: Praying for Meghans Blog. Went from lockdown in china to Lockdown In South Africa" "Producer, author, parenting & lifestyle humorist. I’d say I’m a good driver, but I’m not. http://amzn.to/1YY1prZ."
+4196 female "RT @CoachKurtHines: A little “#Quarantine” Math:
+
+1.  Don’t do any workouts on your own, and you’ll know it.
+
+2.  Do 2-3 workouts a week, y…" "kpop trash |
+BTS ARMY |
+OT7 stan |
+펠리™ |
+fan account
+#Πανελλήνιες2020"
+4197 male "RT @MBOKSR_MAGA: #GetAmericaBackToWork #GetTexasBackToWork 
+ #Quarantine 
+@GovAbbott @GregAbbott_TX @tedcruz @realDonaldTrump - America is…" "News 📰 related to Politics💯
+Entertainment🧩 Sports🏏 National🇮🇳 International🇵🇷*️⃣🗽Issues.
+For Full Article visit :- https://sutronkanusar.blogspot.com"
+4218 male "RT @RedInk022: 🤔 Very challenging task but I can do that lol
+#Quarantine https://t.co/UNZKYngqcc" "❤LOVE MY FAMILY, COUNTRY AND 😇GOD.🇺🇸
+Truth Seeker, Animal Lover, Researcher of hidden History and knowledge.🇺🇸IFBAP🇺🇸
+FAITHFUL AND PATRIOTIC TO THE CORE."
+4230 female "Would play UNO with any of them?! 🤣🤣🤣
+.
+.
+#UNO #jojobizzareadventure
+#covid19 #corona #quarantine https://t.co/BK86fHLP7N" "radical militant librarian, farmer, bookseller, mountain momma and mountain lover,"
+4244 male "RT @KKRiders: Our Entry: Dhamaka! 🔥
+
+What's yours❓😉 ______
+
+#AndreRussell #IPL #Cricket #KorboLorboJeetbo #FirstWord #Quarantine #Quarantin…" "Proudly collared by the incomparable @mistress_neena"
+4250 male "RT @MoppyOpps: Who knew that married life in 2020 would be getting chased around by a bored naked man 24/7 with no way to escape. #Quaranti…" "🇺🇸Nationalist🇺🇸,  MOM, No Dates ❤️ my country & respect my President, #MAGA, #VoteRED ❌, FB all Pats, NO LIBS❗️#KAG #Trump2020 #FakeNews #CNNisTrash"
+4272 male "RT @JMeT73: Mickey on quarantine day #21
+#Quarantine #StayHome https://t.co/cxvZOdg1TS" "My Universe..Yeah Vonverse"
+4280 male "I am sure #Barron is unhappy because of who his father isn’t rather than because of #quarantine." "Interested in (Ukraine) politics and economics. Open for discussions. Let us find the best way for a stable growth in Ukraine."
+4281 male "RT @diazex_art: Zoe isn't handling quarantine very well.
+
+Nothing to do, nowhere to visit, and no one to annoy :c Be like Zoe, stay home.…" "•Producer •Singer-Songwriter •Philosopher •Beatmaker. Melusiii🔥 IG: @sre_iii 4 collabs : davidmelusi05@gmail.com"
+4287 female "RT @HouseLiquidator: Not in #Newmarket #GoOutSide #Spreadcovid19 @TownofNewmarket
+ For updates on closures and cancellations, please visit…" "all of the sarcastic and less inspiring thoughts I don't post on IG.. Entertainer, Jayhawk, Jokester. VP @thegreenpetshop"
+4293 male "RT @nandixnegasi: Saw the badness @ugq_kels throw up this #yahbadchallenge and well, yall know I'm convinced this song was written for me b…" "easy going chef outside of the kitchen"
+4313 male "RT @FlakPhoto: 📸 Guys, I'd like to see the pictures you're making on your #quarantine walks. Show me your stuff? Here's one of mine, a view…" 
+4337 male "RT @vijumicro1985: @waiwaiindia Done Dear Team ♥️👇
+
+#WaiWaiKhaoMoodBanao
+#waiwai #quarantine #pass #noodles #soup #munch #lunch #contest #g…" "Certified Google Professional Cloud Architect | Retrogamer | runner | with a palindrome birth date"
+4338 male "RT @WORLDSTAR: Parents are not playing during this #quarantine! 😂😳 @_THATBOYFUNNY https://t.co/ecUcDu7nWK" "The Official Twitter For YouTuber OrangeGrove55!! News and Rumors about the Mouse https://www.youtube.com/c/OrangeGrove55"
+4343 female "#Quarantine #Hoarders #HoardersMarathon on A&amp;E 
+😮😮😮😮 https://t.co/kbvTIbm5gX" "#മല്ലു  , #AspiringIndian,#doctor, #travelenthusiast , #techy 
+#retweets may be  endorsement, or sarcasm or troll or may be just for fun.
+TELEGRAM ID - @neon147"
+4386 female "RT @The_CTMiller: #WritingCommunity I'm just saying, but  #NaNoWriMo's Camp NaNo starts in just a few days. Quite a few of us are in #Quara…" "🌵 Austin, Texas
+🙋 Blogger & YouTuber
+✍️ Sharing experiences in travel, work, beauty, relationships, cooking, shopping and lifestyle tips"
+4415 male "Shahrukh Khan's Good Looking Selfie Sneaked In With His Message On Quarantine Time
+
+#Quarantine… https://t.co/2DbwwtaaCR" 
+4421 female "Support for teachers and teacher educators https://t.co/eociKbIZNe  #quarentena #ficaemcasa #quarantine #stayhome" "Jamaican🇯🇲🇯🇲🇯🇲 Pisces♊ March 20th Single 💫💫💫"
+4451 female "Fudge #quarantine and fudge all of you. Especially you @AlexisStaggsSCU" 131🐣
+4469 female "RT @kaykaymenon02: Wonderful!! Thank you!! 🙏 https://t.co/vrHV8JxzhV" 
+4472 female "tbh it was just a matter of time til it happened #Quarantine #TikTok # https://t.co/BuPfrH8zG2" "A comedy Mic ,both booked and open, run by @ecroydon w/out buckets or lotteries at Sabor Y Cultura every Fri. 7-9 comic sign up 6:30 5625 Hollywood Blvd 🌎"
+4510 male "RT @DICTIONCHRISTIA: On Duty at #Quarantine Center
+
+#CoronaWarrior ✌️ https://t.co/WAEaCgeoqG" "single dad raising two young sons, their mum taken too soon. promises to keep.
+ 
+Hashtag games/Satire/Jokes.
+
+we are all in this together - don't be offended."
+4515 female "RT @USARugby: #USMNT7s player @mrKevonWilliams keeps his 6 and 8-year old kids entertained through #Quarantine. 
+
+...and he's got tips 👌
+
+S…" "Jornalista e Pedagoga. Mãe solo. Escrevo com o coração."
+4537 male "RT @mBliss32951359: While stuck indoors, take care of yourselves. 🍆🍑💦https://t.co/kQvqhBgqm3
+#erotic #selfcare #masturbate #gettingoff #Qua…" "In case you like bad girls I once ate an oreo that I dipped in water"
+4547 male "For those of you who live in the U.S and need to hear it again you should not be going out unless your life depends… https://t.co/FRRJU7X8Ig" "Cog Hill Golf & Country Club is a 72 hole public golf facility located near Chicago. Dubsdread is rated #1 in Illinois-Golfweek."
+4548 male "Had #tacotuesday on a Saturday night. I don’t cook a lot, but this meal came together pretty well. Maybe one day I’… https://t.co/JSyaXUFvsL" "Writer, comic, home bound photoshopper who tells stories & nannies. Off to see the wizard since 1978. #bekindalways"
+4568 male "RT @MAJTOURE: #SolutionarySidebar
+
+So we’re clear. 
+
+Locking in SICK people is #quarantine.
+
+Locking in HEALTHY people is control.
+
+#ByTheW…" "people who are number 69 on pro clubs are boring"
+4577 female "Another day in #Quarantine - another day in the #shed #StayHome #COVID19 #coronavirus #CoronavirusOutbreak" "Premium Photography + Cinematography Services Worldwide http://bellonpictures.com"
+4604 male "How to file for your stimulus plan.
+https://t.co/43HfhPEGE8 
+#Covid19 #Coronavirus #quarantine #money
+ Economic impact payments" "Song Writer || Music artist || Music producer . The beat wizard🧙‍♂️|| IG: @dtac_official"
+4613 male "RT @HannahHolyfield: IF you are starting to go stir crazy try these FREE apps and FUN activities to help you and your children enjoy this t…" "Acoustic storyteller with an addiction to coffee and good lyrics. Management: Next Level Entertainment"
+4623 female "On April 22nd #EarthDay 
+Highly Recommend watching 'HOME' Documentary while #Quarantine 
+About Diversity of Life on… https://t.co/LoyMEZOMSl" "Jsem učitelka v důchodu. Má ráda filmy, literaturu,přírodu, hory a vodu. A hlavně mám ráda děti, protože ony potřebují největší ochranu."
+4643 female "RT @WorldofSufis: #coronavirus 
+#Covid_19 
+#Quarantine 
+#QuarantineLife 
+
+Original post by: Bastiaan Wildeman https://t.co/SxRyiUO1zA" "K-Pop, Anime, Manga and Book addicted |
+Army, Ahgase and Monbebe |
+BTS Bias: Kim Namjoon😍 |
+'kill them with success. bury them with a smile' RM"
+4684 male "NEW EPISODE MONDAY Special thanks to our #cutea Zak for this week’s intro! ...Get your cups ready ☕️👌🏽 —- Topics:… https://t.co/LSTgXSWzj9" "Curator/Senior Advisor of digital museum practice @smkmuseum. Art historian, European, OpenGLAMer, initiator of Sharing is Caring. Classical music lover."
+4689 male "RT @adamjohnsonNYC: PSA - if you need some #good #quarantine #content @drdrew is having a two day twitter meltdown because people are upset…" "🇳🇱XRP🇳🇱 - Royal Dutch Navy Veteran - Retired - Love HOLLAND - RIPPLE XRP investor and believer. When the switch is made, XRP becomes incredibly large."
+4704 male "Have you heard Don't Ask Why Remixes by Berkhouse/Snyder on #hearnow? https://t.co/YJicshjg1T #QuaratineLife #Quarantine" ¯\_(ツ)_/¯
+4727 male "RT @Munachiiso: Day 45: I started learning different life cycle methods in react.js #100daysofcode #Quarantine #CodeNewbie #codenewbies #pr…" 
+4738 male "RT @everydaytem: Lockdown — https://t.co/01XjmVbdca
+
+#quarantine #corona #covid #animation #motion #lockdown #stayhome #illustration https:…" "Part Time YouTuber ▪ Full Time Heathen ▪ Podcaster/Interviewer  ▪ Gambler ▪ Funko Collector ▪ #XRP ▪ #XLM ▪ #VegasBadBoyz"
+4750 female "I love how my calender didn't bother to load today. You are correct again google. #Quarantine #CoronavirusLockdown https://t.co/HQwEb3faxr" "A global leader in smart home automation and control."
+4813 female "Great post, Nena. Solitude is so vital for introspection, soul cleansing and finding a peaceful place. Thank you!" "God |Family |LEO'S  💙| #LivePD | 🐘"
+4818 male "What’s your #Quarantine outfit?" "Mom To Blaine Wyatt & Weston : Foodie : CriminalInformationSpecialist : FormerCosmoModel : Blessed : Kentucky"
+4859 male "#quarantine en The Rooftop https://t.co/US4TdrGVmX" "Im the one i should love in this world"
+4877 female "Day 21 of quarantine and Day 21 of growing this sweet potato 🍠 #quarantine #vegan #growyourownfood #veganfoodshare… https://t.co/62JDTc0Rdf" "nature conservation ; religion ;politics;
+RTs not endorsement,Faves may be for future reference; views are personal"
+4881 male "“Let light shine out of darkness.”#TubelightModi #9bje9minutes #Quarantine #GoCorona #CoronaStopKaroNa https://t.co/Hp2gOUB8wr" "I'm an entertainment attorney and film producer in Los Angeles. I help filmmakers get films made."
+4896 female "RT @ParisHilton: This #Quarantine is not hot.🙅🏼‍♀️ #StayHome #SaveLives and watch #TheSimpleLife. 👯‍♀️ https://t.co/tCOitdBzm1" "#Career Adviser I MS Admission Consultant | #DigitalMarketing Aficionado | #EdTech #Blogger | Former #Biomedical Researcher @UniofOxford @UtrechtUni @UNSW"
+4906 male "RT @handsomedevan: Day 3 of #quarantine
+Her: Can we wash off together?
+2 mins later ...
+
+Full video posting tonight on
+@manyvids @onlyfans…" "Hannah💕 Chasahni🌍 Owner of Free⛓Spirit🏝Photography📸"
+4911 male "RT @Gopal29: @waiwaiindia Captured correctly ➡️
+
+#WaiWaiKhaoMoodBanao
+#waiwai #quarantine #pass #noodles #soup #munch #lunch #contest #game…" "28 | Humanist | Dravid Sir is my role Model | Music lover | Trouble Seeker | Full Time Struggler | Love Sleeping | Overthinking | Bit Lazy...cant type more :P"
+4961 male "RT @FamilyKabs: What part of “The kitchen is CLOSED” do these girls not understand 🤷🏾‍♂️😒 
+
+Lol follow us on @tiktok_us “@TheKabsFamily”…" "Carpe Diem!, Passionate about family, friends, golf, skiing, auto business & fitness"
+4969 female "RT @Laiba_Liaqat_: Quarantine day 10
+
+My father starts watching Pakistani dramas.. 😂😂
+#Quarantine" "𝒶𝓁ℴ𝓃𝒾💘 (𝒾𝓂 15 𝓎ℯ𝒶𝓇𝓈 ℴ𝓁𝒹☺️) (𝓀𝒶𝓂𝒹ℯ𝓃🤍‼️) ♉️"
+4998 male "Wait for the good times. Surely it will come. 💫
+.
+.
+.
+#bepositive #motivated #stayhomestaysafe #covid19 #quarantine… https://t.co/6qALUaSpO6" 🐶❤️🐾
+5096 female "Video proof that Building 7 was a controlled demolition! #QAnon #WWG1WGA #TheGreatAwakening #COVID19 #COVID-19… https://t.co/NSDLIfGJl2" "writer. photographer. artist. animal lover/rescuer. lover of books, music, science, nature, hope, compassion, sundresses & flipflops #voteblue 💕⚾️🎶📚✨🌸🌱🐾"
+5098 female "RT @ParisHilton: This #Quarantine is not hot.🙅🏼‍♀️ #StayHome #SaveLives and watch #TheSimpleLife. 👯‍♀️ https://t.co/tCOitdBzm1" "Creek Wood ‘20• CBU ‘24🏌🏼‍♀️"
+5104 female "RT @story_and_her: @OmarDeanII Quarantine &amp; Chill Playlist here: https://t.co/3XMLlFFgqz
+
+#rnb #hiphop #soup #grime #bashment #afroswing #r…" "มิตรไมตรีจะอยู่ของมิตรไมตรี
+อย่ายุ่งให้มาก!!เข้าใจมั้ย ผัวะๆๆๆๆ (มสนค)
+-น้องมิตรไมตรีอันเก่าจะอยู่ในใจตลอดไป-
+🐰🐣"
+5137 male "Ppl are lighting firecrackers like is Diwali...apparently we r celebrating the #CoronavirusOutbreakindia… https://t.co/JtB9G48jAH" 
+5145 female "RT @YuluBike: It's almost 9pm. Turn up your brightness and use this video as your torch!
+#Yulu #YuluBike #lockdown #9baje9min #9pm9mins #9p…" "NDC-Nutrition at Work is Canada's leading nutrition services provider for EFAPs. We enhance the health and wellness of thousands of employees coast to coast."
+5146 female "RT @The_KnottyLlama: #Vegan fondue, anyone? Just whipped this up for my #quarantine snack🤤🌱 
+
+Your Goddess can do anything, all you’re good…" 
+5178 male "#Sub4Sub Thread !!!!
+You Subscribe first, Screenshot the sub, then drop your link !! 
+Easy Gaining !☺️… https://t.co/TK790Pxvzq" "Dope Unsigned rapper/Trapper..
+Hits/Heats make me feel like am from saturn 💥💥
+check the kid up on SoundCloudhttps://soundcloud.com/king-karni-669718160/yung6i"
+5181 female "@waiwaiindia Here Is My Perfect Screenshot Dear Team @waiwaiindia
+
+#WaiWaiKhaoMoodBanao
+#waiwai #quarantine #pass… https://t.co/T5U91qhmfo" "model 32L bust Insta: candycharmsofficialx 📧lushouslips69@hotmail.co.uk wishlist: https://www.amazon.co.uk/gp/aw/ls/ref=aw_wl_lol_wl?ie=UTF8&lid=2SZDGMG1I6BEK"
+5210 male "A travel poster to celebrate going literally anywhere after quarantine 
+
+#Quarantine #QuarantineLife #COVID19… https://t.co/x5eWueKrkf" 
+5216 male "RT @latinoboyjj: I’m tired of this bitch ass mf quarantine and corona virus bro, I need some good weewee rn. 😫🍆#gay #gayboy #quarantine #bo…" "Proud to be a Working Class Yorkshire lass and also a Scandiphile. Work for the government...unfortunately!"
+5222 female "RT @ParisHilton: This #Quarantine is not hot.🙅🏼‍♀️ #StayHome #SaveLives and watch #TheSimpleLife. 👯‍♀️ https://t.co/tCOitdBzm1" ♡skaxogus♡
+5314 female "@catturd2 Is their a lot of those? Remember those PREPPERS from yrs back? Just imagine those pple now! I havent ceN… https://t.co/XGhVq4Y12r" "📻 Midday girl on @997thePoint • Sports fanatic • Sushi junkie • Travel enthusiast • Chocolate & PB addict • Music obsessed • Insta: @ShayleeLately"
+5330 male "All of these #CoronaVirusUpdates need to get on the same page...they tell us not to worry then we are in… https://t.co/QQQXX7Dlg5" "☕️ drinking, 🐶 🐱 loving, Wisco native living in FL. I surround myself w/ #Disney #HarryPotter #music & #pets Proud #childlessmillennial"
+5365 female "Gotta find little victories during #coronavirus 🤷🏾‍♂️🤷🏾‍♂️. Got #toiletpaper for our house and my parents.  AND fil… https://t.co/vU9ytPKwRF" "I PURPLE YOU💜
+☛♬💯💖"
+5374 male "The clean air we had until now was the one rare benefit of #lockdown21 . Now the crackers and fireworks at… https://t.co/PPs7u8DW4F" "A Proud Tsonga man , very tolerant  ,Football fanatic
+and Manchester United fanatic."
+5401 male "I'm Ur friend." "I Tweet about trending topics, mental health, true crime, books, funko, vaping and YouTube."
+5422 male "Meditation is a great way to get thru #Quarantine" 
+5428 male "RT @MokgoroJob: I will be on Newzroom Afrika (Dstv channel 405) tonight at 20h00 to outline plans to roll out large scale screening, testin…" "818/805/702 http://Father.DJ.Producer - - http://BeatJunkies.com Record Pool - Drai's Nightclub Las Vegas anthony@djcyberkid.com"
+5488 female "RT @JMeT73: Mickey on quarantine day #21
+#Quarantine #StayHome https://t.co/cxvZOdg1TS" "I love Tech Anime Gaming and Space and really enjoy wearing and using related stuff like Tees and Mugs ... Gadgets and Hoodies *** We Ship Globally ***"
+5512 female "We will need a major diet and exercise overhaul when this is over." "Subscribe to my #Blog for a free write up and placement... ask about free placement and spins on #MusicNetwork1063 Internet radio too..."
+5541 male "good morning, i dont want to get out of bed today 🤍
+
+$ffreckle
+https://t.co/5T9w0lyrRs
+
+#soles #feetpictures… https://t.co/js5Xx7dg54" "Stream Future Nostalgia when out."
+5548 female "How will you act on #FirstContactDay after #quarantine has been lifted. Reply with a GIF" "Life is better with a chihuahua ❤️🐾"
+5562 female "Surpriseeee for my crush who lives in India.😜
+#CandleForCovid #ModiUnityCall #Trending #Quarantine #bhakts https://t.co/cQ6lOgq3wg" "nevermind, everythingoes • #BTS • #BLACKPINK • #ATEEZ • #STRAYKIDS • ENFP-T • she/her • 21 • i love screaming on au/ff • dispensatrice di abbracci"
+5567 female "RT @CSojourner: @rcn400 @NanceePayn I thought it was impossible before!  But I haven't come to blows with any of them yet, probably only be…" "Just me."
+5595 female "RT @EpochTimes: The document was prepared on Feb. 16 by the Shizhong district police department about the #Quarantine of prison guards. htt…" "Out to show the world you can follow your dreams at any age! 🐶Dog Lover 🏰 Disney Nerd 🎭Actress 🏕 Hiking, camping, and nature. 🙏Buddhist 🏈 ⚖️Please vote!!!"
+5601 female "RT @aubrey_huff: This will be the scene all over America in 2 weeks. Just how long do you think people will stay cooped up in their houses…" "Motivational Speaker | Business Coach | Vision Strategist | Single Mom Advocate #RiseUpSingleMom non-profit organization [Genesis 21:18]"
+5616 female "RT @teamsrknepal: [Video] : Re-uniting with friends after #quarantine be like . 😜
+
+@iamsrk @BeingSalmanKhan @RedChilliesEnt @pooja_dadlani…" "Writer. Reader. Mother of minions.
+she/her 🌈"
+5638 male "India stands united amidst global pandemic. Our unity is our strength.
+#IndiaFightCorona #9बजे9मिनट #9bje9minutes… https://t.co/i4lHWU0Nnz" "You see us as you want to see us...a brain, and an athlete, and a basket case, a princess, and a criminal. Also @CFM_Country @Cyber_FM @CyberFM_Streetz"
+5641 male "Areh mere 9 mins toh torch mai nikal gye .. video toh bnayi hi nhi 🤷😂
+Will this society accept me ?? 😬… https://t.co/HiB94lEtEN" "Currently obsessed with the #coronavirus #outbreak, but usually #trending #beauty #fashion. As an Amazon Associate I earn from qualifying purchases."
+5707 female "She really likes herself.  How do you type letters to yourself, then read them as though your unfamiliar with the c… https://t.co/gxovo6wd7v" 
+5709 female "RT @DrJDrooghaag: 🔵 How’s your #Quarantine workout going? 😉
+
+@Dahl_Consult @Fabriziobustama @HaroldSinnott @FrRonconi @treasadovander @Geek…" "Assholery is learned behavior. It can also be unlearned. Adolescents are the best, the cultural narrative around them sucks."
+5711 male "Obama did. That is why he created and staffed government agencies to respond to it. #DonTheCon fired them… https://t.co/M4OMBv6OmI" "Actor, improvisor, writer. Basically I just like making stuff up."
+5719 male "Done! Took 40 minutes to get a drink for my beloved wife. I can't wait to hold this over her head for the next few… https://t.co/rhyBk03ymu" "#DegreesNYC is a unified vision to close NYC's postsecondary attainment gaps by aligning college and career efforts around a shared vision with clear goals."
+5737 female "Not bad, @SebToots! Who’s giving this a shot?🌀⛳️" 
+5743 male "RT @SebToots: New challenge for all the golfers at home!! 🏌️‍♀️🏌🏽‍♂️ #sebtootschallenge #quarantine #goodluck https://t.co/PJ891QLXYO" "Spreading positivity since 2017 🌟 We deliver worldwide 🌎 #madeinlebanon 🇱🇧Check our full collection on our website 👇🏻"
+5767 male "He is a dangerous cult leader, nothing more, nothing less #Coronavirusnyc #COVID19  #COVID  #America #WeThePeople… https://t.co/8NlDrR0wxV" "Attorney at Law practicing in Forest Hills, NY."
+5772 female "Hopefully this will all be a thing of the past.
+
+#CoronaVirus #CoronVirusUK #COVID2019 #Quarantine #QuarantineLife… https://t.co/PFNB3LIi9y" "Geeky tree-hugger & metalhead. Writer. Photographer. General nuisance. Occasional world-music warbler. #AmWriting #WritingCommunity"
+5779 female "RT @waiwaiindia: Here comes the next level! 
+Grab a screenshot and share it with us when you see 2 same packs of Wai Wai align.
+#WaiWaiKhao…" 
+5823 female "RT @aubrey_huff: This will be the scene all over America in 2 weeks. Just how long do you think people will stay cooped up in their houses…" "Prof @asucollegeoflaw, Dep. Director @academy4justice. Habeas, innocence, prisons & forensic evidence -https://ssrn.com/author=1371842"
+5854 female "#digitalart #loveyourself #words #miss#you #relationshipgoals #relatable#post #emotions
+#emo#message
+#halat#waqt
+#c… https://t.co/UF0hJ1gsqc" "(fan account obviously 🙄)
+
+que se arme la carnita asada 🤠 ya no soy ilegal :D
+
+ @BTSphotos_HQ"
+5864 female "RT @_kwasi_b: Rent Strike. Los Angeles, 2020. #documentary #photography #LosAngeles #Quarantine https://t.co/i6L46BUZB8" "Robert Pattinson From Every Angle 🦇"
+5879 male "RT @esiaza: Hello! My website is live and has short stories, books, and other distractions for those cooped up in #quarantine I'm really ex…" "At Ford, we go further to make our cars better, our employees happier and our planet a better place to be."
+5884 male "RT @rohitjswl01: Top 3 @BeingSalmanKhan films to watch this Quarantine 
+(Different moods)
+
+1- #BajrangiBhaijaan &amp; #HAHK 
+(Family + Emotiona…" Me
+5938 female "RT @aubrey_huff: This will be the scene all over America in 2 weeks. Just how long do you think people will stay cooped up in their houses…" "temporarily passive aggressive & self-confused | ไม่สู้คน"
+5960 male "New video! What I do during self quarantine and what’s up in Switzerland ? https://t.co/yXDMArg2QH #quarantine… https://t.co/ZNxV2ounm0" "I mean, it be like that sometimes"
+5979 female "The purpose of our lives is to be happy!😊 
+Thanks for the photo mz_kimberly_517 
+#sundayfunday #gametime #letsplay… https://t.co/kpZrAxTiSD" "Struggling writer of realistic romance. Single mother of son with ASD. Orphaned daughter of two souls who gave up way too early. Protector of the underdog."
+5980 male "This morning's #quarantine fun. Hail to Purple Hail to White! Go #B1GCats! https://t.co/SwamEbJBm8" "02line (01)/  BTS  /  PENTAGON  /  THE BOYZ /  THE RAMPAGE from EXILE TRIBE  /  など…   無言フォロー失礼します🙏🙇"
+5985 female "Good vibes only 🖖💚🍭
+.
+.
+.
+.
+.
+#goodvibes #goodvibesonly #crossstitch #handmade #moderncrossstitch #walkerstitches… https://t.co/5AlvFchqPo" 
+6006 female "@IKEAUSA Baking is all we can do since we are at home all day cuz of the Corona quarantine .... love ur baking supp… https://t.co/RLcxaFwJco" "Famous Legend Music Producer💯
+Spotify:
+https://open.spotify.com/artist/5wO9KudLXVabBen9Rjrb31"
+6046 male "RT @aubrey_huff: This will be the scene all over America in 2 weeks. Just how long do you think people will stay cooped up in their houses…" "Hot & trending from the world of music, digital programming, & performing arts. Follow us for latest on entertainment. [Last updated: 9.6.2017]"
+6048 female "RT @snikerdoodlebun: Looking to see who wants a piece 🍑
+
+#twerkthatass #bigass #BottomUp #bottom #gayass #COVID19Pandemic #COVID #Quarantin…" "http://m.imdb.com/name/nm7967471/ http://www.facebook.com/CheyannaLavonZubas. http://www.instagram.com/CheyannaLavonZubas"
+6059 male "RT @hotinfographics: Healthy #Eating Under #Quarantine [Infographic] - https://t.co/xJjOIse98l -" "You see us as you want to see us...a brain, and an athlete, and a basket case, a princess, and a criminal. Also @CFM_Country @Cyber_FM @CyberFM_Streetz"
+6062 female "RT @Shivani_offl: Home Sweet Home ❤️ #Quarantine #StayHome #StaySafe #StayHealthy 
+
+#coronavirusindia #TN_Together_AgainstCorona #Covid_19i…" "🩹🏥💉ER nurse🩺🌡💊"
+6071 female "Filming day today! Hows everyone holding up?
+🍁
+#morganridermusic #folk #folkmusic #quarantine #folkblues #folksoul… https://t.co/gHaP4yXT1V" 
+6075 female "See the whole video at https://t.co/dk2RA8mJZw #personaltrainer #personaltraining #trainingtips #coachbodymike… https://t.co/JAzdPhhqcG" 
+6093 male "From my new series called #LifeDuringQuarantine Number two I the first installment is called #MeditationOnMyDoor ,… https://t.co/0ub36FzfDU" "Family, Sports, Star Wars"
+6100 male "@narendramodi From 🇳🇵 Capital city of Nepal Kathmandu #Grate 
+Follow @PMOIndia @PrakashParba 
+@ZeeNews @ABPNews… https://t.co/5T7jSZWGc6" "I'm a thinker and a doer, not a talker"
+6108 female "Quarantine clicks! Lockdown pic #3
+.
+.
+. #fire #myphotography #teammhy✌🏻 #diya #deepa #quarantine #photography… https://t.co/JtdeVydbfG" "Cancer charity providing package of free support & advice, holistic therapies & beauty treatments to people & families affected by a cancer diagnosis."
+6110 female "Staying home is
+selfless service.
+#stayhome
+#stayathome
+#staysafe
+#selfless
+#service
+#seva
+#sewa
+#quarantine… https://t.co/ExG07aMCNb" "authorised centre of Pranic Healing in Pune spreading GMCKS Teachings and healing people..."
+6117 female "RT @jayemulaa: Meet me in the bedroom it’s going up. #Quarantine https://t.co/xxQrlOB05j" "I like Critical Role (currently on C2E74) ACNH, and also drawing. Any pronouns are fine."
+6138 female "I love this each fucking day of my life!!! Thanks #quarantine" "The Finger Lakes newest, fast pace and exciting Trivia Quiz Game!  No pens, no paper, impossible to cheat!  Find a game near you!!  #flxtrivia #speedquizzing"
+6144 male "@FlakPhoto Excellent idea, @FlakPhoto! Here are a few shots from my #quarantine walks around #MadisonWI: https://t.co/WjROZ6q9Sj" "prop builder, cosplayer, paper florist at Vethereal ✖️ DnD enthusiast. plant dad 🌱 they/she"
+6152 female "Party at my house!
+#party #quarantine #quarantinelife #isolation #socialdistancing #gofuckyaself #nashville… https://t.co/qrZG9daMrV" "Accnt for rt and like,dont follow me pls"
+6177 female "Pro tip 101: Great way to pass the time is to make something delicious.
+
+#food #quarantine #quarantinelife https://t.co/M0KDxdyQvu" 
+6184 male "RT @JazeeraJulaili: Good sharing from the dietitians. 
+
+Yes indeed. We dont need to drink detox drink to eliminate all your toxin. 
+Minum l…" "Disc Jockey, Producer"
+6203 female "RT @JRRTolkien: Want something productive to do in #quarantine? We are still accepting #Tolkien essays. Learn more: Essay – April 2020 Them…" "#BTS •°{𝓕𝓪𝓷 𝓪𝓬𝓬𝓸𝓾𝓷𝓽 }°• ♂️ •𝑩𝒆𝒍𝒊𝒆𝒗𝒆 𝒊𝒏 𝒚𝒐𝒖𝒓 𝒄𝒉𝒐𝒊𝒄𝒆𝒔 ♡
+
+
+ 
+
+
+
+
+
+
+
+
+𝒔𝒂𝒔𝒂𝒆𝒏𝒈s 𝒏ã𝒐 𝒑𝒂𝒔𝒔𝒂𝒓ã𝒐"
+6213 male "RT @ReviewsHead: Bob Ross must be really upset with y’all for not being happy in #SelfIsolation #quarantine if he’s possessing y’all to be…" "award winning vocalist/composer Tomas Jay has sound that appeals to a wide audience. Tomas infuses many styles in his compositions and arrangements of standards"
+6235 female "HAPPY DIWALI DOSTO...
+#quarantine  ☺️Photography❤️..
+.
+.
+.
+#stayathome .
+. 
+.
+.
+. . . . ♥️🤗 . . .
+#skinnytofit 💪.… https://t.co/oBNYcn5GSb" PEACE
+6241 male "Use this #quarantine as a #GIFT ~ via fearlessmotivationalofficial #CoronaVirusChallenge https://t.co/H4bhsc79CD" "Fan account @ArtemisKaztmF4F
+https://m.chaturbate.com/stevenn_smith/
+No Copyright"
+6288 male "RT @notkidbleezus: Live now on #overwatch. Slamming some @WhiteClaw to help ease the #quarantine blues. 
+
+Come hangout on #twitch with me!…" "not to be taken seriously"
+6334 male "Today I choose joy
+.
+.
+.
+.
+.
+.
+.
+#photography #photooftheday #photoshoot #smile #happiness #woman #mood #chill… https://t.co/i6Jerh3ABJ" "Dutch | ARMY | Carat | Gemini |  You've shown me I have reasons to love myself
+
+☆♬ BTS & SVT fan account"
+6347 female "RT @uncle_saucebags: New comic! #seeashottakeashotchallenge #comics #webcomics #artistsontwitter #quarantine #alcohol #quarantinelife https…" "My common sense, which is not common at all."
+6351 female "RT @aubrey_huff: This will be the scene all over America in 2 weeks. Just how long do you think people will stay cooped up in their houses…" 
+6355 male "If you need face covering, and don't have access to masks. Super easy to do. Look..." "Bros over Hoes💪
+These bitches ain't loyal✋
+Bio ma wasa kafi acha tha✌"
+6359 female "New acc Add me 😼 #NewFriends  064029731772 #Pokemon #PokemonGOfriend #pokemongotrainercode #pokemonGo #quarantine… https://t.co/8NbOrAjM7R" "Soy una persona que le gusta el Kpop y mi grupo favorito es BTS 😍🇲🇽 #bts #army @BTSKS777 @BTSKS123"
+6362 male "RT @mumbaitales: Too Late?
+#DalgonaCoffee 🤎
+.
+#quarantinelife #quarantine #quarantineandchill #lockdown2020 #quarantinediaries #coffee #dal…" "IG: @gimardave | BS MARINE ENGINEERING"
+6370 male "RT @monishatheju: Sometimes distance is the only way to find peace 
+
+#Corona #go #Coronavirus #StayHomeStaySafe #KeepYourDistance #SocialDi…" "28 || Toyota"
+6391 female "RT @NoussyBiba: Yesterday, I organised an online Workshop on Multilingual Terminology as a Technical #Translation Tool. I couldn’t have ask…" "Vilnius University"
+6396 female "RT @AgerwalNidhhi: Baked a cake for the first time 
+1.Check the batter, as we used maple syrup instead of sugar. 
+2.Wait for light bulbs to…" "follow me. #100daysOfCode  #coding  #hourofcode or code related
+made with ❤️ + node.js by @yunkidev"
+6398 male "Me : So what’re you doing today?
+Lauren : Mmm I think I watched 13 episodes of Jane The Virgin yesterday, imma try… https://t.co/CqO6WxsoQ5" "Influencer 💻 | Blogger ✍️ | Photographer 📸 | Instagram/Snapchat/TikTok @AydenLincoln 📱 | All opinions are my own 📣 | Email contact@aydenlincoln.com 📧"
+6399 male "Spend your weekend on these film adaptations, the ultimate 2 in 1! 
+
+For a philosophical read: The Unbearable Light… https://t.co/wkb6oslkbR" "CICO, a Global Communication Agency driven by innovation, sets the NEW STANDARD by building Effective Communication Models and contributes to a GREATER WORLD"
+6411 male "Twenty-one day of confinement.             
+
+#quarantine #bored #manytask #music #chillvibes #chillout #palmsunday🌿… https://t.co/7DLe6uxWB3" "I'm student in Pimpri Chinchwad college of engineering pune and lives in latur"
+6418 female "RT @PunkMaster91: Too many things to appreciate in just one picture. 
+
+I'm a fuckin eye candy pig. 
+
+Happy #SundayFunday here's my contribu…" "Brilliant Massage & Skin in Burlington Vermont http://jolitabrilliant.com"
+6426 male "My thoughts exactly." "I tweet what I made for dinner. And other random thoughts."
+6432 female "Cleaning things out during #quarantine and found this gem. A #holybible that had been given to my grandfather. Supe… https://t.co/TqCrSznef5" "@ozziestm #1 fan account💕"
+6443 female "RT @MkHoman28: Hog hunting #lakeerie #bassfishing #Quarantine #13fishing https://t.co/tEOGcssZQ6" "I'm bad enough to make you turn to love me yet"
+6452 male """Around The W̶o̶r̶l̶d̶ House In Ten Days""
+Day 4-Son's Room
+The chair doing its part, staying safely at home &amp; conti… https://t.co/Z2mVzffY3v" "jus a kid with big dreams 🏆"
+6456 female "All my #vinyl #collectors have to check out my buddy Alex’s movie - Record Safari! Only $5 to rent here:… https://t.co/D2OEnpfMvT" "Wanderlust • Kuala Lumpur"
+6483 female "RT @melodiapetrova: can they reboot pulp fiction and cast you? cause 😍😍" "Artist, Fashion Designer, Photographer, Writer and Activist on a mission to tell our stories through the visual arts."
+6491 female "I had a dream I was giving a zoom presentation and couldn’t figure out how to share my PowerPoint. I heard the 500… https://t.co/UEzsJqdEDL" "Catfights and ass"
+6516 female "Babe there’s a roach 😂😂😂 #quarantine #TikTok #cuarentena  https://t.co/3JNiVUjttc" "Artist/Designer/Entertainer 
+Ent. Advisor/Director: @Realms_Con
+Support: https://www.paypal.me/stephaniechateau"
+6519 male "RT @notkidbleezus: Live now on #overwatch. Slamming some @WhiteClaw to help ease the #quarantine blues. 
+
+Come hangout on #twitch with me!…" "Christian, Marketing teacher at @MUWedu, professional DIYer, loving husband, cool dad, fledgling indie filmmaker"
+6527 female "RT @rg26__: My faves 😂❤️ https://t.co/xvkzljLPYz" "ASD is established since 2009 and is run by a team of industry professionals with vast solar experience.Commercial solar panels"
+6559 male "Lockdown Chronicles Day 12!
+In this lockdown sticking to your homes be like these plum-headed parakeets!… https://t.co/NXuhFatsIx" "Someone who is curious and likes to try new things"
+6561 male "RT @FlakPhoto: 📸 Guys, I'd like to see the pictures you're making on your #quarantine walks. Show me your stuff? Here's one of mine, a view…" "He Banna Specialist"
+6578 female "@iamnagarjuna @narendramodi 
+Successfully lighted up candles and souces of light  by switching off electricity to p… https://t.co/tQ9224MgpJ" "#Family #Animals #AnimalLover #Music #Festivals #Wildlife #Nature #Travel #Outdoors #Ambivert #LiveLaughLove.💚💜💙NO DM'S LISTS ETC PLEASE, YOU'LL GET BLOCKED!"
+6579 male "#Day12/21 #Quarantine #shutdown
+
+Day 11 - Exam &gt; Proper Food &gt; Repeat 
+
+Day 12 - Very bad day today. Could not solv… https://t.co/7WBMwF7ies" "work in silence... let the success to make noises!"
+6593 male "RT @hello_lee_hi: Check this now on YouTube #quarantine #homealone 🦋 https://t.co/PrvrWKL58k" "The largest independent news network in the Middle East. Post-ideological, fresh reporting | About: https://goo.gl/c7n8Z1"
+6650 female "HEY DADS‼️Today @ 2:15PM @pervistaylor will be speaking to fathers on how to thrive and triumph over anxiety in the… https://t.co/P8Dc0bHlag" "Where There's A Will There's A Way"
+6651 female "Sun🌞 is rare in UK but not when you are in #quarantine." "♋️ rising, ♋️ sun, ♊️ moon - yeah I feel everything and yes you’re going to know how I’m feeling | CEO of random cooking and talking to my plants"
+6657 male "RT @GandalfGreyCat: This #Quarantine is exhausting 😹😹😹 That’s my sister Alice 😻🐾 #QuarantineCats #SundayThoughts #CatsOfTwitter https://t.c…" "Communication Designer, Podcast Producer, Inclusive Designer, Typography Enthusiast"
+6667 female "RT @aswadshiraz: Another day of #Quarantine 
+My brother: Hi!
+
+Me: https://t.co/Dg854VUTLa" "Ig: i_hate_myself_777_"
+6695 male "RT @julietibrahim: If you encourage people to wear and use masks then please educate them on the proper usage and how to dispose off it aft…" "Just wanna have fan!"
+6700 male """Never give up for that is just the place and time that the tide will turn"" 😊🧡
+
+#beach #beachdays #vacay… https://t.co/mFOnClu3mn" "WWG1WGA ***MAGA**KAG*** ***IT'S TIME TO WAKE UP***"
+6708 male "RT @lewisjkeens: If you have a spare 12 minutes today - Here's an article I have written with ideas about boosting your well-being. 
+
+Bulle…" "An independent podcast that looks at Country Music as a UK listener.- @BritishCMA member Dom.countrychat@outlook.com   https://linktr.ee/countrychatwithdom"
+6730 female "I’m good, you good? ........................
+#quarantine #stayhome #quaranqueen #yougoodchallenge #imgoodchallenge… https://t.co/vXYcOfWMvG" "mom of 2. fiance. total foodie. makeup obsession. blogger."
+6748 male "I MISS MY FRIENDS (part four) 
+.
+.
+.
+.
+#nonbinary #friends #imissyou #quarantine https://t.co/MsCUDNkAm1" "Sharing good music with the Internet !!
+
+Big techno Fan.
+
+DjMixes
+Tutorials on Youtube !!
+
+https://www.instagram.com/the_greatest_guitar_player_/"
+6755 male "During the lockdown, we are not only facing coronavirus, but issues like loneliness, depression and anxiety. In thi… https://t.co/0z2ldsGpee" "DEM@ENTORING is an Erasmus+ Project, aiming to use an inclusive educational and training approach, addressing health, wellbeing to people with dementia."
+6760 male "RT @LethalBizzle: Kyle Walker #quarantine https://t.co/fTIamitSwH" "I’m just me🤷🏾‍♀️...and a BTS ARMY🤟🏾💜💜💜💜💜💜💜💜💜💜💜💜"
+6779 male "#Quarantine Day 23: My son and I are social-distancing his @LEGO_Group figures. #COVID19 #coronavirus https://t.co/6gEJ5BLzCx" 
+6781 female "RT @ParisHilton: This #Quarantine is not hot.🙅🏼‍♀️ #StayHome #SaveLives and watch #TheSimpleLife. 👯‍♀️ https://t.co/tCOitdBzm1" "#StayHomeSaveLives #WereInThisTogether #LifesShortPlayGames #BoycottGamestop | #SwitchFC: 3417-8308-1603"
+6812 female "RT @anygivensinband: How are you spending your quarantine time? 
+Refreshing the kit. 
+
+#Quarantine #Drums #Drummer #FreshPaint #NewLooks #S…" "looking in-looking on,
+making art, still trying to work out the difference between a smile & a grin
+photographic artist sculpture poet controversial celebrity"
+6818 female "RT @LethalBizzle: Kyle Walker #quarantine https://t.co/fTIamitSwH" "Trendsetter/Werdio 💱LA🐊 *AVN Nominee Favorite Cam guy * back up 🕒@Handsomedevan1❤️Available for bookings &    🔻content exchange 🔻 @Handsomedevan@gmail.com"
+6843 male "RT @AGENTCEJOHNSON: Check out Wynter Of Wolves from @AUTHORBDWEST! Join Wynter Timber on this epic origin story while in #quarantine! #good…" 
+6848 female "RT @ElenaRomanova88: Who likes #petite women? 😻👅
+
+Join me on my private site https://t.co/3fE2sAHFoJ 👅💦 to cure your #quarantine blues away…" "The Indian Express brings to you latest news from India and the world, breaking round the clock. On telegram: http://t.me/indianexpress"
+6851 female "IN STOCK!! IN STOCK! Nintendo Switch 
+https://t.co/xBWlWICmdP     
+
+#Ad #Nintendo #NintendoSwitch 
+#StayHome… https://t.co/LuCRsxCD9o" "Proud daughter of a LEGAL immigrant ♥️ Illinois Democrats are ruining our state! 👉Il 🧀 Born & bred a cheesehead 🏈 2018 USYS National Champion ⚽️"
+6933 male "RT @MilaVolker: It is the 13th day of self-isolation... 🤪
+
+Something you didn't know about the sex work😆
+
+#coronavirus #COVID19 #coronatime…" "@tarak9999✊ @Msdhoni😎 @imRo45💥 @NameisNani😍 @Ramsayz🤗 @Rajinikanth👌⭐️
+@ChennaiIPL💪"
+6980 female "RT @EHaswany: 🎶🎶5 piano pieces people MUST know !!! 🎵🎵 
+Check the insta page : The Tremble Clef 
+
+ #Piano #music #guy #virtuoso #improvisat…" "Medicine | Evidence Synthesis | Health Systems & Policy |  Assoc Ed @GlobalHealthBMJ | @CAPSMG |@GeorgeInstIN | @UNSWMedicine 
+*Personal Account * 🇮🇳"
+7020 male "RT @ANZHELA211291: This is #Armenia unique in any way. The country where even during #Coronavirus #pandemic people don`t forget to be kind.…" "We run Damian Lewis fan blog https://t.co/wcJSQRTiN2 and fan site https://t.co/euRCCYtdcx Look what @lewis_damian says about us👇 https://t.co/aZsDjkvdvW"
+7031 male "RT @thesyndromemag: #Quarantine is a lot like getting your period: You cry in the bathroom when your roommate eats one of your snacks witho…" "I love reading comics and watching movies"
+7033 male "🔥🔥🔥🔥🔥🔥🔥🔥 ""It took you 9 years and an IG live to reply me"" 😂😂😂😂😂😂😂" "Global manufacturer of magnetic separation equipment, metal detection, material handling, magnetic cylinders, magnetic materials, bonded magnets and assemblies."
+7057 male "RT @MrYoung1_: Everybody wants to come at Sarkodie for a come back but he said if you want him reply to your beef get ready to pay 💰 him" "El Twitter de los Científic@s  🇪🇦 residentes en la Republica Checa  🇨🇿 //Spanish Researchers 🔬 in Czech Republic"
+7090 male "Another win we got today. Are rockets too powerful? When it's a full squad raining down hell fire it's pretty inter… https://t.co/3OjOL8CtXl" "Mobile Developer for work. VR Developer for fun. Liberty lover for life : http://www.hypercatcher.com"
+7112 female "Little did you know @DaveBautista has been in #Quarantine for 1000 years... Since 1932. #WhatWeDointheShadows https://t.co/PDDb2txKAE" "JP to EN translator, WSET Level 3 Sake, CSP, SSI Intl Kikizake. JA sake news: https://arline.fyi/sakenews日本酒を応援したい日英翻訳者・WSET日本酒レベル3 (最上級) 資格・国際唎酒師・CSP"
+7119 female "What's there to do while stuck indoors? We've compiled 4 suggestions to help make your time quarantined as interest… https://t.co/6xOvsq3WzC" "I love BTS, Steve Rogers, & my dogs. Also, I have a recipe for chocolate coconut cookies that will blow your mind. That's about it."
+7123 female "I repeat.. some views never get old :)
+#instagram #quarantine #thegreattpcrisisof2020 #theoutdoorwoods #kiddos @ Ca… https://t.co/s1n9aSPA1i" "Genealogist & Scientist. User Advisory Rep @UkNatArchives. Formerly: Oxford DPhil @dtc_oxford, @Google Scholar and #openscience Panton Fellow with @OKFN"
+7137 male "RT @jodijeannine: #WELCOME2CANADA
+
+#RoxhamRoad StillVacuous~ #DailyFlights INCOMING #ComplimentsOfJT ~ #RCMPEscort ~ #REDCarpet ~ #Porters…" "Software Engineer     DM~Disable Strictly"
+7149 male "FINALLY UPLOADED THIS via (Twitter)... 💎VVS it “ROCK IT UP” 💎 shot by @twwterless_ian 🛸🖤. LEMME KNOW IF I SHOULD PU… https://t.co/Ul3YNMkoRY" "Sc:edami59 
+Stop chasing the money and start chasing the passion😎"
+7162 female "Follow me ! Tell a friend to tell a friend !!! 
+
+#Quarantine #COVID19 #willsmith #jadasmith #585viral #rochesterny… https://t.co/ct8H1osARe" "seguidora de mi señor Jesucristo, soy una morada de corazón , Hala Madrid!!!!"
+7164 male "I just watched my new Music Video for the first time 🎥 byrdrocks your insane‼️
+
+Flood the comments🦠🚫 500 and I’ll d… https://t.co/MVKqu0FTUz" "Matrikas exquisitely designed Diaries and Products that you would love as much to just hold on to as to flaunt."
+7168 female "niggas need the clout craazy" "Eng. in R&D | Mid-range Travel & Lifestyle blogger. 📸  Sonya6000 | 🇵🇹 living in 🇳🇱
+#travelblogger #sonya6000"
+7201 female "You ever flip someone off as a joke expecting them to flip you back or laugh or whatever but it backfires and they… https://t.co/HFlHIxmlxe" 
+7215 male "RT @Wildbheart: The protocol I had to fucking breach #Quarantine #Bagets #Binatangpinoy #Sarapngpinoy #Kantotserye #Kantot #Kantotpinoy #Bu…" "A Patriot, A Hard Believer, An Employee, A Pissed Off Person with All The Non-Sense Happening Around Word"
+7217 female "RT @RickErickson14: SETH(@sethy_boy_) on TikTok: Quarantine trick shots #fyp #quarantine #bored
+Seth with some bombs!!!!! https://t.co/nOkB…" "CEO TMC: #Futurist #Influencer #Keynote #Speaker #Cloud #IoT #Blockchain #Cybersecurity #VoIP #CRM #UCaaS #BigData #Analytics #AI #MachineLearning #SDWAN #IIoT"
+7225 female "Who’s jealous of my #quarantine crew? 
+
+#DoingMyPartCO #DogsofTwittter #CatsOfTwitter #DogsOfTheQuarantine https://t.co/iXE8TOhJLo" "im uglier in person."
+7230 female "There's worse ways to spend a weekend, right, than with @aceatkins Spenser and @cjboxauthor Joe? #amreading #books… https://t.co/8okPJLLY26" "God! Singer/Songwriter,Actress, Dancer,Model 5’7, Fashion,Funny, Vegan,Saint Louis gangster from the Midwest swang ,I use to live in Florida too 💙"
+7242 male "RT @ParisHilton: This #Quarantine is not hot.🙅🏼‍♀️ #StayHome #SaveLives and watch #TheSimpleLife. 👯‍♀️ https://t.co/tCOitdBzm1" "Queen of urban street soap operas.  http://urbanpulpfictionworld.home.blog"
+7266 male "RT @2_guysfromvegas: Just wrapped up Episode 9! Don’t forget to listen every Monday. Play it while you’re in the shower, cooking, driving t…" "Rugby and food fan likes all sport apart from football which leaves me cold"
+7299 male "RT @FlyPhilsBirds76: Ok...how many drinks a day are you having during #Covid_19 #Quarantine? Be honest!
+
+#COVID19Pandemic #coronavirus #Soc…" "Advocate |Nationalist |Nation First 🇮🇳|Rt's are not Endorsement.."
+7301 male "This was funny to me! How y’all coming out ladies?
+
+#quarantine #quarantineandchill #exx #newmusic #linkinbio #rnb… https://t.co/zYTDU61gkj" "Once a gamer, always a gamer🎮Got a love for fighting games 👊🥊💥 Let's brawl it out online! I'll be playing other genres too! Streaming TBA"
+7320 female "RT @ta_mee_esh: Nowadays everyone wanna be Haitian or be friends with a Haitian. Where was this love before????🇭🇹🇭🇹💯💯✊🏾 #haitian #haitianti…" "CARRY-ON WITH KIDS
+Family of four, looking to explore! 🌎
+Seeing the world through our children's eyes! 💙💛"
+7326 male "RT @BLKLondonDL1: My straight best friend is also confined in Paris and bored. He wants #pussy. I told him ""Sorry"". Me too I need 2 or 3 di…" "🇺🇸Just a dog LOVER. following many puppers. Retired from Verizon after 50 years."
+7336 female "RT @JohnCleese: When someone tries to come over during quarantine... #johncleese #montypython #tauntingfrenchman #quarantine https://t.co/g…" "I am hot and sexy"
+7339 male "RT @AsemWORLD: Who needs Freestyle Friday I can do this from Sunday to Sunday. The ball is in your court... #Asem #Asemmusic #weatherchanne…" "Moving Forward"
+7340 female "RT @itsSweetThing: #Quarantine doesn't stop this Twerking Addict🙄🤦‍♀️🤣 https://t.co/kGAJnv5iEQ" "Saved by grace alone, through faith alone, on The Word alone because of Christ alone! Wife, Mother, Patriot, Musician, Artist. 🎻❤
+TRUMP IS MY PRESIDENT! #MAGA."
+7389 male "RT @OnlyXReviews1: We have featured 100+ male models this past week.
+Here are YOUR favorites!
+
+#1 @DannyDxxx  🔥🔥🔥
+Our top guy of the week a…" "#kpoper
+#Estudiante
+#NamjoonxRM"
+7395 female "Butter + garlic + onion is probably my one of my favorite smells. #Quarantine #cookingallthetime" "I'm the bitch with a blade. 💋
+she/her. Author, photographer, digital artist, MFA candidate, femme, feline, & mixed martial artist. 
+IG: baby.vamp.ami
+☠️🌈🦁🥊"
+7411 female "blacked out at home for my 25th birthday, glad they took my phone away from me 🥴🥴 #Quarantine" "Only Planet Of Alia Bhatt 🌍🌠 We Keep You Updated With All Pics & Videos Of Our Angel Alia ❤✨ Upcoming: Brahmāstra / Sadak 2 / Gangubai / Takht (Fan Account)"
+7423 female "RT @unknown_ftm: I am bored and horny. 👉🏼👌🏼
+#ftmnudes #ftmporn #ftmnsfw #ftmpussy #ftmclit #bigclit #dicklet #ftmdick #tinycock #bonushole…" "A human being is a house of many chambers... some of them never visited even by the owner. Fools and lovers want keys to all the rooms... 
+
+*C Barnard- One Life"
+7427 male "I can handle being at home. I can handle feeding two adults and three boys three square meals per day. I can handle… https://t.co/POHyL6sa2d" "& this time, we bout to get funky"
+7431 male "RT @bladelife_tv: This is 📵 Chris Cheshire blading in the movie 🏙""GENRE""🚷🚏🚸
+.
+.
+.
+.
+@chris.cheshire @denialprintco 
+arondreamchasers 
+#card…" "political activities , member OK &VI Odisha, member DRUCC. state council member,Biju Janata Dal.Odissha."
+7433 female "While my husband and I were getting dinner together, I asked him if his wine was his “Riesling for living” and then… https://t.co/7GbNpVSgXC" "Fed up with inhaling polluted air and choking down a diesel particle and cigarette smoke cocktail while having to skirt (or collect) garbage #pollutionkills"
+7448 female "I swear I don't normally post THIS many pictures of food, but it's when HelloFresh is NAILING it and the food is th… https://t.co/E0c0om8KQH" "Olive clinics are designed and committed for offering comprehensive care with the latest medical technology and diagnostics under one roof"
+7480 female "RT @imbbnick: I swear I’m not a naughty boy 😈 #Quarantine #LGBTQ #SundayThoughts #Covid_19 #LGBTQさんと繋がりたい https://t.co/Ljb8eIa8gS" 
+7492 female "RT @Kofi_Seven: If Sark replies Asem is back again I swear but until then.... 🤷🏽‍♂️😃" "Doing me living life it is what it is"
+7494 male "Quarantine starts this Sun.the 5th @ midnight here's how my Town decided to spend there last night of freedom. Bein… https://t.co/JUoymk5EO5" "Makeup artist. I talk to myself"
+7503 male "What did you have for Sunday dinner?
+
+#sunday #sundayfunday  #familytime #steak #greenbeans #salad #quarantine… https://t.co/Bsp2q379Y2" 
+7520 male "If I’ve learned anything from #quarantine it’s that you should have a couple of staple meals. And then you should h… https://t.co/MtsgiR4cax" "Photography is special, a peaceful weapon that can freeze a moment & make it timeless forever.
+
+All images are © intellectual property of ""Photon Sucker"""
+7524 male "RT @hello_lee_hi: Check this now on YouTube #quarantine #homealone 🦋 https://t.co/PrvrWKL58k" "For more drawings, follow me on Instagram and facebook: #sketchysharma"
+7528 female "RT @dywaves_: I just watched my new Music Video for the first time 🎥 byrdrocks your insane‼️ Flood the comments🦠🚫 500 and I’ll drop this ‼️…" "🇵🇪🇺🇸#DungeonMaster, Casual #Necromancer, #Critter, #Anime, #travel, #got, #lotr, #nintendo, #relicsandrarities #dnd5e #DnD #trpg @ahalflifestart👈"
+7547 male "Happy Sunday.. #alonetime #quarantine #quarantinelife #karaoke #goodvibes https://t.co/XX45AGGr4v" "Former Most Zen Stand-in of All Time. Former LMT. Former coffee guru. Frequently driving a car. Rare-time yoga head-stander. Always in godless wonder."
+7562 male "This is literally us #Covid19 edition.
+#workfromhome #quarantine #schoolisclosed #stayathome #shelterinplace… https://t.co/2npsiL7pds" 
+7578 male "My dog would like a word with your manager. 
+#Quarantine https://t.co/RuelgMmDQN" "Total Bottom livin in SoCal. Takin dicks like a champ! #BBBH #rawislaw #totalbottom #cumdump #teambottom meganthe🐎"
+7580 male "RT @DogsHateBoots: currently watching 50 shades freed...
+
+I hate you Covid19 I hate you
+
+#Quarantine #coronavirus" "Professional doctor FCPS in paediatrics at CMC Larkana love #Democracy#strong believer of Bhuttoism"
+7608 female "We are bored! #quarantine #fishmom https://t.co/flpOmFZfbL" ❤️❤️❤️❤️❤️❤️
+7633 male "RT @omacwk: How about boycotting Hollywood and the rich. They want us to go see their movies, buy online merch while laying us off due to #…" "ESOMAR is the global voice of the data, research, insights and analytics community.
+Be Data Smart."
+7695 female "RT @AsemWORLD: Who needs Freestyle Friday I can do this from Sunday to Sunday. The ball is in your court... #Asem #Asemmusic #weatherchanne…" "💕👑Peace & Serenity👑💕"
+7696 male "My Wife, Dani (Danielle Glunt)! Is in a Green Color-Shift Beetle Mask!
+Check out, Like and Share her pages:
+
+Prop T… https://t.co/QM65xv5meJ" "Content creation/ P.R expert /Influencer / Media Watcher. Contributing editor @glitzafrica magazine."
+7713 female "Updating my website! https://t.co/iW2LRc1eDS
+#JustStayAtHome #Quarantine https://t.co/vgyqPmcHuJ" "jin is to the gays what jesus is to the christians"
+7730 male "In 2016, settling into my 50th year and captured on the water where I belong, I called this date the “halftime” of… https://t.co/qdRZMNksRF" 
+7748 male "RT @brollejrhoff: #Quarantine law dont work on this guy lol! (India) not sure if it's fake or not! https://t.co/SY5W1572cC" "BBC
+Who is your daddy 🔥"
+7751 male "RT @JenRanToPB: PBHS students! Check out this GooseChase! It’s fun, it’s something to do, it helps your brain, and it gives you the chance…" "Artist, songwriter and record producer. Creator of #SkyppSaturdays 🙏🏾"
+7794 male "RT @mauverschuuren: What to watch during #Quarantine? How about #FallCabal. (Make sure to watch all ep. 1-10) Not saying any is true but it…" 
+7823 female "RT @AsemWORLD: Who needs Freestyle Friday I can do this from Sunday to Sunday. The ball is in your court... #Asem #Asemmusic #weatherchanne…" "Tasha on Will & Grace|| Actress🎬|Author📚| Rapper🎤|Singer 🎶||Pantheon Talent Agency-LA||Atl-LA|| Cover Video"
+7843 male "I’m very saddened that I will not be able to attend #Easter Service at my church this year.  
+
+I’m done with this #Quarantine" "Giving young people insight to events and opportunities to define the culture of their area #FreshPerspective"
+7863 male "RT @SunnyDTransman: #Quarantine and chill 
+
+https://t.co/w61HLApVdn
+#ftmporn #transmanporn #fatpussy #bigclit https://t.co/Meo5PGQAaR" "Specializing in .NET, web, and mobile components for enterprise software including native Blazor and Xamarin, plus fast tools for Angular, React, & Vue."
+7864 male "RT @jbhjamie: Right before #quarantine we happened to switch our household from primarily paper towels to primarily washcloths. It’s worked…" "Progressive Politics, Gay Stuff, Democracy, Manhattan(s) • VPD @MaineDems • Was CEO @DipJar & CM @MitranoForNY23 • Opinions barely mine—certainly no one else's"
+7875 female "Update: [Action required] Your https://t.co/YU6yRYuYlf Trial has Expired – Mon Apr 06 2020 #Berniesanders… https://t.co/B5rp30IpxH" "🌸Hello!🌸 My name is Aidee.🌸 I'm 26 years old. 🌸7/06/2018 I saw them live #GOT7 #Kpop #Kdrama🌸 🇰🇷🇰🇷 #MONBEBE #ARMY 💜🌸 #ATINY 5/04/2019 BTS Rose Bowl"
+7878 female "RT @AkwaboahBa: And Oh if Angelo no receive payment forgetti 😂😂😂Obidi no go hear your cry 🤷🏻‍♀️" "Grey/Grey Knight ★ 16 ★ Cis Female ★ She/Her ★ Grey-AroAce ★ Cookie Run: HHLDB2418
+
+Grey Knight/Khonjin on miiverse clones
+@ShadowCate is my cat"
+7879 female "@srndedbyazhls That’s good to know because I have a feeling we might be here a while!! #Quarantine DAY 23 #Isolation" "▪️아미▪️OT7▪️fan account▪️ 
+At least this planet has Namjoon! 💜
+
+pfp: credits to @kadis_art
+header cr: @reiz_i"
+7890 female "Proudly presenting https://t.co/whMKilxg8n. Check it out and let me know what you think! none #Quarantine #Covid_19 #GoCorona" "DDN is the home of  Adult-ish , The Greenhouse and The Luv Chronicles Podcast. Real People having Real Conversations."
+7916 male "RT @itsSweetThing: #Quarantine doesn't stop this Twerking Addict🙄🤦‍♀️🤣 https://t.co/kGAJnv5iEQ" "#PROMOPAGE FOR @MrDRKSDE https://soundcloud.com/shadow-drksde"
+7924 male "RT @iamedem: Asem u no go stop this life..Always taking shots..." "I’m Emma & my blog explains the science behind beauty labels & fashion products to help people buy better! plus some fun articles scienceinstyleblog@gmail.com"
+7950 male "This video..so eerie 
+
+NYC - The New Normal #Quarantine https://t.co/4FQHrZiBVO via @YouTube" "Bollywood superstar Salman Khan 
+kollywood superstar ilyathalapathy Vijay 
+2 my favourite actor i love ❤❤😍😍"
+7962 female "RT @mhamadkb112: The Coronavirus is on the doorstep of liberated northern Syria.
+There is no quarantine at Idlib, which makes the situation…" "Indian Entertainment site that scoops out the latest news, gossips, interviews, videos, events and more of Telly World and Bollywood."
+7968 female "RT @aubrey_huff: This tweet just proves many people will believe anything they read. Hence why we are in this #quarantine #stayhome #corona…" "sae. #lakeshow."
+8034 male "Loosing my mind #Covid_19 #Quarantine #StayHome #bored #tweetit" "Here for the fun"
+8045 male "Spicy chicken curry, Polau and Salad cooked by my lovely wife @elitakarim as Quarantined dinner.
+#chicken… https://t.co/gECkiQsy3e" "#ProudIndian #MuslimReformer #ProIndian #ProIsraelie 
+backup A/c - @awakeningfacts1"
+8053 male "RT @c_hopkinson: Listen to Tommy Shelby and the @ThePeakyBlinder  about #quarantine ...  #QuarantineLife #QuarantineDay12  #QuaratineAndChi…" "I don't know, and I don't think I ever will...
+
+5 P's🤞🏾
+
+THIS O'MALLEY BABY| STYLE TWO FLAVA FLAV, SADEY| THE ONLY OTHER DREADED SLIM SHADEY| TJHEA!!!"
+8075 male "Related Instagram tags for #Quarantena: #iorestoacasa #quarantine #ronaldo #stayhome #dieta #lorenzolari #cheatmeal #sgarro #frootloops" "NC SW Regional & RSS District Teacher of the Year 16-17/Apple Distinguished Educator/TED-ED Innovative Educator/Author/Lego Master Educator/GlobalEducator"
+8089 male "RT @eleanorbarrow: WAIT FOR IT... #DontRushChallenge 😂😭
+
+@hannahgracemortimer 
+@young_gabs 
+@lissafergusx 
+@daiss_x 
+@moniquerenex 
+
+#selfi…" "Host of #FullHeelPodcast/
+(Co-Producer) #FutbolonFullHeel / 
+(Co-Host) Average Joe's MMA Show
+ 
+Xboxlive- DonkeyTr0n"
+8092 male "Oh all this #Quarantine got me thinking bout rebranding my social media’s. And posting more. https://t.co/6xanGsKgbq" "Co-host of Revenge of the Cis
+
+http://Revengeofthecis.com"
+8119 female "RT @arunbothra: Which one is your favorite #Quarantine Asan? 
+(Via WA) https://t.co/145PUHEqYu" "♏️#Escorpiano de #Natal 🌈 RN #Brasil 🇧🇷 📺 #POPStars2 🎤✨@m6officiel 🛫 #Traveling 🧭 the world 4️⃣ #work Any advices❓ 💌 #Business enquiries 📧 lemf@msn.com"
+8158 male "Asem is Back again ...Asem asan aba biom" "Semi-pro listener. Happy to offer solicited advice. Doing the best with what I've got."
+8180 male "RT @MAAIF_Uganda: Thanks for the inquiry. first phase was successfully handled. This is part of the new invasion and control teams from the…" "E.R  Physician at Bucaramanga
+Next MD at USA"
+8183 female "Stay Home
+Be Responsible 
+📸 Credit: @Healthy_naija 
+
+#StaySafeNigeria #COVID19 #MondayMorning #Quarantine https://t.co/A9pyKkF1QF" "Filmmaker, actress, & model. Watch me https://t.co/MZmJkaCPfz and Follow me on  FB at https://t.co/M9r6V1pWEQ IG at @charlenejeter1"
+8191 female "RT @AsemWORLD: Who needs Freestyle Friday I can do this from Sunday to Sunday. The ball is in your court... #Asem #Asemmusic #weatherchanne…" "Mphil Scholar,
+@Realist
+@anthustic......................
+*If you don't know where you are going, it makes no difference what path you take..........."
+8213 male "Goals are not just pursued in the moment, but in the choices we make every day.
+
+#choosewell #MondayMotivation… https://t.co/RjsSIPXV1L" "spm 2020 hahdhajhshahshzhs"
+8229 female "RT @c_hopkinson: Listen to Tommy Shelby and the @ThePeakyBlinder  about #quarantine ...  #QuarantineLife #QuarantineDay12  #QuaratineAndChi…" "BTS Revisa AGORAFOBIA en Wattpad ♥️👌🏽"
+8230 female "RT @Bollyhungama: .@itsKajolD shares a series of photos with @ajaydevgn, #Nysa, #Yug, @MadhuriDixit talking about maintaining sanity amid l…" 
+8235 male "#Quarantine Day 16 : 
+""Me in every Whatsapp Group"" https://t.co/0laYTVjDbW" "Battle On Xenites!
+Síguenos en Facebook : https://www.facebook.com/XenaLatinoamerica"
+8241 female "Trump signs $2.2 trillion US stimulus package into law | Virus Information News  Full article -&gt;… https://t.co/F3KmnowTJh" "Information Management Specialist. Educational advocate. Google Certified Teacher. Obscura Enthusiast."
+8242 female "RT @AspectMorgan: Still life during quarantine time :) Glad to have large basin for washing supermarket  produce :) #quarantine #covid #cor…" 
+8289 male "Isolation mark
+•
+•
+•
+#pmphotoassignments @petermckinnon  #photography #corona #quarantine #isolation #stayhome https://t.co/beQTdOrjXR" "My name is Patsy. I love animals and can't stand abusers.  I'm here to make friends. I have a black and white male cat which I love. I love to follow pet pages."
+8306 male "RT @QuibellPaul: On Chapel Sands by.,@LauraCummingArt .,@thesundaytimes ‘a masterpiece’ #book #books2read #books #BookWorm #booklovers #Qua…" 
+8309 female "Wayo is me. #2moons #Quarantine https://t.co/zpi3WGg5dr" "Aussie guy bringing you as much @toriamos news as I possibly can! #ToriAmos"
+8311 male "@realDonaldTrump when to open America for business https://t.co/xfgLdvOIUb" "Tired of boring content? Looking for something to enlighten your mood? Then, you are at right place. We are infotaining video creators with a twist!"
+8325 female "When your mind and body can't get on the same page. Which day of #quarantine do you think this was?… https://t.co/222xmQYuL5" "Redian Marku Twitter Bot.
+Please follow my account @rediandev!"
+8341 male "5 th one" "Proud Muslim.
+Keep supporting SAF🖒ShahidAfridifoundation.org5
+//Love you lala❤❤
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cricket is my life🏏 #HopeNotOut"
+8362 female "@PplOfIndia @sankrant @billyperrigo @narendramodi @AmitShah #TablighiJamat #MuslimsSpreadingCorona
+
+40 #Surgeons an… https://t.co/yVIdgGB11Q" "ISFJ-T • Sherlocked • Book lover • Socially awkward"
+8363 female "RT Eurosurveillanc: #Estimation of the required duration of a #lockdown with #quarantine, to contain a #COVID19 #outbreak in a city of 5,0…" "The world’s first permanent smoking screen. Freedom from the hassle of smoking screens. Adult tobacco use only."
+8379 male "RT @hello_lee_hi: Check this now on YouTube #quarantine #homealone 🦋 https://t.co/PrvrWKL58k" "Events, Hospitality Professional, NYC Tour Guide Specialist, Marketing, Fund Raising, 
+Personal Bespoke Shopper"
+8396 male "RT @rhevanth95: What is the best activity you do to get through boredom during this lockdown period?
+#quarantine #IndiaFightsCorona" "just a bit all over the place really ——————————————–————————yes I do love all 7 of em"
+8405 female "RT @iamedem: Asem u no go stop this life..Always taking shots..." "Poet, editor, digital marketing strategist. Mom, feminist, craft beer fan. Bit of a nerd. Working on a novel, of course."
+8443 male "Chefs to your counters! Grab your spoons, bowls, and cutting boards, and prepare for Cottage Treats, a family frien… https://t.co/6heBijigJC" "Film critic for @TheWrap @linoleumcast @whoshotyapod @bfastallday author of HAVE YOURSELF A MOVIE LITTLE CHRISTMAS http://amzn.to/2cRL0SY he/him/his"
+8449 male "RT @ogmssky: Add my #Snapchat nudesofskyla if interested in buying #cheapnudes !! Im doing a #Quarantine sale! :) #milf #cumslut #grool #xx…" "Soch acchi honi chayie..najariya to sabke alag alag hai 🥰🥰😍😍😍🤩🤩 Follow like aur share kre aur dusro ko b hasaye"
+8468 male "Growing suicide rate among Kyrgyz teenagers during quarantine 
+The Interior Ministry of #Kyrgyzstan confirmed 7 tee… https://t.co/QcYoJLY9A1" "ALPHA FEMALE & Boujie Freak 18+ 🔞 —CMA, upcoming BSN & certified preschool teacher—😊💉🤓 deleted @ 16.7K"
+8473 female "Hurrah 🎉🎉
+Finally done with 1k followers 💯❤
+
+🙈
+#Quarantine 
+#Covid_19" "You see us as you want to see us...a brain, and an athlete, and a basket case, a princess, and a criminal."
+8492 female "RT @arunbothra: Which one is your favorite #Quarantine Asan? 
+(Via WA) https://t.co/145PUHEqYu" "Entrepreneur, Web Developer, Writer and Blogger. Enjoy following latest in tech, computing, social networking, online media, new things, new thinking.."
+8518 female "RT @ParisHilton: This #Quarantine is not hot.🙅🏼‍♀️ #StayHome #SaveLives and watch #TheSimpleLife. 👯‍♀️ https://t.co/tCOitdBzm1" "Expect The Unexpected✨21 | Model | Artist | Youtuber// https://onlyfans.com/jaleah_love // Snapchat: @ Cantstopmejay2"
+8535 male "RT @chris_damned: Wanna see me blow my load after my home work out ?! 
+
+https://t.co/zoMEzhbWnG !! 
+
+YOU’RE WELCOME 😇 
+
+#rt #subscribe #sha…" "Official Account of Michael C Schmidt aka A.Raymond, Author Wife is @MaryLSchmidt #SCBWI #memoir #childrensbooks @NewAppleAwards #ReadersFavorite"
+8551 male "Dream now - Travel later, Discover Zermatt #Switzerland from your home through 154 interactive panoramas in this 36… https://t.co/29faRPcI2y" "Sometimes when I say things to my kids & step away to reflect upon the wisdom I have imparted, I realize how ridiculous the words sounded coming out of my mouth"
+8558 female "RT @avinashasks: Mine is 6 what's your" "Clothing / Fashion with an automotive aesthetic. Gear for the garage and street."
+8579 male "#StarTimeInQuarantine ⭐
+
+@maheswarichanak is now live on our 
+@galattadotcom Instagram. Shoot your questions...
+
+In… https://t.co/Dg7HdMPMkT" 
+8581 female "#LPMItravelfromhome: Feeling anxious and restless, cooped up at home? Why not try some soothing travel, through you… https://t.co/NiYH4qOlty" "i want mochi. yes. i want jimin"
+8588 female "🤣🤣🤣 lil mans has had enough of #Quarantine" "author counsellor motivational speaker mom chartered accountant"
+8592 male "RT @DrRebellious: Doctors and nursing staff who completed duties in #Covid19 wards are welcomed and given 14 days #quarantine facility in a…" "Author of The Immoral Landscape of the New Atheism: Soul = Mind.
+Spiritual health = mental health. Atheism = mental illness & social disorder. #Catholic #ID"
+8619 female "Bruh Leslie has been killing it with his posts during the #Quarantine" "RT are not endorsement"
+8648 male "Our current situation is unprecedented for us, but we have options for how we live through these times. Something t… https://t.co/NDtVG9Wlo4" "• LOVE KPOP • Aspiring Food/Travel Vlogger • Foodie, gamer, and anime nerd • Music, drawing, cooking, traveling"
+8655 male "I gotta start acting sexier before this lazy shit becomes permanent 😭 #Quarantine #QuarantineDiaries #lazy #COVID19… https://t.co/5xgU6M6Q7n" "Western Head Varsity Football Coach, Western APC-Strength & Conditioning Teacher, Husband, Christian #WinTheDay #FearTheWing"
+8682 female "RT @aks_alexandra: Here we go again with our 2nd challenge (since it took 1037393 attempts, I’ve added the outtakes) @tombradshaw92 #Quaran…" "Independent dance music producer, specialising in Drum and Bass, Electro House and other dance styles."
+8683 female "The #Coronavirus started right around Gwyneth Paltrow made candles that smelled like her cock socket. 
+
+#Covid_19… https://t.co/4hIyC42T1t" "we are all mature until somebody brings out the bubble wrap😊
+fan account for sc"
+8684 male "5.45% and 20.8% as of 0550 EST.  We’re seem to be reaching the limit so to speak.  The hope is we start to go the o… https://t.co/SFHXkdZPnC" "⚔️🎠✨ 21 / Lyris Titanborn step on me // I tweet a lot- Elder Scrolls twitter of @Darien_Gautier ! #ESOfam 🦁🦅🐉 Icon @majindruu // http://thorn.org/donate/"
+8686 male "In these uncertain times, we need to learn to just be present, and flow.  #COVID19 #selfcare #beaware #nopanic… https://t.co/TEREGjZ8Q2" "A Filipino Jesuit based in Worcester, Massachusetts; tweeting about life, organizations, leadership, spirituality, religion, diversity, equity & inclusion."
+8693 male "RT @nessachirwa: Better late than never 🤭
+It is the #dontrushchallenge after all 💁🏾‍♀️   
+#sweet6ix
+•
+Song: Don’t Rush - by @YoungTandBugse…" 
+8700 male "RT @Ecosia: Want to fight climate change during #quarantine? Install Ecosia and 🌱plant trees🌱 every time you search the web. 
+
+If you're al…" CFA(ICFAI)
+8703 male "Yet another crafty make by me! Very pleased how it turned out. Want to make more and hang more plants around the ho… https://t.co/rmai8fVdDE" 
+8745 female "RT @chrstngonzales: bored 😶
+#Quarantine https://t.co/URuO0tFK4F" "OT7 STAN💯"
+8748 male "Chale miss you" "💜Life isn't about finding yourself. Life is about creating yourself 💜"
+8768 male "Looks like I can still make my ski trip happen! https://t.co/4vSsAqg8jo #skiing #Quarantine" "1:17━━⬤────────────────4:50 𝘐 𝘴𝘵𝘪𝘭𝘭 𝘸𝘰𝘯𝘥𝘦𝘳, 𝘸𝘰𝘯𝘥𝘦𝘳 𝘉𝘦𝘢𝘶𝘵𝘪𝘧𝘶𝘭 𝘴𝘵𝘰𝘳𝘺"
+8776 male "RT @Israel: We're bored, you're bored so know's your chance to ask us  ❓anything you've ever wanted to know about #Israel. 
+
+From the best…" "Common Man....!"
+8788 female "RT @teamstoodnt: Best Practices For Working From Home!
+Read here: https://t.co/38Vx4TzBdV
+
+#CoronaUpdate  #CoronaLockdown #coronavirusindia…" "🌸🌹🌷🌺🙏Jai Mata Di 🙏🌺🌷🌹🌸
+http://instagram.com/doll_princess_divya"
+8810 male "This fax tho" "Mariners are my #1 team. Season ticket holder of the Seahawks. MMP🦋 #PNW  #LoveIsMyReligion"
+8822 female "RT @spok3nOG: HMU on Snapchat : TyrizzyIsGone : if u wanna trade, or rate me. Cuz I’m horny asf rn. Or just hit up my dms for some bbc 😈 #s…" "هو قالك عيز فين🖕🖕"
+8825 male "Doing the #TikTok challenge where no matter how bored you are in #quarantine you don’t download Tik-Tok and make st… https://t.co/ZIiyGkYWmO" "For Fans of AlvaJay! Fan Account.
+(｡♥‿♥｡)
+Follow Alva 👉@RealAlvaJay 🇲🇽
+-
+#alvajay
+-
+👉👉👉 https://lovefreecams.com/alva-jay 👈👈👈"
+8827 male "RT @iamedem: Asem u no go stop this life..Always taking shots..." "⟭⟬ • in the future i hope we only have days when we smile • 아포방포•
+fan account • ⟬⟭"
+8875 male "RT @zees_grillz: Our kitchen is still opened to receive all ur orders. Dm or call 07017335573 to place orders.  We do bulk orders too with…" รอดูโคนันเดอะมูฟวี่
+8893 female "RT @CzechCentreLnd: Need a little inspiration to get you through #quarantine? Check out this 'THE CZECH BOOKS YOU MUST READ' project by @Ra…" "sales for valiant. this is my personal account though! tweets only my own and represent only me! and I am WEIRD."
+8913 male "RT @arunbothra: Which one is your favorite #Quarantine Asan? 
+(Via WA) https://t.co/145PUHEqYu" "Belieber 👑👑 Army 💜💜 Bautister 🐍🐍 #Kidrauhl #SiempreJuntos #IPurpleYou"
+8935 male "am I the only one who didn’t sleep? still up at 6:46am #Quarantine #insomnia? #nosleep https://t.co/nR39zO3oAo" 
+8941 female "Every other day I update myself on #Covid_19  bc there's tons of misinformation it's overwhelming 2 no that no1 has… https://t.co/5dduzb576W" "BTS x ARMY
+army forever 💜
+VKOOK Is my live"
+8943 female "RT @AsemWORLD: Who needs Freestyle Friday I can do this from Sunday to Sunday. The ball is in your court... #Asem #Asemmusic #weatherchanne…" "Instagram: saint.francis_"
+8950 female "RT @ManavAtlas: ""Attention #Science_Enthusiasts!""
+
+Are you getting bored during #Quarantine?
+
+@ManavAtlas (https://t.co/C2022wpYLX) present…" 
+8968 male "RT @Indovision_S: From the desk of Vinay Aggarwal, CEO
+""wake up and get ready just like you're going to work. If you stay in your slippers…" "UArts 2020. Brevity. The Phalanx Monolith. We All Deserve Life."
+8970 male "Empty Downtown Hamilton 15. B&amp;W series of a seemingly deserted downtown Hamilton, ON. (Population: 763,000) at appr… https://t.co/jnlXoyZEH6" "Host of the Ministry of Hemp podcast, Co-Host of the Two-Headed Nerd comic book podcast, drummer, skeptic, atheist, cook, aquarium nerd and adult child."
+8978 female "RT @MagaAngelo45: I was just gonna tie mine on “outlaw” style, but this way might make going to the bank easier.🤷‍♂️
+
+#Quarantine #InThisTo…" "Ghanaian stories"
+9023 female "Go and check out my amazing friends making @bigwednesdayy our very own Music Video because ours has been postponed… https://t.co/E6jFeAe2pJ" "🇵🇱🇳🇴🇺🇸 26&tired ig: frozenxamethyst YouTube: KristinT"
+9093 female "Poverty fight us! A ti jakan tan,#CoronaVirus God, you get blessings whey you For give us! If na by our sins, Baba… https://t.co/OxqwOYh4d8" "~BTS Army~ 💜💜💜"
+9101 female "RT @Bellaasays2: Meet little Taco🐶
+
+#forgetcorona #iBella #Quarantine https://t.co/lIcvvogXDW" 
+9122 female "Sometimes I just miss sitting around and being bored. Because that’s the time where my mind feels the most free to… https://t.co/hzPnR0fE6W" "𝙳𝚒𝚛𝚎𝚌𝚝𝚒𝚘𝚗𝚎𝚛 𝚂𝚒𝚗𝚌𝚎 2013"
+9155 female "RT @waqasiyatt: Quarantine day 13.
+Love is in the air 💞
+#QuarantineLife #Quarantine #sialkot https://t.co/yCLS5ujZfl" "👉🏻ENG/ESP ; #sao_Anime #Joyconboyz #Undertale ; Orgullosa de haber leído las novelas ligeras de SAO + Artista en proceso🖋👌🏻"
+9163 female "I feed my ego with this so don’t play with my money this #quarantine I’m beerious (serious)" 
+9169 male "Neymar Jr. pays £7,500 to his friends as a salary for staying with him.
+
+Please my friend : grow rich soon. 
+I will… https://t.co/HFBs1hCqAv" "Writer for hire. Author of the FRIDAY NIGHT FRIGHTS series. Father. Old punk. Horror fan. http://amazon.com/author/ericmos…"
+9187 male "RT @TeamSarkCess: What do you intend to gaining after this? Smh" "Love Myself❤
+Music Is My Life. #TBF🌻💜🍀"
+9197 female "RT @AsemWORLD: Who needs Freestyle Friday I can do this from Sunday to Sunday. The ball is in your court... #Asem #Asemmusic #weatherchanne…" "ustedes causan mí euforia 💜🤟🙆"
+9203 male "RT @CummingsATH: I like these DUDES. #UTRFounder" "“Your presence can give happiness. I hope you remember that.” —Jin @BTS_twt"
+9220 male "RT @ButterflyLove_8: Did U Know That The Persian Scholar Of Medicine,Ibn Sina (980-1037)Suspected That Some Diseases Were Spread By Microor…" "Where Art Meets Innovation. A living museum for the lost art of true creativity--in whatever form it still lives. Curated from the best and created by our crew."
+9235 female "On a lighter note pls enjoy. God bless us all🙏🏼" 
+9274 male "RT @pennewstweet: Singapore puts nearly 20,000 resident workers in quarantine
+#Singapore #quarantine #residentworkers #COVID19 #Covid19Sing…" "Pulm/CC Fellow @uwpccm, by way of @umichmedicine. Interested in sepsis phenotypes. Karaoke enthusiast. Florida Man."
+9281 female "Boxed Afternoon Teas at just £16pp. Delivered without crockery and in re-usable boxes. All staff will be social dis… https://t.co/q1NeXrFvg3" "The south's go-to for unique event design, planning, production & management specializing in corporate events, weddings & celebrations. We service globally."
+9286 male "TOGETHER BELIEVING FOR A BETTER TOMORROW
+
+#hug #love #together #ensemblealamaison #humanity #quarantine #confinement" "25. He/him. I watch more TV than you. 'Posts a lot of hogwash.'"
+9314 female "#quarantine
+My friend making tiktok coz he was bored in quarantine 🤯
+*le me - https://t.co/Q8t1ZX9LNQ" 
+9341 male "RT @iamedem: Asem u no go stop this life..Always taking shots..." "I am a retired teacher, a patriot and a social worker. I fight for justice."
+9342 female "RT @Dee_Diana_T: I usually hide my note9 when an iPhone user comes by. Stay home!! #quarantine https://t.co/tTYfWBygKI" "Fan of the GOAT 🐐🎾 #RenasArmy"
+9385 male "Thank you @Oper_Leipzig for sending over a pair of super chic masks!  Trying to work on my fashionable tan line now… https://t.co/OXISsu8kQu" "Certified Residential Specialist, REALTOR®️, Consultant and Educator - ERA Key Realty Services - MA - USPHS Commissioned Corps Retiree - International Traveler"
+9400 male "RT @unian_en: Ruling party leader says #quarantine in #Ukraine may end no earlier than mid-May #Kornienko #ServantOfThePeople #coronavirus…" "An unapologetic, analytical, & passionate weekly Buffalo sports talk podcast. Tell Virgil write brick on my brick. Writer for @LastWordOnNFL"
+9410 male "RT @GFarooqi: Since been #lockdown #quarantine weather in #Islamabad been really tempting &amp; mischievous... cloudy, breezy, pleasant &amp; fragr…" "Showing A Bright Side Of J&K!"
+9418 male "RT @nnaji_kate: 🤣 Please who is really at fault here? 
+He, NEPA or his Wife?
+Must Watch!!!
+
+#MondayMotivation #COVID #Quarantine #funkeakin…" "We are always lookin! If you see your content and don’t approve ask and we’ll remove. #NSFW 18+ please slide n our DM"
+9420 female "RT @Bellaasays2: Meet little Taco🐶
+
+#forgetcorona #iBella #Quarantine https://t.co/lIcvvogXDW" "art student with solent uni"
+9430 female "I started hating works like
+#Pandemic 
+#Quarantine 
+#Virus
+#Epidemic 
+And above all
+#Corona 😤" 
+9456 female "RT @BitSler: This week you have Amazing WAGER CONTEST every days! 💰🏦
+
+More than $10.000 distributed already on MONDAY, TUESDAY, WEDNESDAY,…" Student🤓
+9481 female "RT @GanassiChip: Who knew on the St Petersburg/Atlanta Race weekend when we changed the clocks we went from Standard Time to the Twilight Z…" "Grimy Brooklyn Cat running a business!. What you find here is Raw Law! Be Advised!!! #BBWsAreMyKryptonite #JustBlazin #GMENALLDAY #Its420AllTheTime"
+9489 female "#RunThisUp #LabSessions #Lab51 #LabLocked 
+.
+.
+HELP ME TO #WIN THIS ONE PLEASE PEOPLE  &amp; DROP #COMMENTS &amp; #LIKES… https://t.co/wEpxIk9vdt" 
+9500 male "RT @JRRTolkien: The #Covid_19 #quarantine has given this #Tolkien quotation NEW MEANING: “It’s a dangerous business, #Frodo, going out your…" "Writer/Director #MacheathProductions  http://thealchemyofscreenacting.co.uk. Zero tolerance of all abuse and cruelty: human and animal. On 5,000 Following limit"
+9518 male "#Quarantine is giving me some time to pick up old hobbies. Found my old #diabolo the other day, and made this routi… https://t.co/RfDUCwqplm" "financial advisor n into real estate and social worker and food blogger"
+9526 female "RT @DelafroozSajjad: Thank you @Sampark_Pradhan
+.
+.
+
+@FridayStorytel1 @DisneyplusHSVIP @neerajpofficial @ShitalBhatiaFFW @shivamNair #speci…" 
+9548 male "Kenyan music #quarantine playlist set to uplift your soul.
+
+https://t.co/w9gttBfKNd https://t.co/TlGGzBNhnL" "South Korean BTS Bighit💜💜"
+9553 female "We can’t wait to get back up to #WaltDisneyWorld! Once this #quarantine situation is all over, you know we’ll be up… https://t.co/LR6NZ18pCk" "follow me. #100daysOfCode  #coding  #hourofcode or code related
+made with ❤️ + node.js by @yunkidev"
+9558 male "RT @BollySpy: #RashamiDesai Learning Guitar During Her Stay At Home
+
+@TheRashamiDesai #StayHomeSaveLives #COVID2019 #coronavirus #Quarantin…" "#방탄 • #theternal: 𝗐𝖾 𝗐𝖾𝗋𝖾 𝗈𝗇𝗅𝗒 𝗌𝖾𝗏𝖾𝗇, 𝖻𝗎𝗍 𝗐𝖾 𝗁𝖺𝗏𝖾 𝗒𝗈𝗎 𝗇𝗈𝗐
+ 💫🌦
+
+
+
+
+
+               𝘀𝘁𝗮𝗻 𝗮𝗰𝗰𝗼𝘂𝗻𝘁: an aries not aries"
+9561 male "RT @939MIA: We can’t wait to get back up to #WaltDisneyWorld! Once this #quarantine situation is all over, you know we’ll be up there for a…" "Insta: https://www.instagram.com/felkoficial
+Youtube: http://youtube.com/c/Felkoficial"
+9573 male "Which one is your favourite #quarantine asana!
+
+#lockdownlife #asanapractice #favouriteasanas #nameit #covid19… https://t.co/fgXD4XlyCJ" "I am PaquitoDisco"
+9639 female "PS4 life!! I was better at work 😤 #Quarantine" 
+9660 female "Municipalities have identified municipal facilities to be used for #quarantine and #SelfIsolation units should they… https://t.co/DElKH72z3P" "philippians 4:13"
+9663 male "RT @iamedem: Asem u no go stop this life..Always taking shots..." "Beckham shadow Blow candles 27 jan 🎉 Cars lover 🚘 millionaire 💵by❤️ Born at a very young age 👶 Dn’t thnk fr a 2nd dat I actually care wat u hav 2 say😺"
+9700 male "Oil color on paper 2017 
+- painted 2020
+#quarantine #stayhome #drawing #painter #painting #artist #art #saeedsafi… https://t.co/PYHpuEDyY1" "FRESH IS BEST FARM TO TABLE I DO"
+9709 female "RT @dailystarnews: At least 44 #Bangladeshis who were stuck in #India were put under institutional #quarantine after they returned through…" "TTP Survivor. Fluent in Sarcasm. Lover of all things Geeky. Writer of Words. Mom. I write for @tvserieshub."
+9760 female "RT @nnaji_kate: 🤣 Please who is really at fault here? 
+He, NEPA or his Wife?
+Must Watch!!!
+
+#MondayMotivation #COVID #Quarantine #funkeakin…" 
+9774 male "RT @ShobhaBJP: 70 people from Belagavi attended #NizamuddinMarkaj, among thm 8 tested +ve, rest of the results yet to come.
+
+In #Quarantine…" "Paris-based YouTuber - SF/F Author - Chronic Transient - Send salsa 🔥 host of the brand new podcast Building the Oracle http://bit.ly/BTO-Episodes"
+9789 male "RT @MR_BURNDATLOUD: Big brother is always watching.. #OnTheTv #Live #Nycstreets #Highways #Quarantine #emptystreets #Nyc @Bklynbby @Hippie_…" "US expat (NY) #MAGA #KAG #1A #2A #Vets #ProLife #BuildTheWall, blckd by @lsarsour, married father, #MAGA ambassador, MThPhys, #DigitalLurp יהודי"
+9798 female "Dark days ahead as churches closed, no public worship &amp; 
+no one can go to confession. Let's all pray inside our hom… https://t.co/ZLgE1wj3XY" "Sc👻: killaa_kia Insta📸: shesomakia ISU’23❤️"
+9900 female "RT @BertM51: 5* ""Ha! Not good....freaking #awesome! Pick this one tonight. Would make a wonderful distraction from the #quarantine monotony…" "어느날 내 눈에 훅 들어온 찬란한 일곱개의 별✨~ BTS💜ARMY 
+수리수리 마수리 얍! 매직샵으로😊"
+9902 male "RT @nnaji_kate: 🤣 Please who is really at fault here? 
+He, NEPA or his Wife?
+Must Watch!!!
+
+#MondayMotivation #COVID #Quarantine #funkeakin…" "♫ ♫ Artists & Fans Network ♫ ★ Connecting 1000's of music lovers to talented Artists & Singers ★Taking #music talent to a new level. Save our #Spotify #Playlist"
+9908 male "Jerusalem is quiet; I never thought I’d say it. 
+
+I’m finishing @mhouellebecq’s  “Serotonin”.  With books like this… https://t.co/0ovfVqSjP8" "Christ First, Cancer survivor, NASA Fan, Military Tech enthusiast, Entrepreneur, #MolonLabe #MAGA #KAG2020 HiQing around"
+9914 male "RT @JRRTolkien: The #Covid_19 #quarantine has given this #Tolkien quotation NEW MEANING: “It’s a dangerous business, #Frodo, going out your…" "Hear Toby's brand new single,""What's up Cuz""http://orcd.co/whats-up-cuz,""Text me...(712) 624-4358"
+9924 male "Home quarantine back work out! 
+04.06.2K20
+Hope all is well with you in this time of crisis
+10-20min of work out wi… https://t.co/TMTktZhtD7" "🔞 Male Performer/ Producer/Director/ Photograph/Videoography #TeamVP #BBCTITANS
+http://onlyfans.com/mr_jordan_3x  .......
+
+https://stars.avn.com/jonathanjordan"
+9975 male "that is another legacy filled with barakah!
+
+Note: Ibn Sina's full name was Abu Ali Al-Hussein Ibn Abdullah Ibn Sin… https://t.co/UNCpFPqiUG" 
+9979 female "First day at work after near a month in #Quarantine was so boring! I used to work home and that was more productive. #coronavirus" "Helping You Protect Your Family, Home, & Pets from Harmful Bugs Without Toxic Chemicals since 1998 🐜"
+9980 male "RT @nnaji_kate: 🤣 Please who is really at fault here? 
+He, NEPA or his Wife?
+Must Watch!!!
+
+#MondayMotivation #COVID #Quarantine #funkeakin…" "Media hack, @dohadebates. Prevs: @advance_digital, @ajplus, @circa. Politics. Gay. Oil painter. Reimagining news/comms since '11. RTs ≠ endorsement"
+9986 female "RT @AsemWORLD: Who needs Freestyle Friday I can do this from Sunday to Sunday. The ball is in your court... #Asem #Asemmusic #weatherchanne…" "DREAM EPIC IG: @Zayy7_"
+9996 female "RT @iamedem: Asem u no go stop this life..Always taking shots..." "Aidante naturelle pour ma mère atteinte d'Alzheimer Merci Twitter pour mon seul répit.Vous n'avez aucune idée du bien-être que ça m'apporte! Caregiver for mom!"
