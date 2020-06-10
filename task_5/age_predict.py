@@ -17,7 +17,7 @@ import numpy as np
 # screen_name: full user name
 data = read_mongo(db='twitter_db', collection='twitter_collection',
                   query={'original author': 1, 'user': 1,'text': 1})
-pd.set_option('display.max_columns', None)
+data = data.sample(n=10000, random_state=42)pd.set_option('display.max_columns', None)
 
 nested_data = json_normalize(data['user'])
 
