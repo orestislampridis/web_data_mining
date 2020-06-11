@@ -203,8 +203,8 @@ print("final_gender_list: ", final_gender_list)
 
 # write genders to file
 genders_to_file = pd.DataFrame(final_gender_list, columns=["gender"])
-genders_to_file = genders_to_file[genders_to_file.gender.notnull()]  #new
-genders_to_file = pd.concat([genders_to_file, text_df,desc_df], axis=1, sort=False, join='inner')  #new
+genders_to_file = genders_to_file[genders_to_file.gender.notnull()]
+genders_to_file = pd.concat([genders_to_file, text_df,desc_df], axis=1, sort=False, join='inner')
 genders_to_file.to_csv('genders.csv', header=False, index=True, encoding='utf-8', sep=' ')
 
 

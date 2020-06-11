@@ -17,25 +17,33 @@ import numpy as np
 # screen_name: full user name
 data = read_mongo(db='twitter_db', collection='twitter_collection',
                   query={'original author': 1, 'user': 1,'text': 1})
-data = data.sample(n=10000, random_state=42)pd.set_option('display.max_columns', None)
+data = data.drop_duplicates(subset='original author', keep="first").reset_index()
+# data = data.iloc[:50000]
+data = data.iloc[:10000]
+# data = data.iloc[:1000]
 
+
+pd.set_option('display.max_columns', None)
+#print(data.head())
 nested_data = json_normalize(data['user'])
 
 author_df = (data['original author'])
-desc_df = (nested_data['description'])
+desc = (nested_data['description'].tolist())
+data['description']=desc
 text_df = (data['text'])
 
-data = pd.concat([author_df, desc_df,text_df], axis=1, sort=False)
+
+data = pd.concat([author_df, data['description'],text_df], axis=1, sort=False)
+print(data)
+data['text']=data['text'].replace(np.nan, '', regex=True)
 data['description']=data['description'].replace(np.nan, '', regex=True)
 
 #drop columns with ground truth
 truth = pd.read_csv(r"age_tweets.csv", encoding="utf8")
 truth.rename(columns={'Unnamed: 0':'_id'}, inplace=True)
-data=data.drop(truth['_id'].values[:2].tolist())
-
-print(data.head())
 
 # function to clean the word of any punctuation or special characters
+# we need slang and emojis as they reflect the difference between age groups
 def cleanPunc(sentence):
     cleaned = re.sub(r'[?|!|\'|"|#]', r'', sentence)
     cleaned = re.sub(r'[.|,|)|(|\|/]', r' ', cleaned)
@@ -78,7 +86,7 @@ def slang_count(text):
             if slang == word:
                 counter += 1
     return counter
-
+print("Extracting features...")
 #count slang and emojis at text and description
 data["slang_count"] = ""
 data["emoji_count"] = ""
@@ -94,7 +102,7 @@ for i in range(0,len(data)):
 data['description']=data['description'].str.lower()
 data['description']=data['description'].apply(cleanPunc)
 
-print(data.head())
+print(data.head(3))
 
 
 
@@ -110,21 +118,23 @@ data[['emoji_count', 'slang_count']] = scaler.fit_transform(data[['emoji_count',
 
 #create dataframe X, y for train
 X=pd.concat([vectors_pd,data['emoji_count'],data['slang_count']],axis=1)
-
+#print(X)
 #load classifier
 filename = 'adaboost_final.sav'
-clf = loaded_model = pickle.load(open(filename, 'rb'))
+clf = pickle.load(open(filename, 'rb'))
+print("\nPredicting with Adaboost...")
 
-y=clf.predict(X)
+y = clf.predict(X)
+y = y.tolist()
 
-pred_age = pd.DataFrame(data=y, columns=age_group)
-
-result_age = pd.concat([data,pred_age], axis=1, sort=False)
-print(result_age)
+data['age_group'] = y
+print(data)
 
 #plots
-result_age.age_group.plot(kind='hist')
-plt.show()
+counts = data['age_group'].value_counts()
 
-result_age.age_group.plot(kind='kde', xlim=(0, 100), grid=True)
+plt.bar(counts.index[:], counts.values[:], color = (0.0,0.0,1,0.5))
+plt.title('Twitter users age groups counts')
+plt.xlabel('Categories')
+plt.ylabel('Counts')
 plt.show()

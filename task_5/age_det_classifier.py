@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import csv
 import re
-
+import matplotlib.pyplot as plt
 import pickle
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
@@ -16,21 +16,32 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score, f1_score ,precision_score, recall_score
+import collections
+
 
 #load age_tweets
 data = pd.read_csv(r"age_tweets.csv", encoding="utf8")
 #saved data has column 'Unnamed: 0' as the previous id
 data.rename(columns={'Unnamed: 0':'_id'}, inplace=True)
-bins = [0, 18, 29, 39,100]
-labels = [1,2,3,4] #1->teens, 2->20s, 3->30s, 4->40s and above
+bins = [0, 21, 36,100]
+labels = ["very_young","young","young_in_heart"] #very young->[0,20], young->[21,35], young in heart->[36,100]
 data['binned'] = pd.cut(data['age'], bins=bins, labels=labels)
 data['description']=data['description'].replace(np.nan, '', regex=True)
 pd.set_option('display.max_columns', None)
 print(data.head())
 
 
+# #plots data balance
+# counts = data['binned'].value_counts()
+# plt.bar(counts.index[:], counts.values[:], color = (0.0,0.0,1,0.5))
+# plt.title('Twitter users age groups counts')
+# plt.xlabel('Categories')
+# plt.ylabel('Counts')
+# plt.show()
+
 
 # function to clean the word of any punctuation or special characters
+# we need slang and emojis as they reflect the difference between age groups
 def cleanPunc(sentence):
     cleaned = re.sub(r'[?|!|\'|"|#]', r'', sentence)
     cleaned = re.sub(r'[.|,|)|(|\|/]', r' ', cleaned)
@@ -148,10 +159,10 @@ print("\nClassifier:",name)
 clf.fit(X_train, y_train)
 y_pred=clf.predict(X_test)
 
-print("Accuracy:",accuracy_score(y_test, y_pred))
-print("Precission:",precision_score(y_test, y_pred,average='macro'))
-print("Recal:",recall_score(y_test, y_pred,average='macro'))
-print("f1_score:",f1_score(y_test, y_pred,average='macro'))
+print("Accuracy:",accuracy_score(y_test, y_pred))  # Accuracy: 0.720873786407767
+print("Precission:",precision_score(y_test, y_pred,average='macro'))  # Precission: 0.7225022104332449
+print("Recal:",recall_score(y_test, y_pred,average='macro')) # Recal: 0.7211324853708959
+print("f1_score:",f1_score(y_test, y_pred,average='macro')) # f1_score: 0.7200576583813273
 print("\n")
 
 #     if best<accuracy_score(y_test, y_pred):
@@ -161,3 +172,8 @@ print("\n")
 # save the model to disk
 filename = 'adaboost_final.sav'
 pickle.dump(clf, open(filename, 'wb'))
+
+
+
+# print(collections.Counter(y_pred)) # Counter({'young': 143, 'young in heart': 145, 'very young': 124})
+# print(collections.Counter(y_test)) # Counter({'young': 151, 'young in heart': 126, 'very young': 135})
