@@ -31,6 +31,45 @@ folium_map_1 = folium.Map(
     max_zoom=20
 )
 
+feature_ea = folium.FeatureGroup(name='Entire home/apt')
+feature_pr = folium.FeatureGroup(name='Private room')
+feature_sr = folium.FeatureGroup(name='Shared room')
+
+for i, v in locs_gdf.iterrows():
+    popup = """
+    Location id : <b>%s</b><br>
+    Room type : <b>%s</b><br>
+    Neighbourhood : <b>%s</b><br>
+    Price : <b>%d</b><br>
+    """ % (v['id'], v['room_type'], v['neighbourhood'], v['price'])
+
+    if v['room_type'] == 'Entire home/apt':
+        folium.CircleMarker(location=[v['latitude'], v['longitude']],
+                            radius=1,
+                            tooltip=popup,
+                            color='#FFBA00',
+                            fill_color='#FFBA00',
+                            fill=True).add_to(feature_ea)
+    elif v['room_type'] == 'Private room':
+        folium.CircleMarker(location=[v['latitude'], v['longitude']],
+                            radius=1,
+                            tooltip=popup,
+                            color='#087FBF',
+                            fill_color='#087FBF',
+                            fill=True).add_to(feature_pr)
+    elif v['room_type'] == 'Shared room':
+        folium.CircleMarker(location=[v['latitude'], v['longitude']],
+                            radius=1,
+                            tooltip=popup,
+                            color='#FF0700',
+                            fill_color='#FF0700',
+                            fill=True).add_to(feature_sr)
+
+feature_ea.add_to(locs_map)
+feature_pr.add_to(locs_map)
+feature_sr.add_to(locs_map)
+folium.LayerControl(collapsed=False).add_to(locs_map)
+
 folium_map_2 = folium.Map(
     location=[40.736851, 22.920227],
     tiles='CartoDB dark_matter',
