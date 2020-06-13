@@ -97,8 +97,6 @@ data["slang_count"] = ""
 data["emoji_count"] = ""
 # print(data.iloc[0])
 
-
-
 for i in range(0,len(data)):
     data["slang_count"].iloc[i] = slang_count(data['description'].iloc[i])
     data["slang_count"].iloc[i] += slang_count(data['text'].iloc[i])
@@ -106,7 +104,6 @@ for i in range(0,len(data)):
     data["emoji_count"].iloc[i] += emoji_count(data['description'].iloc[i])
 
 # convert to lower and remove punctuation or special characters
-
 data['description'] = data['description'].str.lower()
 data['description'] = data['description'].apply(cleanPunc)
 
