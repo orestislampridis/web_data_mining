@@ -1,17 +1,47 @@
 # predict likes of a tweet/insta post
+import re
+import gensim
+import numpy as np
 import pandas as pd
 import task_2.preprocessing
+import task_6.word2vec_model
 from sklearn.svm import SVC
 from pandas import json_normalize
 from xgboost import XGBClassifier
 from connect_mongo import read_mongo
-from sklearn.pipeline import Pipeline
-from sklearn.model_selection import cross_validate
+from sklearn.compose import ColumnTransformer
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics import classification_report, accuracy_score
+
 
 from tqdm import tqdm
 tqdm.pandas()
+
+
+# ======================================================================================================================
+
+pd.set_option('display.max_columns', None)
+
+# ======================================================================================================================
+
+def emoji_count(text):
+    emoji_pattern = re.compile("["
+                               u"\U0001F600-\U0001F64F"  # emoticons
+                               u"\U0001F300-\U0001F5FF"  # symbols & pictographs
+                               u"\U0001F680-\U0001F6FF"  # transport & map symbols
+                               u"\U0001F1E0-\U0001F1FF"  # flags (iOS)
+                               u"\U00002702-\U000027B0"
+                               "]+", flags=re.UNICODE)
+
+    counter = 0
+    datas = list(text)  # split the text into characters
+
+    for word in datas:
+        counter += len(emoji_pattern.findall(word))
+    return counter
 
 
 # ======================================================================================================================
@@ -21,20 +51,32 @@ reading = task_2.preprocessing.preprocessing(convert_lower=True, use_spell_corre
 
 
 # Read Twitter data
-data = read_mongo(db='twitter_db', collection='twitter_collection', query={'text': 1, 'user': 1})
+data = read_mongo(db='twitter_db', collection='twitter_collection', query={'text': 1, 'retweeted_status': 1})
 data = data.sample(n=1000, random_state=42)
+data = data.dropna()
 data.reset_index(drop=True, inplace=True)  # needed when we sample the data in order to join dataframes
 print(data)
 
 
 # get the nested fields screen_name, description from field user
-nested_data = json_normalize(data['user'])
-print(nested_data['friends_count'])  # favourites_count    verified
-print(nested_data['favourites_count'])
-data['favourites_count'] = nested_data['favourites_count']
+nested_data = json_normalize(data['retweeted_status'])
+print(nested_data['user.listed_count'])
+data['favourites_count'] = nested_data['user.listed_count']
 
-#nested_data['description'] = nested_data['description'].replace([None], [''])  # replace none values with empty strings
 
+nested_data['user.description'] = nested_data['user.description'].replace([None], [''])  # replace none values with empty strings
+
+
+
+data["emoji_count"] = ""
+for i in range(0, len(data)):
+    data["emoji_count"].iloc[i] = emoji_count(data['text'].iloc[i])
+    data["emoji_count"].iloc[i] += emoji_count(nested_data['user.description'].iloc[i])
+
+
+
+# clean text using preprocessing.py (clean_Text function)
+data['clean_descr'] = nested_data['user.description'].progress_map(reading.clean_text)
 
 # clean text using preprocessing.py (clean_Text function)
 data['clean_text'] = data.text.progress_map(reading.clean_text)
@@ -48,7 +90,7 @@ data['clean_text'] = data.caption.progress_map(reading.clean_text)
 '''
 
 data.drop(['text'], axis=1, inplace=True)
-data.drop(['user'], axis=1, inplace=True)
+data.drop(['retweeted_status'], axis=1, inplace=True)
 
 
 # further filter stopwords
@@ -56,14 +98,18 @@ more_stopwords = ['tag', 'not', 'let', 'wait', 'set', 'put', 'add', 'post', 'giv
                   'must', 'look', 'call', 'minute', 'com', 'thing', 'much', 'happen', 'hahaha', 'quaranotine',
                   'everyone', 'day', 'time', 'week', 'amp', 'find', 'BTu']
 data['clean_text'] = data['clean_text'].progress_map(lambda clean_text: [word for word in clean_text if word not in more_stopwords])
+data['clean_descr'] = data['clean_descr'].progress_map(lambda clean_text: [word for word in clean_text if word not in more_stopwords])
 
 
 # Drop the rows that contain empty captions
 # inplace=True: modify the DataFrame in place (do not create a new object) - returns None
 data.drop(data[data['clean_text'].progress_map(lambda d: len(d)) < 1].index, inplace=True)  # drop the rows that contain empty captions
 # data[data['clean_text'].str.len() < 1]  # alternative way
+data.drop(data[data['clean_descr'].progress_map(lambda d: len(d)) < 1].index, inplace=True)  # drop the rows that contain empty descriptions
 data.reset_index(drop=True, inplace=True)  # reset index needed for dataframe access with indices
 
+
+#data['clean_txt_descr'] = data['clean_text'] + data['clean_descr']
 
 print(data)  # use to clean non-english posts
 
@@ -75,15 +121,35 @@ data['likes'] = pd.qcut(data['favourites_count'], q=3, labels=bin_labels)
 print(data['likes'].value_counts())
 print(data)
 
-X = data['clean_text']
+X = data[['clean_text', 'clean_descr', 'emoji_count']]
 y = data['likes']
+
+print(X)
+
+
+# ======================================================================================================================
+# Split TRAIN - TEST
+# ======================================================================================================================
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42, stratify=y)
+print(X_train)
+
+
+# ======================================================================================================================
 
 
 def dummy(token):
     return token
 
-
+# tf-idf
 tfidf = TfidfVectorizer(lowercase=False, preprocessor=dummy, tokenizer=dummy, min_df=3, ngram_range=(1, 2))
+
+# one-hot-encoding
+one_not = CountVectorizer(lowercase=False, preprocessor=dummy, tokenizer=dummy, analyzer='word')
+
+# word2vec
+model = gensim.models.Word2Vec(X_train, size=100, min_count=0, sg=1)
+word2vec_vectorizer = dict(zip(model.wv.index2word, model.wv.syn0))
 
 # SVM
 svm = SVC(kernel='rbf', C=100, gamma='scale', probability=True)
@@ -100,16 +166,66 @@ xgb_imb_aware = XGBClassifier(learning_rate=0.01, n_estimators=1000, max_depth=4
 predictors = [['SVM', svm], ['Random Forest Classifier', rfc], ['XGB Classifier', xgb_imb_aware]]
 
 
-# set the scoring metrics
-scoring = {'precision': 'precision_macro', 'recall': 'recall_macro', 'accuracy': 'accuracy', 'f1-score': 'f1_macro'}
+def evaluation_scores(test, prediction, classifier_name='', encoding_name=''):
+    print('\n', '-' * 60)
+    print(classifier_name + " + " + encoding_name)
+    print('Accuracy:', np.round(accuracy_score(test, prediction), 4))
+    print('-' * 60)
+    print('classification report:\n\n', classification_report(y_true=test, y_pred=prediction))
 
+
+# ======================================================================================================================
+# TF-IDF
+# ======================================================================================================================
 
 for name, classifier in predictors:
-    steps = [('tfidf', tfidf), ('model', classifier)]  # minmax scaler for continuous features
-    pipeline = Pipeline(steps=steps)
+    column_trans = ColumnTransformer(
+        [('tfidf_text', tfidf, 'clean_text'),
+         ('tfidf_descr', tfidf, 'clean_descr')],
+    remainder='passthrough')
 
-    # evaluate pipeline
-    print("\n", name, ":")
-    scores = cross_validate(pipeline, X, y, scoring=scoring, cv=10, return_train_score=False)
-    for s in scoring:
-        print("%s: %.2f (+/- %.2f)" % (s, scores["test_" + s].mean(), scores["test_" + s].std()))
+    X_tfidf_train = column_trans.fit_transform(X_train)
+    X_tfidf_test = column_trans.transform(X_test)
+
+    classifier.fit(X_tfidf_train, y_train)
+    y_predicted = classifier.predict(X_tfidf_test)
+
+    print(evaluation_scores(y_test, y_predicted, classifier_name=name, encoding_name='TF-IDF'))  # , class_names=class_names
+
+
+# ======================================================================================================================
+# Count Vectorizer
+# ======================================================================================================================
+
+for name, classifier in predictors:
+    column_trans = ColumnTransformer(
+        [('one_hot_text', one_not, 'clean_text'),
+         ('one_hot_descr', one_not, 'clean_descr')],
+        remainder='passthrough')
+
+    X_tfidf_train = column_trans.fit_transform(X_train)
+    X_tfidf_test = column_trans.transform(X_test)
+
+    classifier.fit(X_tfidf_train, y_train)
+    y_predicted = classifier.predict(X_tfidf_test)
+
+    print(evaluation_scores(y_test, y_predicted, classifier_name=name, encoding_name='One-hot-encoding'))  # , class_names=class_names
+
+
+# ======================================================================================================================
+# Word2vec
+# ======================================================================================================================
+
+for name, classifier in predictors:
+    column_trans = ColumnTransformer(
+        [('tfidf_text', task_6.word2vec_model.TfidfEmbeddingVectorizer(word2vec_vectorizer), 'clean_text'),
+         ('tfidf_descr', task_6.word2vec_model.TfidfEmbeddingVectorizer(word2vec_vectorizer), 'clean_descr')],
+    remainder='passthrough')
+
+    X_tfidf_train = column_trans.fit_transform(X_train)
+    X_tfidf_test = column_trans.transform(X_test)
+
+    classifier.fit(X_tfidf_train, y_train)
+    y_predicted = classifier.predict(X_tfidf_test)
+
+    print(evaluation_scores(y_test, y_predicted, classifier_name=name, encoding_name='Word2vec'))  # , class_names=class_names
