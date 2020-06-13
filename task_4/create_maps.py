@@ -12,8 +12,6 @@ merged_df = pd.read_csv('merged_locations.csv')
 sentiment_df = pd.read_csv('sentiment_tweets.csv')
 author_text_age_df = pd.read_csv('predicted_ages_50k.csv')
 
-print(author_text_age_df.columns)
-
 merged_df.set_index('id', inplace=True)
 sentiment_df.set_index('id', inplace=True)
 author_text_age_df.set_index('id', inplace=True)
@@ -28,8 +26,6 @@ mapping = {'negative': 'red', 'neutral': 'grey', 'positive': 'green'}
 joined_loc_sent_author_text_age_df["color"] = joined_loc_sent_df["VADER predicted sentiment"].map(mapping)
 
 joined_loc_sent_author_text_age_df['filtered_text'] = joined_loc_sent_author_text_age_df.text.apply(clean_text)
-
-print(joined_loc_sent_author_text_age_df)
 
 # Plot the long and lat coordinates as scatter points
 # on the map image. It is important to set up the X-axis
