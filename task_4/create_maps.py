@@ -2,6 +2,8 @@ import folium
 import pandas as pd
 from folium.plugins import FastMarkerCluster
 
+from simple_preprocessing import clean_text
+
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', None)
 pd.set_option('display.max_colwidth', -1)
@@ -19,15 +21,15 @@ author_text_age_df.set_index('id', inplace=True)
 joined_loc_sent_df = pd.merge(merged_df, sentiment_df, on='id', how='inner')
 joined_loc_sent_author_text_age_df = pd.merge(joined_loc_sent_df, author_text_age_df, on='id', how='inner')
 
-print(joined_loc_sent_author_text_age_df)
-
 # Create a mapping for the colors
 mapping = {'negative': 'red', 'neutral': 'grey', 'positive': 'green'}
 
 # Apply said mapping
-joined_loc_sent_df["color"] = joined_loc_sent_df["VADER predicted sentiment"].map(mapping)
+joined_loc_sent_author_text_age_df["color"] = joined_loc_sent_df["VADER predicted sentiment"].map(mapping)
 
-print(joined_loc_sent_df)
+joined_loc_sent_author_text_age_df['filtered_text'] = joined_loc_sent_author_text_age_df.text.apply(clean_text)
+
+print(joined_loc_sent_author_text_age_df)
 
 # Plot the long and lat coordinates as scatter points
 # on the map image. It is important to set up the X-axis
@@ -40,44 +42,19 @@ folium_map_1 = folium.Map(
     max_zoom=20
 )
 
-feature_ea = folium.FeatureGroup(name='Entire home/apt')
-feature_pr = folium.FeatureGroup(name='Private room')
-feature_sr = folium.FeatureGroup(name='Shared room')
+popup = list()
 
-for i, v in locs_gdf.iterrows():
-    popup = """
-    Location id : <b>%s</b><br>
-    Room type : <b>%s</b><br>
-    Neighbourhood : <b>%s</b><br>
-    Price : <b>%d</b><br>
-    """ % (v['id'], v['room_type'], v['neighbourhood'], v['price'])
+for i, v in joined_loc_sent_author_text_age_df.iterrows():
+    popup.append("""
+    Username : <b>%s</b><br>
+    Tweeted text : <b>%s</b><br>
+    Predicted sentiment : <b>%s</b><br>
+    Predicted age group : <b>%s</b><br>
+    """ % (
+        v['original author'], v['filtered_text'],
+        v['VADER predicted sentiment'], v['age_group']))
 
-    if v['room_type'] == 'Entire home/apt':
-        folium.CircleMarker(location=[v['latitude'], v['longitude']],
-                            radius=1,
-                            tooltip=popup,
-                            color='#FFBA00',
-                            fill_color='#FFBA00',
-                            fill=True).add_to(feature_ea)
-    elif v['room_type'] == 'Private room':
-        folium.CircleMarker(location=[v['latitude'], v['longitude']],
-                            radius=1,
-                            tooltip=popup,
-                            color='#087FBF',
-                            fill_color='#087FBF',
-                            fill=True).add_to(feature_pr)
-    elif v['room_type'] == 'Shared room':
-        folium.CircleMarker(location=[v['latitude'], v['longitude']],
-                            radius=1,
-                            tooltip=popup,
-                            color='#FF0700',
-                            fill_color='#FF0700',
-                            fill=True).add_to(feature_sr)
-
-feature_ea.add_to(locs_map)
-feature_pr.add_to(locs_map)
-feature_sr.add_to(locs_map)
-folium.LayerControl(collapsed=False).add_to(locs_map)
+joined_loc_sent_author_text_age_df['popup'] = popup
 
 folium_map_2 = folium.Map(
     location=[40.736851, 22.920227],
@@ -86,8 +63,8 @@ folium_map_2 = folium.Map(
     max_zoom=20
 )
 
-joined_loc_sent_df.apply(
-    lambda row: folium.CircleMarker(location=[row["latitude"], row["longitude"]], radius=1,
+joined_loc_sent_author_text_age_df.apply(
+    lambda row: folium.CircleMarker(location=[row["latitude"], row["longitude"]], radius=1, tooltip=row["popup"],
                                     color=row["color"]).add_to(folium_map_1),
     axis=1)
 

@@ -109,17 +109,12 @@ def strip_links(text):
 
 
 def strip_all_entities(text):
-    entity_prefixes = ['@', '#']
+    entity_prefixes = ['#', '@', ':', '/', '.', ',', '(', ')', '&', '!']
     for separator in string.punctuation:
         if separator not in entity_prefixes:
-            text = text.replace(separator, ' ')
-    words = []
-    for word in text.split():
-        word = word.strip()
-        if word:
-            if word[0] not in entity_prefixes:
-                words.append(word)
-    return ' '.join(words)
+            text = text.replace(separator, '')
+
+    return text
 
 
 # convert POS tag to wordnet tag in order to use in lemmatizer
@@ -179,30 +174,30 @@ def only_alpha(tokenized_text):
 # Method to clean tweets and instagram posts
 def clean_text(text):
     # remove entities and links
-    text = strip_all_entities(strip_links(text))
+    text = strip_all_entities((text))
 
     # remove rt and via in case of tweet data
-    text = text.lower()
-    text = re.sub(r"rt", "", text)
-    text = re.sub(r"via", "", text)
+    # text = text.lower()
+    # text = re.sub(r"rt", "", text)
+    # text = re.sub(r"via", "", text)
 
     # remove repost in case of instagram data
-    text = re.sub(r"repost", "", text)
+    # text = re.sub(r"repost", "", text)
 
     # replace consecutive non-ASCII characters with a space
-    text = re.sub(r'[^\x00-\x7F]+', ' ', text)
+    # text = re.sub(r'[^\x00-\x7F]+', ' ', text)
 
     # remove emojis from text
     text = emoji_pattern.sub(r'', text)
 
     # substitute contractions with full words
-    text = replace_contractions(text)
+    # text = replace_contractions(text)
 
     # tokenize text
     tokenized_text = word_tokenize(text)
 
     # remove all non alpharethmetic values
-    tokenized_text = only_alpha(tokenized_text)
+    # tokenized_text = only_alpha(tokenized_text)
 
     # print("tokenized_text", tokenized_text)
 
@@ -210,9 +205,7 @@ def clean_text(text):
     # looping through conditions
     for word in tokenized_text:
         # check tokens against stop words, emoticons and punctuations
-        if (
-                word not in stop_words and word not in emoticons and word not in string.punctuation and not word.isspace() and len(
-            word) > 1) or word in whitelist:
+        if (word not in emoticons) or word in whitelist:
             # print("word", word)
             filtered_text.append(word)
 
@@ -222,4 +215,4 @@ def clean_text(text):
 
     # print("tokenized_text 2", tokenized_text)
 
-    return filtered_text  # ' '.join(tokenized_text)
+    return ' '.join(tokenized_text)
