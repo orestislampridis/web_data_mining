@@ -22,7 +22,7 @@ data = read_mongo(db='twitter_db', collection='twitter_collection',
 # data = data.iloc[:10000]
 # data = data.iloc[:100]
 
-print(data)
+print(data.head(3))
 
 pd.set_option('display.max_columns', None)
 # print(data.head())
@@ -34,7 +34,7 @@ data['description'] = desc
 text_df = (data['text'])
 
 data = pd.concat([author_df, data['description'], text_df], axis=1, sort=False)
-print(data)
+print(data.head(3))
 data['text'] = data['text'].replace(np.nan, '', regex=True)
 data['description'] = data['description'].replace(np.nan, '', regex=True)
 
@@ -95,7 +95,11 @@ print("Extracting features...")
 # count slang and emojis at text and description
 data["slang_count"] = ""
 data["emoji_count"] = ""
-for i in range(50000, 100000):
+# print(data.iloc[0])
+
+
+
+for i in range(0, 50000):
     data["slang_count"].iloc[i] = slang_count(data['description'].iloc[i])
     data["slang_count"].iloc[i] += slang_count(data['text'].iloc[i])
     data["emoji_count"].iloc[i] = emoji_count(data['text'].iloc[i])
