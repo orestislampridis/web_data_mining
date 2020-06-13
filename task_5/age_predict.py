@@ -16,7 +16,7 @@ from connect_mongo import read_mongo
 # original author: username
 # screen_name: full user name
 data = read_mongo(db='twitter_db', collection='twitter_collection',
-                  query={'original author': 1, 'user': 1, 'text': 1})[50000:100000]
+                  query={'original author': 1, 'user': 1, 'text': 1})[50000:50100]
 # data = data.drop_duplicates(subset='original author', keep="first").reset_index()
 # data = data.iloc[:50000]
 # data = data.iloc[:10000]
@@ -99,7 +99,7 @@ data["emoji_count"] = ""
 
 
 
-for i in range(0, 50000):
+for i in range(0,len(data)):
     data["slang_count"].iloc[i] = slang_count(data['description'].iloc[i])
     data["slang_count"].iloc[i] += slang_count(data['text'].iloc[i])
     data["emoji_count"].iloc[i] = emoji_count(data['text'].iloc[i])
@@ -111,13 +111,15 @@ data['description'] = data['description'].str.lower()
 data['description'] = data['description'].apply(cleanPunc)
 
 print(data.head(3))
+index=data.index.values #get index(ids) of tweets
 
 # load tfidf
 vectorizer = TfidfVectorizer(stop_words='english', max_features=10000, ngram_range=(1, 3),
                              vocabulary=pickle.load(open("tfidf_age.pkl", 'rb')))
+
 # transform description to tfidf
 vectors = vectorizer.fit_transform(data['description'])
-vectors_pd = pd.DataFrame(vectors.toarray())
+vectors_pd = pd.DataFrame(vectors.toarray()).set_index(index) # match with index(ids)
 
 # scale emojis_count and slang_count to [0,1]
 scaler = MinMaxScaler()
@@ -125,7 +127,7 @@ data[['emoji_count', 'slang_count']] = scaler.fit_transform(data[['emoji_count',
 
 # create dataframe X, y for train
 X = pd.concat([vectors_pd, data['emoji_count'], data['slang_count']], axis=1)
-print(X)
+print(X.head(3))
 
 # load classifier
 filename = 'adaboost_final.sav'

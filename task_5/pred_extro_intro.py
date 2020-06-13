@@ -26,7 +26,7 @@ data = read_mongo(db='twitter_db', collection='twitter_collection',
 data = data.sample(n=1000, random_state=42)
 # get the nested fields from field user
 tweets = json_normalize(data['user'])
-tweets =tweets[['id','followers_count','friends_count','favourites_count','statuses_count']]
+tweets = tweets[['id','followers_count','friends_count','favourites_count','statuses_count']]
 print(tweets.head(3))
 
 #find mean
