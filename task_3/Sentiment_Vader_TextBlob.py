@@ -1,12 +1,9 @@
 import matplotlib.pyplot as plt
 import pandas as pd
-from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from textblob import TextBlob
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 from connect_mongo import read_mongo
-
-
-
 
 #read data
 file1="../dataset/test_cleaned.csv"
@@ -15,6 +12,7 @@ insta=pd.read_csv(file1, encoding="utf8")
 tweets = read_mongo(db='twitter_db', collection='twitter_collection', query={'text': 1})
 #tweets = tweets.sample(n=1000, random_state=42)
 
+print(tweets.head())
 
 
 insta = insta[['_id', 'caption' ]] #this is all I need

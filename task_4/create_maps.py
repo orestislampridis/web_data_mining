@@ -2,15 +2,24 @@ import folium
 import pandas as pd
 from folium.plugins import FastMarkerCluster
 
+pd.set_option('display.max_columns', None)
+pd.set_option('display.width', None)
+pd.set_option('display.max_colwidth', -1)
+
 merged_df = pd.read_csv('merged_locations.csv')
 sentiment_df = pd.read_csv('sentiment_tweets.csv')
+author_text_age_df = pd.read_csv('predicted_ages_50k.csv')
+
+print(author_text_age_df.columns)
 
 merged_df.set_index('id', inplace=True)
 sentiment_df.set_index('id', inplace=True)
+author_text_age_df.set_index('id', inplace=True)
 
 joined_loc_sent_df = pd.merge(merged_df, sentiment_df, on='id', how='inner')
+joined_loc_sent_author_text_age_df = pd.merge(joined_loc_sent_df, author_text_age_df, on='id', how='inner')
 
-print(joined_loc_sent_df)
+print(joined_loc_sent_author_text_age_df)
 
 # Create a mapping for the colors
 mapping = {'negative': 'red', 'neutral': 'grey', 'positive': 'green'}
