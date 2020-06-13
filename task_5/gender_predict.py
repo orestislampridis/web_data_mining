@@ -1,4 +1,3 @@
-import csv
 import pickle
 import re
 
@@ -7,7 +6,6 @@ import numpy as np
 import pandas as pd
 from pandas import json_normalize
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.preprocessing import MinMaxScaler
 
 from connect_mongo import read_mongo
 
@@ -69,7 +67,7 @@ print("\nPredicting with {}...".format(clf.__class__.__name__))
 y = clf.predict(X)
 gender = {1: 'male', 0: 'female'}
 y = [gender[item] for item in y]
-#print(y)
+# print(y)
 data['gender'] = y
 data['original author'] = author_df
 data['original_text'] = text_df
@@ -79,8 +77,8 @@ print("\n Results:")
 print(data.head(3))
 
 # # Save original author and original text along with predicted age group
-# header = ['original author', 'original_text', 'gender']
-# data.to_csv('predicted_genders.csv', columns=header) # uncomment to save
+header = ['original author', 'original_text', 'gender']
+data.to_csv('predicted_genders.csv', columns=header)  # uncomment to save
 
 # Plot the results
 counts = data['gender'].value_counts()
