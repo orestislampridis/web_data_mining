@@ -76,7 +76,7 @@ data = data[['original author', 'original_text', 'gender']]
 print("\n Results:")
 print(data.head(3))
 
-# # Save original author and original text along with predicted age group
+# Save original author and original text along with predicted age group
 header = ['original author', 'original_text', 'gender']
 data.to_csv('predicted_genders.csv', columns=header)  # uncomment to save
 

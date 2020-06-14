@@ -16,7 +16,7 @@ from connect_mongo import read_mongo
 # original author: username
 # screen_name: full user name
 data = read_mongo(db='twitter_db', collection='twitter_collection',
-                  query={'original author': 1, 'user': 1, 'text': 1})[50000:50100]
+                  query={'original author': 1, 'user': 1, 'text': 1})[100000:117417]
 # data = data.drop_duplicates(subset='original author', keep="first").reset_index()
 # data = data.iloc[:50000]
 # data = data.iloc[:10000]
@@ -140,7 +140,7 @@ data['original_text'] = text_df
 
 # Save original author and original text along with predicted age group
 header = ['original author', 'original_text', 'age_group']
-data.to_csv('predicted_ages_50k-100k.csv', columns=header)
+data.to_csv('predicted_ages_100k.csv', columns=header)
 
 # Plot the results
 counts = data['age_group'].value_counts()

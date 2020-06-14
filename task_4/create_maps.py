@@ -10,7 +10,7 @@ pd.set_option('display.max_colwidth', -1)
 
 merged_df = pd.read_csv('merged_locations.csv')
 sentiment_df = pd.read_csv('sentiment_tweets.csv')
-author_text_age_df = pd.read_csv('predicted_ages_50k.csv')
+author_text_age_df = pd.read_csv('predicted_ages.csv')
 gender_df = pd.read_csv('predicted_genders.csv')
 
 merged_df.set_index('id', inplace=True)
