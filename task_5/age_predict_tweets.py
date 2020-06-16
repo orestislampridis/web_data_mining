@@ -10,11 +10,11 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import MinMaxScaler
 
 from connect_mongo import read_mongo
+pd.set_option('display.max_columns', None)
 
 # Read Twitter data
 # description: bio
 # original author: username
-# screen_name: full user name
 data = read_mongo(db='twitter_db', collection='twitter_collection',
                   query={'original author': 1, 'user': 1, 'text': 1})[50000:50100]
 # data = data.drop_duplicates(subset='original author', keep="first").reset_index()
@@ -22,10 +22,9 @@ data = read_mongo(db='twitter_db', collection='twitter_collection',
 # data = data.iloc[:10000]
 # data = data.iloc[:100]
 
-print(data.head(3))
 
-pd.set_option('display.max_columns', None)
-# print(data.head())
+
+
 nested_data = json_normalize(data['user'])
 
 author_df = (data['original author'])
@@ -34,13 +33,13 @@ data['description'] = desc
 text_df = (data['text'])
 
 data = pd.concat([author_df, data['description'], text_df], axis=1, sort=False)
-print(data.head(3))
 data['text'] = data['text'].replace(np.nan, '', regex=True)
 data['description'] = data['description'].replace(np.nan, '', regex=True)
+print("Tweets:",data.head(3))
 
-# drop columns with ground truth
-truth = pd.read_csv(r"age_tweets.csv", encoding="utf8")
-truth.rename(columns={'Unnamed: 0': '_id'}, inplace=True)
+# # drop columns with ground truth
+# truth = pd.read_csv(r"age_tweets.csv", encoding="utf8")
+# truth.rename(columns={'Unnamed: 0': '_id'}, inplace=True)
 
 
 # function to clean the word of any punctuation or special characters
@@ -92,11 +91,10 @@ def slang_count(text):
 
 
 print("Extracting features...")
-# count slang and emojis at text and description
+# count slang and emojis at text and description for twitter
 data["slang_count"] = ""
 data["emoji_count"] = ""
 # print(data.iloc[0])
-
 for i in range(0,len(data)):
     data["slang_count"].iloc[i] = slang_count(data['description'].iloc[i])
     data["slang_count"].iloc[i] += slang_count(data['text'].iloc[i])
@@ -114,15 +112,15 @@ index=data.index.values #get index(ids) of tweets
 vectorizer = TfidfVectorizer(stop_words='english', max_features=10000, ngram_range=(1, 3),
                              vocabulary=pickle.load(open("tfidf_age.pkl", 'rb')))
 
-# transform description to tfidf
+# transform tweets description to tfidf
 vectors = vectorizer.fit_transform(data['description'])
 vectors_pd = pd.DataFrame(vectors.toarray()).set_index(index) # match with index(ids)
 
-# scale emojis_count and slang_count to [0,1]
+# scale tweets emojis_count and slang_count to [0,1]
 scaler = MinMaxScaler()
 data[['emoji_count', 'slang_count']] = scaler.fit_transform(data[['emoji_count', 'slang_count']])
 
-# create dataframe X, y for train
+# create dataframe X, y for train tweets
 X = pd.concat([vectors_pd, data['emoji_count'], data['slang_count']], axis=1)
 print(X.head(3))
 

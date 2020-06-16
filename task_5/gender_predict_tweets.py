@@ -1,4 +1,4 @@
-import csv
+
 import pickle
 import re
 
@@ -7,7 +7,6 @@ import numpy as np
 import pandas as pd
 from pandas import json_normalize
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.preprocessing import MinMaxScaler
 
 from connect_mongo import read_mongo
 
