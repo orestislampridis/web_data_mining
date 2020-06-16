@@ -30,21 +30,23 @@ nltk.download('maxent_ne_chunker')
 
 # create object of class preprocessing to clean data
 reading = task_2.preprocessing.preprocessing(convert_lower=False, use_spell_corrector=True)
-
+'''
 # Read Twitter data
 data = read_mongo(db='twitter_db', collection='twitter_collection', query={'text': 1})
-data = data.sample(n=1000, random_state=42)
+#data = data.sample(n=1000, random_state=42)
 
 # clean text using preprocessing.py (clean_Text function)
 data['clean_text'] = data.text.progress_map(reading.clean_text)
 
 '''
 # Read Instagram data
-data = pd.read_csv("../dataset/test_cleaned.csv", index_col=False)
-
+all_data = pd.read_csv("../dataset/insta_data_cleaned.csv", sep='~', index_col=False)
+data = pd.DataFrame(all_data['caption'], columns=['caption'])
+#data = read_mongo(db='Instagram_Data', collection='post_data', query={'caption': 1})
+print(data)
 # clean text using preprocessing.py (clean_Text function)
 data['clean_text'] = data.caption.progress_map(reading.clean_text)
-'''
+
 
 print(data.shape)
 

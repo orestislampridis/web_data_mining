@@ -16,22 +16,26 @@ reading = task_2.preprocessing.preprocessing(convert_lower=False, use_spell_corr
 
 # Read Twitter data
 data = read_mongo(db='twitter_db', collection='twitter_collection', query={'text': 1, 'created_at': 1})
-data = data.sample(n=1000, random_state=42)
+#data = data.sample(n=1000, random_state=42)
 
 # clean text using preprocessing.py (clean_Text function)
 data['clean_text'] = data.text.progress_map(reading.clean_text)
+data.drop(['text'], axis=1, inplace=True)
 
 '''
 # Read Instagram data
-# data = pd.read_csv("../dataset/test_cleaned.csv", index_col=False)
+#data = read_mongo(db='Instagram_Data', collection='post_data', query={'caption': 1, 'date': 1})
+all_data = pd.read_csv("../dataset/insta_data_cleaned.csv", sep='~', index_col=False)
+data = pd.DataFrame(all_data[['caption', 'date']], columns=['caption', 'date'])
+#print(data)
+data.rename(columns={'date': 'created_at'}, inplace=True)  # rename column date to created_at
 
 # clean text using preprocessing.py (clean_Text function)
 data['clean_text'] = data.caption.progress_map(reading.clean_text)
+data.drop(['caption'], axis=1, inplace=True)
 '''
 
-data.drop(['text'], axis=1, inplace=True)
-
-print(data.shape)
+#print(data.shape)
 
 
 # further filter stopwords
@@ -48,7 +52,7 @@ data.drop(data[data['clean_text'].progress_map(lambda d: len(d)) < 1].index, inp
 data.reset_index(drop=True, inplace=True)  # reset index needed for dataframe access with indices
 
 
-print(data)  # use to clean non-english posts
+#print(data)  # use to clean non-english posts
 
 
 # keep the whole dataset intact, without categorizing it in time sections, in order to find topics from all data
@@ -62,7 +66,7 @@ whole_dataset = data
 data['datetime'] = pd.to_datetime(data['created_at'])
 data = data.set_index('datetime')
 data.drop(['created_at'], axis=1, inplace=True)
-print(data)
+#print(data)
 
 '''
 data_per_day = []

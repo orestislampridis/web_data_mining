@@ -29,10 +29,17 @@ def LDA_analysis(data, pyLDAvis_show=False, plot_graphs=False):
     :param plot_graphs: whether to plot graphs or not
     :return: dictionary with 20 words for each topic and their frequency (count)
     """
+
+    # ======================================================================================================================
+
+    pd.set_option('display.max_columns', None)
+
+    # ======================================================================================================================
+
     # Prepare bi-grams and tri-grams
     list_of_list_of_tokens = data['clean_text'].tolist()
 
-    print("list_of_list_of_tokens: ", list_of_list_of_tokens)
+    #print("list_of_list_of_tokens: ", list_of_list_of_tokens)
 
     # threshold: Represent a score threshold for forming the phrases -- bi-grams/tri-grams (higher means fewer phrases, default: 10.0)
     bigram_model = Phrases(list_of_list_of_tokens, threshold=5.0)  # get ready bi-gram identifier
@@ -41,19 +48,19 @@ def LDA_analysis(data, pyLDAvis_show=False, plot_graphs=False):
     # get possible bi-grams and tri-grams, depending on the number of times that bi-grams and tri-grams appear together
     list_of_list_of_tokens = list(trigram_model[bigram_model[list_of_list_of_tokens]])
 
-    print("tokens with uni-grams, bi-grams and tri-grams combined: ", list_of_list_of_tokens)
+    #print("tokens with uni-grams, bi-grams and tri-grams combined: ", list_of_list_of_tokens)
 
     # Prepare objects for LDA gensim implementation
     dictionary_LDA = corpora.Dictionary(list_of_list_of_tokens)
-    print("dictionary_LDA", dictionary_LDA)
+    #print("dictionary_LDA", dictionary_LDA)
 
     # no_below: Filter words that appear in less than 2 posts
     # no_above: more than 0.8 documents (fraction of total corpus size, not absolute number)
     # keep_n: keep only the first 100000 most frequent tokens
     dictionary_LDA.filter_extremes(no_below=2, no_above=0.8, keep_n=100000)
-    print("FILTERED dictionary_LDA", dictionary_LDA)
+    #print("FILTERED dictionary_LDA", dictionary_LDA)
     corpus = [dictionary_LDA.doc2bow(list_of_tokens) for list_of_tokens in list_of_list_of_tokens]
-    print("corpus", corpus)
+    #print("corpus", corpus)
 
     # Run LDA
     np.random.seed(123456)
@@ -162,19 +169,28 @@ def LDA_analysis(data, pyLDAvis_show=False, plot_graphs=False):
 
         fig, axes = plt.subplots(1, 3, figsize=(20, 10), facecolor='k', sharex=True, sharey=True)  # set the number of plots
 
-        for i, ax in enumerate(axes.flatten()):
-            fig.add_subplot(ax)
-            topic_words = dict(topics[i][1])
-            cloud.generate_from_frequencies(topic_words, max_font_size=300)
-            plt.gca().imshow(cloud)
-            plt.gca().set_title('Topic ' + str(i), fontdict=dict(size=16), color='white')
-            plt.gca().axis('off')
+        j = 0
+        # plot wordclouds for every topic, in batches of 3
+        while j < len(topics):
+            for i, ax in enumerate(axes.flatten()):
+                if i + j < len(topics):
+                    fig.add_subplot(ax)
+                    topic_words = dict(topics[i + j][1])
+                    cloud.generate_from_frequencies(topic_words, max_font_size=300)
+                    plt.gca().imshow(cloud)
+                    plt.gca().set_title('Topic ' + str(i + j), fontdict=dict(size=16), color='white')
+                    plt.gca().axis('off')
+                else:
+                    break
 
-        plt.subplots_adjust(wspace=0, hspace=0)
-        plt.axis('off')
-        plt.margins(x=0, y=0)
-        plt.tight_layout()
-        plt.show()
+            plt.subplots_adjust(wspace=0, hspace=0)
+            plt.axis('off')
+            plt.margins(x=0, y=0)
+            plt.tight_layout()
+            plt.show()
+
+            j += 3
+
 
     # ======================================================================================================================
         # Word Count and Importance of Topic Keywords
@@ -192,24 +208,33 @@ def LDA_analysis(data, pyLDAvis_show=False, plot_graphs=False):
         # Plot Word Count and Weights of Topic Keywords
         fig, axes = plt.subplots(1, 3, figsize=(10, 5), sharey=True, dpi=100)
         cols = [color for name, color in mcolors.TABLEAU_COLORS.items()]
-        for i, ax in enumerate(axes.flatten()):
-            ax.bar(x='word', height="word_count", data=df.loc[df.topic_id == i, :], color=cols[i], width=0.5, alpha=0.3,
-                   label='Word Count')
-            ax_twin = ax.twinx()
-            ax_twin.bar(x='word', height="importance", data=df.loc[df.topic_id == i, :], color=cols[i], width=0.2,
-                        label='Weights')
-            ax.set_ylabel('Word Count', color=cols[i])
-            ax_twin.set_ylim(0, 0.030)
-            ax.set_ylim(0, 3500)
-            ax.set_title('Topic: ' + str(i), color=cols[i], fontsize=16)
-            ax.tick_params(axis='y', left=False)
-            ax.set_xticklabels(df.loc[df.topic_id == i, 'word'], rotation=30, horizontalalignment='right')
-            ax.legend(loc='upper left')
-            ax_twin.legend(loc='upper right')
 
-        fig.tight_layout(w_pad=2)
-        fig.suptitle('Word Count and Importance of Topic Keywords', fontsize=22, y=1.05)
-        plt.show()
+        j = 0
+        # plot weights and count of words for every topic, in batches of 3
+        while j < len(topics):
+            for i, ax in enumerate(axes.flatten()):
+                if i + j < len(topics):
+                    ax.bar(x='word', height="word_count", data=df.loc[df.topic_id == i + j, :], color=cols[i + j], width=0.5, alpha=0.3,
+                           label='Word Count')
+                    ax_twin = ax.twinx()
+                    ax_twin.bar(x='word', height="importance", data=df.loc[df.topic_id == i + j, :], color=cols[i + j], width=0.2,
+                                label='Weights')
+                    ax.set_ylabel('Word Count', color=cols[i + j])
+                    ax_twin.set_ylim(0, 0.030)
+                    # ax.set_ylim(0, 3500)
+                    ax.set_title('Topic: ' + str(i + j), color=cols[i + j], fontsize=16)
+                    ax.tick_params(axis='y', left=False)
+                    ax.set_xticklabels(df.loc[df.topic_id == i + j, 'word'], rotation=30, horizontalalignment='right')
+                    ax.legend(loc='upper left')
+                    ax_twin.legend(loc='upper right')
+                else:
+                    break
+
+            fig.tight_layout(w_pad=2)
+            fig.suptitle('Word Count and Importance of Topic Keywords', fontsize=22, y=1.05)
+            plt.show()
+
+            j += 3
 
 
     # ======================================================================================================================
@@ -226,6 +251,8 @@ def LDA_analysis(data, pyLDAvis_show=False, plot_graphs=False):
         # -- Relevance of words is computed with a parameter lambda
         # -- Lambda optimal value ~0.6 (https://nlp.stanford.edu/events/illvi2014/papers/sievert-illvi2014.pdf)
         vis = pyLDAvis.gensim.prepare(topic_model=lda_model, corpus=corpus, dictionary=dictionary_LDA)
+        #pyLDAvis.save_html(vis, 'insta_lda.html')
+        pyLDAvis.save_html(vis, 'twitter_lda.html')
         pyLDAvis.show(vis)
 
     # ======================================================================================================================
