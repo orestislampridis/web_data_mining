@@ -2,63 +2,68 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from pandas import json_normalize
+from sklearn.svm import SVC
+from xgboost import XGBClassifier
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report, accuracy_score
 from sklearn.model_selection import train_test_split
-from sklearn.svm import SVC
-from sklearn.tree import DecisionTreeClassifier
-from xgboost import XGBClassifier
 
-from connect_mongo import read_mongo
+
 
 pd.set_option('display.max_columns', None)
 
-# Get our initial df with columns 'geo.coordinates' and 'location'
-df = read_mongo(db='twitter_db', collection='twitter_collection', query={'retweeted_status': 1})#.sample(10000)
 
-# Read Insta data
-#data = read_mongo(db='Instagram_Data', collection='post_data', query={'text': 1, 'retweeted_status': 1})
+all_data = pd.read_csv("../dataset/insta_data_cleaned.csv", sep='~', index_col=False)
 
-df = df.dropna()
-
-# Get the nested fields screen_name, description from field user
-nested_data = json_normalize(df['retweeted_status'])
-print(nested_data.columns.to_list())
+all_data = all_data.dropna()
 
 data = pd.DataFrame()
 
 # Feature columns
 # data['text'] = nested_data['text']
-data['day_of_the_week'] = pd.to_datetime(nested_data["created_at"], errors='ignore', utc=True)
+data['day_of_the_week'] = pd.to_datetime(all_data["date"], errors='ignore', utc=True)
 data['day_of_the_week'] = data.day_of_the_week.dt.dayofweek
-# data['user_mentions'] = nested_data['entities.user_mentions']
-# data['hashtags'] = nested_data['entities.hashtags']
-data['verified'] = nested_data['user.verified']
-data['user_followers_count'] = nested_data['user.followers_count']
-data['user_friends_count'] = nested_data['user.friends_count']
-data['user_favourites_count'] = nested_data['user.favourites_count']  # Not sure if this is useful
-data['user_statuses_count'] = nested_data['user.statuses_count']
+data['verified'] = all_data['owner_verified']
+data['followers'] = all_data['owner_followers']
+data['owner_private'] = all_data['owner_private']
+data['owner_viewable_story'] = all_data['owner_viewable_story']
+data['total_posts'] = all_data['total_posts']
+data['videos_count_all'] = all_data['videos_count_all']
+data['photos_count_all'] = all_data['photos_count_all']
+data['all_photos_avg_likes'] = all_data['all_photos_avg_likes']
+data['all_photos_stdev_likes'] = all_data['all_photos_stdev_likes']
+data['all_photos_avg_comments'] = all_data['all_photos_avg_comments']
+data['all_photos_stdev_comments'] = all_data['all_photos_stdev_comments']
+data['all_videos_avg_likes'] = all_data['all_videos_avg_likes']
+data['all_videos_stdev_likes'] = all_data['all_videos_stdev_likes']
+data['all_videos_avg_comments'] = all_data['all_videos_avg_comments']
+data['all_videos_stdev_comments'] = all_data['all_videos_stdev_comments']
+data['all_videos_avg_views'] = all_data['all_videos_avg_views']
+data['all_videos_stdev_views'] = all_data['all_videos_stdev_views']
+data['followees'] = all_data['followees']
+data['caption_hashtags'] = all_data['caption_hashtags'].apply(lambda x: len(x))
+data['caption_mentions'] = all_data['caption_mentions'].apply(lambda x: len(x))
+data['tagged_users'] = all_data['tagged_users'].apply(lambda x: len(x))
+
 
 # Ground truth columns
-data['quote_count'] = nested_data['quote_count']
-data['reply_count'] = nested_data['reply_count']
-data['retweet_count'] = nested_data['retweet_count']
-data['favorite_count'] = nested_data['favorite_count']
+data['likes'] = all_data['likes']
 
 # data.to_csv("ultimate_ground_truth.csv")
 
 # split the 'like' field into three bins, low/medium/high
 bin_labels = ['low', 'medium', 'high']  # class_names
 # bin_labels = [0, 1, 2]
-data['likes'] = pd.qcut(data['favorite_count'], q=3, labels=bin_labels)
+data['likes'] = pd.qcut(data['likes'], q=3, labels=bin_labels)
 
 print(data['likes'].value_counts())
 
-X = data[['day_of_the_week', 'verified', 'user_followers_count', 'user_friends_count', 'user_favourites_count',
-          'user_statuses_count']]
 y = data['likes']
+data.drop('likes', axis=1, inplace=True)
+X = data
+
 
 print(X)
 print(y)

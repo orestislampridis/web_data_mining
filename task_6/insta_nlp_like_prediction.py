@@ -52,11 +52,12 @@ def emoji_count(text):
 reading = task_2.preprocessing.preprocessing(convert_lower=True, use_spell_corrector=True, only_verbs_nouns=False)
 
 
-# Read Twitter data
-data = read_mongo(db='twitter_db', collection='twitter_collection', query={'text': 1, 'retweeted_status': 1})
-
-# Read Insta data
-#data = read_mongo(db='Instagram_Data', collection='post_data', query={'text': 1, 'retweeted_status': 1})
+# Read Instagram data
+all_data = pd.read_csv("../dataset/insta_data_cleaned.csv", sep='~', index_col=False)
+print(all_data)
+data = pd.DataFrame(all_data[['caption', 'likes']], columns=['caption', 'likes'])
+data.rename(columns={'caption': 'text', 'likes': 'favourites_count'}, inplace=True)  # rename column date to created_at
+print(data)
 
 
 #data = data.sample(n=1000, random_state=42)
@@ -65,39 +66,17 @@ data.reset_index(drop=True, inplace=True)  # needed when we sample the data in o
 print(data)
 
 
-# get the nested fields screen_name, description from field user
-nested_data = json_normalize(data['retweeted_status'])
-print(nested_data['user.listed_count'])
-data['favourites_count'] = nested_data['user.listed_count']
-
-
-nested_data['user.description'] = nested_data['user.description'].replace([None], [''])  # replace none values with empty strings
-
-
-
 data["emoji_count"] = ""
 for i in range(0, len(data)):
     data["emoji_count"].iloc[i] = emoji_count(data['text'].iloc[i])
-    data["emoji_count"].iloc[i] += emoji_count(nested_data['user.description'].iloc[i])
 
-
-
-# clean text using preprocessing.py (clean_Text function)
-data['clean_descr'] = nested_data['user.description'].progress_map(reading.clean_text)
 
 # clean text using preprocessing.py (clean_Text function)
 data['clean_text'] = data.text.progress_map(reading.clean_text)
 
-'''
-# Read Instagram data
-# data = pd.read_csv("../dataset/test_cleaned.csv", index_col=False)
-
-# clean text using preprocessing.py (clean_Text function)
-data['clean_text'] = data.caption.progress_map(reading.clean_text)
-'''
+data['clean_text'] = data['clean_text'].replace([None], [''])  # replace none values with empty strings
 
 data.drop(['text'], axis=1, inplace=True)
-data.drop(['retweeted_status'], axis=1, inplace=True)
 
 
 # further filter stopwords
@@ -105,18 +84,14 @@ more_stopwords = ['tag', 'not', 'let', 'wait', 'set', 'put', 'add', 'post', 'giv
                   'must', 'look', 'call', 'minute', 'com', 'thing', 'much', 'happen', 'hahaha', 'quaranotine',
                   'everyone', 'day', 'time', 'week', 'amp', 'find', 'BTu']
 data['clean_text'] = data['clean_text'].progress_map(lambda clean_text: [word for word in clean_text if word not in more_stopwords])
-data['clean_descr'] = data['clean_descr'].progress_map(lambda clean_text: [word for word in clean_text if word not in more_stopwords])
 
 
 # Drop the rows that contain empty captions
 # inplace=True: modify the DataFrame in place (do not create a new object) - returns None
 data.drop(data[data['clean_text'].progress_map(lambda d: len(d)) < 1].index, inplace=True)  # drop the rows that contain empty captions
 # data[data['clean_text'].str.len() < 1]  # alternative way
-data.drop(data[data['clean_descr'].progress_map(lambda d: len(d)) < 1].index, inplace=True)  # drop the rows that contain empty descriptions
 data.reset_index(drop=True, inplace=True)  # reset index needed for dataframe access with indices
 
-
-#data['clean_txt_descr'] = data['clean_text'] + data['clean_descr']
 
 print(data)  # use to clean non-english posts
 
@@ -128,7 +103,7 @@ data['likes'] = pd.qcut(data['favourites_count'], q=3, labels=bin_labels)
 print(data['likes'].value_counts())
 print(data)
 
-X = data[['clean_text', 'clean_descr', 'emoji_count']]
+X = data[['clean_text', 'emoji_count']]
 y = data['likes']
 
 print(X)
@@ -201,8 +176,7 @@ def evaluation_scores(test, prediction, classifier_name='', encoding_name=''):
 
 for name, classifier in predictors:
     column_trans = ColumnTransformer(
-        [('tfidf_text', tfidf, 'clean_text'),
-         ('tfidf_descr', tfidf, 'clean_descr')],
+        [('tfidf_text', tfidf, 'clean_text')],
     remainder='passthrough')
 
     X_tfidf_train = column_trans.fit_transform(X_train)
@@ -220,8 +194,7 @@ for name, classifier in predictors:
 
 for name, classifier in predictors:
     column_trans = ColumnTransformer(
-        [('one_hot_text', one_not, 'clean_text'),
-         ('one_hot_descr', one_not, 'clean_descr')],
+        [('one_hot_text', one_not, 'clean_text')],
         remainder='passthrough')
 
     X_tfidf_train = column_trans.fit_transform(X_train)
@@ -239,8 +212,7 @@ for name, classifier in predictors:
 
 for name, classifier in predictors:
     column_trans = ColumnTransformer(
-        [('tfidf_text', task_6.word2vec_model.TfidfEmbeddingVectorizer(word2vec_vectorizer), 'clean_text'),
-         ('tfidf_descr', task_6.word2vec_model.TfidfEmbeddingVectorizer(word2vec_vectorizer), 'clean_descr')],
+        [('tfidf_text', task_6.word2vec_model.TfidfEmbeddingVectorizer(word2vec_vectorizer), 'clean_text')],
         remainder='passthrough')
 
     X_tfidf_train = column_trans.fit_transform(X_train)

@@ -1,5 +1,3 @@
-import os
-import gensim
 from pandas import np
 from collections import defaultdict
 from sklearn.base import BaseEstimator
