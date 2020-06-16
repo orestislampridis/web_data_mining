@@ -16,7 +16,10 @@ from connect_mongo import read_mongo
 pd.set_option('display.max_columns', None)
 
 # Get our initial df with columns 'geo.coordinates' and 'location'
-df = read_mongo(db='twitter_db', collection='twitter_collection', query={'retweeted_status': 1}).sample(10000)
+df = read_mongo(db='twitter_db', collection='twitter_collection', query={'retweeted_status': 1})#.sample(10000)
+
+# Read Insta data
+#data = read_mongo(db='Instagram_Data', collection='post_data', query={'text': 1, 'retweeted_status': 1})
 
 df = df.dropna()
 
@@ -66,7 +69,7 @@ def dummy(token):
 
 
 # Logistic Regression
-lr = LogisticRegression(solver="liblinear", C=500, max_iter=200)
+lr = LogisticRegression(solver="liblinear", C=300, max_iter=300)
 
 # Decision Tree
 dt = DecisionTreeClassifier()
@@ -75,7 +78,7 @@ dt = DecisionTreeClassifier()
 svm = SVC(kernel='rbf', C=100, gamma='scale', probability=True)
 
 # Random Forest Classifier
-rfc = RandomForestClassifier(n_estimators=100, criterion='gini', max_depth=None)
+rfc = RandomForestClassifier(n_estimators=100, criterion='gini', max_features='log2', max_depth=None)
 
 # XGBClassifier
 # scale_pos_weight: scale the gradient for the positive class, set to inverse of the class distribution (ratio 1:5 -> 5)

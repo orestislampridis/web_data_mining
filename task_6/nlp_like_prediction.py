@@ -10,6 +10,8 @@ from pandas import json_normalize
 from xgboost import XGBClassifier
 from connect_mongo import read_mongo
 from sklearn.compose import ColumnTransformer
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
@@ -52,7 +54,12 @@ reading = task_2.preprocessing.preprocessing(convert_lower=True, use_spell_corre
 
 # Read Twitter data
 data = read_mongo(db='twitter_db', collection='twitter_collection', query={'text': 1, 'retweeted_status': 1})
-data = data.sample(n=1000, random_state=42)
+
+# Read Insta data
+#data = read_mongo(db='Instagram_Data', collection='post_data', query={'text': 1, 'retweeted_status': 1})
+
+
+#data = data.sample(n=1000, random_state=42)
 data = data.dropna()
 data.reset_index(drop=True, inplace=True)  # needed when we sample the data in order to join dataframes
 print(data)
@@ -141,6 +148,8 @@ print(X_train)
 def dummy(token):
     return token
 
+# ======================================================================================================================
+
 # tf-idf
 tfidf = TfidfVectorizer(lowercase=False, preprocessor=dummy, tokenizer=dummy, min_df=3, ngram_range=(1, 2))
 
@@ -150,6 +159,15 @@ one_not = CountVectorizer(lowercase=False, preprocessor=dummy, tokenizer=dummy, 
 # word2vec
 model = gensim.models.Word2Vec(X_train, size=100, min_count=0, sg=1)
 word2vec_vectorizer = dict(zip(model.wv.index2word, model.wv.syn0))
+
+
+# ======================================================================================================================
+
+# Logistic Regression
+lr = LogisticRegression(solver="liblinear", C=300, max_iter=300)
+
+# Decision Tree
+dt = DecisionTreeClassifier()
 
 # SVM
 svm = SVC(kernel='rbf', C=100, gamma='scale', probability=True)
@@ -163,8 +181,11 @@ xgb_imb_aware = XGBClassifier(learning_rate=0.01, n_estimators=1000, max_depth=4
                             subsample=0.8, colsample_bytree=0.8, reg_alpha=0.005, objective='binary:logistic',
                             nthread=4, random_state=27)
 
-predictors = [['SVM', svm], ['Random Forest Classifier', rfc], ['XGB Classifier', xgb_imb_aware]]
+predictors = [['LinearRegression', lr], ['DecisionTreeClassifier', dt], ['SVM', svm], ['Random Forest Classifier', rfc],
+              ['XGB Classifier', xgb_imb_aware]]
 
+
+# ======================================================================================================================
 
 def evaluation_scores(test, prediction, classifier_name='', encoding_name=''):
     print('\n', '-' * 60)
@@ -220,7 +241,7 @@ for name, classifier in predictors:
     column_trans = ColumnTransformer(
         [('tfidf_text', task_6.word2vec_model.TfidfEmbeddingVectorizer(word2vec_vectorizer), 'clean_text'),
          ('tfidf_descr', task_6.word2vec_model.TfidfEmbeddingVectorizer(word2vec_vectorizer), 'clean_descr')],
-    remainder='passthrough')
+        remainder='passthrough')
 
     X_tfidf_train = column_trans.fit_transform(X_train)
     X_tfidf_test = column_trans.transform(X_test)

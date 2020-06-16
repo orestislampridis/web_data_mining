@@ -1,0 +1,224 @@
+# predict likes of a tweet/insta post
+import re
+import gensim
+import numpy as np
+import pandas as pd
+import task_2.preprocessing
+import task_6.word2vec_model
+from sklearn.svm import SVC
+from pandas import json_normalize
+from xgboost import XGBClassifier
+from connect_mongo import read_mongo
+from sklearn.compose import ColumnTransformer
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics import classification_report, accuracy_score
+
+
+from tqdm import tqdm
+tqdm.pandas()
+
+
+# ======================================================================================================================
+
+pd.set_option('display.max_columns', None)
+
+# ======================================================================================================================
+
+def emoji_count(text):
+    emoji_pattern = re.compile("["
+                               u"\U0001F600-\U0001F64F"  # emoticons
+                               u"\U0001F300-\U0001F5FF"  # symbols & pictographs
+                               u"\U0001F680-\U0001F6FF"  # transport & map symbols
+                               u"\U0001F1E0-\U0001F1FF"  # flags (iOS)
+                               u"\U00002702-\U000027B0"
+                               "]+", flags=re.UNICODE)
+
+    counter = 0
+    datas = list(text)  # split the text into characters
+
+    for word in datas:
+        counter += len(emoji_pattern.findall(word))
+    return counter
+
+
+# ======================================================================================================================
+
+# create object of class preprocessing to clean data
+reading = task_2.preprocessing.preprocessing(convert_lower=True, use_spell_corrector=True, only_verbs_nouns=False)
+
+
+# Read Instagram data
+all_data = pd.read_csv("../dataset/insta_data_cleaned.csv", sep='~', index_col=False)
+print(all_data)
+data = pd.DataFrame(all_data[['caption', 'likes']], columns=['caption', 'likes'])
+data.rename(columns={'caption': 'text', 'likes': 'favourites_count'}, inplace=True)  # rename column date to created_at
+print(data)
+
+
+#data = data.sample(n=1000, random_state=42)
+data = data.dropna()
+data.reset_index(drop=True, inplace=True)  # needed when we sample the data in order to join dataframes
+print(data)
+
+
+data["emoji_count"] = ""
+for i in range(0, len(data)):
+    data["emoji_count"].iloc[i] = emoji_count(data['text'].iloc[i])
+
+
+# clean text using preprocessing.py (clean_Text function)
+data['clean_text'] = data.text.progress_map(reading.clean_text)
+
+data['clean_text'] = data['clean_text'].replace([None], [''])  # replace none values with empty strings
+
+data.drop(['text'], axis=1, inplace=True)
+
+
+# further filter stopwords
+more_stopwords = ['tag', 'not', 'let', 'wait', 'set', 'put', 'add', 'post', 'give', 'way', 'check', 'think', 'www',
+                  'must', 'look', 'call', 'minute', 'com', 'thing', 'much', 'happen', 'hahaha', 'quaranotine',
+                  'everyone', 'day', 'time', 'week', 'amp', 'find', 'BTu']
+data['clean_text'] = data['clean_text'].progress_map(lambda clean_text: [word for word in clean_text if word not in more_stopwords])
+
+
+# Drop the rows that contain empty captions
+# inplace=True: modify the DataFrame in place (do not create a new object) - returns None
+data.drop(data[data['clean_text'].progress_map(lambda d: len(d)) < 1].index, inplace=True)  # drop the rows that contain empty captions
+# data[data['clean_text'].str.len() < 1]  # alternative way
+data.reset_index(drop=True, inplace=True)  # reset index needed for dataframe access with indices
+
+
+print(data)  # use to clean non-english posts
+
+
+# split the 'like' field into three bins, low/medium/high
+bin_labels = ['low', 'medium', 'high']
+data['likes'] = pd.qcut(data['favourites_count'], q=3, labels=bin_labels)
+
+print(data['likes'].value_counts())
+print(data)
+
+X = data[['clean_text', 'emoji_count']]
+y = data['likes']
+
+print(X)
+
+
+# ======================================================================================================================
+# Split TRAIN - TEST
+# ======================================================================================================================
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42, stratify=y)
+print(X_train)
+
+
+# ======================================================================================================================
+
+
+def dummy(token):
+    return token
+
+# ======================================================================================================================
+
+# tf-idf
+tfidf = TfidfVectorizer(lowercase=False, preprocessor=dummy, tokenizer=dummy, min_df=3, ngram_range=(1, 2))
+
+# one-hot-encoding
+one_not = CountVectorizer(lowercase=False, preprocessor=dummy, tokenizer=dummy, analyzer='word')
+
+# word2vec
+model = gensim.models.Word2Vec(X_train, size=100, min_count=0, sg=1)
+word2vec_vectorizer = dict(zip(model.wv.index2word, model.wv.syn0))
+
+
+# ======================================================================================================================
+
+# Logistic Regression
+lr = LogisticRegression(solver="liblinear", C=300, max_iter=300)
+
+# Decision Tree
+dt = DecisionTreeClassifier()
+
+# SVM
+svm = SVC(kernel='rbf', C=100, gamma='scale', probability=True)
+
+# Random Forest Classifier
+rfc = RandomForestClassifier(n_estimators=100, criterion='gini', max_features='log2', max_depth=None)
+
+# XGBClassifier
+# scale_pos_weight: scale the gradient for the positive class, set to inverse of the class distribution (ratio 1:5 -> 5)
+xgb_imb_aware = XGBClassifier(learning_rate=0.01, n_estimators=1000, max_depth=4, min_child_weight=6, gamma=0,
+                            subsample=0.8, colsample_bytree=0.8, reg_alpha=0.005, objective='binary:logistic',
+                            nthread=4, random_state=27)
+
+predictors = [['LinearRegression', lr], ['DecisionTreeClassifier', dt], ['SVM', svm], ['Random Forest Classifier', rfc],
+              ['XGB Classifier', xgb_imb_aware]]
+
+
+# ======================================================================================================================
+
+def evaluation_scores(test, prediction, classifier_name='', encoding_name=''):
+    print('\n', '-' * 60)
+    print(classifier_name + " + " + encoding_name)
+    print('Accuracy:', np.round(accuracy_score(test, prediction), 4))
+    print('-' * 60)
+    print('classification report:\n\n', classification_report(y_true=test, y_pred=prediction))
+
+
+# ======================================================================================================================
+# TF-IDF
+# ======================================================================================================================
+
+for name, classifier in predictors:
+    column_trans = ColumnTransformer(
+        [('tfidf_text', tfidf, 'clean_text')],
+    remainder='passthrough')
+
+    X_tfidf_train = column_trans.fit_transform(X_train)
+    X_tfidf_test = column_trans.transform(X_test)
+
+    classifier.fit(X_tfidf_train, y_train)
+    y_predicted = classifier.predict(X_tfidf_test)
+
+    print(evaluation_scores(y_test, y_predicted, classifier_name=name, encoding_name='TF-IDF'))  # , class_names=class_names
+
+
+# ======================================================================================================================
+# Count Vectorizer
+# ======================================================================================================================
+
+for name, classifier in predictors:
+    column_trans = ColumnTransformer(
+        [('one_hot_text', one_not, 'clean_text')],
+        remainder='passthrough')
+
+    X_tfidf_train = column_trans.fit_transform(X_train)
+    X_tfidf_test = column_trans.transform(X_test)
+
+    classifier.fit(X_tfidf_train, y_train)
+    y_predicted = classifier.predict(X_tfidf_test)
+
+    print(evaluation_scores(y_test, y_predicted, classifier_name=name, encoding_name='One-hot-encoding'))  # , class_names=class_names
+
+
+# ======================================================================================================================
+# Word2vec
+# ======================================================================================================================
+
+for name, classifier in predictors:
+    column_trans = ColumnTransformer(
+        [('tfidf_text', task_6.word2vec_model.TfidfEmbeddingVectorizer(word2vec_vectorizer), 'clean_text')],
+        remainder='passthrough')
+
+    X_tfidf_train = column_trans.fit_transform(X_train)
+    X_tfidf_test = column_trans.transform(X_test)
+
+    classifier.fit(X_tfidf_train, y_train)
+    y_predicted = classifier.predict(X_tfidf_test)
+
+    print(evaluation_scores(y_test, y_predicted, classifier_name=name, encoding_name='Word2vec'))  # , class_names=class_names
