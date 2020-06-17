@@ -2,12 +2,13 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from textblob import TextBlob
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
-
+import plotly.offline as py
+import plotly.graph_objects as go
 from connect_mongo import read_mongo
 
 #read data
-file1="../dataset/test_cleaned.csv"
-insta=pd.read_csv(file1, encoding="utf8")
+file1="../dataset/insta_data_cleaned.csv"
+insta=pd.read_csv(file1, sep='~', encoding="utf8")
 
 tweets = read_mongo(db='twitter_db', collection='twitter_collection', query={'text': 1})
 #tweets = tweets.sample(n=1000, random_state=42)
@@ -112,6 +113,22 @@ for i in range(0, len(tweets)):
 
 tweets['VADER predicted sentiment'] = pred_V_tweets
 tweets['TextBlob predicted sentiment'] = pred_B_tweets
+
+
+
+
+
+fig = go.Figure(data=[
+    go.Bar(name='VADER sentiment', x=tweets['VADER predicted sentiment'].unique(), y=tweets['VADER predicted sentiment'].value_counts().values),
+    go.Bar(name='TextBlob sentiment', x=tweets['TextBlob predicted sentiment'].unique(), y=tweets['TextBlob predicted sentiment'].value_counts().values)
+])
+# Change the bar mode
+fig.update_layout(barmode='group')
+
+py.plot(fig, filename='topics-distribution.html')
+#fig.show()
+
+
 
 
 
