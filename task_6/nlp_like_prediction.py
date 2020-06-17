@@ -3,6 +3,8 @@ import re
 import gensim
 import numpy as np
 import pandas as pd
+import plotly.express as px
+import plotly.offline as py
 import task_2.preprocessing
 import task_6.word2vec_model
 from sklearn.svm import SVC
@@ -250,3 +252,23 @@ for name, classifier in predictors:
     y_predicted = classifier.predict(X_tfidf_test)
 
     print(evaluation_scores(y_test, y_predicted, classifier_name=name, encoding_name='Word2vec'))  # , class_names=class_names
+
+
+# ======================================================================================================================
+# Plot pie of like distribution
+# ======================================================================================================================
+
+# Fit best performing model on the whole dataset and predict on it
+column_trans = ColumnTransformer(
+        [('one_hot_text', one_not, 'clean_text'),
+         ('one_hot_descr', one_not, 'clean_descr')],
+        remainder='passthrough')
+
+X = column_trans.fit_transform(X)
+
+rfc.fit(X, y)
+y_predicted = rfc.predict(X)
+y_pred = pd.DataFrame(y_predicted, columns=['y_pred'])
+print(y_pred)
+fig = px.pie(y_pred, names="y_pred")
+py.plot(fig, filename='twitter_nlp_pred_best_model.html')

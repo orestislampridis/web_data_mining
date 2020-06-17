@@ -6,9 +6,9 @@ import pandas as pd
 import task_2.preprocessing
 import task_6.word2vec_model
 from sklearn.svm import SVC
-from pandas import json_normalize
+import plotly.express as px
+import plotly.offline as py
 from xgboost import XGBClassifier
-from connect_mongo import read_mongo
 from sklearn.compose import ColumnTransformer
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.linear_model import LogisticRegression
@@ -222,3 +222,22 @@ for name, classifier in predictors:
     y_predicted = classifier.predict(X_tfidf_test)
 
     print(evaluation_scores(y_test, y_predicted, classifier_name=name, encoding_name='Word2vec'))  # , class_names=class_names
+
+
+# ======================================================================================================================
+# Plot pie of like distribution
+# ======================================================================================================================
+
+# Fit best performing model on the whole dataset and predict on it
+column_trans = ColumnTransformer(
+        [('tfidf_text', tfidf, 'clean_text')],
+    remainder='passthrough')
+
+X = column_trans.fit_transform(X)
+
+xgb_imb_aware.fit(X, y)
+y_predicted = xgb_imb_aware.predict(X)
+y_pred = pd.DataFrame(y_predicted, columns=['y_pred'])
+print(y_pred)
+fig = px.pie(y_pred, names="y_pred")
+py.plot(fig, filename='insta_nlp_pred_best_model.html')

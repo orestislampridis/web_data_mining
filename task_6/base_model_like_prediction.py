@@ -2,6 +2,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import plotly.express as px
+import plotly.offline as py
 from pandas import json_normalize
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
@@ -106,6 +108,20 @@ for name, classifier in predictors:
     y_predicted = classifier.predict(X_test)
 
     print(evaluation_scores(y_test, y_predicted, classifier_name=name))  # , class_names=class_names
+
+
+# ======================================================================================================================
+# Plot pie of like distribution
+# ======================================================================================================================
+
+# Fit best performing model on the whole dataset and predict on it
+rfc.fit(X, y)
+y_predicted = rfc.predict(X)
+y_pred = pd.DataFrame(y_predicted, columns=['y_pred'])
+print(y_pred)
+fig = px.pie(y_pred, names="y_pred")
+py.plot(fig, filename='twitter_base_line_pred_best_model.html')
+
 
 # ======================================================================================================================
 # Interpret data features
