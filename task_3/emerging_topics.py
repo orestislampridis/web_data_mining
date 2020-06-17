@@ -1,7 +1,9 @@
 import pandas as pd
 import task_2.preprocessing
-from connect_mongo import read_mongo
+import plotly.offline as py
 import task_3.LDA_analysis
+import plotly.graph_objects as go
+from connect_mongo import read_mongo
 import task_3.emerging_topics_wordcloud
 
 from tqdm import tqdm
@@ -11,7 +13,8 @@ tqdm.pandas()
 # ======================================================================================================================
 
 # create object of class preprocessing to clean data
-reading = task_2.preprocessing.preprocessing(convert_lower=False, use_spell_corrector=True, only_verbs_nouns=True)
+#reading = task_2.preprocessing.preprocessing(convert_lower=False, use_spell_corrector=True, only_verbs_nouns=True)
+reading = task_2.preprocessing.preprocessing(convert_lower=False, use_spell_corrector=False, only_verbs_nouns=False)
 
 
 # Read Twitter data
@@ -63,10 +66,13 @@ whole_dataset = data
 # Create time series
 # ======================================================================================================================
 
+# USED FOR PLOTTING
+data = data.sort_values(by=['created_at'])
+
 data['datetime'] = pd.to_datetime(data['created_at'])
 data = data.set_index('datetime')
 data.drop(['created_at'], axis=1, inplace=True)
-#print(data)
+print(data.columns)
 
 '''
 data_per_day = []
@@ -75,6 +81,23 @@ for group in data.groupby(data.index.date):  # split dataframe into multiple dat
     data_per_day.append(group[1])
 '''
 data_per_day = [group[1] for group in data.groupby(data.index.date)]
+print(data_per_day)
+
+
+# ======================================================================================================================
+# Plot in interactive graph the number of extracted post per time period
+# ======================================================================================================================
+
+temp_plot_df = [len(group) for group in data_per_day]
+print("temp_plot_df ", temp_plot_df)
+print("data.index.unique() ", data.index.map(lambda t: t.date()).unique())
+
+fig = go.Figure()
+fig.add_trace(go.Scatter(x=data.index.map(lambda t: t.date()).unique(), y=temp_plot_df,
+                         mode='lines+markers',
+                         name='Twitter Posts'))
+
+py.plot(fig, filename='twitter_posts_per_day.html')
 
 
 # ======================================================================================================================
