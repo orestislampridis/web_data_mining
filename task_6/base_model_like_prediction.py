@@ -120,6 +120,7 @@ y_predicted = rfc.predict(X)
 y_pred = pd.DataFrame(y_predicted, columns=['y_pred'])
 print(y_pred)
 fig = px.pie(y_pred, names="y_pred")
+fig.update_traces(hoverinfo='label+percent', textinfo='value+percent')
 py.plot(fig, filename='twitter_base_line_pred_best_model.html')
 
 
