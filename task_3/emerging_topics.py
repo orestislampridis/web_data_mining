@@ -13,8 +13,7 @@ tqdm.pandas()
 # ======================================================================================================================
 
 # create object of class preprocessing to clean data
-#reading = task_2.preprocessing.preprocessing(convert_lower=False, use_spell_corrector=True, only_verbs_nouns=True)
-reading = task_2.preprocessing.preprocessing(convert_lower=False, use_spell_corrector=False, only_verbs_nouns=False)
+reading = task_2.preprocessing.preprocessing(convert_lower=False, use_spell_corrector=True, only_verbs_nouns=True)
 
 
 # Read Twitter data
