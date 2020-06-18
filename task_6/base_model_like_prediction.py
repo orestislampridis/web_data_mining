@@ -18,10 +18,10 @@ from connect_mongo import read_mongo
 pd.set_option('display.max_columns', None)
 
 # Get our initial df with columns 'geo.coordinates' and 'location'
-df = read_mongo(db='twitter_db', collection='twitter_collection', query={'retweeted_status': 1})#.sample(10000)
+df = read_mongo(db='twitter_db', collection='twitter_collection', query={'retweeted_status': 1})  # .sample(10000)
 
 # Read Insta data
-#data = read_mongo(db='Instagram_Data', collection='post_data', query={'text': 1, 'retweeted_status': 1})
+# data = read_mongo(db='Instagram_Data', collection='post_data', query={'text': 1, 'retweeted_status': 1})
 
 df = df.dropna()
 
@@ -88,8 +88,10 @@ xgb_imb_aware = XGBClassifier(learning_rate=0.01, n_estimators=1000, max_depth=4
                               subsample=0.8, colsample_bytree=0.8, reg_alpha=0.005, objective='binary:logistic',
                               nthread=4, random_state=27)
 
-predictors = [['LinearRegression', lr], ['DecisionTreeClassifier', dt], ['SVM', svm], ['Random Forest Classifier', rfc],
-              ['XGB Classifier', xgb_imb_aware]]
+# predictors = [['LogisticRegression', lr], ['DecisionTreeClassifier', dt], ['SVM', svm], ['Random Forest Classifier', rfc],
+#              ['XGB Classifier', xgb_imb_aware]]
+
+predictors = [['Random Forest Classifier', rfc]]
 
 
 def evaluation_scores(test, prediction, classifier_name='', class_names=None):
@@ -109,13 +111,33 @@ for name, classifier in predictors:
 
     print(evaluation_scores(y_test, y_predicted, classifier_name=name))  # , class_names=class_names
 
-
 # ======================================================================================================================
 # Plot pie of like distribution
 # ======================================================================================================================
 
+# Get our original df to apply the trained classifier and get predictions
+predict_df = read_mongo(db='twitter_db', collection='twitter_collection', query={'user': 1})
+predict_df = predict_df.dropna()
+
+# Get the nested fields screen_name, description and other from field user
+nested_data = json_normalize(predict_df['user'])
+print(nested_data.columns.to_list())
+
+predict_data = pd.DataFrame()
+
+# Feature columns
+predict_data['day_of_the_week'] = pd.to_datetime(nested_data["created_at"], errors='ignore', utc=True)
+predict_data['day_of_the_week'] = predict_data.day_of_the_week.dt.dayofweek
+predict_data['verified'] = nested_data['verified']
+predict_data['user_followers_count'] = nested_data['followers_count']
+predict_data['user_friends_count'] = nested_data['friends_count']
+predict_data['user_favourites_count'] = nested_data['favourites_count']  # Not sure if this is useful
+predict_data['user_statuses_count'] = nested_data['statuses_count']
+
+X = predict_data[['day_of_the_week', 'verified', 'user_followers_count', 'user_friends_count', 'user_favourites_count',
+                  'user_statuses_count']]
+
 # Fit best performing model on the whole dataset and predict on it
-rfc.fit(X, y)
 y_predicted = rfc.predict(X)
 y_pred = pd.DataFrame(y_predicted, columns=['y_pred'])
 print(y_pred)
@@ -123,9 +145,8 @@ fig = px.pie(y_pred, names="y_pred")
 fig.update_traces(hoverinfo='label+percent', textinfo='value+percent')
 py.plot(fig, filename='twitter_base_line_pred_best_model.html')
 
-
 # ======================================================================================================================
-# Interpret data features
+# Feature Imporance
 # ======================================================================================================================
 
 importances = rfc.feature_importances_
