@@ -115,8 +115,9 @@ tweets['VADER predicted sentiment'] = pred_V_tweets
 tweets['TextBlob predicted sentiment'] = pred_B_tweets
 
 
-
-
+# ======================================================================================================================
+# Figure comparing distributions for each class of VADER vs TextBlob
+# ======================================================================================================================
 
 fig = go.Figure(data=[
     go.Bar(name='VADER sentiment', x=tweets['VADER predicted sentiment'].unique(), y=tweets['VADER predicted sentiment'].value_counts().values),
@@ -125,12 +126,10 @@ fig = go.Figure(data=[
 # Change the bar mode
 fig.update_layout(barmode='group')
 
-py.plot(fig, filename='topics-distribution.html')
-#fig.show()
+py.plot(fig, filename='sentiment-distribution.html')
 
 
-
-
+# ======================================================================================================================
 
 
 pd.set_option('display.max_columns', None)
