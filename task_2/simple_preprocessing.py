@@ -1,4 +1,7 @@
-# pre-process and clean data
+"""
+Simple Pre-processing used only for cleaning the
+text when creating map pop-ups in task_4
+"""
 import re
 import string
 

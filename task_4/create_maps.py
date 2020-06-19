@@ -38,6 +38,7 @@ joined_loc_sent_author_text_age_gender_likes_df = pd.merge(joined_loc_sent_autho
 
 # Print the column names
 print(joined_loc_sent_author_text_age_gender_likes_df.columns)
+print(joined_loc_sent_author_text_age_gender_likes_df)
 
 # Create a mapping for the colors for better representation on map
 mapping = {'negative': 'red', 'neutral': 'grey', 'positive': 'green'}
