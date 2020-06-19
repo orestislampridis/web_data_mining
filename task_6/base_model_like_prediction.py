@@ -19,7 +19,7 @@ from connect_mongo import read_mongo
 pd.set_option('display.max_columns', None)
 
 # Get our initial df with columns 'geo.coordinates' and 'location'
-df = read_mongo(db='twitter_db', collection='twitter_collection', query={'retweeted_status': 1}).sample(5000)
+df = read_mongo(db='twitter_db', collection='twitter_collection', query={'retweeted_status': 1})
 
 df = df.dropna()
 
@@ -59,7 +59,7 @@ data['favorite_count_bins'] = pd.qcut(data.favorite_count, 4)
 print(data.favorite_count_bins.value_counts().sort_index())
 
 # Split the 'like' field into the four bins defined above, low/normal/high/famous
-bin_labels = ['low: (0, 3]', 'normal: (3, 22]', 'high: (22, 192]', 'famous: (192, 4919]']  # class_names
+bin_labels = ['low: (0, 3]', 'normal: (3, 26]', 'high: (26, 233]', 'famous: (233, 4997]']  # class_names
 # bin_labels = [0, 1, 2, 3]
 data['likes'] = pd.qcut(data['favorite_count'], q=len(bin_labels), labels=bin_labels)
 
@@ -95,10 +95,8 @@ xgb_imb_aware = XGBClassifier(learning_rate=0.01, n_estimators=1000, max_depth=4
                               subsample=0.8, colsample_bytree=0.8, reg_alpha=0.005, objective='binary:logistic',
                               nthread=4, random_state=27)
 
-# predictors = [['LogisticRegression', lr], ['DecisionTreeClassifier', dt], ['SVM', svm], ['Random Forest Classifier', rfc],
-#              ['XGB Classifier', xgb_imb_aware]]
-
-predictors = [['Random Forest Classifier', rfc]]
+predictors = [['LogisticRegression', lr], ['DecisionTreeClassifier', dt], ['SVM', svm], ['Random Forest Classifier', rfc],
+              ['XGB Classifier', xgb_imb_aware]]
 
 
 def evaluation_scores(test, prediction, classifier_name=''):
