@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import plotly.express as px
-import plotly.offline as py
 import plotly.graph_objects as go
+import plotly.offline as py
 from pandas import json_normalize
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
@@ -95,7 +95,8 @@ xgb_imb_aware = XGBClassifier(learning_rate=0.01, n_estimators=1000, max_depth=4
                               subsample=0.8, colsample_bytree=0.8, reg_alpha=0.005, objective='binary:logistic',
                               nthread=4, random_state=27)
 
-predictors = [['LogisticRegression', lr], ['DecisionTreeClassifier', dt], ['SVM', svm], ['Random Forest Classifier', rfc],
+predictors = [['LogisticRegression', lr], ['DecisionTreeClassifier', dt], ['SVM', svm],
+              ['Random Forest Classifier', rfc],
               ['XGB Classifier', xgb_imb_aware]]
 
 
@@ -125,10 +126,12 @@ def evaluation_scores(test, prediction, classifier_name=''):
                         layout=go.Layout(
                             yaxis=dict(range=[0, 100],  # sets the range of yaxis
                                        constrain="domain")  # meanwhile compresses the yaxis by decreasing its "domain"
-                            )
+                        )
                         )
 
-        fig.update_layout(title_text='Twitter - Base Model Like Predicition - Best Model Performance (Random Forest Classifier)', title_x=0.5)
+        fig.update_layout(
+            title_text='Twitter - Base Model Like Predicition - Best Model Performance (Random Forest Classifier)',
+            title_x=0.5)
         fig.update_yaxes(ticksuffix="%")
 
         py.plot(fig, filename='twitter_base_model_perform.html')
@@ -173,11 +176,13 @@ y_predicted = rfc.predict(X)
 y_pred = pd.DataFrame(y_predicted, columns=['Predicted Likes'])
 print(y_pred)
 
+# Save predicted likes to csv to integrate with map
+y_pred.to_csv('predicted_likes.csv')
+
 fig = px.pie(y_pred, names="Predicted Likes")
 fig.update_layout(title_text='Twitter - Base Model Like Prediction - Data Distribution on Like count', title_x=0.5)
 fig.update_traces(hoverinfo='label+percent', textinfo='value+percent')
 py.plot(fig, filename='twitter_base_model_pred_best_model.html')
-
 
 # ======================================================================================================================
 # Interpret data features - Feature Importance
@@ -201,7 +206,6 @@ plt.xticks(range(X.shape[1]), indices)
 plt.xlim([-1, X.shape[1]])
 plt.show()
 
-
 # ======================================================================================================================
 # Interpret data features - Feature Importance with Interactive Chart
 # ======================================================================================================================
@@ -213,7 +217,6 @@ feature_importances['std'] = np.std([tree.feature_importances_ for tree in rfc.e
 feature_importances.sort_values('importance', ascending=False, inplace=True)
 print(feature_importances)
 
-
 fig = go.Figure(data=[
     go.Bar(name='Feature Importance', x=feature_importances.index, y=feature_importances['importance'],
            error_y=dict(type='data',  # value of error bar given in data coordinates
@@ -223,6 +226,8 @@ fig = go.Figure(data=[
 
 # position the ticks at intervals of dtick=0.25, starting at tick0=0.25
 fig.update_layout(xaxis=dict(tick0=0, dtick=0.25))
-fig.update_layout(title_text='Twitter - Base Model Like Predicition - Feature Imprortance - Best Model Performance (Random Forest Classifier)', title_x=0.5)
+fig.update_layout(
+    title_text='Twitter - Base Model Like Predicition - Feature Imprortance - Best Model Performance (Random Forest Classifier)',
+    title_x=0.5)
 
 py.plot(fig, filename='twitter_base_model_feature_imp.html')
