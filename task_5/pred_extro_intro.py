@@ -1,42 +1,42 @@
 
+import matplotlib.pyplot as plt
 import pandas as pd
 from pandas import json_normalize
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-import task_2.preprocessing
 from tqdm import tqdm
+
 tqdm.pandas()
 from connect_mongo import read_mongo
 
 pd.set_option('display.max_columns', None)
 
-#read data instagram
-file1 = "../dataset/test_cleaned.csv"
-insta = pd.read_csv(file1, encoding="utf8")
+# read data instagram
+file1 = "../dataset/insta_data_cleaned.csv"
+insta = pd.read_csv(file1, sep='~', encoding="utf8")
 insta = insta.drop_duplicates(subset='owner_id', keep="first")
 insta = insta.reset_index(drop=True)
-insta = insta[['_id','owner_id','owner_followers','followees','comments','likes','total_posts']]
+insta = insta[['_id', 'owner_id', 'owner_followers', 'followees', 'comments', 'likes', 'total_posts']]
 
 print(insta.head(3))
 
-#read data twitter
+# read data twitter
 data = read_mongo(db='twitter_db', collection='twitter_collection',
                   query={'original author': 1, 'user': 1})
 data = data.sample(n=1000, random_state=42)
 # get the nested fields from field user
 tweets = json_normalize(data['user'])
-tweets = tweets[['id','followers_count','friends_count','favourites_count','statuses_count']]
+tweets = tweets[['id', 'followers_count', 'friends_count', 'favourites_count', 'statuses_count']]
 print(tweets.head(3))
 
-#find mean
-mean_insta = insta[["owner_followers","followees","comments","likes","total_posts"]].mean()
-mean_tweets = tweets[['followers_count','friends_count','favourites_count','statuses_count']].mean()
+# find mean
+mean_insta = insta[["owner_followers", "followees", "comments", "likes", "total_posts"]].mean()
+mean_tweets = tweets[['followers_count', 'friends_count', 'favourites_count', 'statuses_count']].mean()
 
 print(mean_insta)
 print(mean_tweets)
 
-score_insta = len(data) * [0]
+score_insta = len(insta) * [0]
+print(len(insta))
+print(len(score_insta))
 for i in range(0, len(insta)):
 
     if insta['owner_followers'].iloc[i] >= mean_insta['owner_followers']:
@@ -54,7 +54,7 @@ for i in range(0, len(insta)):
     if insta['total_posts'].iloc[i] >= mean_insta['total_posts']:
         score_insta[i] += 1
 
-score_tweets = len(data) * [0]
+score_tweets = len(tweets) * [0]
 for i in range(0, len(tweets)):
 
     if tweets['followers_count'].iloc[i] >= mean_tweets['followers_count']:
@@ -78,7 +78,7 @@ for i in range(0, len(insta)):
         insta['intro/extro'][i] = 'introvert'
 
 tweets['intro/extro'] = " "
-for i in range(0, len(insta)):
+for i in range(0, len(tweets)):
 
     if score_tweets[i] >= 2:
         tweets['intro/extro'][i] = 'extrovert'
@@ -94,7 +94,7 @@ plt.xlabel('Categories')
 plt.ylabel('Counts')
 plt.show()
 
-plt.bar(counts_tweets.index[1:3], counts_tweets.values[:2], color = (0.0,0.0,1,0.5))
+plt.bar(counts_tweets.index[:2], counts_tweets.values[:2], color=(0.0, 0.0, 1, 0.5))
 plt.title('Twitter users extrovert/ introvert counts')
 plt.xlabel('Categories')
 plt.ylabel('Counts')

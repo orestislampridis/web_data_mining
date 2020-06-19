@@ -1,35 +1,34 @@
-import pandas as pd
-import numpy as np
 import re
-import pandas as pd
-from pandas import json_normalize
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-import task_2.preprocessing
+import re
 from statistics import mean
+
+import matplotlib.pyplot as plt
+import pandas as pd
 from tqdm import tqdm
+
 tqdm.pandas()
 from connect_mongo import read_mongo
 
 pd.set_option('display.max_columns', None)
 
-#read data instagram
-file1 = "../dataset/test_cleaned.csv"
-insta = pd.read_csv(file1, encoding="utf8")
+# read data instagram
+file1 = "../dataset/insta_data_cleaned.csv"
+insta = pd.read_csv(file1, sep='~', encoding="utf8")
 
 print(insta.head(3))
 
-#read data twitter
+# read data twitter
 data = read_mongo(db='twitter_db', collection='twitter_collection',
                   query={'text': 1})
-tweets = data.sample(n=1000, random_state=42)
+# tweets = data.sample(n=1000, random_state=42)
+tweets = data
 
 print(tweets.head(3))
-#define i-talk
-i_talk=['i','me','my','myself','mine']
+# define i-talk
+i_talk = ['i', 'me', 'my', 'myself', 'mine']
 
-#a function for simple preprocess
+
+# a function for simple preprocess
 def clean_text(text):
     text = text.lower()
     text = re.sub(r"\'s", " ", text)
@@ -53,6 +52,7 @@ def count_occurrences(word, sentence):
 
 #count i-talk occurances for instagam
 score_insta=len(insta)*[0]
+
 for i in range(0,len(insta)):
     for pron in i_talk:
         score_insta[i]+=count_occurrences(pron, insta['caption'].iloc[i])
@@ -84,14 +84,14 @@ for i in range(0,len(tweets)):
 counts_insta = insta['narcissistic'].value_counts()
 counts_tweets = tweets['narcissistic'].value_counts()
 
-plt.bar(counts_insta.index[:2], counts_insta.values[:2], color = (0.8,0.0,0.7,0.8))
-plt.title('Instagram users extrovert/ introvert counts')
+plt.bar(counts_insta.index[:2], counts_insta.values[:2], color=(0.8, 0.0, 0.7, 0.8))
+plt.title('Instagram users narcissistic counts')
 plt.xlabel('Categories')
 plt.ylabel('Counts')
 plt.show()
 
-plt.bar(counts_tweets.index[0:2], counts_tweets.values[:2], color = (0.0,0.0,1,0.5))
-plt.title('Twitter users extrovert/ introvert counts')
+plt.bar(counts_tweets.index[0:2], counts_tweets.values[:2], color=(0.0, 0.0, 1, 0.5))
+plt.title('Twitter users narcissistic counts')
 plt.xlabel('Categories')
 plt.ylabel('Counts')
 plt.show()

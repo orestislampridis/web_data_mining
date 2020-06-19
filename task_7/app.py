@@ -1,7 +1,5 @@
 from flask import Flask, request, render_template
 
-
-
 # http://localhost:5000
 
 
@@ -75,7 +73,6 @@ def sentim_analysis():
     if request.method == 'POST':
         year = request.form['year']
         return render_template('index.html', prediction_text='Employee Salary should be {}')
-
 
 
 if __name__ == "__main__":

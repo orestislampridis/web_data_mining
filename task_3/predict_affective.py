@@ -1,29 +1,28 @@
 import pickle
-import pandas as pd
-import numpy as np
+
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 import seaborn as sns
-import task_2.preprocessing
 from tqdm import tqdm
+
+import task_2.preprocessing
+
 tqdm.pandas()
 from connect_mongo import read_mongo
 
-
-#get categories
+# get categories
 emotion_categories = ['anger', 'joy', 'disgust', 'fear', 'sadness', 'surprise']
-#read data
-file1="../dataset/test_cleaned.csv"
-insta=pd.read_csv(file1, encoding="utf8")
+# read data
+file1 = "../dataset/insta_data_cleaned.csv"
+insta = pd.read_csv(file1, sep='~', encoding="utf8")
 
 tweets = read_mongo(db='twitter_db', collection='twitter_collection', query={'text': 1})
 tweets = tweets.sample(n=1000, random_state=42)
 
-
-
-
 reading = task_2.preprocessing.preprocessing(convert_lower=False, use_spell_corrector=True)
 insta['caption'] = insta.caption.progress_map(reading.clean_text)
-tweets['text']=tweets.text.progress_map(reading.clean_text)
+tweets['text'] = tweets.text.progress_map(reading.clean_text)
 
 #print(SemEval['Tweet'].iloc[:2])
 def list2string(list):
