@@ -1,5 +1,4 @@
 import re
-import re
 from statistics import mean
 
 import matplotlib.pyplot as plt
