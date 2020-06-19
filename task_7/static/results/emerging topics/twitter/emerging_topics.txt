@@ -1,0 +1,561 @@
+C:\Users\valan\PycharmProjects\WebDataMiningProject\venv\Scripts\python.exe C:/Users/valan/PycharmProjects/WebDataMiningProject/task_3/emerging_topics.py
+[nltk_data] Downloading package wordnet to
+[nltk_data]     C:\Users\valan\AppData\Roaming\nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+C:\Users\valan\PycharmProjects\WebDataMiningProject\venv\lib\site-packages\past\builtins\misc.py:45: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+  from imp import reload
+C:\Users\valan\PycharmProjects\WebDataMiningProject\venv\lib\site-packages\gensim\corpora\dictionary.py:11: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+  from collections import Mapping, defaultdict
+C:\Users\valan\PycharmProjects\WebDataMiningProject\venv\lib\site-packages\scipy\sparse\sparsetools.py:21: DeprecationWarning: `scipy.sparse.sparsetools` is deprecated!
+scipy.sparse.sparsetools is a private module for scipy.sparse, and should not be used.
+  _deprecated()
+C:\Users\valan\PycharmProjects\WebDataMiningProject\venv\lib\site-packages\tqdm\std.py:668: FutureWarning:
+
+The Panel class is removed from pandas. Accessing it from the top-level namespace will also be removed in the next version
+
+100%|██████████| 117417/117417 [16:43<00:00, 117.02it/s]
+100%|██████████| 117417/117417 [00:00<00:00, 182429.34it/s]
+100%|██████████| 117417/117417 [00:00<00:00, 602483.41it/s]
+  0%|          | 0/14 [00:00<?, ?it/s]ALL DATES:  {datetime.date(2020, 4, 5)}
+num_topics:  15
+0: 0.089*"stayhome" + 0.085*"today" + 0.042*"try" + 0.030*"song" + 0.024*"meet_bedroom"
+
+1: 0.061*"sunday" + 0.044*"family" + 0.039*"morning" + 0.027*"since" + 0.027*"lol"
+
+2: 0.129*"savelives_watch_thesimplelife" + 0.041*"fun" + 0.028*"gon" + 0.024*"coronavirus_COVID" + 0.020*"flavor"
+
+3: 0.049*"bore" + 0.046*"stay_home" + 0.032*"could" + 0.030*"wanot" + 0.026*"human"
+
+4: 0.060*"scene_kaappaan" + 0.060*"hey_amigo_surprise_remember" + 0.040*"music" + 0.028*"world" + 0.028*"every"
+
+5: 0.060*"miss" + 0.050*"thank" + 0.042*"night" + 0.029*"join" + 0.022*"wenot"
+
+6: 0.085*"COVID" + 0.085*"Covid" + 0.078*"covid" + 0.046*"friend" + 0.027*"might"
+
+7: 0.065*"video" + 0.052*"chen_close_girl_understand" + 0.052*"lol_follow" + 0.042*"share" + 0.026*"palmsunday"
+
+8: 0.158*"youtube_homealone" + 0.053*"life" + 0.051*"kyle_walker" + 0.041*"play" + 0.035*"isolation"
+
+9: 0.043*"feel" + 0.029*"fuck" + 0.029*"life" + 0.028*"live" + 0.022*"god"
+
+10: 0.140*"coronavirus" + 0.040*"socialdistancing" + 0.030*"food" + 0.029*"india" + 0.024*"mind"
+
+11: 0.065*"lockdown" + 0.043*"book" + 0.036*"please" + 0.026*"challenge" + 0.023*"read"
+
+12: 0.071*"stay" + 0.052*"mask" + 0.038*"follow" + 0.031*"thanks" + 0.028*"dog"
+
+13: 0.059*"work" + 0.034*"level_grab_screenshot_share" + 0.032*"hope" + 0.029*"pack_Was_Was_waiwaikhao" + 0.023*"home"
+
+14: 0.077*"love" + 0.066*"people" + 0.056*"home" + 0.041*"show" + 0.030*"another"
+
+% of topics document is about:  [(2, 0.19609487), (3, 0.39030126), (6, 0.19612248), (14, 0.1961213)]
+
+Coherence Score:  0.66980265198444
+  7%|▋         | 1/14 [01:10<15:12, 70.20s/it]word_freq:  {'stay': 75, 'mask': 45, 'follow': 38, 'thanks': 38, 'dog': 28, 'house': 33, 'baje minotues': 19, 'church': 19, 'celebrate': 19, 'people': 105, 'series': 14, 'parenots': 12, 'khan_human': 13, 'enginaky_cancer_sefirinkizi_NisSan': 14, 'covid_corona_quarenotena': 14, 'que': 12, 'bje minutes': 11, 'family': 56, 'pandemic': 11, 'mumbai': 12, 'scene_kaappaan': 68, 'hey_amigo_surprise_remember': 68, 'music': 39, 'world': 40, 'every': 28, 'girl': 35, 'sundaythoughts': 23, 'quaranotinediaries': 16, 'youtube': 17, 'differenot': 15, 'believe': 17, 'coronavirus_covid': 14, 'summer': 12, 'drop': 13, 'sir': 13, 'tonight': 12, 'draw': 12, 'idea': 14, 'car': 11, 'boy': 16, 'savelives_watch_thesimplelife': 135, 'fun': 48, 'gon': 24, 'coronavirus_COVID': 20, 'flavor': 20, 'understand_Puppy_hater': 23, 'tell': 38, 'season': 17, 'yesterday': 23, 'wish': 15, 'shot': 12, 'march': 12, 'practice': 13, 'felt_cute_might_gel': 14, 'delivery_istherelifeoutthere': 14, 'hair_stare_window_grocery': 14, 'story': 13, 'pic': 12, 'reach': 11, 'share_series_photo_Nyasa': 11, 'stayhome': 103, 'today': 115, 'try': 61, 'song': 35, 'meet_bedroom': 28, 'light': 24, 'keep': 48, 'spend': 24, 'southkorea': 16, 'dance': 22, 'mom': 18, 'bihday': 18, 'wife': 15, 'place': 19, 'help': 37, 'covid_coronavirus': 18, 'makeup': 14, 'dress': 14, 'outside': 13, 'retweet': 13, 'miss': 57, 'thank': 43, 'night': 36, 'join': 27, 'wenot': 21, 'episode': 16, 'home': 126, 'fight': 17, 'dream': 16, 'sun': 14, 'spring': 18, 'anything': 13, 'unotil': 13, 'offer': 13, 'lunch': 13, 'eth': 10, 'brother': 10, 'stick_home': 9, 'welcome': 10, 'lie': 7, 'sunday': 59, 'morning': 49, 'since': 24, 'lol': 26, 'turn': 21, 'anyone': 24, 'love': 122, 'wake': 20, 'talk': 17, 'grow': 16, 'health': 17, 'life': 144, 'bless': 14, 'netflix': 14, 'continue': 13, 'seem': 14, 'The': 12, 'self': 13, 'feel': 48, 'fuck': 31, 'live': 33, 'god': 24, 'hair': 23, 'inoto': 21, 'case': 21, 'end': 17, 'room': 18, 'hour': 16, 'weekend': 21, 'kid': 25, 'meme': 21, 'distance': 15, 'forget': 16, 'quaranotineactivies': 13, 'link': 19, 'plan': 14, 'air': 13, 'lockdown': 96, 'book': 45, 'please': 49, 'challenge': 31, 'read': 44, 'game': 32, 'COVID': 124, 'nature': 17, 'breakfast': 21, 'person': 18, 'douche_challenge': 20, 'motherfucker_cream_hope_arrest': 20, 'quarantine': 17, 'eat': 22, 'realize': 14, 'sundaythoughts_catsoftwter': 12, 'exhaust_sister_alice_quaranotinecats': 12, 'number': 16, 'win': 14, 'Covid': 92, 'covid': 92, 'friend': 54, 'might': 32, 'QuaranotineLife': 32, 'ask': 24, 'enjoy': 32, 'list': 26, 'quaranotinelife': 48, 'shout': 23, 'corona': 51, 'create': 25, 'stick': 12, 'wanot_buy_man_dinner': 14, 'work_home': 9, 'food_quaranotinelife': 11, 'sleep': 16, 'COVID_coronavirus': 14, 'sound_enjoy_seeing_hear': 12, 'video': 62, 'lol_follow': 52, 'chen_close_girl_understand': 52, 'share': 40, 'palmsunday': 29, 'break': 16, 'tip': 16, 'everything': 19, 'decide': 14, 'tweet': 15, 'palm_sunday': 13, 'picture': 17, 'stuff': 14, 'paper': 10, 'date': 11, 'shop': 12, 'order': 15, 'since_Covid_tigerking_rage': 9, 'figure_ask': 9, 'wine': 8}
+ALL DATES:  {datetime.date(2020, 4, 6)}
+num_topics:  15
+0: 0.166*"flavor_via" + 0.038*"another" + 0.024*"cat" + 0.024*"dog" + 0.024*"work_home"
+
+1: 0.126*"home" + 0.039*"bore_bore_chance_ask" + 0.039*"anything_wanoted_israel" + 0.025*"pay" + 0.024*"year"
+
+2: 0.041*"thank" + 0.033*"song" + 0.032*"since" + 0.031*"hope" + 0.029*"tell"
+
+3: 0.043*"lockdown" + 0.037*"corona" + 0.029*"COVID" + 0.027*"world" + 0.022*"break"
+
+4: 0.137*"friday_sunday_sunday_ball" + 0.137*"cou_asem_weatherchanne" + 0.087*"stayhome" + 0.068*"asem_stop_lifealways_shot" + 0.066*"please"
+
+5: 0.117*"life" + 0.077*"morning" + 0.029*"sound" + 0.023*"lol" + 0.023*"COVID"
+
+6: 0.071*"work" + 0.038*"meet_taco_forgetcorona_Bella" + 0.036*"music" + 0.036*"play" + 0.035*"friend"
+
+7: 0.042*"Covid" + 0.041*"frodo" + 0.041*"Covid_quotation_mean_business" + 0.040*"try" + 0.039*"miss"
+
+8: 0.149*"coronavirus" + 0.084*"covid" + 0.033*"end" + 0.022*"mondaymotivation" + 0.021*"Covid"
+
+9: 0.113*"today" + 0.042*"mondaymorning" + 0.042*"style_might_bank_inthisto" + 0.042*"gon_tie_mine_outlaw" + 0.039*"show"
+
+10: 0.064*"video" + 0.060*"people" + 0.049*"quaranotinelife" + 0.048*"family" + 0.046*"isolation"
+
+11: 0.094*"COVID" + 0.091*"stay" + 0.066*"keep" + 0.021*"drop" + 0.020*"baby"
+
+12: 0.071*"watch" + 0.057*"help" + 0.047*"fun" + 0.034*"game" + 0.027*"lot"
+
+13: 0.292*"please_fault_nepa_wife" + 0.277*"watch_mondaymotivation_covid_funkeakin" + 0.034*"monday" + 0.027*"lockdowneffect" + 0.021*"join"
+
+14: 0.114*"people_belagavi_attend_test" + 0.114*"rest_result" + 0.051*"love" + 0.043*"feel" + 0.030*"share"
+
+% of topics document is about:  [(3, 0.19609027), (10, 0.77866554)]
+
+Coherence Score:  0.6775801406592962
+word_freq:  {'flavor_via': 230, 'another': 46, 'cat': 27, 'dog': 24, 'work_home': 23, 'question': 22, 'night': 22, 'comedy': 18, 'photo': 22, 'god': 18, 'turn': 23, 'hea': 17, 'kind': 15, 'distance': 14, 'breakfast': 11, 'staed': 14, 'wish': 11, 'hour': 12, 'pet': 7, 'plan': 16, 'please_fault_nepa_wife': 598, 'watch_mondaymotivation_covid_funkeakin': 563, 'monday': 63, 'lockdowneffect': 46, 'join': 42, 'man': 42, 'enjoy': 36, 'flavor': 23, 'sleep': 18, 'fan': 21, 'workfromhome': 18, 'room': 16, 'dream': 19, 'stay_stay': 8, 'boyfriend': 10, 'day oflockdown': 10, 'mondaymotivation': 46, 'hug': 12, 'COVID_mondaymorning': 12, 'allow': 10, 'work': 129, 'meet_taco_forgetcorona_Bella': 73, 'music': 49, 'play': 52, 'friend': 60, 'read': 56, 'follow': 34, 'socialdistancing': 56, 'workout': 30, 'learn': 43, 'sun_camera_capture_MondayMotivation': 32, 'sundaythoughts_sunsetphotography': 32, 'book': 27, 'mood': 26, 'coronavirus_COVID': 22, 'fuck': 26, 'wife': 21, 'nyc': 17, 'point': 19, 'everything': 21, 'Covid': 121, 'Covid_quotation_mean_business': 67, 'frodo': 67, 'try': 67, 'miss': 60, 'health': 41, 'hey': 23, 'kid': 37, 'picture': 17, 'run': 23, 'lie': 15, 'laugh': 21, 'face': 19, 'link_bio': 18, 'counotry': 13, 'around': 17, 'test': 20, 'water': 17, 'yesterday': 15, 'parenots': 15, 'coronavirus': 214, 'covid': 117, 'end': 51, 'every': 37, 'people': 133, 'tiktok': 28, 'yes': 17, 'skill': 22, 'stop_Tweaking_addict': 28, 'house': 44, 'bore_home': 12, 'store': 16, 'name': 13, 'kill_win_prize_friend': 17, 'timeoutwhbf_conotest_Quad': 17, 'live': 38, 'style': 11, 'though': 13, 'watch': 88, 'help': 83, 'fun': 53, 'game': 45, 'lot': 23, 'bihday': 23, 'place_order_order': 31, 'chen_open_receive_order': 31, 'hand': 22, 'india': 21, 'inside': 18, 'pandemic': 21, 'send': 17, 'practice': 16, 'answer': 13, 'monoth': 15, 'sex': 14, 'choose': 15, 'joke': 15, 'close': 13, 'cou_asem_weatherchanne': 207, 'friday_sunday_sunday_ball': 207, 'stayhome': 107, 'asem_stop_lifealways_shot': 104, 'please': 75, 'guy': 62, 'period': 25, 'become': 28, 'order': 22, 'shoot': 17, 'shop': 14, 'meet': 11, 'power': 13, 'sorry': 12, 'course': 13, 'staff': 11, 'pizza': 10, 'rage_figure_ask': 9, 'since_Covid_tigerking': 9, 'accept': 8, 'today': 146, 'mondaymorning': 57, 'style_might_bank_inthisto': 63, 'gon_tie_mine_outlaw': 63, 'show': 51, 'wanot': 56, 'forget': 26, 'hear': 26, 'series': 23, 'savelives_watch_thesimplelife': 30, 'exercise': 19, 'season': 17, 'movie': 21, 'commenot': 14, 'seem': 22, 'sunday': 20, 'beat': 15, 'leave': 15, 'everybody': 11, 'isolation_coronalockdown_COVID': 7, 'life': 154, 'morning': 105, 'sound': 38, 'lol': 28, 'COVID': 187, 'food': 29, 'talk': 24, 'guess': 26, 'cook': 20, 'gon': 20, 'change': 18, 'staysafe': 21, 'quaranotined': 18, 'woman': 13, 'roll': 13, 'head': 18, 'station': 17, 'sign': 13, 'quote': 14, 'qua': 16, 'thank': 52, 'song': 49, 'since': 44, 'hope': 42, 'tell': 41, 'mask': 35, 'selfisolation': 30, 'Quaranotine': 39, 'chill': 33, 'home_stayhomesavelives_COVID_coronavirus': 38, 'rashamidesai_learn_guar_stay': 38, 'walk': 21, 'care': 26, 'extend': 12, 'mom': 18, 'ask': 25, 'april': 17, 'buy': 18, 'daddy': 17}
+emergingWords [('flavor_via', 0.443267776096823), ('please_fault_nepa_wife', 1.0), ('watch_mondaymotivation_covid_funkeakin', 0.9470499243570348), ('coronavirus', 0.41906202723146746), ('cou_asem_weatherchanne', 0.4084720121028744), ('friday_sunday_sunday_ball', 0.4084720121028744)]
+ 14%|█▍        | 2/14 [02:42<15:23, 76.96s/it]ALL DATES:  {datetime.date(2020, 4, 7)}
+num_topics:  15
+0: 0.152*"coronavirus" + 0.068*"video" + 0.048*"watch" + 0.025*"friend" + 0.024*"eat"
+
+1: 0.065*"socialdistancing" + 0.044*"home" + 0.039*"Covid" + 0.039*"lockdown" + 0.033*"another"
+
+2: 0.069*"wanot" + 0.063*"music" + 0.055*"thanks" + 0.024*"challenge" + 0.023*"drop"
+
+3: 0.103*"covid" + 0.046*"play" + 0.032*"night" + 0.027*"stay_home" + 0.025*"stop"
+
+4: 0.099*"life" + 0.054*"people" + 0.036*"live" + 0.030*"song" + 0.029*"show"
+
+5: 0.111*"kellyanne_conway_chastise_suggest" + 0.111*"COVID_spread" + 0.111*"conotained_monoth_ago_today" + 0.044*"follow" + 0.038*"love"
+
+6: 0.062*"keep" + 0.061*"house" + 0.053*"bore" + 0.040*"corona" + 0.040*"hope"
+
+7: 0.065*"stay" + 0.051*"family" + 0.041*"mansion" + 0.036*"kid" + 0.032*"quarantine"
+
+8: 0.081*"today" + 0.064*"year" + 0.056*"crib" + 0.027*"man" + 0.024*"ask"
+
+9: 0.090*"stayhome" + 0.044*"hear" + 0.037*"learn" + 0.033*"game" + 0.021*"season"
+
+10: 0.039*"girl" + 0.034*"spend" + 0.030*"walk" + 0.027*"movie" + 0.024*"bookworm_booklover_qua"
+
+11: 0.148*"freak_iphone_malu_orang" + 0.148*"donot_flex_hotel_room" + 0.148*"tengok" + 0.026*"enjoy" + 0.025*"listen"
+
+12: 0.052*"stayathome" + 0.038*"book" + 0.034*"since" + 0.029*"talk" + 0.026*"bring"
+
+13: 0.157*"COVID" + 0.049*"work" + 0.046*"isolation" + 0.044*"miss" + 0.034*"fun"
+
+14: 0.073*"feel" + 0.060*"quaranotinelife" + 0.036*"anyone" + 0.025*"end" + 0.025*"morning"
+
+% of topics document is about:  [(1, 0.955555)]
+
+Coherence Score:  0.649867882449379
+word_freq:  {'coronavirus': 298, 'video': 133, 'watch': 112, 'friend': 91, 'eat': 48, 'today': 236, 'order': 43, 'tuesday': 42, 'food': 41, 'love': 208, 'lose': 25, 'link': 24, 'cook': 35, 'makeup': 29, 'travel': 23, 'turn': 25, 'point': 21, 'course': 22, 'money': 22, 'yesterday': 17, 'keep': 98, 'house': 95, 'bore': 85, 'corona': 69, 'hope': 56, 'remember': 67, 'might': 49, 'mood': 46, 'gon': 41, 'sta': 41, 'idea': 34, 'distancing': 29, 'child': 34, 'experience': 15, 'podcast': 25, 'define': 20, 'clean': 19, 'home': 171, 'smile': 21, 'self': 18, 'socialdistancing': 121, 'Covid': 65, 'lockdown': 81, 'another': 58, 'guy': 61, 'mask': 50, 'pay': 54, 'flavor': 37, 'name': 40, 'tell': 43, 'wonder': 24, 'hey': 29, 'continue': 21, 'people': 178, 'fuck': 30, 'wife': 24, 'dream': 17, 'move': 23, 'music_piano_corn': 28, 'year': 84, 'crib': 74, 'man': 34, 'ask': 28, 'sun': 31, 'virus': 28, 'hand': 32, 'case': 23, 'lock': 29, 'face': 26, 'moon': 23, 'message': 22, 'eye': 16, 'youtube': 28, 'mom': 24, 'date': 14, 'believe': 15, 'ness': 14, 'Pants_fire': 20, 'stayathome': 77, 'book': 59, 'since': 54, 'talk': 50, 'bring': 41, 'laugh': 32, 'place': 33, 'covid_coronavirus': 24, 'inoto': 32, 'april': 31, 'school': 24, 'join': 34, 'include': 23, 'hang': 19, 'room': 18, 'finish': 21, 'work': 170, 'catch': 24, 'mind': 23, 'playlist': 20, 'stayhome': 131, 'hear': 55, 'learn': 60, 'game': 55, 'season': 29, 'cou_asem_weatherchanne': 38, 'friday_sunday_sunday_ball': 38, 'cut': 24, 'cause': 25, 'view': 21, 'homemade': 18, 'pass': 22, 'suck': 15, 'level': 19, 'word': 29, 'wanots': 18, 'stick_home': 21, 'foot': 20, 'stock': 16, 'nature': 15, 'feel': 110, 'quaranotinelife': 97, 'anyone': 60, 'end': 77, 'morning': 35, 'list': 34, 'health': 40, 'decide': 39, 'selfie': 26, 'pic': 27, 'workout': 32, 'guess': 23, 'everything': 26, 'hell': 20, 'stick': 27, 'deal': 25, 'series': 25, 'name_leave_list_bachelornation': 23, 'ask_dream': 23, 'donot_flex_hotel_room': 340, 'freak_iphone_malu_orang': 340, 'tengok': 340, 'enjoy': 66, 'listen': 50, 'care': 39, 'lol': 37, 'create': 31, 'share': 46, 'meme': 34, 'boy': 29, 'quaranotined': 18, 'curfewriddimchallenge_corona_covid': 25, 'hair': 22, 'god': 29, 'selfisolation': 29, 'tomorrow': 22, 'subscribe': 20, 'piece': 14, 'comedy': 17, 'COVID': 289, 'isolation': 98, 'miss': 87, 'fun': 73, 'try': 93, 'story': 46, 'run': 45, 'kind': 39, 'tip': 43, 'around': 29, 'forget': 35, 'world': 69, 'wan': 28, 'someone': 39, 'cat': 23, 'spot': 23, 'china': 17, 'lot': 34, 'medium': 24, 'stay': 118, 'family': 82, 'mansion': 74, 'kid': 56, 'quarantine': 43, 'tonight': 41, 'close': 22, 'dance': 28, 'right': 31, 'plan': 29, 'inspire': 23, 'shout': 33, 'monoth': 22, 'choose': 18, 'leave': 32, 'agree': 12, 'store': 21, 'parenots': 19, 'air': 18}
+emergingWords [('video', 0.5316742081447964), ('eat', 0.3393665158371041), ('tuesday', 0.3257918552036199), ('love', 0.7013574660633484), ('keep', 0.45248868778280543), ('bore', 0.4230769230769231), ('corona', 0.38687782805429866), ('remember', 0.38235294117647056), ('might', 0.3416289592760181), ('sta', 0.3235294117647059), ('idea', 0.3076923076923077), ('child', 0.3076923076923077), ('home', 0.6176470588235294), ('Covid', 0.3574660633484163), ('lockdown', 0.41402714932126694), ('pay', 0.35294117647058826), ('year', 0.42081447963800905), ('crib', 0.39819004524886875), ('sun', 0.3009049773755656), ('stayathome', 0.40497737556561086), ('bring', 0.3235294117647059), ('place', 0.3054298642533937), ('inoto', 0.3031674208144796), ('cou_asem_weatherchanne', 0.6131221719457014), ('friday_sunday_sunday_ball', 0.6131221719457014), ('feel', 0.4796380090497738), ('quaranotinelife', 0.4502262443438914), ('anyone', 0.3665158371040724), ('morning', 0.3891402714932127), ('list', 0.3076923076923077), ('decide', 0.3190045248868778), ('donot_flex_hotel_room', 1.0), ('freak_iphone_malu_orang', 1.0), ('tengok', 1.0), ('listen', 0.3438914027149321), ('create', 0.3009049773755656), ('share', 0.334841628959276), ('meme', 0.3076923076923077), ('isolation', 0.45248868778280543), ('story', 0.334841628959276), ('tip', 0.32805429864253394), ('world', 0.38687782805429866), ('someone', 0.3190045248868778), ('stay', 0.497737556561086), ('family', 0.416289592760181), ('mansion', 0.39819004524886875), ('quarantine', 0.32805429864253394), ('tonight', 0.3235294117647059), ('right', 0.3009049773755656), ('shout', 0.3054298642533937)]
+ 21%|██▏       | 3/14 [04:23<15:22, 83.90s/it]ALL DATES:  {datetime.date(2020, 4, 8)}
+num_topics:  15
+0: 0.082*"watch" + 0.064*"video" + 0.039*"end" + 0.038*"hope" + 0.025*"fuck"
+
+1: 0.054*"Covid" + 0.045*"spend" + 0.038*"night" + 0.036*"change" + 0.033*"list"
+
+2: 0.068*"bore" + 0.042*"play" + 0.037*"challenge" + 0.037*"anyone" + 0.032*"COVID_coronavirus"
+
+3: 0.064*"experience" + 0.057*"fun" + 0.051*"feel" + 0.036*"join" + 0.033*"book"
+
+4: 0.106*"stayhome" + 0.066*"quaranotinelife" + 0.062*"wanot" + 0.053*"another" + 0.021*"flavor"
+
+5: 0.157*"midst_chaos_oppounity_cover" + 0.157*"childrenofthequarn_baby" + 0.039*"lol" + 0.026*"spring" + 0.021*"team"
+
+6: 0.116*"home" + 0.036*"since" + 0.034*"could" + 0.028*"show" + 0.027*"thanks"
+
+7: 0.096*"lockdown" + 0.063*"stay" + 0.057*"house" + 0.043*"try" + 0.028*"game"
+
+8: 0.060*"family" + 0.040*"guy" + 0.039*"song" + 0.037*"stayathome" + 0.034*"learn"
+
+9: 0.173*"coronavirus" + 0.034*"food" + 0.033*"kid" + 0.029*"try_quaranotinelife_champ_chinaflu" + 0.028*"stayathome_chinesevirus_kungflufighting"
+
+10: 0.099*"covid" + 0.077*"love" + 0.043*"miss" + 0.038*"year" + 0.036*"enjoy"
+
+11: 0.071*"isolation" + 0.062*"friend" + 0.037*"read" + 0.032*"someone" + 0.031*"live"
+
+12: 0.118*"COVID" + 0.115*"life" + 0.075*"today" + 0.062*"corona" + 0.032*"world"
+
+13: 0.092*"katie" + 0.067*"work" + 0.056*"help" + 0.039*"story" + 0.037*"stay_home"
+
+14: 0.095*"people" + 0.054*"might" + 0.050*"socialdistancing" + 0.044*"keep" + 0.034*"please"
+
+% of topics document is about:  [(5, 0.9348808)]
+
+Coherence Score:  0.6580008952044821
+word_freq:  {'stayhome': 171, 'quaranotinelife': 122, 'wanot': 100, 'another': 68, 'flavor': 38, 'distancing': 29, 'stop': 41, 'forget': 38, 'wonder': 29, 'laugh': 29, 'update': 22, 'effect': 18, 'wear': 24, 'shot': 24, 'cover': 21, 'cause': 22, 'hop': 14, 'nature': 24, 'QuaranotineLife': 18, 'offer': 21, 'coronavirus': 308, 'food': 55, 'kid': 60, 'try_quaranotinelife_champ_chinaflu': 75, 'stayathome_chinesevirus_kungflufighting': 74, 'thank': 57, 'order': 35, 'student': 20, 'school': 23, 'retweet': 24, 'quaranotined': 30, 'message': 20, 'move': 24, 'skill': 21, 'lift': 19, 'parent': 10, 'seem': 22, 'heat': 18, 'coffee': 19, 'quaranoti': 24, 'family': 110, 'guy': 64, 'song': 67, 'stayathome': 72, 'learn': 62, 'inoto': 55, 'share': 51, 'win': 38, 'workout': 54, 'idea': 41, 'stay_home_stay': 36, 'dance': 33, 'work': 155, 'break': 34, 'mean': 38, 'virus': 35, 'dream': 29, 'around': 22, 'guess': 27, 'decide': 29, 'watch': 156, 'video': 120, 'end': 88, 'hope': 78, 'fuck': 49, 'news': 44, 'create': 28, 'love': 202, 'talk': 40, 'fan': 39, 'shout': 32, 'cat': 37, 'fight': 37, 'beat': 31, 'hour': 42, 'listen': 36, 'money': 28, 'meme': 31, 'walk': 33, 'moon': 36, 'midst_chaos_oppounity_cover': 274, 'childrenofthequarn_baby': 274, 'lol': 49, 'spring': 29, 'team': 26, 'pic': 27, 'god': 27, 'suppo': 25, 'detail': 12, 'stage': 16, 'air': 14, 'reading': 16, 'jail': 8, 'smile': 15, 'oppounity': 10, 'tire': 14, 'beauty': 16, 'rate': 15, 'spot': 16, 'project': 15, 'people': 171, 'might': 98, 'socialdistancing': 95, 'keep': 107, 'please': 70, 'wanot_buy_man_dinner': 67, 'mood': 51, 'become': 34, 'period': 32, 'body': 33, 'man': 42, 'link': 37, 'governmenot': 29, 'medium': 22, 'street': 21, 'realize': 20, 'blog': 21, 'parenots': 19, 'sing': 18, 'run': 39, 'Covid': 84, 'spend': 45, 'night': 67, 'change': 40, 'list': 50, 'send': 43, 'everything': 39, 'clue_consider_accomplishment': 41, 'delivery': 12, 'outside': 22, 'quote': 16, 'sand_book_books read_book': 17, 'bookworm_booklover_qua': 17, 'eat': 47, 'breakfast': 19, 'control': 16, 'word': 24, 'stuff': 18, 'staing': 20, 'buy': 21, 'isolation': 99, 'friend': 95, 'read': 56, 'someone': 48, 'live': 55, 'tonight': 57, 'stream': 45, 'picture': 37, 'tiktok': 50, 'pandemic': 31, 'mansion': 36, 'worry': 18, 'drop': 30, 'chill': 30, 'radio': 28, 'selfisolation': 24, 'stay': 144, 'boy': 23, 'series': 28, 'focus': 13, 'lockdown': 155, 'house': 114, 'try': 90, 'game': 58, 'leave': 39, 'work_home': 30, 'face': 38, 'kind': 37, 'wife': 28, 'episode': 32, 'per': 20, 'inspire': 29, 'room': 28, 'quarantine': 42, 'deal': 19, 'act': 15, 'water': 21, 'death': 23, 'away_news_tonight_response': 33, 'bore': 100, 'play': 71, 'challenge': 51, 'anyone': 54, 'COVID_coronavirus': 50, 'gon': 43, 'tip': 40, 'COVID': 362, 'season': 23, 'plan': 34, 'wan': 35, 'monoth': 29, 'course': 27, 'yes': 29, 'lyle': 23, 'business': 27, 'unotil': 16, 'tomorrow': 28, 'haircut': 19, 'quaranotineandchill': 21}
+emergingWords [('wanot', 0.5), ('stop', 0.33045977011494254), ('try_quaranotinelife_champ_chinaflu', 0.4281609195402299), ('stayathome_chinesevirus_kungflufighting', 0.42528735632183906), ('thank', 0.3764367816091954), ('song', 0.4051724137931034), ('win', 0.3218390804597701), ('stay_home_stay', 0.3160919540229885), ('break', 0.3103448275862069), ('mean', 0.3218390804597701), ('news', 0.3390804597701149), ('fan', 0.32471264367816094), ('fight', 0.31896551724137934), ('beat', 0.3017241379310345), ('hour', 0.3333333333333333), ('walk', 0.3074712643678161), ('midst_chaos_oppounity_cover', 1.0), ('childrenofthequarn_baby', 1.0), ('please', 0.41379310344827586), ('wanot_buy_man_dinner', 0.4051724137931034), ('become', 0.3103448275862069), ('period', 0.3045977011494253), ('body', 0.3074712643678161), ('spend', 0.34195402298850575), ('night', 0.4051724137931034), ('change', 0.3275862068965517), ('send', 0.33620689655172414), ('clue_consider_accomplishment', 0.33045977011494254), ('read', 0.3735632183908046), ('live', 0.3706896551724138), ('stream', 0.34195402298850575), ('picture', 0.31896551724137934), ('tiktok', 0.3563218390804598), ('pandemic', 0.3017241379310345), ('mansion', 0.3218390804597701), ('episode', 0.3045977011494253), ('away_news_tonight_response', 0.3074712643678161), ('play', 0.4166666666666667), ('challenge', 0.35919540229885055), ('COVID_coronavirus', 0.3563218390804598)]
+ALL DATES:  {datetime.date(2020, 4, 9)}
+ 29%|██▊       | 4/14 [06:24<15:51, 95.18s/it]num_topics:  15
+0: 0.087*"life" + 0.051*"today" + 0.026*"work" + 0.024*"video" + 0.023*"quaranotineandchill"
+
+1: 0.198*"coronavirus" + 0.098*"deserve_kick_face" + 0.098*"eddie_talk_medium_earthquake" + 0.021*"keep_world" + 0.021*"flavor"
+
+2: 0.065*"keep" + 0.059*"love" + 0.030*"family" + 0.024*"tell" + 0.018*"watch"
+
+3: 0.079*"rest_draw_Camus_stuff" + 0.079*"method_samsara_socialdistan" + 0.063*"people" + 0.034*"KAy_map_chi_inn" + 0.034*"effect_pareshaan_watch_BiggBoss"
+
+4: 0.078*"stayhome" + 0.051*"stay" + 0.036*"feel" + 0.035*"COVID" + 0.029*"year"
+
+5: 0.038*"music" + 0.030*"night" + 0.029*"join" + 0.025*"fuck" + 0.025*"talk"
+
+6: 0.107*"covid" + 0.037*"guy" + 0.036*"anyone" + 0.029*"date_rapper_music_cove" + 0.029*"drop_eth_april_save"
+
+7: 0.037*"fun" + 0.029*"try" + 0.029*"stay_home" + 0.027*"game" + 0.023*"dog"
+
+8: 0.067*"cashapp_Apply" + 0.067*"ill_send_people_retweet" + 0.040*"isolation" + 0.026*"help" + 0.026*"hea_every"
+
+9: 0.038*"friend" + 0.032*"another" + 0.022*"locksouthafricadown_extend_President_cyrilramaphosa" + 0.022*"covey_force_south_african" + 0.021*"miss_freedom_family_friend"
+
+10: 0.072*"watch" + 0.064*"please_send_help" + 0.063*"wife_staed_throw_baby" + 0.063*"shower_bird_nest_backyard" + 0.055*"quaranotinelife"
+
+11: 0.030*"tiktok" + 0.025*"wanot" + 0.024*"hey" + 0.020*"send" + 0.020*"nothing"
+
+12: 0.088*"house" + 0.024*"dance" + 0.020*"cook" + 0.020*"tomorrow" + 0.020*"around"
+
+13: 0.038*"show" + 0.025*"list" + 0.023*"hope" + 0.022*"cat" + 0.018*"girl"
+
+14: 0.078*"home" + 0.065*"madonna_video" + 0.044*"lockdownextension_cyrilramaphosa" + 0.044*"pray_President_thank_leadership" + 0.042*"rep_claim_BiggBoss_contestant"
+
+% of topics document is about:  [(4, 0.93488)]
+
+Coherence Score:  0.6861495392668794
+word_freq:  {'rest_draw_Camus_stuff': 74, 'method_samsara_socialdistan': 74, 'people': 53, 'effect_pareshaan_watch_BiggBoss': 31, 'KAy_map_chi_inn': 31, 'kid': 34, 'perfect_jump_rope_skills': 22, 'wife': 15, 'walk': 17, 'stop': 15, 'easter': 21, 'jiocinema_love': 15, 'question': 12, 'wanot': 33, 'MonEra_anytime': 12, 'Report': 8, 'sound': 9, 'wake': 10, 'plot': 9, 'celebrate': 8, 'friend': 38, 'another': 37, 'locksouthafricadown_extend_President_cyrilramaphosa': 19, 'covey_force_south_african': 19, 'zoo_quaranoti': 16, 'human_Maria_piotrowski_confinement': 16, 'miss_freedom_family_friend': 16, 'shout': 15, 'tonight': 11, 'public_expose': 11, 'bulge_bin_gay_exit': 11, 'excel_flashing_paper_towel': 11, 'hear': 10, 'work_home': 8, 'bar': 8, 'teacher': 8, 'quaranotineradio': 8, 'pull': 8, 'test': 9, 'episode': 17, 'music': 52, 'night': 28, 'join': 33, 'fuck': 25, 'talk': 24, 'lol': 27, 'listen': 28, 'leave': 19, 'instagram': 16, 'story': 17, 'pandemic': 14, 'link': 17, 'picture': 14, 'wish': 15, 'drop': 16, 'stream': 11, 'love': 83, 'right': 15, 'self': 12, 'dinner': 15, 'keep': 61, 'family': 34, 'tell': 29, 'watch': 78, 'thank': 24, 'mean': 15, 'bihday': 14, 'POST': 13, 'fan': 13, 'sing': 11, 'buy': 13, 'staed': 11, 'quaranotinelife': 52, 'god': 10, 'lot': 13, 'school': 13, 'lockdown': 33, 'box': 8, 'fight': 9, 'coronavirus': 186, 'eddie_talk_medium_earthquake': 98, 'deserve_kick_face': 98, 'keep_world': 18, 'flavor': 24, 'hour': 19, 'face': 25, 'end': 27, 'become': 13, 'yes': 13, 'rain': 11, 'hang': 11, 'zoom': 10, 'goal': 9, 'couple': 8, 'season': 11, 'snack': 8, 'decide': 14, 'conotenot': 8, 'win': 11, 'fun': 38, 'try': 51, 'stay_home': 27, 'game': 24, 'dog': 19, 'change': 20, 'workout': 17, 'name': 18, 'coronavirus_covid': 16, 'please_complaint_Alba_privacy': 18, 'believe_allow_ALBA_folk': 18, 'commissioner_jill': 18, 'apple_podcasts_Google': 17, 'bonus_mini_update_nam': 17, 'policy_listen_episode_Notify': 17, 'Covid': 21, 'ask': 13, 'thursday': 13, 'attempt_home_groom_feeling': 9, 'pick': 11, 'stayhome': 79, 'stay': 52, 'feel': 55, 'COVID': 47, 'year': 37, 'could': 22, 'follow': 22, 'covid': 120, 'idea': 19, 'relieve_stress_show_crushquaranotine': 19, 'enjoy': 18, 'today': 77, 'staysafe': 14, 'run': 14, 'forget': 12, 'makeup': 14, 'work': 69, 'drink': 10, 'mood': 15, 'hair': 17, 'tiktok': 21, 'hey': 21, 'send': 22, 'nothing': 17, 'marry_fun_watch_ceremony': 12, 'Quaranotine': 12, 'hand': 11, 'pizza': 11, 'person': 12, 'remember': 11, 'momenot': 15, 'someone': 12, 'project': 10, 'beat': 10, 'sting': 9, 'state': 9, 'please_send_help': 58, 'shower_bird_nest_backyard': 57, 'wife_staed_throw_baby': 57, 'play': 47, 'please': 38, 'share': 22, 'bore': 33, 'song': 27, 'anyone_place_note_specie': 17, 'movie': 15, 'video': 51, 'meme': 12, 'pet': 10, 'stick': 14, 'selfisolation': 9, 'laugh': 8, 'body': 11, 'onlyfans': 13, 'life': 88, 'quaranotineandchill': 25, 'every': 27, 'remastered_crank_session_stream': 20, 'live_FEB_night': 20, 'book': 20, 'socialdistancing': 46, 'quarantine': 18, 'stayathome': 22, 'kill': 13, 'live': 26, 'pay': 23, 'challenge': 14, 'studio': 12, 'choose': 10, 'plan': 13}
+emergingWords [('people', 0.3824451410658307), ('love', 0.38557993730407525), ('lockdown', 0.3949843260188088), ('coronavirus', 0.3949843260188088), ('eddie_talk_medium_earthquake', 0.31974921630094044), ('deserve_kick_face', 0.31974921630094044), ('stayhome', 0.30094043887147337), ('stay', 0.30094043887147337), ('COVID', 1.0), ('covid', 0.3887147335423197)]
+ 36%|███▌      | 5/14 [07:24<12:42, 84.69s/it]ALL DATES:  {datetime.date(2020, 4, 10)}
+num_topics:  15
+0: 0.054*"fun" + 0.041*"throwback_video_farm_coimbatore" + 0.041*"farm_farmerlife" + 0.039*"join" + 0.038*"enjoy"
+
+1: 0.137*"life" + 0.079*"today" + 0.077*"love" + 0.070*"work" + 0.037*"end"
+
+2: 0.076*"miss" + 0.046*"play" + 0.039*"tonight" + 0.028*"stay_home" + 0.028*"eat"
+
+3: 0.186*"covid" + 0.041*"covid_coronavirus" + 0.027*"please" + 0.026*"method_samsara_socialdistan" + 0.026*"rest_draw_Camus_stuff"
+
+4: 0.064*"feel" + 0.052*"isolation" + 0.044*"stop" + 0.040*"eddie_talk_medium_earthquake" + 0.040*"deserve_kick_face"
+
+5: 0.077*"stayhome" + 0.071*"video" + 0.055*"socialdistancing" + 0.036*"thank" + 0.033*"live"
+
+6: 0.039*"memory_film" + 0.039*"teri_Anthony_cuba_song" + 0.038*"guy" + 0.033*"order" + 0.028*"girl"
+
+7: 0.176*"coronavirus" + 0.091*"people" + 0.044*"corona" + 0.040*"weekend" + 0.040*"tell"
+
+8: 0.094*"watch" + 0.076*"COVID" + 0.045*"night" + 0.039*"challenge" + 0.030*"thanks"
+
+9: 0.053*"kid" + 0.053*"quaranotinelife" + 0.046*"news" + 0.036*"share" + 0.035*"learn"
+
+10: 0.063*"jam_step_though_road" + 0.063*"step_inoto_mumbai_traffic" + 0.050*"friend" + 0.030*"every" + 0.029*"anyone"
+
+11: 0.097*"home" + 0.066*"lockdown" + 0.038*"rep_claim_BiggBoss_contestant" + 0.038*"stick_hotel_lock" + 0.033*"man"
+
+12: 0.101*"ill_send_people_retweet" + 0.075*"cashapp_Apply" + 0.054*"try" + 0.039*"since" + 0.036*"stay"
+
+13: 0.111*"gym" + 0.053*"bore" + 0.045*"help" + 0.041*"friday" + 0.037*"tiktok"
+
+14: 0.084*"house" + 0.051*"year" + 0.049*"family" + 0.047*"wanot" + 0.039*"another"
+
+% of topics document is about:  [(0, 0.06666667), (1, 0.06666667), (2, 0.06666667), (3, 0.06666667), (4, 0.06666667), (5, 0.06666667), (6, 0.06666667), (7, 0.06666667), (8, 0.06666667), (9, 0.06666667), (10, 0.06666667), (11, 0.06666667), (12, 0.06666667), (13, 0.06666667), (14, 0.06666667)]
+
+Coherence Score:  0.6763239897449477
+word_freq:  {'kid': 82, 'quaranotinelife': 75, 'news': 71, 'share': 49, 'learn': 50, 'easter': 37, 'nothing': 26, 'instagram': 27, 'stayhome_staysafe': 23, 'everything': 32, 'online': 25, 'around': 26, 'monoth': 24, 'spring': 26, 'coronavirus_COVID': 29, 'workout': 27, 'gay': 18, 'sign': 15, 'pick': 19, 'lose_mind': 7, 'feel': 86, 'isolation': 68, 'stop': 59, 'deserve_kick_face': 79, 'eddie_talk_medium_earthquake': 79, 'game': 72, 'ask': 35, 'hair': 39, 'stayathome': 37, 'child': 30, 'cook': 27, 'unotil': 18, 'wenot': 20, 'meal': 18, 'counotry': 19, 'wake': 19, 'onlyfans': 23, 'The': 19, 'afternoon': 10, 'step': 19, 'ill_send_people_retweet': 186, 'cashapp_Apply': 165, 'try': 107, 'since': 60, 'stay': 109, 'follow': 59, 'inoto': 39, 'lol': 41, 'hey': 29, 'bar': 23, 'money': 24, 'madonna_video': 42, 'forget': 27, 'film': 20, 'youtube': 25, 'view': 19, 'baby': 25, 'anything': 19, 'laugh': 19, 'seem': 19, 'teri_Anthony_cuba_song': 83, 'memory_film': 83, 'guy': 58, 'order': 59, 'girl': 50, 'lot': 39, 'list': 39, 'lose': 28, 'daughter': 24, 'makeup': 28, 'beach': 30, 'woman': 24, 'sting': 20, 'draw': 13, 'gamer': 10, 'cute': 15, 'canon': 10, 'bed': 19, 'bake': 12, 'power': 16, 'watch': 148, 'COVID': 127, 'night': 72, 'challenge': 53, 'thanks': 48, 'Covid': 62, 'catch': 25, 'foryourpage': 40, 'relax_walk_round_house': 39, 'class': 22, 'walk': 26, 'lockdownextended': 27, 'boredom': 23, 'keep': 96, 'series': 28, 'wish': 22, 'facebook': 12, 'god': 19, 'oil': 17, 'cabin_peacetime': 30, 'step_inoto_mumbai_traffic': 105, 'jam_step_though_road': 105, 'friend': 88, 'every': 54, 'anyone': 55, 'rest': 30, 'bring': 40, 'shout': 21, 'test': 24, 'send': 30, 'state': 27, 'become': 32, 'comedy': 16, 'cover': 22, 'story': 22, 'drink': 24, 'store': 16, 'damn': 23, 'cause': 22, 'reduce': 19, 'coronavirus': 289, 'people': 190, 'corona': 76, 'weekend': 51, 'tell': 59, 'fuck': 47, 'care': 29, 'boy': 31, 'release': 18, 'head': 26, 'lock': 28, 'business': 21, 'vibe': 24, 'chill': 20, 'governmenot': 17, 'stick': 24, 'stayhome_covid': 8, 'wear': 20, 'blog': 16, 'foot': 12, 'miss': 115, 'play': 74, 'tonight': 54, 'stay_home': 49, 'eat': 48, 'leave': 34, 'plan': 37, 'dinner': 33, 'listen': 40, 'turn': 36, 'date': 20, 'netflix': 19, 'hear': 30, 'someone': 30, 'answer': 27, 'tweet': 22, 'fan': 21, 'everybody': 17, 'stand': 12, 'decide': 23, 'life': 270, 'today': 159, 'love': 163, 'work': 157, 'end': 69, 'hope': 56, 'show': 61, 'flavor': 39, 'hour': 56, 'food': 46, 'idea': 38, 'tip': 27, 'sleep': 30, 'bihday': 29, 'school': 25, 'staing': 19, 'work_home': 25, 'car': 21, 'april': 26, 'house': 161, 'year': 94, 'family': 90, 'wanot': 85, 'another': 69, 'morning': 45, 'sta': 46, 'read': 39, 'photo': 38, 'run': 34, 'mean': 38, 'stream': 28, 'goodfriday': 25, 'venue_Laval_order_collection': 31, 'video_upon_arrival_covid': 31, 'QuaranotineLife': 27, 'link': 25, 'update': 24, 'link_bio': 13, 'quaranotined': 21}
+emergingWords [('kid', 0.3641304347826087), ('quaranotinelife', 0.4320652173913043), ('news', 0.6875), ('share', 0.421195652173913), ('learn', 0.6304347826086957), ('easter', 0.45108695652173914), ('nothing', 0.4701086956521739), ('instagram', 0.46467391304347827), ('stayhome_staysafe', 0.5570652173913043), ('everything', 0.5815217391304348), ('online', 0.5625), ('around', 0.5652173913043478), ('monoth', 0.5597826086956522), ('spring', 0.5652173913043478), ('coronavirus_COVID', 0.5733695652173914), ('workout', 0.4673913043478261), ('gay', 0.5434782608695652), ('sign', 0.5353260869565217), ('pick', 0.47282608695652173), ('lose_mind', 0.5135869565217391), ('feel', 0.41032608695652173), ('isolation', 0.6793478260869565), ('stop', 0.375), ('deserve_kick_face', 0.5461956521739131), ('eddie_talk_medium_earthquake', 0.5461956521739131), ('game', 0.3641304347826087), ('ask', 0.43478260869565216), ('hair', 0.43478260869565216), ('stayathome', 0.453804347826087), ('child', 0.5760869565217391), ('cook', 0.5679347826086957), ('unotil', 0.5434782608695652), ('wenot', 0.5489130434782609), ('meal', 0.5434782608695652), ('counotry', 0.5461956521739131), ('wake', 0.4701086956521739), ('onlyfans', 0.4673913043478261), ('The', 0.5461956521739131), ('afternoon', 0.5217391304347826), ('step', 0.5461956521739131), ('ill_send_people_retweet', 1.0), ('cashapp_Apply', 0.9429347826086957), ('try', 0.3423913043478261), ('since', 0.657608695652174), ('stay', 0.33967391304347827), ('follow', 0.39402173913043476), ('inoto', 0.6005434782608695), ('lol', 0.45652173913043476), ('hey', 0.47282608695652173), ('bar', 0.453804347826087), ('money', 0.5597826086956522), ('madonna_video', 0.6086956521739131), ('forget', 0.453804347826087), ('film', 0.5489130434782609), ('youtube', 0.5625), ('view', 0.5461956521739131), ('baby', 0.5625), ('anything', 0.5461956521739131), ('laugh', 0.46467391304347827), ('seem', 0.5461956521739131), ('teri_Anthony_cuba_song', 0.720108695652174), ('memory_film', 0.720108695652174), ('guy', 0.6521739130434783), ('order', 0.654891304347826), ('girl', 0.6304347826086957), ('lot', 0.42391304347826086), ('list', 0.6005434782608695), ('lose', 0.5706521739130435), ('daughter', 0.5597826086956522), ('makeup', 0.45652173913043476), ('beach', 0.5760869565217391), ('woman', 0.5597826086956522), ('sting', 0.46467391304347827), ('draw', 0.529891304347826), ('gamer', 0.5217391304347826), ('cute', 0.5353260869565217), ('canon', 0.5217391304347826), ('bed', 0.5461956521739131), ('bake', 0.5271739130434783), ('power', 0.5380434782608695), ('watch', 0.30434782608695654), ('night', 0.375), ('challenge', 0.38858695652173914), ('thanks', 0.625), ('Covid', 0.38315217391304346), ('catch', 0.5625), ('foryourpage', 0.6032608695652174), ('relax_walk_round_house', 0.6005434782608695), ('class', 0.5543478260869565), ('walk', 0.4701086956521739), ('lockdownextended', 0.5679347826086957), ('boredom', 0.5570652173913043), ('keep', 0.39945652173913043), ('series', 0.5706521739130435), ('wish', 0.47554347826086957), ('facebook', 0.5271739130434783), ('god', 0.4701086956521739), ('oil', 0.5407608695652174), ('cabin_peacetime', 0.5760869565217391), ('step_inoto_mumbai_traffic', 0.779891304347826), ('jam_step_though_road', 0.779891304347826), ('friend', 0.358695652173913), ('every', 0.421195652173913), ('anyone', 0.6440217391304348), ('rest', 0.5760869565217391), ('bring', 0.6032608695652174), ('shout', 0.4782608695652174), ('test', 0.453804347826087), ('send', 0.47282608695652173), ('state', 0.44565217391304346), ('become', 0.4429347826086957), ('comedy', 0.5380434782608695), ('cover', 0.5543478260869565), ('story', 0.48097826086956524), ('drink', 0.45652173913043476), ('store', 0.5380434782608695), ('damn', 0.5570652173913043), ('cause', 0.5543478260869565), ('reduce', 0.5461956521739131), ('corona', 0.7010869565217391), ('weekend', 0.6331521739130435), ('tell', 0.41304347826086957), ('fuck', 0.43478260869565216), ('care', 0.5733695652173914), ('boy', 0.5788043478260869), ('release', 0.5434782608695652), ('head', 0.5652173913043478), ('lock', 0.5706521739130435), ('business', 0.5516304347826086), ('vibe', 0.5597826086956522), ('chill', 0.5489130434782609), ('governmenot', 0.5407608695652174), ('stick', 0.4673913043478261), ('stayhome_covid', 0.5163043478260869), ('wear', 0.5489130434782609), ('blog', 0.5380434782608695), ('foot', 0.5271739130434783), ('miss', 0.8070652173913043), ('play', 0.421195652173913), ('tonight', 0.37771739130434784), ('stay_home', 0.43478260869565216), ('eat', 0.625), ('leave', 0.453804347826087), ('plan', 0.42934782608695654), ('dinner', 0.44565217391304346), ('listen', 0.46195652173913043), ('turn', 0.592391304347826), ('date', 0.5489130434782609), ('netflix', 0.5461956521739131), ('hear', 0.44021739130434784), ('someone', 0.44565217391304346), ('answer', 0.5679347826086957), ('tweet', 0.5543478260869565), ('fan', 0.47282608695652173), ('everybody', 0.5407608695652174), ('stand', 0.5271739130434783), ('decide', 0.4701086956521739), ('end', 0.3804347826086957), ('hope', 0.6467391304347826), ('show', 0.6603260869565217), ('flavor', 0.453804347826087), ('hour', 0.39402173913043476), ('food', 0.6195652173913043), ('idea', 0.4429347826086957), ('tip', 0.5679347826086957), ('sleep', 0.5760869565217391), ('bihday', 0.453804347826087), ('school', 0.46195652173913043), ('staing', 0.5461956521739131), ('work_home', 0.4483695652173913), ('car', 0.5516304347826086), ('april', 0.5652173913043478), ('house', 0.9320652173913043), ('year', 0.33967391304347827), ('family', 0.3423913043478261), ('wanot', 0.3532608695652174), ('another', 0.4076086956521739), ('morning', 0.6168478260869565), ('sta', 0.6195652173913043), ('read', 0.6005434782608695), ('photo', 0.5978260869565217), ('run', 0.44021739130434784), ('mean', 0.4320652173913043), ('stream', 0.4483695652173913), ('goodfriday', 0.5625), ('venue_Laval_order_collection', 0.5788043478260869), ('video_upon_arrival_covid', 0.5788043478260869), ('QuaranotineLife', 0.5679347826086957), ('link', 0.47282608695652173), ('update', 0.5597826086956522), ('link_bio', 0.529891304347826), ('quaranotined', 0.5516304347826086)]
+ALL DATES:  {datetime.date(2020, 4, 11)}
+ 43%|████▎     | 6/14 [09:24<12:42, 95.27s/it]num_topics:  15
+0: 0.025*"Quaranotine_question_expose_quaranotined" + 0.018*"home" + 0.015*"since_store" + 0.015*"toy_home" + 0.015*"close_isolation"
+
+1: 0.031*"covid_coronavirus" + 0.030*"bore" + 0.028*"family" + 0.019*"kid" + 0.019*"guy"
+
+2: 0.057*"cashapp_apple_pay" + 0.057*"ill_send_people_retweet" + 0.032*"wanot" + 0.021*"hey" + 0.015*"love"
+
+3: 0.032*"podcast" + 0.032*"help" + 0.030*"today" + 0.023*"people" + 0.023*"stayhome"
+
+4: 0.043*"Pan_somali_subscribe_commenot" + 0.043*"retweet_Completion_subscriber" + 0.029*"night" + 0.025*"work" + 0.022*"life"
+
+5: 0.053*"alan_animation_animate_lockdownextension" + 0.045*"lockdown_Knockdown_MovieS" + 0.023*"leave" + 0.019*"staed_march" + 0.019*"extends_unotil"
+
+6: 0.049*"feel" + 0.035*"enjoy" + 0.027*"friend" + 0.021*"end_tonight_song_patriot" + 0.021*"send"
+
+7: 0.035*"stay" + 0.021*"tiktok" + 0.021*"weekend" + 0.017*"dinner" + 0.017*"hope"
+
+8: 0.037*"socialdistancing" + 0.034*"quaranotinelife" + 0.021*"covid" + 0.020*"live" + 0.020*"youtube"
+
+9: 0.039*"video" + 0.031*"friday" + 0.022*"show" + 0.018*"california" + 0.014*"goodfriday"
+
+10: 0.030*"home" + 0.019*"around" + 0.016*"try" + 0.015*"since" + 0.015*"dance"
+
+11: 0.095*"life" + 0.040*"miss" + 0.032*"love" + 0.027*"thank" + 0.026*"covid"
+
+12: 0.059*"avoid_people_goodomens_ineffablehusbands" + 0.054*"watch" + 0.027*"BITtersweet_poetry_XVII_btersweettuesdays" + 0.027*"itsstilltuesday_everydayisthes" + 0.020*"hope_Human"
+
+13: 0.083*"Coronavirus" + 0.083*"mirror_fuck_horny_miss" + 0.042*"vote_dream_latin_buddy" + 0.028*"COVID" + 0.026*"goodfriday"
+
+14: 0.067*"coronavirus" + 0.027*"tell_friend_mafia_pay" + 0.026*"stayhome" + 0.024*"COST_POST_mafia_classic" + 0.017*"gon"
+
+% of topics document is about:  [(8, 0.95555437)]
+
+Coherence Score:  0.6544483569568216
+word_freq:  {'video': 18, 'friday': 20, 'show': 15, 'california': 5, 'goodfriday': 21, 'spread': 4, 'play': 16, 'man': 5, 'watch': 27, 'COVID': 21, 'dick': 6, 'keep_stand': 3, 'press_everything': 3, 'stop_sun': 3, 'understand_keep': 3, 'style': 5, 'thanks': 6, 'gym': 5, 'ireland': 3, 'rip': 3, 'mirror_fuck_horny_miss': 26, 'Coronavirus': 26, 'vote_dream_latin_buddy': 13, 'coronavirus': 35, 'pay': 6, 'corona': 8, 'easter_guy': 5, 'sale_monoth': 5, 'enjoy': 18, 'fuck': 7, 'idea': 4, 'covid': 29, 'tonight_live': 3, 'money_though': 3, 'help_raise': 3, 'try_restock': 3, 'anyone_book': 3, 'tater_handle': 3, 'stay': 17, 'tiktok': 10, 'weekend': 14, 'dinner': 5, 'hope': 9, 'thank_dick': 4, 'watch_FUN': 4, 'stayhome_jerk': 4, 'workout_GayLord': 4, 'dress': 7, 'chill': 8, 'travel': 6, 'help': 15, 'name': 5, 'socialdistance_viualvibes': 3, 'hope_xoxosamanotha': 3, 'COVID_stayathome': 3, 'drop_nude': 3, 'comment_play': 3, 'alan_animation_animate_lockdownextension': 14, 'lockdown_Knockdown_MovieS': 12, 'leave': 9, 'gon_economy': 5, 'staed_march': 5, 'extends_unotil': 5, 'donotrushchallenge_passthebrushchal': 5, 'cousin_late': 5, 'challenge_run': 5, 'share': 10, 'world_end': 4, 'life': 43, 'season': 7, 'follow': 7, 'flower': 6, 'eddie_talk': 3, 'deserve_kick': 3, 'medium_earthquake': 3, 'face': 6, 'guise_fakenews': 3, 'tell_friend_mafia_pay': 8, 'stayhome': 24, 'COST_POST_mafia_classic': 7, 'gon': 11, 'nothing': 7, 'might': 7, 'girl': 5, 'okay': 4, 'keep': 18, 'stayathome': 6, 'today': 22, 'mask': 8, 'quaranotinelife': 13, 'fur_furry': 3, 'sure_keep': 3, 'paw_hand': 3, 'wanot_lock': 3, 'rest_live': 3, 'socialdistancing': 14, 'live': 11, 'youtube': 7, 'even_walk': 5, 'book': 11, 'family': 15, 'flavor': 5, 'naked_nakedchallange': 4, 'fridaymotivation_buttnaked': 4, 'become_fun': 4, 'another_joint': 4, 'produce_COVID': 4, 'order': 8, 'read': 5, 'world': 5, 'morning': 8, 'retweet_Completion_subscriber': 12, 'Pan_somali_subscribe_commenot': 12, 'night': 16, 'work': 16, 'house': 10, 'iii_hold': 4, 'posit': 4, 'socialdistancing_selfisolation': 4, 'aloha_filter': 4, 'fun': 10, 'dog': 11, 'date': 4, 'gay': 4, 'money': 4, 'decision': 3, 'Toronto': 3, 'news': 6, 'home': 24, 'around': 7, 'try': 8, 'since': 8, 'dance': 6, 'feeling': 4, 'homeworkout': 4, 'channel': 5, 'pick': 5, 'people': 21, 'figure': 3, 'beer': 3, 'list': 6, 'isolation': 6, 'staed': 5, 'tomorrow': 4, 'beef': 3, 'avoid_people_goodomens_ineffablehusbands': 15, 'itsstilltuesday_everydayisthes': 7, 'BITtersweet_poetry_XVII_btersweettuesdays': 7, 'thistooshallpass': 5, 'discover_stateofemergency': 5, 'hope_Human': 5, 'charlie_parker': 4, 'movie': 9, 'challenge_accept': 4, 'music': 16, 'freedom': 4, 'lockdownextended': 4, 'quarantine': 4, 'since_staed': 3, 'action': 3, 'version': 3, 'meme': 5, 'miss': 21, 'love': 24, 'thank': 9, 'walk': 9, 'year': 16, 'tonight': 7, 'hair': 10, 'drop': 5, 'test': 4, 'stay_home': 6, 'link_bio': 7, 'every_Governors': 3}
+emergingWords [('watch', 0.4701195219123506), ('COVID', 0.4103585657370518), ('coronavirus', 1.0), ('stay', 0.3545816733067729), ('life', 0.8924302788844621), ('today', 0.5338645418326693), ('work', 0.549800796812749), ('house', 0.5896414342629482), ('try', 0.38247011952191234), ('people', 0.6613545816733067), ('miss', 0.36254980079681276), ('love', 0.5418326693227091)]
+ALL DATES:  {datetime.date(2020, 4, 12)}
+ 50%|█████     | 7/14 [09:55<08:50, 75.81s/it]num_topics:  15
+0: 0.049*"land" + 0.046*"another_game_senator_screenshot" + 0.025*"bookworm_booklover_qua" + 0.025*"sand_book_books read_book" + 0.025*"guy"
+
+1: 0.028*"easter" + 0.027*"corona" + 0.024*"COVID" + 0.020*"WHF_people" + 0.020*"hope_fucker_dick_fall"
+
+2: 0.042*"play" + 0.031*"wanot_documentary_watch_outoftheshadows" + 0.031*"inoto_mind" + 0.031*"watch" + 0.019*"easter_happyeaster"
+
+3: 0.043*"people" + 0.031*"music" + 0.029*"mood_cigaretteshappy_cigarette_madsmikkelsen" + 0.026*"TeamMates_cigarette" + 0.026*"another_dress_stayhome"
+
+4: 0.059*"challenge" + 0.026*"happyeaster_easter_hidden_picture" + 0.026*"addie_baby_throw" + 0.026*"carson_Wenot_home_wife" + 0.023*"BIC"
+
+5: 0.131*"easter" + 0.053*"dance_lot" + 0.035*"today" + 0.034*"corona_virus" + 0.031*"people_india_fight_virus"
+
+6: 0.045*"lockdown" + 0.025*"stay" + 0.020*"break" + 0.020*"could" + 0.017*"rap"
+
+7: 0.037*"stayhome" + 0.036*"video" + 0.024*"end" + 0.021*"princess_play_football_game" + 0.019*"skill_midnight_silence_expression"
+
+8: 0.022*"COVID_COVID" + 0.020*"follow" + 0.017*"shall_celebrate_eth_home" + 0.015*"meowrror_cat_cat_windchill" + 0.015*"share"
+
+9: 0.037*"sunday" + 0.037*"quaranotinelife" + 0.015*"book" + 0.015*"easter_stay_home" + 0.015*"animate_booklover_wringcommuny_animate"
+
+10: 0.083*"coronavirus" + 0.024*"Covid" + 0.024*"COVID" + 0.019*"today" + 0.012*"staythefuckhome_covid"
+
+11: 0.020*"feel" + 0.014*"weekend" + 0.013*"friend" + 0.012*"easter" + 0.011*"quaranotinelife_quaranotineandchill"
+
+12: 0.067*"luxury_lesson" + 0.067*"throwback_summer_selfisolation_felt" + 0.041*"subzero_sarkodie" + 0.041*"asem_lift_asem_asemmusic" + 0.041*"Weatherchanne_comingsoon_wobedanotem_lockdownshow"
+
+13: 0.069*"covid" + 0.053*"foreigner_Jaggy_vasudev_AIsha" + 0.053*"yoga_foundation_attend_celebration" + 0.024*"listen" + 0.018*"COVID"
+
+14: 0.064*"song_happyeastersunday" + 0.027*"tyranotdemocrat_Governor_order_Day" + 0.027*"officeholder_swear" + 0.027*"Eastern_sunday_churchgoer_dem" + 0.024*"home"
+
+% of topics document is about:  [(14, 0.8782606)]
+
+Coherence Score:  0.6466763978503959
+word_freq:  {'lockdown': 27, 'stay': 15, 'break': 8, 'could': 15, 'rap': 9, 'inspire_playlist_help_cope': 6, 'earthquake': 16, 'try': 19, 'online': 6, 'mercenary_guest': 4, 'conspiracy_EPh': 4, 'easter_gift': 4, 'pic_page': 4, 'f fmodels_Quran': 4, 'eye': 7, 'show': 9, 'easter_hope': 6, 'wanot_grab': 3, 'grade': 5, 'moan_MALIBU': 3, 'song_happyeastersunday': 26, 'Eastern_sunday_churchgoer_dem': 11, 'officeholder_swear': 11, 'tyranotdemocrat_Governor_order_Day': 11, 'home': 30, 'keep': 23, 'stick_home_bore_ton': 8, 'prize_include': 8, 'eastersunday': 10, 'workout': 8, 'work': 16, 'stand_chance': 5, 'interest_share_picture': 5, 'win_Cove': 5, 'COVID': 58, 'stop': 9, 'shop': 5, 'stay_home': 14, 'idea': 6, 'wake': 9, 'easter': 101, 'corona': 22, 'hope_fucker_dick_fall': 9, 'WHF_people': 9, 'night': 15, 'work_book_format_read': 8, 'free_kindleunlimed': 8, 'gon': 14, 'socialdistancing': 9, 'lockdown_socialdistancing': 6, 'dust_virus_corona': 6, 'please': 11, 'stayhome': 33, 'love': 33, 'year': 17, 'pay': 5, 'case': 10, 'spring': 7, 'sunday': 18, 'quaranotinelife': 25, 'book': 13, 'easter_stay_home': 6, 'animate_booklover_wringcommuny_animate': 6, 'xxx': 6, 'year_happyeaster_easter': 5, 'flatten_curve': 5, 'sundaythoughts': 6, 'welisara_hospital': 4, 'staff_agama': 4, 'send_contact': 4, 'degrade_treatment': 4, 'covid mx_cruel': 4, 'breach_Aisle': 4, 'cover_receive_animation': 4, 'per': 4, 'sound': 4, 'play': 22, 'inoto_mind': 13, 'wanot_documentary_watch_outoftheshadows': 13, 'watch': 17, 'easter_happyeaster': 10, 'anyone': 11, 'family': 23, 'care': 9, 'nature': 7, 'trysugar_sugarcosmetics_game_challenge': 5, 'today': 40, 'shout': 8, 'cum': 7, 'wanot': 19, 'prince_self': 4, 'version_prince': 4, 'request_demand': 4, 'COVID_aka': 4, 'COVID_COVID': 9, 'follow': 11, 'shall_celebrate_eth_home': 7, 'meowrror_cat_cat_windchill': 6, 'share': 15, 'food': 8, 'mood': 7, 'mikimonotllo_hot': 5, 'differenot': 6, 'help': 16, 'igd mstreet_stayhome': 4, 'people': 31, 'covid_coronavirus': 8, 'paper': 5, 'world': 13, 'life_continue': 3, 'REBOUNDS_Ceria': 3, 'challenge': 23, 'happyeaster_easter_hidden_picture': 10, 'addie_baby_throw': 10, 'carson_Wenot_home_wife': 10, 'BIC': 9, 'life': 37, 'frontline_keep': 5, 'coronawarriors_execute': 5, 'Sanitation_drive': 5, 'game': 13, 'wash_hand_second': 4, 'stay_home_stay': 6, 'ensure_safety': 4, 'cook': 4, 'press': 3, 'rise_heisrisen': 3, 'jesusisalive': 3, 'quaranotinelife_jesus': 3, 'Joshua_yeshuah': 3, 'coronavirus': 40, 'Covid': 15, 'staythefuckhome_covid': 5, 'office_coronavirus': 5, 'trump_blood': 5, 'hand_throw': 5, 'winner': 5, 'win': 9, 'screenshot_share': 4, 'logo_ZINGY': 4, 'level_grab': 4, 'shoot_question': 4, 'startimeinquaranotine_live': 4, 'instagram': 4, 'motivation': 5, 'shave': 5, 'music': 19, 'mood_cigaretteshappy_cigarette_madsmikkelsen': 12, 'TeamMates_cigarette': 11, 'another_dress_stayhome': 11, 'run': 13, 'song': 13, 'memebarding_stayhome_respect': 7, 'asem': 5, 'easter_guy': 5, 'foot': 7, 'sale_monoth': 4, 'release': 6, 'easter_easter_sunday': 4, 'kill': 7, 'question': 4, 'land': 21, 'another_game_senator_screenshot': 20, 'sand_book_books read_book': 11, 'bookworm_booklover_qua': 11, 'guy': 15, 'miss': 17, 'happyeaster_animate_booklover_wringcommuny': 6, 'animate_cover_receive': 6, 'another': 6, 'facebook': 5, 'spend': 10, 'hea': 9, 'leave_meaning': 4, 'easter_weekend': 4, 'catch_spostrends': 4, 'tonight_POST': 4, 'Farouk_siddiqui': 4, 'stayhome_left': 4, 'men_year': 4}
+emergingWords [('lockdown', 0.463768115942029), ('break', 0.32608695652173914), ('could', 0.37681159420289856), ('rap', 0.3333333333333333), ('inspire_playlist_help_cope', 0.3115942028985507), ('earthquake', 0.38405797101449274), ('online', 0.3115942028985507), ('eye', 0.3188405797101449), ('show', 0.3115942028985507), ('easter_hope', 0.3115942028985507), ('grade', 0.30434782608695654), ('song_happyeastersunday', 0.45652173913043476), ('Eastern_sunday_churchgoer_dem', 0.34782608695652173), ('officeholder_swear', 0.34782608695652173), ('tyranotdemocrat_Governor_order_Day', 0.34782608695652173), ('stick_home_bore_ton', 0.32608695652173914), ('prize_include', 0.32608695652173914), ('eastersunday', 0.34057971014492755), ('workout', 0.32608695652173914), ('stand_chance', 0.30434782608695654), ('interest_share_picture', 0.30434782608695654), ('win_Cove', 0.30434782608695654), ('stop', 0.3333333333333333), ('shop', 0.30434782608695654), ('wake', 0.3333333333333333), ('easter', 1.0), ('hope_fucker_dick_fall', 0.3333333333333333), ('WHF_people', 0.3333333333333333), ('work_book_format_read', 0.32608695652173914), ('free_kindleunlimed', 0.32608695652173914), ('socialdistancing', 0.30434782608695654), ('lockdown_socialdistancing', 0.3115942028985507), ('dust_virus_corona', 0.3115942028985507), ('please', 0.34782608695652173), ('case', 0.34057971014492755), ('spring', 0.3188405797101449), ('sunday', 0.39855072463768115), ('easter_stay_home', 0.3115942028985507), ('animate_booklover_wringcommuny_animate', 0.3115942028985507), ('xxx', 0.3115942028985507), ('year_happyeaster_easter', 0.30434782608695654), ('flatten_curve', 0.30434782608695654), ('sundaythoughts', 0.3115942028985507), ('inoto_mind', 0.36231884057971014), ('wanot_documentary_watch_outoftheshadows', 0.36231884057971014), ('watch', 0.34057971014492755), ('easter_happyeaster', 0.34057971014492755), ('anyone', 0.34782608695652173), ('care', 0.3333333333333333), ('nature', 0.3188405797101449), ('trysugar_sugarcosmetics_game_challenge', 0.30434782608695654), ('shout', 0.32608695652173914), ('cum', 0.3188405797101449), ('wanot', 0.4057971014492754), ('COVID_COVID', 0.3333333333333333), ('shall_celebrate_eth_home', 0.3188405797101449), ('meowrror_cat_cat_windchill', 0.3115942028985507), ('food', 0.32608695652173914), ('mood', 0.3188405797101449), ('mikimonotllo_hot', 0.30434782608695654), ('differenot', 0.3115942028985507), ('covid_coronavirus', 0.32608695652173914), ('paper', 0.30434782608695654), ('challenge', 0.43478260869565216), ('happyeaster_easter_hidden_picture', 0.34057971014492755), ('addie_baby_throw', 0.34057971014492755), ('carson_Wenot_home_wife', 0.34057971014492755), ('BIC', 0.3333333333333333), ('life', 0.3115942028985507), ('frontline_keep', 0.30434782608695654), ('coronawarriors_execute', 0.30434782608695654), ('Sanitation_drive', 0.30434782608695654), ('game', 0.36231884057971014), ('stay_home_stay', 0.3115942028985507), ('Covid', 0.37681159420289856), ('staythefuckhome_covid', 0.30434782608695654), ('office_coronavirus', 0.30434782608695654), ('trump_blood', 0.30434782608695654), ('hand_throw', 0.30434782608695654), ('winner', 0.30434782608695654), ('win', 0.3333333333333333), ('motivation', 0.30434782608695654), ('shave', 0.30434782608695654), ('mood_cigaretteshappy_cigarette_madsmikkelsen', 0.35507246376811596), ('TeamMates_cigarette', 0.34782608695652173), ('another_dress_stayhome', 0.34782608695652173), ('run', 0.36231884057971014), ('song', 0.36231884057971014), ('memebarding_stayhome_respect', 0.3188405797101449), ('asem', 0.30434782608695654), ('foot', 0.3188405797101449), ('release', 0.3115942028985507), ('kill', 0.3188405797101449), ('land', 0.42028985507246375), ('another_game_senator_screenshot', 0.41304347826086957), ('sand_book_books read_book', 0.34782608695652173), ('bookworm_booklover_qua', 0.34782608695652173), ('guy', 0.37681159420289856), ('happyeaster_animate_booklover_wringcommuny', 0.3115942028985507), ('animate_cover_receive', 0.3115942028985507), ('another', 0.3115942028985507), ('facebook', 0.30434782608695654), ('spend', 0.34057971014492755), ('hea', 0.3333333333333333)]
+ 57%|█████▋    | 8/14 [10:40<06:40, 66.75s/it]ALL DATES:  {datetime.date(2020, 4, 13)}
+num_topics:  15
+0: 0.064*"life" + 0.063*"lockdown" + 0.045*"covid_coronavirus" + 0.040*"change_pyjamas_night_pyjama" + 0.032*"help"
+
+1: 0.050*"evict" + 0.050*"target_traveller_amid_wave" + 0.050*"coronavirus_outbreak_trader_repose" + 0.046*"people" + 0.025*"music"
+
+2: 0.053*"friend" + 0.043*"today" + 0.034*"follow" + 0.026*"man" + 0.019*"eat"
+
+3: 0.131*"COVID" + 0.036*"try" + 0.030*"share" + 0.029*"sleep" + 0.027*"house"
+
+4: 0.114*"point_guy_stayhome_que" + 0.045*"wanot" + 0.043*"wakeupamerica_family" + 0.034*"world_expose_group" + 0.033*"isolation"
+
+5: 0.110*"walkies" + 0.058*"home" + 0.051*"work" + 0.045*"home_fro" + 0.045*"staing_fuck_work_home"
+
+6: 0.037*"feel" + 0.034*"resource_live_supply_place" + 0.034*"horror_home_hawaii_lime" + 0.034*"luxury" + 0.033*"COVID_coronavirus"
+
+7: 0.079*"fun" + 0.040*"another" + 0.029*"send" + 0.028*"hair" + 0.023*"family"
+
+8: 0.033*"could" + 0.030*"walk" + 0.030*"lol" + 0.030*"pas" + 0.029*"dog"
+
+9: 0.054*"video" + 0.053*"stay" + 0.040*"game" + 0.026*"play" + 0.024*"run"
+
+10: 0.047*"movie" + 0.043*"sta" + 0.042*"stayathome" + 0.035*"Covid" + 0.034*"morning"
+
+11: 0.091*"covid" + 0.033*"quaranotineandchill" + 0.024*"milf" + 0.023*"listen" + 0.021*"year_wife_mom_enjoy"
+
+12: 0.074*"coronavirus" + 0.070*"meet_face_face_yeah" + 0.069*"excrement_parallel_tomorrow" + 0.058*"stayhome" + 0.036*"love"
+
+13: 0.083*"watch" + 0.037*"please" + 0.023*"anyone" + 0.021*"grow" + 0.021*"cum"
+
+14: 0.425*"positivevibes" + 0.425*"stay_home_wutang_firstresponders" + 0.009*"bless_health_safety_amen" + 0.009*"keep_pray_destroy_virus" + 0.007*"fuck"
+
+% of topics document is about:  [(0, 0.95555025)]
+
+Coherence Score:  0.6884836805053239
+word_freq:  {'walkies': 114, 'home': 69, 'work': 49, 'home_fro': 30, 'staing_fuck_work_home': 30, 'keep': 43, 'playlist_listen_armaanmalik': 26, 'night': 25, 'tip': 17, 'cat_challenge': 15, 'dream': 13, 'gon': 9, 'longs_session_friend_fun': 11, 'stock': 6, 'control': 7, 'bird': 9, 'felt': 6, 'hide': 6, 'shop': 7, 'nail': 4, 'could': 18, 'walk': 16, 'lol': 18, 'pas': 15, 'dog': 12, 'book_book_boo': 15, 'book_monoth_onchapelsands_masterpiece': 15, 'create': 12, 'enjoy': 15, 'end_girl_front_Pain': 12, 'puri_Theta': 12, 'life': 65, 'people': 61, 'thanks': 15, 'mood': 15, 'realize': 8, 'effect': 8, 'wan': 6, 'cat': 6, 'miss': 32, 'friend': 38, 'today': 52, 'follow': 22, 'man': 14, 'eat': 13, 'onlyfans': 11, 'Person_people_toronotobbc': 8, 'office': 10, 'vote': 13, 'season': 11, 'inspiration': 9, 'weather': 8, 'medium': 11, 'news': 10, 'choose': 8, 'connect_meet_face_face': 12, 'phone': 6, 'drop': 6, 'counotry': 9, 'feel': 43, 'horror_home_hawaii_lime': 22, 'resource_live_supply_place': 22, 'luxury': 22, 'COVID_coronavirus': 18, 'selfisolation': 18, 'staed': 12, 'thank': 16, 'care': 13, 'year': 14, 'Quaranoti': 13, 'wish': 7, 'monoth': 10, 'internet': 10, 'distancing': 10, 'story': 10, 'struggle': 7, 'business': 11, 'coronavirus': 101, 'meet_face_face_yeah': 76, 'excrement_parallel_tomorrow': 75, 'stayhome': 60, 'love': 42, 'land': 30, 'stay_home': 25, 'quaranotinelife': 43, 'another_game_senator_screenshot': 25, 'stay_home_stay': 26, 'guy_today_fun_question': 23, 'pannikongha': 23, 'period': 12, 'food': 20, 'pay': 16, 'learn': 18, 'face': 17, 'quaranotineconotenot_Culture': 15, 'meet': 10, 'enter': 9, 'COVID': 108, 'try': 26, 'share': 22, 'sleep': 23, 'house': 25, 'lot': 15, 'guy': 16, 'exercise': 14, 'change': 10, 'since': 13, 'list': 16, 'virus': 11, 'self': 8, 'tiktok': 7, 'meme': 9, 'happiness': 8, 'shot': 6, 'Report': 4, 'covid': 53, 'quaranotineandchill': 17, 'milf': 15, 'listen': 16, 'year_wife_mom_enjoy': 13, 'avoid': 9, 'nowcorona_momenot': 9, 'chance': 9, 'might': 8, 'april': 9, 'backyard': 5, 'corona': 29, 'spring': 7, 'amaze': 7, 'seem': 5, 'coronavirus_COVID': 6, 'tyranotdemocrat_Governor_order_Day': 7, 'officeholder_swear': 7, 'Eastern_sunday_churchgoer_dem': 7, 'movie': 35, 'sta': 25, 'stayathome': 32, 'Covid': 29, 'morning': 24, 'monday': 20, 'socialdistancing': 17, 'easter': 32, 'mondaymotivation': 12, 'series': 14, 'photography': 15, 'hour': 11, 'photo': 13, 'CAMs_debut_weekend_end': 12, 'lockdown': 75, 'fan': 11, 'weekend': 9, 'inoto': 17, 'Tater': 8, 'covid_coronavirus': 46, 'change_pyjamas_night_pyjama': 40, 'help': 36, 'show': 32, 'world': 26, 'bore': 20, 'fight': 22, 'kid': 22, 'every': 22, 'word': 13, 'youtube': 10, 'remember': 14, 'wear': 19, 'quaranotined': 11, 'shout': 11, 'tell': 16, 'watch': 46, 'please': 29, 'anyone': 16, 'grow': 11, 'cum': 11, 'book': 22, 'woman': 9, 'sand_book_books read_book': 10, 'bookworm_booklover_qua': 10, 'focus': 10, 'win': 10, 'DOs_pay_challenge_every': 8, 'promoter': 8, 'reopen_club_clubdowntownbmore_double': 8, 'read': 10, 'BIC_BIC_chicago_RETWEET': 8, 'job': 12, 'lock': 10, 'seem_stayhomeindia_isolationlife': 11, 'step': 10}
+emergingWords [('walkies', 1.0), ('home_fro', 0.52), ('staing_fuck_work_home', 0.52), ('playlist_listen_armaanmalik', 0.49714285714285716), ('tip', 0.44571428571428573), ('cat_challenge', 0.4342857142857143), ('dream', 0.4228571428571429), ('gon', 0.37714285714285717), ('longs_session_friend_fun', 0.4114285714285714), ('stock', 0.38285714285714284), ('control', 0.38857142857142857), ('bird', 0.4), ('felt', 0.38285714285714284), ('hide', 0.38285714285714284), ('shop', 0.33714285714285713), ('nail', 0.37142857142857144), ('could', 0.3314285714285714), ('walk', 0.44), ('lol', 0.4514285714285714), ('pas', 0.4342857142857143), ('dog', 0.41714285714285715), ('book_book_boo', 0.4342857142857143), ('book_monoth_onchapelsands_masterpiece', 0.4342857142857143), ('create', 0.41714285714285715), ('enjoy', 0.4342857142857143), ('end_girl_front_Pain', 0.41714285714285715), ('puri_Theta', 0.41714285714285715), ('thanks', 0.4342857142857143), ('mood', 0.3028571428571429), ('realize', 0.3942857142857143), ('effect', 0.3942857142857143), ('wan', 0.38285714285714284), ('cat', 0.38285714285714284), ('friend', 0.5657142857142857), ('man', 0.42857142857142855), ('eat', 0.4228571428571429), ('onlyfans', 0.4114285714285714), ('Person_people_toronotobbc', 0.3942857142857143), ('office', 0.4057142857142857), ('vote', 0.4228571428571429), ('season', 0.4114285714285714), ('inspiration', 0.4), ('weather', 0.3942857142857143), ('medium', 0.4114285714285714), ('news', 0.4057142857142857), ('choose', 0.3942857142857143), ('connect_meet_face_face', 0.41714285714285715), ('phone', 0.38285714285714284), ('drop', 0.38285714285714284), ('counotry', 0.4), ('feel', 0.5942857142857143), ('horror_home_hawaii_lime', 0.4742857142857143), ('resource_live_supply_place', 0.4742857142857143), ('luxury', 0.4742857142857143), ('COVID_coronavirus', 0.4514285714285714), ('selfisolation', 0.4514285714285714), ('staed', 0.41714285714285715), ('thank', 0.44), ('care', 0.32571428571428573), ('year', 0.3657142857142857), ('Quaranoti', 0.4228571428571429), ('wish', 0.38857142857142857), ('monoth', 0.4057142857142857), ('internet', 0.4057142857142857), ('distancing', 0.4057142857142857), ('story', 0.4057142857142857), ('struggle', 0.38857142857142857), ('business', 0.4114285714285714), ('meet_face_face_yeah', 0.7828571428571428), ('excrement_parallel_tomorrow', 0.7771428571428571), ('another_game_senator_screenshot', 0.32), ('guy_today_fun_question', 0.48), ('pannikongha', 0.48), ('period', 0.41714285714285715), ('learn', 0.4514285714285714), ('face', 0.44571428571428573), ('quaranotineconotenot_Culture', 0.4342857142857143), ('meet', 0.4057142857142857), ('enter', 0.4), ('try', 0.30857142857142855), ('share', 0.30857142857142855), ('sleep', 0.48), ('house', 0.49142857142857144), ('lot', 0.4342857142857143), ('guy', 0.34285714285714286), ('exercise', 0.42857142857142855), ('change', 0.4057142857142857), ('since', 0.4228571428571429), ('list', 0.44), ('virus', 0.4114285714285714), ('self', 0.3942857142857143), ('tiktok', 0.38857142857142857), ('meme', 0.4), ('happiness', 0.3942857142857143), ('shot', 0.38285714285714284), ('Report', 0.37142857142857144), ('covid', 0.6514285714285715), ('quaranotineandchill', 0.44571428571428573), ('milf', 0.4342857142857143), ('listen', 0.44), ('year_wife_mom_enjoy', 0.4228571428571429), ('avoid', 0.4), ('nowcorona_momenot', 0.4), ('chance', 0.4), ('might', 0.3942857142857143), ('april', 0.4), ('backyard', 0.37714285714285717), ('corona', 0.30857142857142855), ('spring', 0.3485714285714286), ('amaze', 0.38857142857142857), ('seem', 0.37714285714285717), ('coronavirus_COVID', 0.38285714285714284), ('tyranotdemocrat_Governor_order_Day', 0.37142857142857144), ('officeholder_swear', 0.37142857142857144), ('Eastern_sunday_churchgoer_dem', 0.37142857142857144), ('movie', 0.5485714285714286), ('sta', 0.49142857142857144), ('stayathome', 0.5314285714285715), ('morning', 0.4857142857142857), ('monday', 0.46285714285714286), ('socialdistancing', 0.3028571428571429), ('easter', 0.7428571428571429), ('mondaymotivation', 0.41714285714285715), ('series', 0.42857142857142855), ('photography', 0.4342857142857143), ('hour', 0.4114285714285714), ('photo', 0.4228571428571429), ('CAMs_debut_weekend_end', 0.41714285714285715), ('fan', 0.4114285714285714), ('weekend', 0.4), ('inoto', 0.44571428571428573), ('Tater', 0.3942857142857143), ('change_pyjamas_night_pyjama', 0.5771428571428572), ('bore', 0.46285714285714286), ('fight', 0.4742857142857143), ('kid', 0.4742857142857143), ('every', 0.4742857142857143), ('word', 0.4228571428571429), ('youtube', 0.4057142857142857), ('remember', 0.42857142857142855), ('wear', 0.45714285714285713), ('quaranotined', 0.4114285714285714), ('shout', 0.3314285714285714), ('tell', 0.44), ('anyone', 0.32), ('grow', 0.4114285714285714), ('cum', 0.32571428571428573), ('woman', 0.4), ('sand_book_books read_book', 0.35428571428571426), ('bookworm_booklover_qua', 0.35428571428571426), ('focus', 0.4057142857142857), ('win', 0.34285714285714286), ('DOs_pay_challenge_every', 0.3942857142857143), ('promoter', 0.3942857142857143), ('reopen_club_clubdowntownbmore_double', 0.3942857142857143), ('read', 0.4057142857142857), ('BIC_BIC_chicago_RETWEET', 0.3942857142857143), ('job', 0.41714285714285715), ('lock', 0.4057142857142857), ('seem_stayhomeindia_isolationlife', 0.4114285714285714), ('step', 0.4057142857142857)]
+ 64%|██████▍   | 9/14 [11:30<05:08, 61.78s/it]ALL DATES:  {datetime.date(2020, 4, 14)}
+num_topics:  15
+0: 0.103*"today" + 0.038*"music" + 0.025*"watch" + 0.024*"play" + 0.021*"someone"
+
+1: 0.328*"idea" + 0.025*"world" + 0.017*"nature_matter_paint" + 0.017*"since_study_paint_outside" + 0.015*"episode"
+
+2: 0.086*"people" + 0.055*"covid" + 0.045*"video" + 0.041*"bore" + 0.032*"house"
+
+3: 0.042*"break_resident_protest_coronavirus" + 0.042*"source_scott_shoemaker_facebook" + 0.042*"lockdown_state_carol_Linefeed" + 0.038*"tell" + 0.036*"stayhome"
+
+4: 0.027*"channel_facebook_bishop_MUSIC" + 0.027*"Tune_today_est_iuicevenots" + 0.024*"coffee" + 0.022*"Lockdown" + 0.019*"staing"
+
+5: 0.077*"life" + 0.044*"try" + 0.037*"keep" + 0.026*"help" + 0.022*"drop"
+
+6: 0.048*"friend" + 0.033*"challenge" + 0.031*"fun" + 0.025*"originate_word_mean_period" + 0.024*"join"
+
+7: 0.100*"home" + 0.048*"stay" + 0.031*"since" + 0.030*"show" + 0.024*"book"
+
+8: 0.039*"Retreated_tweet_banana_hai" + 0.039*"Adj_Deep_shaker_tweet" + 0.035*"epic_spend" + 0.033*"attach_Side" + 0.025*"share"
+
+9: 0.024*"goal" + 0.021*"QuaranotineLife" + 0.020*"house_people" + 0.020*"tiruppur_corona_update_people" + 0.017*"workout"
+
+10: 0.060*"love" + 0.033*"socialdistancing" + 0.026*"history" + 0.025*"miss" + 0.024*"kid"
+
+11: 0.211*"COVID" + 0.034*"tweeter_clip_Handy_wear" + 0.034*"Punished_pin_pain_trump" + 0.022*"spend" + 0.017*"coronavirus"
+
+12: 0.028*"thanks" + 0.025*"every" + 0.023*"family" + 0.022*"read" + 0.021*"listen"
+
+13: 0.053*"muslim" + 0.052*"east_number_area_area" + 0.045*"coronavirus" + 0.040*"feel" + 0.025*"quarantine"
+
+14: 0.058*"positivevibes" + 0.056*"stay_home_wutang_firstresponders" + 0.038*"end" + 0.026*"dog" + 0.020*"live"
+
+% of topics document is about:  [(10, 0.14126247), (11, 0.84055424)]
+
+Coherence Score:  0.6868212017472062
+word_freq:  {'COVID': 213, 'tweeter_clip_Handy_wear': 38, 'Punished_pin_pain_trump': 38, 'spend': 26, 'coronavirus': 111, 'heartthrob_smile_Lockdown': 17, 'wear': 14, 'Quaranotine_word_mean_isolation': 13, 'india_complete': 13, 'choice': 12, 'monoth': 16, 'period': 11, 'sta': 22, 'pandemic': 11, 'flower': 9, 'business': 17, 'king': 9, 'fight': 12, 'sleep': 9, 'WHF': 8, 'channel_facebook_bishop_MUSIC': 24, 'Tune_today_est_iuicevenots': 24, 'coffee': 21, 'Lockdown': 22, 'staing': 16, 'order': 15, 'hour': 15, 'story': 17, 'mind': 13, 'cook': 22, 'eat': 12, 'stuff': 11, 'katrinakaif_janhvikapoor_Quarantine': 11, 'Times_bollywood_diva_bathrobe': 11, 'youtube': 10, 'wenot': 13, 'meal': 10, 'breakingnews': 10, 'smile': 10, 'suppo': 10, 'muslim': 58, 'east_number_area_area': 57, 'feel': 44, 'quarantine': 25, 'quaranotinelife': 34, 'learn': 28, 'game': 26, 'change': 18, 'wanots': 15, 'medium': 16, 'become': 14, 'food': 28, 'sand_book_books read_book': 15, 'bookworm_booklover_qua': 15, 'care': 12, 'baby': 13, 'lol': 10, 'quaranotineandchill': 11, 'virus': 13, 'home': 98, 'stay': 48, 'since': 31, 'show': 31, 'book': 24, 'work': 53, 'hop_bring_ray_sunshine': 25, 'home_hope': 25, 'backdrop_shoot_since_shooting': 25, 'stayathome': 29, 'mood': 21, 'boy': 21, 'isolation': 44, 'stayhome': 83, 'buy': 15, 'sound': 14, 'shout': 14, 'series': 12, 'cause': 11, 'boredom': 10, 'break_resident_protest_coronavirus': 36, 'source_scott_shoemaker_facebook': 36, 'lockdown_state_carol_Linefeed': 36, 'tell': 30, 'staed': 18, 'another': 30, 'COVID_coronavirus': 16, 'car': 12, 'stay_home_dance': 12, 'work_home': 19, 'class': 23, 'wife': 17, 'seem': 10, 'decide': 10, 'throwback': 10, 'child': 15, 'tuesdayvibes': 8, 'teacher': 8, 'app': 8, 'thanks': 23, 'every': 36, 'family': 25, 'read': 23, 'listen': 17, 'please': 30, 'picture': 15, 'onlyfans': 14, 'lockdown': 63, 'state': 11, 'joke': 11, 'fashion': 10, 'word': 16, 'create': 18, 'space': 10, 'pay': 10, 'till': 9, 'commenot': 9, 'amaze': 9, 'right': 13, 'today': 102, 'music': 41, 'watch': 41, 'play': 30, 'someone': 23, 'enjoy': 25, 'year': 30, 'plan': 16, 'tuesdaymotivation': 15, 'crew': 17, 'ask': 19, 'head': 14, 'mean': 18, 'kind': 14, 'feel_please_lasttimeisaysorry_tia': 15, 'tee_summer_lee_leejeansph': 14, 'feel_right_home_lee': 14, 'leave': 12, 'mom': 12, 'GuaranTEE_hope_enjoy_thanks': 14, 'love': 83, 'socialdistancing': 35, 'history': 23, 'miss': 46, 'kid': 33, 'chill': 17, 'hope': 19, 'home_forget_tour_louvre': 18, 'blog': 16, 'school': 18, 'lose': 13, 'gon': 12, 'oppounity': 12, 'hold': 11, 'office': 10, 'body': 10, 'yoga': 10, 'chocolate': 9, 'include': 10, 'momenot': 12, 'positivevibes': 58, 'stay_home_wutang_firstresponders': 56, 'end': 37, 'dog': 24, 'live': 38, 'corona': 41, 'follow': 26, 'tuesday': 20, 'mask': 15, 'talk': 17, 'life': 128, 'person': 15, 'project': 14, 'hear': 13, 'thank': 24, 'instagram': 12, 'friend_bengal_chaplain_recover': 13, 'Covid_read_fax': 13, 'solidseven_volleyball_quarantrain': 12, 'Via_Dorado_trick_shot': 12, 'idea': 330, 'world': 48, 'nature_matter_paint': 17, 'since_study_paint_outside': 17, 'episode': 14, 'offer': 15, 'love_blessing_inspiration_prayer': 12, 'walk': 14, 'beauty': 12, 'podcast': 12, 'pass': 8, 'voice': 9, 'wine': 8, 'nothing': 8, 'feeling_right_home_lee': 9, 'hmm': 7, 'drink': 7, 'toy': 7, 'woman': 14, 'tee_summer_staysafe_lee': 8}
+emergingWords [('tweeter_clip_Handy_wear', 0.32873563218390806), ('Punished_pin_pain_trump', 0.32873563218390806), ('spend', 0.30114942528735633), ('muslim', 0.37471264367816093), ('east_number_area_area', 0.3724137931034483), ('game', 0.30114942528735633), ('stay', 0.35172413793103446), ('isolation', 0.3425287356321839), ('break_resident_protest_coronavirus', 0.32413793103448274), ('source_scott_shoemaker_facebook', 0.32413793103448274), ('lockdown_state_carol_Linefeed', 0.32413793103448274), ('another', 0.3103448275862069), ('music', 0.335632183908046), ('play', 0.3103448275862069), ('positivevibes', 0.37471264367816093), ('stay_home_wutang_firstresponders', 0.3701149425287356), ('end', 0.3264367816091954), ('live', 0.32873563218390806), ('idea', 1.0)]
+ALL DATES:  {datetime.date(2020, 4, 22)}
+ 71%|███████▏  | 10/14 [12:44<04:21, 65.37s/it]ALL DATES:  {datetime.date(2020, 5, 4)}
+num_topics:  15
+0: 0.133*"watch" + 0.124*"world" + 0.073*"thank" + 0.069*"follow" + 0.069*"hope"
+
+1: 0.097*"wanot" + 0.096*"another" + 0.074*"eth" + 0.072*"mask" + 0.057*"enjoy"
+
+2: 0.087*"help" + 0.075*"socialdistancing" + 0.064*"end" + 0.053*"change" + 0.046*"tip"
+
+3: 0.143*"try" + 0.111*"please" + 0.069*"health" + 0.060*"turn" + 0.059*"game"
+
+4: 0.165*"preference" + 0.165*"mukbang" + 0.165*"tothe" + 0.165*"yummy" + 0.165*"FLavor"
+
+5: 0.321*"pay" + 0.192*"rock_May_radio_listen" + 0.076*"every" + 0.063*"series" + 0.035*"fan"
+
+6: 0.136*"coronavirus" + 0.135*"love" + 0.123*"life" + 0.121*"COVID" + 0.077*"lockdown"
+
+7: 0.072*"guy" + 0.059*"girl" + 0.059*"since" + 0.054*"place" + 0.049*"question"
+
+8: 0.098*"today" + 0.083*"home" + 0.065*"people" + 0.064*"feel" + 0.052*"challenge"
+
+9: 0.164*"FLavor" + 0.164*"tothe" + 0.164*"yummy" + 0.164*"tummy" + 0.164*"mukbang"
+
+10: 0.171*"live" + 0.138*"could" + 0.109*"win" + 0.092*"someone" + 0.039*"survive"
+
+11: 0.272*"work" + 0.106*"maythe thbewhyou" + 0.090*"ask" + 0.058*"alan_self_quaranotinelife_boredinothehouse" + 0.043*"family_rent_per_monoth"
+
+12: 0.120*"video" + 0.065*"year" + 0.061*"family" + 0.047*"song" + 0.045*"night"
+
+13: 0.162*"yummy" + 0.162*"tothe" + 0.162*"mukbang" + 0.162*"tummy" + 0.162*"FLavor"
+
+14: 0.247*"covid" + 0.068*"stayhome" + 0.068*"monday" + 0.046*"thanks" + 0.032*"morning"
+
+% of topics document is about:  [(13, 0.9772358)]
+
+Coherence Score:  0.5673139416196498
+word_freq:  {'work': 143, 'maythe thbewhyou': 51, 'ask': 57, 'alan_self_quaranotinelife_boredinothehouse': 33, 'family_rent_per_monoth': 31, 'business': 25, 'france_arrive_EUR_schengen': 21, 'area_cozens_Policy': 20, 'update': 13, 'distancing': 15, 'counotry': 12, 'selfisolation_socialdistancing': 10, 'page': 11, 'maytheforcebewhyou': 10, 'speak': 9, 'monday_morning': 5, 'none': 5, 'girl_Bracknell': 5, 'highlight_quaranoti': 5, 'miami_audi': 5, 'try': 67, 'please': 45, 'health': 30, 'turn': 28, 'game': 30, 'cook': 26, 'class': 19, 'link_bio': 21, 'finish': 13, 'hour': 18, 'recipe': 23, 'hand': 13, 'teacher': 16, 'wanoted': 12, 'wenot': 12, 'suppose': 8, 'solution': 9, 'vacation': 9, 'bunch': 4, 'appear': 3, 'watch': 92, 'world': 104, 'thank': 53, 'follow': 53, 'hope': 48, 'anyone': 34, 'list': 38, 'clutter_house_win_end': 35, 'battle_stuff_work_quaranotined': 35, 'dream': 24, 'meme': 23, 'drop': 18, 'cover': 20, 'summer': 16, 'gift': 18, 'review': 9, 'guide': 8, 'wallpaper': 16, 'COVE': 8, 'brain': 7, 'guy': 36, 'girl': 32, 'since': 27, 'place': 26, 'question': 24, 'school': 19, 'season': 17, 'around': 16, 'california': 14, 'understand': 12, 'send': 14, 'cover_song_fill': 11, 'conotenot': 15, 'pass': 11, 'Report': 9, 'hate': 14, 'monoths': 11, 'deliver': 9, 'station': 10, 'click': 9, 'help': 66, 'socialdistancing': 62, 'end': 45, 'change': 35, 'tip': 35, 'bihday': 31, 'hair': 30, 'face': 27, 'workouts': 33, 'doctor': 21, 'stayathome': 21, 'mind': 21, 'staysafe': 20, 'maythefouhbewhyou': 16, 'colour': 17, 'wan': 15, 'facemasks_gift_shoppingonline': 10, 'practice': 11, 'damn': 10, 'ration_drive': 16, 'wanot': 70, 'another': 64, 'eth': 54, 'mask': 43, 'enjoy': 40, 'book': 33, 'child': 26, 'order': 29, 'staed': 27, 'buy': 21, 'continue': 16, 'blog': 23, 'coronavirus_COVID': 18, 'starter': 15, 'dance': 14, 'momenot': 13, 'future': 12, 'wanots': 11, 'WHF': 10, 'bird': 11, 'video': 108, 'year': 54, 'family': 61, 'song': 36, 'night': 37, 'yep_cover_song_fill': 37, 'cover_May_cyberfm_spotlight': 59, 'read': 40, 'mean': 30, 'quarantine': 29, 'spend': 24, 'offer': 30, 'movie': 23, 'box': 19, 'avoid_company': 20, 'Air_offer_coronavirus_test': 20, 'pleasure': 13, 'room': 14, 'stay_hostel_YES_per': 22, 'semester_monoths_today_universe': 22, 'today': 135, 'home': 120, 'people': 96, 'feel': 90, 'challenge': 50, 'miss': 80, 'friend': 68, 'show': 66, 'music': 61, 'rise': 70, 'play': 49, 'quaranotinelife': 41, 'share': 42, 'Covid': 48, 'join': 38, 'create': 29, 'man': 28, 'fundraiser_mainemendoza_fundraiser_quaranoti': 36, 'maine_reaction_citizen_explore': 36, 'game_night_Gautama_stayhomestaysafe': 25, 'live': 46, 'could': 34, 'win': 31, 'someone': 28, 'survive': 11, 'fact': 9, 'hello': 10, 'stage': 10, 'band': 9, 'throwback': 9, 'trust': 6, 'bollywood': 6, 'shake': 5, 'sea': 7, 'huh': 5, 'answer_awareness_isolation_proteinbars': 6, 'picoftheday': 4, 'cover_jinjersuicide': 4, 'DID_winter': 4, 'silence_nirvana': 4, 'preference': 15912, 'mukbang': 15913, 'tothe': 15914, 'yummy': 15914, 'FLavor': 15913, 'tummy': 15912, 'tell': 44, 'everything': 28, 'kid': 35, 'cat': 23, 'spring': 20, 'guess': 18, 'money': 15, 'wring': 10, 'build': 15, 'joy': 10, 'draw': 12, 'apply': 9, 'tweak': 9, 'cry': 6}
+emergingWords [('preference', 0.9998750312421895), ('mukbang', 0.9999375156210947), ('tothe', 1.0), ('yummy', 1.0), ('FLavor', 0.9999375156210947), ('tummy', 0.9998750312421895)]
+ 86%|████████▌ | 12/14 [21:55<04:16, 128.33s/it]ALL DATES:  {datetime.date(2020, 5, 5)}
+num_topics:  15
+0: 0.061*"world" + 0.049*"eat" + 0.039*"could" + 0.033*"shout" + 0.028*"lot"
+
+1: 0.164*"COVID" + 0.049*"friend" + 0.041*"try" + 0.037*"read" + 0.033*"anything"
+
+2: 0.395*"tummy_mukbang" + 0.395*"preference_FLavor_yummy_tothe" + 0.011*"spend" + 0.009*"COVID_covid" + 0.008*"grow"
+
+3: 0.865*"jungkook_cover_Never_help" + 0.015*"mood" + 0.008*"theme" + 0.005*"food_grow_home" + 0.004*"car"
+
+4: 0.091*"challenge" + 0.070*"stayhome" + 0.058*"help" + 0.057*"keep" + 0.045*"miss"
+
+5: 0.112*"love" + 0.090*"home" + 0.075*"watch" + 0.063*"wanot" + 0.056*"stay"
+
+6: 0.120*"rock_radio_rock_listen" + 0.107*"pay" + 0.058*"quaranotinelife" + 0.049*"year" + 0.036*"food"
+
+7: 0.143*"covid" + 0.043*"socialdistancing" + 0.026*"book" + 0.021*"ness" + 0.021*"wanots"
+
+8: 0.058*"alan_self_quaranotinelife_boredinothehouse" + 0.050*"Covid" + 0.042*"bring" + 0.041*"sta" + 0.035*"money"
+
+9: 0.066*"cover_cyberfm_spotlight" + 0.042*"yep_cover_song_fill" + 0.038*"music" + 0.038*"anyone" + 0.029*"tiktok"
+
+10: 0.075*"video" + 0.058*"cincodemayo" + 0.040*"home_feeling_symptom_test" + 0.040*"family_throw" + 0.036*"photography"
+
+11: 0.111*"work" + 0.057*"feel" + 0.034*"join" + 0.032*"show" + 0.032*"tell"
+
+12: 0.096*"people" + 0.081*"lockdown" + 0.043*"song" + 0.041*"learn" + 0.031*"ask"
+
+13: 0.099*"today" + 0.098*"coronavirus" + 0.087*"life" + 0.036*"cncowners_vote_member_wanot" + 0.035*"morning"
+
+14: 0.051*"family" + 0.042*"live" + 0.037*"enjoy" + 0.031*"thanks" + 0.030*"run"
+
+% of topics document is about:  [(3, 0.87826085)]
+
+Coherence Score:  0.6673944694272937
+word_freq:  {'alan_self_quaranotinelife_boredinothehouse': 30, 'Covid': 28, 'bring': 24, 'sta': 22, 'money': 19, 'momenot': 17, 'shop': 19, 'qua': 13, 'allow': 8, 'join_backside_handle_myth': 9, 'corona_coronavirus': 9, 'wing': 7, 'help': 60, 'notice': 6, 'sucre': 6, 'completion_world_covid_Completion': 6, 'become_another_reason_increase': 6, 'video': 72, 'tire': 6, 'isi_virus_god_target': 6, 'cincodemayo': 52, 'family_throw': 36, 'home_feeling_symptom_test': 36, 'photography': 31, 'mean': 24, 'list': 23, 'zoom': 20, 'listen': 18, 'dog': 19, 'meme': 18, 'word': 17, 'project': 17, 'plan': 17, 'inoto': 19, 'wan': 14, 'link': 23, 'walk': 13, 'alan_self_animation_animate': 14, 'offer': 14, 'work': 93, 'feel': 46, 'join': 29, 'show': 33, 'tell': 26, 'stayathome': 25, 'Cisco_mayo': 23, 'celebrate': 20, 'life': 126, 'mom': 18, 'youtube': 19, 'hey': 17, 'business': 18, 'coronavirus': 119, 'cock': 14, 'seem': 14, 'fashion': 12, 'station': 13, 'girl': 16, 'class': 11, 'jungkook_cover_Never_help': 2403, 'mood': 31, 'theme': 20, 'food_grow_home': 14, 'car': 11, 'shot': 10, 'light': 10, 'become': 10, 'india': 11, 'staing': 8, 'problem': 7, 'brother': 7, 'apple': 7, 'april': 7, 'lizzie_rich_painter_stayathomesavelives': 7, 'death': 6, 'affect': 6, 'die': 6, 'fan': 5, 'cincoathome': 5, 'people': 74, 'lockdown': 91, 'song': 32, 'learn': 35, 'ask': 25, 'guy': 25, 'workout': 23, 'flavor': 20, 'yesterday': 16, 'summer': 14, 'head': 13, 'job': 16, 'que': 13, 'believe': 12, 'horny': 10, 'inspiration': 11, 'humour': 8, 'email': 8, 'play': 28, 'love': 114, 'home': 81, 'watch': 66, 'wanot': 57, 'stay': 61, 'please': 47, 'share': 33, 'night': 29, 'health': 24, 'tuesday': 22, 'movie': 23, 'someone': 20, 'quaranoti': 16, 'change': 17, 'covid_coronavirus': 11, 'daughter': 11, 'view': 11, 'playlist': 11, 'click': 8, 'ink': 7, 'world': 37, 'eat': 29, 'could': 23, 'shout': 21, 'lot': 17, 'photo': 17, 'nothing': 16, 'hold': 15, 'hear': 16, 'piece': 15, 'thought': 15, 'drink': 13, 'school': 12, 'podcast': 12, 'child': 12, 'chill': 12, 'name': 11, 'beauty': 11, 'hea': 11, 'though': 9, 'challenge': 82, 'stayhome': 60, 'keep': 51, 'miss': 40, 'coffee': 29, 'game': 27, 'bore': 23, 'talk': 23, 'stay_home': 19, 'place': 19, 'clutter_house_win_end': 18, 'battle_stuff_work_quaranotined': 18, 'poll_hero_execute_villain': 20, 'role_career_rajinikanoth_poinot': 20, 'MEnhir': 19, 'MAriana_Grand_stun_selfie': 17, 'might': 13, 'stuckwhu_lot_tip_toy': 12, 'stay_home_stay': 11, 'family': 47, 'live': 36, 'enjoy': 33, 'thanks': 27, 'run': 27, 'house': 24, 'leave': 25, 'order': 21, 'drop': 19, 'man': 30, 'suppo': 16, 'learn_craft_step_pull': 20, 'Oriya_baby': 19, 'wenot': 15, 'point': 14, 'track': 13, 'The': 12, 'onlyfans': 13, 'eth': 14, 'cover_cyberfm_spotlight': 57, 'yep_cover_song_fill': 36, 'music': 30, 'anyone': 30, 'tiktok': 22, 'guideline': 27, 'lockdown_rule_shout_planproper': 27, 'create_havoc_delhi_relax': 27, 'cover': 19, 'another': 18, 'face': 17, 'dance': 14, 'hour': 14, 'beat': 13, 'pleasure': 13, 'guess': 13, 'create': 12, 'date': 11, 'blog': 12}
+emergingWords [('jungkook_cover_Never_help', 1.0)]
+ALL DATES:  {datetime.date(2020, 5, 12)}
+emerging_topics_per_period:  ({datetime.date(2020, 4, 6)}, [('flavor_via', 0.443267776096823), ('please_fault_nepa_wife', 1.0), ('watch_mondaymotivation_covid_funkeakin', 0.9470499243570348), ('coronavirus', 0.41906202723146746), ('cou_asem_weatherchanne', 0.4084720121028744), ('friday_sunday_sunday_ball', 0.4084720121028744)])
+emerging_topics_per_period:  ({datetime.date(2020, 4, 7)}, [('video', 0.5316742081447964), ('eat', 0.3393665158371041), ('tuesday', 0.3257918552036199), ('love', 0.7013574660633484), ('keep', 0.45248868778280543), ('bore', 0.4230769230769231), ('corona', 0.38687782805429866), ('remember', 0.38235294117647056), ('might', 0.3416289592760181), ('sta', 0.3235294117647059), ('idea', 0.3076923076923077), ('child', 0.3076923076923077), ('home', 0.6176470588235294), ('Covid', 0.3574660633484163), ('lockdown', 0.41402714932126694), ('pay', 0.35294117647058826), ('year', 0.42081447963800905), ('crib', 0.39819004524886875), ('sun', 0.3009049773755656), ('stayathome', 0.40497737556561086), ('bring', 0.3235294117647059), ('place', 0.3054298642533937), ('inoto', 0.3031674208144796), ('cou_asem_weatherchanne', 0.6131221719457014), ('friday_sunday_sunday_ball', 0.6131221719457014), ('feel', 0.4796380090497738), ('quaranotinelife', 0.4502262443438914), ('anyone', 0.3665158371040724), ('morning', 0.3891402714932127), ('list', 0.3076923076923077), ('decide', 0.3190045248868778), ('donot_flex_hotel_room', 1.0), ('freak_iphone_malu_orang', 1.0), ('tengok', 1.0), ('listen', 0.3438914027149321), ('create', 0.3009049773755656), ('share', 0.334841628959276), ('meme', 0.3076923076923077), ('isolation', 0.45248868778280543), ('story', 0.334841628959276), ('tip', 0.32805429864253394), ('world', 0.38687782805429866), ('someone', 0.3190045248868778), ('stay', 0.497737556561086), ('family', 0.416289592760181), ('mansion', 0.39819004524886875), ('quarantine', 0.32805429864253394), ('tonight', 0.3235294117647059), ('right', 0.3009049773755656), ('shout', 0.3054298642533937)])
+emerging_topics_per_period:  ({datetime.date(2020, 4, 8)}, [('wanot', 0.5), ('stop', 0.33045977011494254), ('try_quaranotinelife_champ_chinaflu', 0.4281609195402299), ('stayathome_chinesevirus_kungflufighting', 0.42528735632183906), ('thank', 0.3764367816091954), ('song', 0.4051724137931034), ('win', 0.3218390804597701), ('stay_home_stay', 0.3160919540229885), ('break', 0.3103448275862069), ('mean', 0.3218390804597701), ('news', 0.3390804597701149), ('fan', 0.32471264367816094), ('fight', 0.31896551724137934), ('beat', 0.3017241379310345), ('hour', 0.3333333333333333), ('walk', 0.3074712643678161), ('midst_chaos_oppounity_cover', 1.0), ('childrenofthequarn_baby', 1.0), ('please', 0.41379310344827586), ('wanot_buy_man_dinner', 0.4051724137931034), ('become', 0.3103448275862069), ('period', 0.3045977011494253), ('body', 0.3074712643678161), ('spend', 0.34195402298850575), ('night', 0.4051724137931034), ('change', 0.3275862068965517), ('send', 0.33620689655172414), ('clue_consider_accomplishment', 0.33045977011494254), ('read', 0.3735632183908046), ('live', 0.3706896551724138), ('stream', 0.34195402298850575), ('picture', 0.31896551724137934), ('tiktok', 0.3563218390804598), ('pandemic', 0.3017241379310345), ('mansion', 0.3218390804597701), ('episode', 0.3045977011494253), ('away_news_tonight_response', 0.3074712643678161), ('play', 0.4166666666666667), ('challenge', 0.35919540229885055), ('COVID_coronavirus', 0.3563218390804598)])
+emerging_topics_per_period:  ({datetime.date(2020, 4, 9)}, [('people', 0.3824451410658307), ('love', 0.38557993730407525), ('lockdown', 0.3949843260188088), ('coronavirus', 0.3949843260188088), ('eddie_talk_medium_earthquake', 0.31974921630094044), ('deserve_kick_face', 0.31974921630094044), ('stayhome', 0.30094043887147337), ('stay', 0.30094043887147337), ('COVID', 1.0), ('covid', 0.3887147335423197)])
+emerging_topics_per_period:  ({datetime.date(2020, 4, 10)}, [('kid', 0.3641304347826087), ('quaranotinelife', 0.4320652173913043), ('news', 0.6875), ('share', 0.421195652173913), ('learn', 0.6304347826086957), ('easter', 0.45108695652173914), ('nothing', 0.4701086956521739), ('instagram', 0.46467391304347827), ('stayhome_staysafe', 0.5570652173913043), ('everything', 0.5815217391304348), ('online', 0.5625), ('around', 0.5652173913043478), ('monoth', 0.5597826086956522), ('spring', 0.5652173913043478), ('coronavirus_COVID', 0.5733695652173914), ('workout', 0.4673913043478261), ('gay', 0.5434782608695652), ('sign', 0.5353260869565217), ('pick', 0.47282608695652173), ('lose_mind', 0.5135869565217391), ('feel', 0.41032608695652173), ('isolation', 0.6793478260869565), ('stop', 0.375), ('deserve_kick_face', 0.5461956521739131), ('eddie_talk_medium_earthquake', 0.5461956521739131), ('game', 0.3641304347826087), ('ask', 0.43478260869565216), ('hair', 0.43478260869565216), ('stayathome', 0.453804347826087), ('child', 0.5760869565217391), ('cook', 0.5679347826086957), ('unotil', 0.5434782608695652), ('wenot', 0.5489130434782609), ('meal', 0.5434782608695652), ('counotry', 0.5461956521739131), ('wake', 0.4701086956521739), ('onlyfans', 0.4673913043478261), ('The', 0.5461956521739131), ('afternoon', 0.5217391304347826), ('step', 0.5461956521739131), ('ill_send_people_retweet', 1.0), ('cashapp_Apply', 0.9429347826086957), ('try', 0.3423913043478261), ('since', 0.657608695652174), ('stay', 0.33967391304347827), ('follow', 0.39402173913043476), ('inoto', 0.6005434782608695), ('lol', 0.45652173913043476), ('hey', 0.47282608695652173), ('bar', 0.453804347826087), ('money', 0.5597826086956522), ('madonna_video', 0.6086956521739131), ('forget', 0.453804347826087), ('film', 0.5489130434782609), ('youtube', 0.5625), ('view', 0.5461956521739131), ('baby', 0.5625), ('anything', 0.5461956521739131), ('laugh', 0.46467391304347827), ('seem', 0.5461956521739131), ('teri_Anthony_cuba_song', 0.720108695652174), ('memory_film', 0.720108695652174), ('guy', 0.6521739130434783), ('order', 0.654891304347826), ('girl', 0.6304347826086957), ('lot', 0.42391304347826086), ('list', 0.6005434782608695), ('lose', 0.5706521739130435), ('daughter', 0.5597826086956522), ('makeup', 0.45652173913043476), ('beach', 0.5760869565217391), ('woman', 0.5597826086956522), ('sting', 0.46467391304347827), ('draw', 0.529891304347826), ('gamer', 0.5217391304347826), ('cute', 0.5353260869565217), ('canon', 0.5217391304347826), ('bed', 0.5461956521739131), ('bake', 0.5271739130434783), ('power', 0.5380434782608695), ('watch', 0.30434782608695654), ('night', 0.375), ('challenge', 0.38858695652173914), ('thanks', 0.625), ('Covid', 0.38315217391304346), ('catch', 0.5625), ('foryourpage', 0.6032608695652174), ('relax_walk_round_house', 0.6005434782608695), ('class', 0.5543478260869565), ('walk', 0.4701086956521739), ('lockdownextended', 0.5679347826086957), ('boredom', 0.5570652173913043), ('keep', 0.39945652173913043), ('series', 0.5706521739130435), ('wish', 0.47554347826086957), ('facebook', 0.5271739130434783), ('god', 0.4701086956521739), ('oil', 0.5407608695652174), ('cabin_peacetime', 0.5760869565217391), ('step_inoto_mumbai_traffic', 0.779891304347826), ('jam_step_though_road', 0.779891304347826), ('friend', 0.358695652173913), ('every', 0.421195652173913), ('anyone', 0.6440217391304348), ('rest', 0.5760869565217391), ('bring', 0.6032608695652174), ('shout', 0.4782608695652174), ('test', 0.453804347826087), ('send', 0.47282608695652173), ('state', 0.44565217391304346), ('become', 0.4429347826086957), ('comedy', 0.5380434782608695), ('cover', 0.5543478260869565), ('story', 0.48097826086956524), ('drink', 0.45652173913043476), ('store', 0.5380434782608695), ('damn', 0.5570652173913043), ('cause', 0.5543478260869565), ('reduce', 0.5461956521739131), ('corona', 0.7010869565217391), ('weekend', 0.6331521739130435), ('tell', 0.41304347826086957), ('fuck', 0.43478260869565216), ('care', 0.5733695652173914), ('boy', 0.5788043478260869), ('release', 0.5434782608695652), ('head', 0.5652173913043478), ('lock', 0.5706521739130435), ('business', 0.5516304347826086), ('vibe', 0.5597826086956522), ('chill', 0.5489130434782609), ('governmenot', 0.5407608695652174), ('stick', 0.4673913043478261), ('stayhome_covid', 0.5163043478260869), ('wear', 0.5489130434782609), ('blog', 0.5380434782608695), ('foot', 0.5271739130434783), ('miss', 0.8070652173913043), ('play', 0.421195652173913), ('tonight', 0.37771739130434784), ('stay_home', 0.43478260869565216), ('eat', 0.625), ('leave', 0.453804347826087), ('plan', 0.42934782608695654), ('dinner', 0.44565217391304346), ('listen', 0.46195652173913043), ('turn', 0.592391304347826), ('date', 0.5489130434782609), ('netflix', 0.5461956521739131), ('hear', 0.44021739130434784), ('someone', 0.44565217391304346), ('answer', 0.5679347826086957), ('tweet', 0.5543478260869565), ('fan', 0.47282608695652173), ('everybody', 0.5407608695652174), ('stand', 0.5271739130434783), ('decide', 0.4701086956521739), ('end', 0.3804347826086957), ('hope', 0.6467391304347826), ('show', 0.6603260869565217), ('flavor', 0.453804347826087), ('hour', 0.39402173913043476), ('food', 0.6195652173913043), ('idea', 0.4429347826086957), ('tip', 0.5679347826086957), ('sleep', 0.5760869565217391), ('bihday', 0.453804347826087), ('school', 0.46195652173913043), ('staing', 0.5461956521739131), ('work_home', 0.4483695652173913), ('car', 0.5516304347826086), ('april', 0.5652173913043478), ('house', 0.9320652173913043), ('year', 0.33967391304347827), ('family', 0.3423913043478261), ('wanot', 0.3532608695652174), ('another', 0.4076086956521739), ('morning', 0.6168478260869565), ('sta', 0.6195652173913043), ('read', 0.6005434782608695), ('photo', 0.5978260869565217), ('run', 0.44021739130434784), ('mean', 0.4320652173913043), ('stream', 0.4483695652173913), ('goodfriday', 0.5625), ('venue_Laval_order_collection', 0.5788043478260869), ('video_upon_arrival_covid', 0.5788043478260869), ('QuaranotineLife', 0.5679347826086957), ('link', 0.47282608695652173), ('update', 0.5597826086956522), ('link_bio', 0.529891304347826), ('quaranotined', 0.5516304347826086)])
+emerging_topics_per_period:  ({datetime.date(2020, 4, 11)}, [('watch', 0.4701195219123506), ('COVID', 0.4103585657370518), ('coronavirus', 1.0), ('stay', 0.3545816733067729), ('life', 0.8924302788844621), ('today', 0.5338645418326693), ('work', 0.549800796812749), ('house', 0.5896414342629482), ('try', 0.38247011952191234), ('people', 0.6613545816733067), ('miss', 0.36254980079681276), ('love', 0.5418326693227091)])
+100%|██████████| 14/14 [23:21<00:00, 100.10s/it]
+({datetime.date(2020, 4, 12)}, [('lockdown', 0.463768115942029), ('break', 0.32608695652173914), ('could', 0.37681159420289856), ('rap', 0.3333333333333333), ('inspire_playlist_help_cope', 0.3115942028985507), ('earthquake', 0.38405797101449274), ('online', 0.3115942028985507), ('eye', 0.3188405797101449), ('show', 0.3115942028985507), ('easter_hope', 0.3115942028985507), ('grade', 0.30434782608695654), ('song_happyeastersunday', 0.45652173913043476), ('Eastern_sunday_churchgoer_dem', 0.34782608695652173), ('officeholder_swear', 0.34782608695652173), ('tyranotdemocrat_Governor_order_Day', 0.34782608695652173), ('stick_home_bore_ton', 0.32608695652173914), ('prize_include', 0.32608695652173914), ('eastersunday', 0.34057971014492755), ('workout', 0.32608695652173914), ('stand_chance', 0.30434782608695654), ('interest_share_picture', 0.30434782608695654), ('win_Cove', 0.30434782608695654), ('stop', 0.3333333333333333), ('shop', 0.30434782608695654), ('wake', 0.3333333333333333), ('easter', 1.0), ('hope_fucker_dick_fall', 0.3333333333333333), ('WHF_people', 0.3333333333333333), ('work_book_format_read', 0.32608695652173914), ('free_kindleunlimed', 0.32608695652173914), ('socialdistancing', 0.30434782608695654), ('lockdown_socialdistancing', 0.3115942028985507), ('dust_virus_corona', 0.3115942028985507), ('please', 0.34782608695652173), ('case', 0.34057971014492755), ('spring', 0.3188405797101449), ('sunday', 0.39855072463768115), ('easter_stay_home', 0.3115942028985507), ('animate_booklover_wringcommuny_animate', 0.3115942028985507), ('xxx', 0.3115942028985507), ('year_happyeaster_easter', 0.30434782608695654), ('flatten_curve', 0.30434782608695654), ('sundaythoughts', 0.3115942028985507), ('inoto_mind', 0.36231884057971014), ('wanot_documentary_watch_outoftheshadows', 0.36231884057971014), ('watch', 0.34057971014492755), ('easter_happyeaster', 0.34057971014492755), ('anyone', 0.34782608695652173), ('care', 0.3333333333333333), ('nature', 0.3188405797101449), ('trysugar_sugarcosmetics_game_challenge', 0.30434782608695654), ('shout', 0.32608695652173914), ('cum', 0.3188405797101449), ('wanot', 0.4057971014492754), ('COVID_COVID', 0.3333333333333333), ('shall_celebrate_eth_home', 0.3188405797101449), ('meowrror_cat_cat_windchill', 0.3115942028985507), ('food', 0.32608695652173914), ('mood', 0.3188405797101449), ('mikimonotllo_hot', 0.30434782608695654), ('differenot', 0.3115942028985507), ('covid_coronavirus', 0.32608695652173914), ('paper', 0.30434782608695654), ('challenge', 0.43478260869565216), ('happyeaster_easter_hidden_picture', 0.34057971014492755), ('addie_baby_throw', 0.34057971014492755), ('carson_Wenot_home_wife', 0.34057971014492755), ('BIC', 0.3333333333333333), ('life', 0.3115942028985507), ('frontline_keep', 0.30434782608695654), ('coronawarriors_execute', 0.30434782608695654), ('Sanitation_drive', 0.30434782608695654), ('game', 0.36231884057971014), ('stay_home_stay', 0.3115942028985507), ('Covid', 0.37681159420289856), ('staythefuckhome_covid', 0.30434782608695654), ('office_coronavirus', 0.30434782608695654), ('trump_blood', 0.30434782608695654), ('hand_throw', 0.30434782608695654), ('winner', 0.30434782608695654), ('win', 0.3333333333333333), ('motivation', 0.30434782608695654), ('shave', 0.30434782608695654), ('mood_cigaretteshappy_cigarette_madsmikkelsen', 0.35507246376811596), ('TeamMates_cigarette', 0.34782608695652173), ('another_dress_stayhome', 0.34782608695652173), ('run', 0.36231884057971014), ('song', 0.36231884057971014), ('memebarding_stayhome_respect', 0.3188405797101449), ('asem', 0.30434782608695654), ('foot', 0.3188405797101449), ('release', 0.3115942028985507), ('kill', 0.3188405797101449), ('land', 0.42028985507246375), ('another_game_senator_screenshot', 0.41304347826086957), ('sand_book_books read_book', 0.34782608695652173), ('bookworm_booklover_qua', 0.34782608695652173), ('guy', 0.37681159420289856), ('happyeaster_animate_booklover_wringcommuny', 0.3115942028985507), ('animate_cover_receive', 0.3115942028985507), ('another', 0.3115942028985507), ('facebook', 0.30434782608695654), ('spend', 0.34057971014492755), ('hea', 0.3333333333333333)])
+emerging_topics_per_period:  ({datetime.date(2020, 4, 13)}, [('walkies', 1.0), ('home_fro', 0.52), ('staing_fuck_work_home', 0.52), ('playlist_listen_armaanmalik', 0.49714285714285716), ('tip', 0.44571428571428573), ('cat_challenge', 0.4342857142857143), ('dream', 0.4228571428571429), ('gon', 0.37714285714285717), ('longs_session_friend_fun', 0.4114285714285714), ('stock', 0.38285714285714284), ('control', 0.38857142857142857), ('bird', 0.4), ('felt', 0.38285714285714284), ('hide', 0.38285714285714284), ('shop', 0.33714285714285713), ('nail', 0.37142857142857144), ('could', 0.3314285714285714), ('walk', 0.44), ('lol', 0.4514285714285714), ('pas', 0.4342857142857143), ('dog', 0.41714285714285715), ('book_book_boo', 0.4342857142857143), ('book_monoth_onchapelsands_masterpiece', 0.4342857142857143), ('create', 0.41714285714285715), ('enjoy', 0.4342857142857143), ('end_girl_front_Pain', 0.41714285714285715), ('puri_Theta', 0.41714285714285715), ('thanks', 0.4342857142857143), ('mood', 0.3028571428571429), ('realize', 0.3942857142857143), ('effect', 0.3942857142857143), ('wan', 0.38285714285714284), ('cat', 0.38285714285714284), ('friend', 0.5657142857142857), ('man', 0.42857142857142855), ('eat', 0.4228571428571429), ('onlyfans', 0.4114285714285714), ('Person_people_toronotobbc', 0.3942857142857143), ('office', 0.4057142857142857), ('vote', 0.4228571428571429), ('season', 0.4114285714285714), ('inspiration', 0.4), ('weather', 0.3942857142857143), ('medium', 0.4114285714285714), ('news', 0.4057142857142857), ('choose', 0.3942857142857143), ('connect_meet_face_face', 0.41714285714285715), ('phone', 0.38285714285714284), ('drop', 0.38285714285714284), ('counotry', 0.4), ('feel', 0.5942857142857143), ('horror_home_hawaii_lime', 0.4742857142857143), ('resource_live_supply_place', 0.4742857142857143), ('luxury', 0.4742857142857143), ('COVID_coronavirus', 0.4514285714285714), ('selfisolation', 0.4514285714285714), ('staed', 0.41714285714285715), ('thank', 0.44), ('care', 0.32571428571428573), ('year', 0.3657142857142857), ('Quaranoti', 0.4228571428571429), ('wish', 0.38857142857142857), ('monoth', 0.4057142857142857), ('internet', 0.4057142857142857), ('distancing', 0.4057142857142857), ('story', 0.4057142857142857), ('struggle', 0.38857142857142857), ('business', 0.4114285714285714), ('meet_face_face_yeah', 0.7828571428571428), ('excrement_parallel_tomorrow', 0.7771428571428571), ('another_game_senator_screenshot', 0.32), ('guy_today_fun_question', 0.48), ('pannikongha', 0.48), ('period', 0.41714285714285715), ('learn', 0.4514285714285714), ('face', 0.44571428571428573), ('quaranotineconotenot_Culture', 0.4342857142857143), ('meet', 0.4057142857142857), ('enter', 0.4), ('try', 0.30857142857142855), ('share', 0.30857142857142855), ('sleep', 0.48), ('house', 0.49142857142857144), ('lot', 0.4342857142857143), ('guy', 0.34285714285714286), ('exercise', 0.42857142857142855), ('change', 0.4057142857142857), ('since', 0.4228571428571429), ('list', 0.44), ('virus', 0.4114285714285714), ('self', 0.3942857142857143), ('tiktok', 0.38857142857142857), ('meme', 0.4), ('happiness', 0.3942857142857143), ('shot', 0.38285714285714284), ('Report', 0.37142857142857144), ('covid', 0.6514285714285715), ('quaranotineandchill', 0.44571428571428573), ('milf', 0.4342857142857143), ('listen', 0.44), ('year_wife_mom_enjoy', 0.4228571428571429), ('avoid', 0.4), ('nowcorona_momenot', 0.4), ('chance', 0.4), ('might', 0.3942857142857143), ('april', 0.4), ('backyard', 0.37714285714285717), ('corona', 0.30857142857142855), ('spring', 0.3485714285714286), ('amaze', 0.38857142857142857), ('seem', 0.37714285714285717), ('coronavirus_COVID', 0.38285714285714284), ('tyranotdemocrat_Governor_order_Day', 0.37142857142857144), ('officeholder_swear', 0.37142857142857144), ('Eastern_sunday_churchgoer_dem', 0.37142857142857144), ('movie', 0.5485714285714286), ('sta', 0.49142857142857144), ('stayathome', 0.5314285714285715), ('morning', 0.4857142857142857), ('monday', 0.46285714285714286), ('socialdistancing', 0.3028571428571429), ('easter', 0.7428571428571429), ('mondaymotivation', 0.41714285714285715), ('series', 0.42857142857142855), ('photography', 0.4342857142857143), ('hour', 0.4114285714285714), ('photo', 0.4228571428571429), ('CAMs_debut_weekend_end', 0.41714285714285715), ('fan', 0.4114285714285714), ('weekend', 0.4), ('inoto', 0.44571428571428573), ('Tater', 0.3942857142857143), ('change_pyjamas_night_pyjama', 0.5771428571428572), ('bore', 0.46285714285714286), ('fight', 0.4742857142857143), ('kid', 0.4742857142857143), ('every', 0.4742857142857143), ('word', 0.4228571428571429), ('youtube', 0.4057142857142857), ('remember', 0.42857142857142855), ('wear', 0.45714285714285713), ('quaranotined', 0.4114285714285714), ('shout', 0.3314285714285714), ('tell', 0.44), ('anyone', 0.32), ('grow', 0.4114285714285714), ('cum', 0.32571428571428573), ('woman', 0.4), ('sand_book_books read_book', 0.35428571428571426), ('bookworm_booklover_qua', 0.35428571428571426), ('focus', 0.4057142857142857), ('win', 0.34285714285714286), ('DOs_pay_challenge_every', 0.3942857142857143), ('promoter', 0.3942857142857143), ('reopen_club_clubdowntownbmore_double', 0.3942857142857143), ('read', 0.4057142857142857), ('BIC_BIC_chicago_RETWEET', 0.3942857142857143), ('job', 0.41714285714285715), ('lock', 0.4057142857142857), ('seem_stayhomeindia_isolationlife', 0.4114285714285714), ('step', 0.4057142857142857)])
+emerging_topics_per_period:  ({datetime.date(2020, 4, 14)}, [('tweeter_clip_Handy_wear', 0.32873563218390806), ('Punished_pin_pain_trump', 0.32873563218390806), ('spend', 0.30114942528735633), ('muslim', 0.37471264367816093), ('east_number_area_area', 0.3724137931034483), ('game', 0.30114942528735633), ('stay', 0.35172413793103446), ('isolation', 0.3425287356321839), ('break_resident_protest_coronavirus', 0.32413793103448274), ('source_scott_shoemaker_facebook', 0.32413793103448274), ('lockdown_state_carol_Linefeed', 0.32413793103448274), ('another', 0.3103448275862069), ('music', 0.335632183908046), ('play', 0.3103448275862069), ('positivevibes', 0.37471264367816093), ('stay_home_wutang_firstresponders', 0.3701149425287356), ('end', 0.3264367816091954), ('live', 0.32873563218390806), ('idea', 1.0)])
+emerging_topics_per_period:  ({datetime.date(2020, 5, 4)}, [('preference', 0.9998750312421895), ('mukbang', 0.9999375156210947), ('tothe', 1.0), ('yummy', 1.0), ('FLavor', 0.9999375156210947), ('tummy', 0.9998750312421895)])
+emerging_topics_per_period:  ({datetime.date(2020, 5, 5)}, [('jungkook_cover_Never_help', 1.0)])
+num_topics:  15
+0: 0.150*"people" + 0.055*"house" + 0.049*"join" + 0.043*"spend" + 0.036*"movie"
+
+1: 0.205*"life" + 0.114*"pay" + 0.059*"live" + 0.030*"plan" + 0.029*"episode"
+
+2: 0.107*"stayhome" + 0.106*"watch" + 0.105*"video" + 0.044*"stay_home" + 0.037*"read"
+
+3: 0.079*"year" + 0.057*"game" + 0.054*"isolation" + 0.042*"mean" + 0.033*"win"
+
+4: 0.136*"lockdown" + 0.071*"idea" + 0.055*"share" + 0.052*"end" + 0.046*"thanks"
+
+5: 0.105*"world" + 0.068*"music" + 0.055*"tell" + 0.038*"stop" + 0.036*"photo"
+
+6: 0.169*"home" + 0.098*"feel" + 0.092*"challenge" + 0.070*"Covid" + 0.056*"hope"
+
+7: 0.164*"love" + 0.080*"wanot" + 0.067*"try" + 0.057*"please" + 0.042*"thank"
+
+8: 0.249*"COVID" + 0.082*"keep" + 0.042*"learn" + 0.037*"talk" + 0.033*"man"
+
+9: 0.096*"miss" + 0.050*"ask" + 0.035*"place" + 0.030*"film" + 0.026*"everything"
+
+10: 0.181*"today" + 0.070*"friend" + 0.048*"play" + 0.047*"enjoy" + 0.046*"another"
+
+11: 0.207*"covid" + 0.063*"help" + 0.058*"show" + 0.039*"every" + 0.038*"bore"
+
+12: 0.237*"coronavirus" + 0.064*"socialdistancing" + 0.057*"corona" + 0.048*"guy" + 0.038*"mask"
+
+13: 0.145*"work" + 0.099*"stay" + 0.060*"quaranotinelife" + 0.039*"song" + 0.037*"anyone"
+
+14: 0.095*"family" + 0.092*"fun" + 0.053*"night" + 0.041*"tip" + 0.031*"spring"
+
+% of topics document is about:  [(6, 0.19611806), (8, 0.19611843), (11, 0.1961142), (12, 0.3902898)]
+
+Coherence Score:  0.5215878816677274
+document_topic                0         1         2         3         4         5         6  \
+0       0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.196118   
+1       0.000000  0.000000  0.878260  0.000000  0.000000  0.000000  0.000000   
+2       0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.934881   
+3       0.066667  0.066667  0.066667  0.066667  0.066667  0.066667  0.066667   
+4       0.000000  0.000000  0.000000  0.000000  0.934879  0.000000  0.000000   
+...          ...       ...       ...       ...       ...       ...       ...   
+115854  0.066667  0.066667  0.066667  0.066667  0.066667  0.066667  0.066667   
+115855  0.878260  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000   
+115856  0.066667  0.066667  0.066667  0.066667  0.066667  0.066667  0.066667   
+115857  0.000000  0.243376  0.000000  0.000000  0.000000  0.243365  0.000000   
+115858  0.243372  0.000000  0.243359  0.000000  0.000000  0.000000  0.243380   
+
+               7         8         9        10        11        12        13  \
+0       0.000000  0.196118  0.000000  0.000000  0.196114  0.390290  0.000000   
+1       0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000   
+2       0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000   
+3       0.066667  0.066667  0.066667  0.066667  0.066667  0.066667  0.066667   
+4       0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000   
+...          ...       ...       ...       ...       ...       ...       ...   
+115854  0.066667  0.066667  0.066667  0.066667  0.066667  0.066667  0.066667   
+115855  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000   
+115856  0.066667  0.066667  0.066667  0.066667  0.066667  0.066667  0.066667   
+115857  0.000000  0.243375  0.000000  0.000000  0.000000  0.243377  0.000000   
+115858  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000  0.243382   
+
+              14  
+0       0.000000  
+1       0.000000  
+2       0.000000  
+3       0.066667  
+4       0.000000  
+...          ...  
+115854  0.066667  
+115855  0.000000  
+115856  0.066667  
+115857  0.000000  
+115858  0.000000  
+
+[115859 rows x 15 columns]
+1878      0.972812
+3386      0.955555
+2595      0.955555
+101787    0.955555
+65177     0.955555
+            ...   
+51265     0.000000
+51264     0.000000
+51261     0.000000
+51257     0.000000
+115858    0.000000
+Name: 1, Length: 115859, dtype: float64
