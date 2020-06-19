@@ -1,8 +1,8 @@
 """
-Script used for location modelling and visualization
+Script used for location modelling
 
 Uses the coordinates supplied by twitter API in the geo field and also
-the location of each tweet's user takn by their profiles after converting
+the location of each tweet's user taken by their profiles after converting
 it to coordinates using the Nominatim geolocator. Then creates a html
 page that contains a Folium map with all the coordinates plotted
 """
@@ -95,7 +95,7 @@ print(geo_df)
 # geo_df.to_csv('geo.csv', index=False)
 
 # Because we don't have many users' coordinates, we will try to convert the locations taken
-# from the users profiles into cooordinates. For this task we will use the Nomatim geocoder
+# from the users profiles into cooordinates. For this task we will use the Nominatim geocoder
 # which takes as input a location and outputs its lat and long coordinates.
 # First create a mapping to avoid unnecessary geolocator failures
 mapping = {'Los Angeles, CA': 'Los Angeles',
