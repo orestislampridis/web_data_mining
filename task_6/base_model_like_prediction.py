@@ -18,7 +18,7 @@ from connect_mongo import read_mongo
 pd.set_option('display.max_columns', None)
 
 # Get our initial df with columns 'geo.coordinates' and 'location'
-df = read_mongo(db='twitter_db', collection='twitter_collection', query={'retweeted_status': 1})  # .sample(10000)
+df = read_mongo(db='twitter_db', collection='twitter_collection', query={'retweeted_status': 1}).sample(5000)
 
 # Read Insta data
 # data = read_mongo(db='Instagram_Data', collection='post_data', query={'text': 1, 'retweeted_status': 1})
@@ -51,10 +51,19 @@ data['favorite_count'] = nested_data['favorite_count']
 
 # data.to_csv("ultimate_ground_truth.csv")
 
-# split the 'like' field into three bins, low/medium/high
-bin_labels = ['low', 'medium', 'high']  # class_names
-# bin_labels = [0, 1, 2]
-data['likes'] = pd.qcut(data['favorite_count'], q=3, labels=bin_labels)
+# Filter out extremely famous people that destroy the distribution
+data = data[data['favorite_count'] < 5000]
+
+# Split the favorite counts into 4 quantiles and get the cut-off points
+np.quantile(data.favorite_count, [0, 0.25, 0.5, 0.75, 1])
+
+data['favorite_count_bins'] = pd.qcut(data.favorite_count, 4)
+print(data.favorite_count_bins.value_counts().sort_index())
+
+# Split the 'like' field into the four bins defined above, low/normal/high/famous
+bin_labels = ['low: (0, 3]', 'normal: (3, 22]', 'high: (22, 192]', 'famous: (192, 4919]']  # class_names
+# bin_labels = [0, 1, 2, 3]
+data['likes'] = pd.qcut(data['favorite_count'], q=len(bin_labels), labels=bin_labels)
 
 print(data['likes'].value_counts())
 
