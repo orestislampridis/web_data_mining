@@ -23,7 +23,8 @@ print(insta.head(3))
 #read data twitter
 data = read_mongo(db='twitter_db', collection='twitter_collection',
                   query={'text': 1})
-tweets = data.sample(n=1000, random_state=42)
+# tweets = data.sample(n=1000, random_state=42)
+tweets = data
 
 print(tweets.head(3))
 #define i-talk
