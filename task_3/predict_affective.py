@@ -12,8 +12,8 @@ from connect_mongo import read_mongo
 #get categories
 emotion_categories = ['anger', 'joy', 'disgust', 'fear', 'sadness', 'surprise']
 #read data
-file1="../dataset/test_cleaned.csv"
-insta=pd.read_csv(file1, encoding="utf8")
+file1="../dataset/insta_data_cleaned.csv"
+insta=pd.read_csv(file1, sep='~', encoding="utf8")
 
 tweets = read_mongo(db='twitter_db', collection='twitter_collection', query={'text': 1})
 tweets = tweets.sample(n=1000, random_state=42)

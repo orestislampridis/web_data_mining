@@ -119,14 +119,14 @@ tweets['TextBlob predicted sentiment'] = pred_B_tweets
 # Figure comparing distributions for each class of VADER vs TextBlob
 # ======================================================================================================================
 
-fig = go.Figure(data=[
-    go.Bar(name='VADER sentiment', x=tweets['VADER predicted sentiment'].unique(), y=tweets['VADER predicted sentiment'].value_counts().values),
-    go.Bar(name='TextBlob sentiment', x=tweets['TextBlob predicted sentiment'].unique(), y=tweets['TextBlob predicted sentiment'].value_counts().values)
-])
-# Change the bar mode
-fig.update_layout(barmode='group')
-
-py.plot(fig, filename='sentiment-distribution.html')
+# fig = go.Figure(data=[
+#     go.Bar(name='VADER sentiment', x=tweets['VADER predicted sentiment'].unique(), y=tweets['VADER predicted sentiment'].value_counts().values),
+#     go.Bar(name='TextBlob sentiment', x=tweets['TextBlob predicted sentiment'].unique(), y=tweets['TextBlob predicted sentiment'].value_counts().values)
+# ])
+# # Change the bar mode
+# fig.update_layout(barmode='group')
+#
+# py.plot(fig, filename='sentiment-distribution.html')
 
 
 # ======================================================================================================================
@@ -140,42 +140,42 @@ print("\nTwitter sentiment predictions")
 print(tweets.head())
 
 
-#Pie plots for INSTAGRAM
-fig = plt.figure(figsize=(10,10))
-ax_insta_V = fig.add_axes([0,0,1,1])
-ax_insta_V.axis('equal')
-colors = ['#ff9999','#66b3ff','#99ff99']
-ax_insta_V.pie(insta.groupby('VADER predicted sentiment').size(),colors=colors, autopct='%1.1f%%',labels=insta.groupby('VADER predicted sentiment').size().index, shadow=True, startangle=90,textprops={'fontsize': 14})
-plt.title('Instagram/n VADER predicted sentiment', bbox={'facecolor':'0.8', 'pad':5})
-plt.show()
-
-fig = plt.figure(figsize=(10,10))
-
-ax_insta_B = fig.add_axes([0,0,1,1])
-ax_insta_B.axis('equal')
-colors = ['#ff9999','#66b3ff','#99ff99']
-ax_insta_B.pie(insta.groupby('TextBlob predicted sentiment').size(),colors=colors, autopct='%1.1f%%',labels=insta.groupby('VADER predicted sentiment').size().index, shadow=True, startangle=90,textprops={'fontsize': 14})
-plt.title('Instagram/n TextBlob predicted sentiment', bbox={'facecolor':'0.8', 'pad':5})
-plt.show()
+# #Pie plots for INSTAGRAM
+# fig = plt.figure(figsize=(10,10))
+# ax_insta_V = fig.add_axes([0,0,1,1])
+# ax_insta_V.axis('equal')
+# colors = ['#ff9999','#66b3ff','#99ff99']
+# ax_insta_V.pie(insta.groupby('VADER predicted sentiment').size(),colors=colors, autopct='%1.1f%%',labels=insta.groupby('VADER predicted sentiment').size().index, shadow=True, startangle=90,textprops={'fontsize': 14})
+# plt.title('Instagram/n VADER predicted sentiment', bbox={'facecolor':'0.8', 'pad':5})
+# plt.show()
+#
+# fig = plt.figure(figsize=(10,10))
+#
+# ax_insta_B = fig.add_axes([0,0,1,1])
+# ax_insta_B.axis('equal')
+# colors = ['#ff9999','#66b3ff','#99ff99']
+# ax_insta_B.pie(insta.groupby('TextBlob predicted sentiment').size(),colors=colors, autopct='%1.1f%%',labels=insta.groupby('VADER predicted sentiment').size().index, shadow=True, startangle=90,textprops={'fontsize': 14})
+# plt.title('Instagram/n TextBlob predicted sentiment', bbox={'facecolor':'0.8', 'pad':5})
+# plt.show()
 
 
 #Pie plots for TWITTER
 fig = plt.figure(figsize=(10,10))
-ax_insta_V = fig.add_axes([0,0,1,1])
-ax_insta_V.axis('equal')
+ax_V = fig.add_axes([0,0,1,1])
+ax_V.axis('equal')
 colors = ['#ff9999','#66b3ff','#99ff99']
-ax_insta_V.pie(tweets.groupby('VADER predicted sentiment').size(),colors=colors, autopct='%1.1f%%',labels=tweets.groupby('VADER predicted sentiment').size().index, shadow=True, startangle=90,textprops={'fontsize': 14})
-plt.title('Instagram/n VADER predicted sentiment', bbox={'facecolor':'0.8', 'pad':5})
+ax_V.pie(tweets.groupby('VADER predicted sentiment').size(),colors=colors, autopct='%1.1f%%',labels=tweets.groupby('VADER predicted sentiment').size().index, shadow=True, startangle=90,textprops={'fontsize': 14})
+plt.title('Twitter/n VADER predicted sentiment', bbox={'facecolor':'0.8', 'pad':5})
 plt.show()
 
-fig = plt.figure(figsize=(10,10))
-
-ax_insta_B = fig.add_axes([0,0,1,1])
-ax_insta_B.axis('equal')
-colors = ['#ff9999','#66b3ff','#99ff99']
-ax_insta_B.pie(tweets.groupby('TextBlob predicted sentiment').size(),colors=colors, autopct='%1.1f%%',labels=tweets.groupby('VADER predicted sentiment').size().index, shadow=True, startangle=90,textprops={'fontsize': 14})
-plt.title('Instagram/n TextBlob predicted sentiment', bbox={'facecolor':'0.8', 'pad':5})
-plt.show()
-
-#save sentiment Tweets for later task
-tweets.to_csv('sentiment_tweets.csv')
+# fig = plt.figure(figsize=(10,10))
+#
+# ax_B = fig.add_axes([0,0,1,1])
+# ax_B.axis('equal')
+# colors = ['#ff9999','#66b3ff','#99ff99']
+# ax_B.pie(tweets.groupby('TextBlob predicted sentiment').size(),colors=colors, autopct='%1.1f%%',labels=tweets.groupby('VADER predicted sentiment').size().index, shadow=True, startangle=90,textprops={'fontsize': 14})
+# plt.title('Twitter/n TextBlob predicted sentiment', bbox={'facecolor':'0.8', 'pad':5})
+# plt.show()
+#
+# #save sentiment Tweets for later task
+# tweets.to_csv('sentiment_tweets.csv')
