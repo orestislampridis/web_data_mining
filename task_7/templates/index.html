@@ -1,194 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
-.navbar {
-  height: 52px;
-  overflow: hidden;
-  background-color: #333;
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
-}
-.w3-sidebar {
-  top: 52px; /* Stay at the top */
-  height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 250px; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  left: 0;
-  background-color: #111; /* Black */
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 20px;
-}
-</style>
-<body>
+{% extends "layout.html" %}
 
-
-<div class="navbar">
-    <button onclick="w3_open_close()" class="w3-button w3-teal w3-xlarge">☰</button>
-</div>
-
-<!-- Sidebar -->
-<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" id="mySidebar" style="display:none">
-
-  <h4 class="w3-bar-item"><b>Menu</b></h4>
-
-  <!-- Task 3 -->
-  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc(1)">Task 3 <i class="fa fa-caret-down"></i></button>
-  <div id="drop_down_menu_1" class="w3-bar-block w3-hide w3-white w3-card-4">
-    <a class="w3-bar-item w3-button w3-hover-black" href="#">Emerging Topics</a>
-    <a class="w3-bar-item w3-button w3-hover-black" href="#">Dynamic Topic Modeling</a>
-    <a class="w3-bar-item w3-button w3-hover-black" href="#">Named Entities Extraction</a>
-    <a class="w3-bar-item w3-button w3-hover-black" href="#">Affective Analysis</a>
-    <a class="w3-bar-item w3-button w3-hover-black" href="#">Sentiment Analysis</a>
-  </div>
-
-  <!-- Task 5 -->
-  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc(2)">Task 5 <i class="fa fa-caret-down"></i></button>
-  <div id="drop_down_menu_2" class="w3-bar-block w3-hide w3-white w3-card-4">
-    <a class="w3-bar-item w3-button w3-hover-black" href="#">Emerging Topics</a>
-    <a class="w3-bar-item w3-button w3-hover-black" href="#">Dynamic Topic Modeling</a>
-    <a class="w3-bar-item w3-button w3-hover-black" href="#">Named Entities Extraction</a>
-    <a class="w3-bar-item w3-button w3-hover-black" href="#">Affective Analysis</a>
-    <a class="w3-bar-item w3-button w3-hover-black" href="#">Sentiment Analysis</a>
-  </div>
-
-  <!-- Task 6 -->
-  <button class="w3-button w3-block w3-left-align" onclick="myAccFunc(3)">Task 6 <i class="fa fa-caret-down"></i></button>
-  <div id="drop_down_menu_3" class="w3-bar-block w3-hide w3-white w3-card-4">
-    <a class="w3-bar-item w3-button w3-hover-black" href="#">Emerging Topics</a>
-    <a class="w3-bar-item w3-button w3-hover-black" href="#">Dynamic Topic Modeling</a>
-    <a class="w3-bar-item w3-button w3-hover-black" href="#">Named Entities Extraction</a>
-    <a class="w3-bar-item w3-button w3-hover-black" href="#">Affective Analysis</a>
-    <a class="w3-bar-item w3-button w3-hover-black" href="#">Sentiment Analysis</a>
-  </div>
-
-</div>
+{% block content %}
 
 <div id="main">
 
-
-<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
-<div class="w3-main" style="margin-left:250px">
-
-  <div class="w3-row w3-padding-64">
-    <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Heading</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum
-        dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <div class="w3-row w3-padding-64">
+        <div class="w3-container">
+            <h1 class="w3-text-teal">{{ subtask_title }}</h1>
+            <p>Lorem consequat.</p>
+        </div>
     </div>
-    <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
-    </div>
-  </div>
 
-  <div class="w3-row">
-    <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Heading</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum
-        dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
-    </div>
-  </div>
+    <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+    <div class="w3-main">
 
-  <div class="w3-row w3-padding-64">
-    <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Heading</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum
-        dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div class="w3-third w3-container">
-      <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
-      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
-    </div>
-  </div>
+        <h1 class="w3-text-teal">THIS IS TITLE</h1>
 
+        {% for i in static_plots %}
 
+        <div class="w3-row w3-padding-64">
+            <div class="w3-container">
+                <h1 class="w3-text-teal">{{ i[0] }}</h1>
+                <p>Lorem consequat.</p>
+            </div>
+
+            <div class="w3-container">
+                <h2><img alt="{{ i[1] }}" class="w3-border w3-padding-large w3-padding-64 w3-center" src="{{ i[1] }}">
+                </h2>
+                <p class="w3-border w3-padding-large w3-padding-64 w3-center"><img
+                        alt="{{ i[1] }}" class="w3-border w3-padding-large w3-padding-64 w3-center" src="{{ i[1] }}">
+                </p>
+            </div>
+        </div>
+
+        <hr>
+
+        {% endfor %}
+
+        {% for i in dynamic_plots %}
+
+        <div class="w3-row w3-padding-64">
+            <div class="w3-container">
+                <h1 class="w3-text-teal">{{ i[0] }}</h1>
+                <p>Lorem consequat.</p>
+            </div>
+        </div>
+
+        <div class="w3-container" data-include="{{ i[1] }}" id="includedHTMLContent"></div>
+
+        <div w3-include-html="\\templates\\gender-distribution.html"></div>
+
+        <link href="{{ i[1] }}" rel="import"/>
+
+        {% endfor %}
+
+    </div>
+    <!-- END MAIN -->
 </div>
 
-  <!-- Pagination -->
-  <div class="w3-center w3-padding-32">
-    <div class="w3-bar">
-      <a class="w3-button w3-black" href="#">1</a>
-      <a class="w3-button w3-hover-black" href="#">2</a>
-      <a class="w3-button w3-hover-black" href="#">3</a>
-      <a class="w3-button w3-hover-black" href="#">4</a>
-      <a class="w3-button w3-hover-black" href="#">5</a>
-      <a class="w3-button w3-hover-black" href="#">»</a>
-    </div>
-  </div>
-
-  <footer id="myFooter">
-    <div class="w3-container w3-theme-l2 w3-padding-32">
-      <h4>PROJECT for subject Web Data Mining of MSc "Data and Web science"</h4>
-    </div>
-
-    <div class="w3-container w3-theme-l1">
-      <p>Contributors: Kontoulis Chrysovalantis Giorgos | Labridis Orestis | Tzallas Petros</p>
-    </div>
-  </footer>
-<!-- END MAIN -->
-</div>
-
-<script type="text/javascript">
-// Get the Sidebar
-var mySidebar = document.getElementById("mySidebar");
-
-// Get the DIV with overlay effect
-var overlayBg = document.getElementById("myOverlay");
-
-// Toggle between showing and hiding the sidebar, and add overlay effect
-function w3_open_close() {
-  if(document.getElementById("mySidebar").style.display === "none"){
-    document.getElementById("main").style.marginLeft = "13%";
-    document.getElementById("mySidebar").style.width = "13%";
-    document.getElementById("mySidebar").style.display = "block";
-    document.getElementById("openNav").style.display = 'none';
-  } else {
-    document.getElementById("main").style.marginLeft = "0%";
-    document.getElementById("mySidebar").style.display = "none";
-    document.getElementById("openNav").style.display = "inline-block";
-  }
-}
-
-// Close the sidebar with the close button
-function w3_close() {
-  document.getElementById("main").style.marginLeft = "0%";
-  document.getElementById("mySidebar").style.display = "none";
-  document.getElementById("openNav").style.display = "inline-block";
-}
-
-function myAccFunc(id) {
-  if(id === 1) {
-    var x = document.getElementById("drop_down_menu_1");
-  } else if(id === 2) {
-    var x = document.getElementById("drop_down_menu_2");
-  } else {
-    var x = document.getElementById("drop_down_menu_3");
-  }
-
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-    x.previousElementSibling.className += " w3-green";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-    x.previousElementSibling.className =
-    x.previousElementSibling.className.replace(" w3-green", "");
-  }
-}
-</script>
-
-</body>
-</html>
+{% endblock %}

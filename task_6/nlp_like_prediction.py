@@ -43,7 +43,6 @@ def emoji_count(text):
                                "]+", flags=re.UNICODE)
 
     counter = 0
-    print(text)
     datas = list(text)  # split the text into characters
 
     for word in datas:
@@ -57,7 +56,7 @@ def emoji_count(text):
 reading = task_2.preprocessing.preprocessing(convert_lower=True, use_spell_corrector=True, only_verbs_nouns=False)
 
 # Read Twitter data
-data = read_mongo(db='twitter_db', collection='twitter_collection', query={'retweeted_status': 1}).sample(2000)
+data = read_mongo(db='twitter_db', collection='twitter_collection', query={'retweeted_status': 1})
 
 # data = data.sample(n=1000, random_state=42)
 data = data.dropna()
@@ -185,8 +184,9 @@ xgb_imb_aware = XGBClassifier(learning_rate=0.01, n_estimators=1000, max_depth=4
                               subsample=0.8, colsample_bytree=0.8, reg_alpha=0.005, objective='binary:logistic',
                               nthread=4, random_state=27)
 
-predictors = [['LinearRegression', lr], ['DecisionTreeClassifier', dt], ['SVM', svm], ['Random Forest Classifier', rfc],
-              ['XGB Classifier', xgb_imb_aware]]
+# predictors = [['LinearRegression', lr], ['DecisionTreeClassifier', dt], ['SVM', svm], ['Random Forest Classifier', rfc],
+#              ['XGB Classifier', xgb_imb_aware]]
+predictors = [['Random Forest Classifier', rfc]]
 
 
 # ======================================================================================================================

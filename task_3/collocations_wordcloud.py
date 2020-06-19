@@ -1,3 +1,7 @@
+"""
+Script that plots the collocations as wordclouds
+"""
+
 import matplotlib.pyplot as plt
 import pandas as pd
 from wordcloud import WordCloud

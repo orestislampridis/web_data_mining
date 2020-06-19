@@ -95,9 +95,10 @@ xgb_imb_aware = XGBClassifier(learning_rate=0.01, n_estimators=1000, max_depth=4
                               subsample=0.8, colsample_bytree=0.8, reg_alpha=0.005, objective='binary:logistic',
                               nthread=4, random_state=27)
 
-predictors = [['LogisticRegression', lr], ['DecisionTreeClassifier', dt], ['SVM', svm],
-              ['Random Forest Classifier', rfc],
-              ['XGB Classifier', xgb_imb_aware]]
+# predictors = [['LogisticRegression', lr], ['DecisionTreeClassifier', dt], ['SVM', svm],
+#              ['Random Forest Classifier', rfc],
+#              ['XGB Classifier', xgb_imb_aware]]
+predictors = [['Random Forest Classifier', rfc]]
 
 
 def evaluation_scores(test, prediction, classifier_name=''):
