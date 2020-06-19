@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.offline as py
+import plotly.graph_objects as go
 from pandas import json_normalize
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
@@ -19,9 +20,6 @@ pd.set_option('display.max_columns', None)
 
 # Get our initial df with columns 'geo.coordinates' and 'location'
 df = read_mongo(db='twitter_db', collection='twitter_collection', query={'retweeted_status': 1}).sample(5000)
-
-# Read Insta data
-# data = read_mongo(db='Instagram_Data', collection='post_data', query={'text': 1, 'retweeted_status': 1})
 
 df = df.dropna()
 
@@ -103,13 +101,39 @@ xgb_imb_aware = XGBClassifier(learning_rate=0.01, n_estimators=1000, max_depth=4
 predictors = [['Random Forest Classifier', rfc]]
 
 
-def evaluation_scores(test, prediction, classifier_name='', class_names=None):
+def evaluation_scores(test, prediction, classifier_name=''):
     print('\n', '-' * 60)
     print(classifier_name)
     print('Accuracy:', np.round(accuracy_score(test, prediction), 4))
     print('-' * 60)
     print('classification report:\n\n', classification_report(y_true=test, y_pred=prediction))
-    # print('classification report:\n\n', classification_report(y_true=test, y_pred=prediction, target_names=class_names))
+
+    # ==================================================================================================================
+    # Figure comparing best best model performance (Random Forest Classifier is the best)
+    # ==================================================================================================================
+
+    if classifier_name == 'Random Forest Classifier':
+        report = classification_report(y_true=test, y_pred=prediction, output_dict=True)
+        accur = 100 * np.round(report['accuracy'], 4)
+        precision = 100 * np.round(report['macro avg']['precision'], 4)
+        recall = 100 * np.round(report['macro avg']['recall'], 4)
+        fscore = 100 * np.round(report['macro avg']['f1-score'], 4)
+
+        metrics_names = ['Accuracy', 'Precision', 'Recall', 'F1-score']
+        metrics_scores = [accur, precision, recall, fscore]
+        colors = ['cyan', 'crimson', 'coral', 'cadetblue']
+
+        fig = go.Figure(data=[go.Bar(x=metrics_names, y=metrics_scores, text='RFC performance', marker_color=colors)],
+                        layout=go.Layout(
+                            yaxis=dict(range=[0, 100],  # sets the range of yaxis
+                                       constrain="domain")  # meanwhile compresses the yaxis by decreasing its "domain"
+                            )
+                        )
+
+        fig.update_layout(title_text='Twitter - Base Model Like Predicition - Best Model Performance (Random Forest Classifier)', title_x=0.5)
+        fig.update_yaxes(ticksuffix="%")
+
+        py.plot(fig, filename='twitter_base_model_perform.html')
 
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42, stratify=y)
@@ -118,7 +142,7 @@ for name, classifier in predictors:
     classifier.fit(X_train, y_train)
     y_predicted = classifier.predict(X_test)
 
-    print(evaluation_scores(y_test, y_predicted, classifier_name=name))  # , class_names=class_names
+    print(evaluation_scores(y_test, y_predicted, classifier_name=name))
 
 # ======================================================================================================================
 # Plot pie of like distribution
@@ -148,14 +172,17 @@ X = predict_data[['day_of_the_week', 'verified', 'user_followers_count', 'user_f
 
 # Fit best performing model on the whole dataset and predict on it
 y_predicted = rfc.predict(X)
-y_pred = pd.DataFrame(y_predicted, columns=['y_pred'])
+y_pred = pd.DataFrame(y_predicted, columns=['Predicted Likes'])
 print(y_pred)
-fig = px.pie(y_pred, names="y_pred")
+
+fig = px.pie(y_pred, names="Predicted Likes")
+fig.update_layout(title_text='Twitter - Base Model Like Prediction - Data Distribution on Like count', title_x=0.5)
 fig.update_traces(hoverinfo='label+percent', textinfo='value+percent')
-py.plot(fig, filename='twitter_base_line_pred_best_model.html')
+py.plot(fig, filename='twitter_base_model_pred_best_model.html')
+
 
 # ======================================================================================================================
-# Feature Imporance
+# Interpret data features - Feature Importance
 # ======================================================================================================================
 
 importances = rfc.feature_importances_
@@ -175,3 +202,29 @@ plt.bar(range(X.shape[1]), importances[indices], color="r", yerr=std[indices], a
 plt.xticks(range(X.shape[1]), indices)
 plt.xlim([-1, X.shape[1]])
 plt.show()
+
+
+# ======================================================================================================================
+# Interpret data features - Feature Importance with Interactive Chart
+# ======================================================================================================================
+
+feature_importances = pd.DataFrame(rfc.feature_importances_,
+                                   index=X.columns,
+                                   columns=['importance'])
+feature_importances['std'] = np.std([tree.feature_importances_ for tree in rfc.estimators_], axis=0)
+feature_importances.sort_values('importance', ascending=False, inplace=True)
+print(feature_importances)
+
+
+fig = go.Figure(data=[
+    go.Bar(name='Feature Importance', x=feature_importances.index, y=feature_importances['importance'],
+           error_y=dict(type='data',  # value of error bar given in data coordinates
+                        array=feature_importances['std'], visible=True),
+           marker={'color': indices, 'colorscale': 'Viridis'})
+])
+
+# position the ticks at intervals of dtick=0.25, starting at tick0=0.25
+fig.update_layout(xaxis=dict(tick0=0, dtick=0.25))
+fig.update_layout(title_text='Twitter - Base Model Like Predicition - Feature Imprortance - Best Model Performance (Random Forest Classifier)', title_x=0.5)
+
+py.plot(fig, filename='twitter_base_model_feature_imp.html')
