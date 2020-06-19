@@ -10,6 +10,7 @@ import task_6.word2vec_model
 from sklearn.svm import SVC
 from pandas import json_normalize
 from xgboost import XGBClassifier
+import plotly.graph_objects as go
 from connect_mongo import read_mongo
 from sklearn.compose import ColumnTransformer
 from sklearn.tree import DecisionTreeClassifier
@@ -55,11 +56,7 @@ reading = task_2.preprocessing.preprocessing(convert_lower=True, use_spell_corre
 
 
 # Read Twitter data
-data = read_mongo(db='twitter_db', collection='twitter_collection', query={'text': 1, 'retweeted_status': 1})
-
-# Read Insta data
-#data = read_mongo(db='Instagram_Data', collection='post_data', query={'text': 1, 'retweeted_status': 1})
-
+data = read_mongo(db='twitter_db', collection='twitter_collection', query={'retweeted_status': 1})
 
 #data = data.sample(n=1000, random_state=42)
 data = data.dropna()
@@ -69,8 +66,9 @@ print(data)
 
 # get the nested fields screen_name, description from field user
 nested_data = json_normalize(data['retweeted_status'])
-print(nested_data['user.listed_count'])
-data['favourites_count'] = nested_data['user.listed_count']
+
+data['text'] = nested_data['text']
+data['favourites_count'] = nested_data['favorite_count']
 
 
 nested_data['user.description'] = nested_data['user.description'].replace([None], [''])  # replace none values with empty strings
@@ -156,7 +154,7 @@ def dummy(token):
 tfidf = TfidfVectorizer(lowercase=False, preprocessor=dummy, tokenizer=dummy, min_df=3, ngram_range=(1, 2))
 
 # one-hot-encoding
-one_not = CountVectorizer(lowercase=False, preprocessor=dummy, tokenizer=dummy, analyzer='word')
+one_hot = CountVectorizer(lowercase=False, preprocessor=dummy, tokenizer=dummy, analyzer='word')
 
 # word2vec
 model = gensim.models.Word2Vec(X_train, size=100, min_count=0, sg=1)
@@ -196,6 +194,31 @@ def evaluation_scores(test, prediction, classifier_name='', encoding_name=''):
     print('-' * 60)
     print('classification report:\n\n', classification_report(y_true=test, y_pred=prediction))
 
+    # ==================================================================================================================
+    # Figure comparing best best model performance (Random Forest Classifier is the best)
+    # ==================================================================================================================
+
+    if classifier_name == 'Random Forest Classifier' and encoding_name == 'One-hot-encoding':
+        report = classification_report(y_true=test, y_pred=prediction, output_dict=True)
+        accur = 100 * np.round(report['accuracy'], 4)
+        precision = 100 * np.round(report['macro avg']['precision'], 4)
+        recall = 100 * np.round(report['macro avg']['recall'], 4)
+        fscore = 100 * np.round(report['macro avg']['f1-score'], 4)
+
+        metrics_names = ['Accuracy', 'Precision', 'Recall', 'F1-score']
+        metrics_scores = [accur, precision, recall, fscore]
+        colors = ['cyan', 'crimson', 'coral', 'cadetblue']
+
+        fig = go.Figure(data=[go.Bar(x=metrics_names, y=metrics_scores, text='RFC performance', marker_color=colors)],
+                        layout=go.Layout(title='Twitter - NLP Like Predicition - Best Model Performance (Random Forest Classifier with One-hot-encoding)',
+                                         yaxis=dict(range=[0, 100],  # sets the range of yaxis
+                                                    constrain="domain")  # meanwhile compresses the yaxis by decreasing its "domain"
+                                         )
+                        )
+
+        fig.update_yaxes(ticksuffix="%")
+
+        py.plot(fig, filename='twitter_nlp_perform.html')
 
 # ======================================================================================================================
 # TF-IDF
@@ -205,7 +228,7 @@ for name, classifier in predictors:
     column_trans = ColumnTransformer(
         [('tfidf_text', tfidf, 'clean_text'),
          ('tfidf_descr', tfidf, 'clean_descr')],
-    remainder='passthrough')
+        remainder='passthrough')
 
     X_tfidf_train = column_trans.fit_transform(X_train)
     X_tfidf_test = column_trans.transform(X_test)
@@ -222,8 +245,8 @@ for name, classifier in predictors:
 
 for name, classifier in predictors:
     column_trans = ColumnTransformer(
-        [('one_hot_text', one_not, 'clean_text'),
-         ('one_hot_descr', one_not, 'clean_descr')],
+        [('one_hot_text', one_hot, 'clean_text'),
+         ('one_hot_descr', one_hot, 'clean_descr')],
         remainder='passthrough')
 
     X_tfidf_train = column_trans.fit_transform(X_train)
@@ -260,8 +283,8 @@ for name, classifier in predictors:
 
 # Fit best performing model on the whole dataset and predict on it
 column_trans = ColumnTransformer(
-        [('one_hot_text', one_not, 'clean_text'),
-         ('one_hot_descr', one_not, 'clean_descr')],
+        [('one_hot_text', one_hot, 'clean_text'),
+         ('one_hot_descr', one_hot, 'clean_descr')],
         remainder='passthrough')
 
 X = column_trans.fit_transform(X)
@@ -270,6 +293,7 @@ rfc.fit(X, y)
 y_predicted = rfc.predict(X)
 y_pred = pd.DataFrame(y_predicted, columns=['y_pred'])
 print(y_pred)
-fig = px.pie(y_pred, names="y_pred")
+
+fig = px.pie(y_pred, names="y_pred", title='Twitter - NLP Like Predicition - Data Distribution on Like count')
 fig.update_traces(hoverinfo='label+percent', textinfo='value+percent')
 py.plot(fig, filename='twitter_nlp_pred_best_model.html')
