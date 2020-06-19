@@ -1,0 +1,262 @@
+C:\Users\valan\PycharmProjects\WebDataMiningProject\venv\Scripts\python.exe C:/Users/valan/PycharmProjects/WebDataMiningProject/task_6/insta_base_model_like_prediction.py
+low: (0, 3]         438
+high: (11, 2935]    368
+medium: (3, 11]     341
+Name: likes, dtype: int64
+      day_of_the_week  verified  followers  owner_private  \
+0                   6     False        654          False   
+1                   5     False        147          False   
+2                   1     False        580          False   
+3                   6     False        224          False   
+4                   3     False        558          False   
+...               ...       ...        ...            ...   
+1142                1     False         82          False   
+1143                1     False       5294          False   
+1144                1     False        148          False   
+1145                1     False       1544          False   
+1146                1     False       8958          False   
+
+      owner_viewable_story  total_posts  videos_count_all  photos_count_all  \
+0                    False         1970                 0              1970   
+1                    False           64                 1                63   
+2                     True           56                22                34   
+3                     True           66                 0                66   
+4                     True           23                 3                20   
+...                    ...          ...               ...               ...   
+1142                 False            6                 0                 6   
+1143                  True          116                10               106   
+1144                 False          122                 0               122   
+1145                  True          395                 7               388   
+1146                  True          158                 2               156   
+
+      all_photos_avg_likes  all_photos_stdev_likes  all_photos_avg_comments  \
+0                26.413706               21.892861                 0.621320   
+1                29.968254               12.017142                 1.492063   
+2                23.676471                8.358583                 2.294118   
+3                 3.151515                1.978999                 0.242424   
+4               121.200000               29.635452                19.300000   
+...                    ...                     ...                      ...   
+1142             15.166667                1.067187                 0.833333   
+1143            106.783019               71.543364                 1.415094   
+1144              5.254098                2.094338                 0.262295   
+1145            128.703608              106.457592                 7.113402   
+1146            758.339744              588.068443                13.660256   
+
+      all_photos_stdev_comments  all_videos_avg_likes  all_videos_stdev_likes  \
+0                      1.302381              0.000000                0.000000   
+1                      1.850551             13.000000                0.000000   
+2                      3.502347             52.227273               30.734836   
+3                      0.652747              0.000000                0.000000   
+4                     17.210752            122.333333               15.520596   
+...                         ...                   ...                     ...   
+1142                   1.213352              0.000000                0.000000   
+1143                   1.975644            137.200000              107.125907   
+1144                   0.540238              0.000000                0.000000   
+1145                   6.337788             84.285714               41.171121   
+1146                  10.360488            365.000000               21.000000   
+
+      all_videos_avg_comments  all_videos_stdev_comments  \
+0                    0.000000                   0.000000   
+1                    0.000000                   0.000000   
+2                    4.136364                   3.481059   
+3                    0.000000                   0.000000   
+4                   19.666667                  11.953614   
+...                       ...                        ...   
+1142                 0.000000                   0.000000   
+1143                 9.500000                  12.151132   
+1144                 0.000000                   0.000000   
+1145                16.714286                  13.582702   
+1146                 6.500000                   2.500000   
+
+      all_videos_avg_views  all_videos_stdev_views  followees  \
+0                 0.000000                0.000000       5119   
+1                51.000000                0.000000        263   
+2               169.363636               59.450931        849   
+3                 0.000000                0.000000         55   
+4               473.666667              155.718407        182   
+...                    ...                     ...        ...   
+1142              0.000000                0.000000        124   
+1143            774.600000              637.334637        111   
+1144              0.000000                0.000000        551   
+1145            468.428571              238.032925        867   
+1146           4618.500000             2840.500000        393   
+
+      caption_hashtags  caption_mentions  tagged_users  
+0                  323                 2             2  
+1                  355                 2             2  
+2                  363                 2            26  
+3                  345                 2             2  
+4                   60                 2             2  
+...                ...               ...           ...  
+1142               124                 2             2  
+1143               135                 2             2  
+1144               157                 2             2  
+1145                 5                35            21  
+1146                 2                 2             2  
+
+[1147 rows x 22 columns]
+0       high: (11, 2935]
+1       high: (11, 2935]
+2       high: (11, 2935]
+3        medium: (3, 11]
+4       high: (11, 2935]
+              ...       
+1142    high: (11, 2935]
+1143    high: (11, 2935]
+1144         low: (0, 3]
+1145    high: (11, 2935]
+1146    high: (11, 2935]
+Name: likes, Length: 1147, dtype: category
+Categories (3, object): [low: (0, 3] < medium: (3, 11] < high: (11, 2935]]
+
+ ------------------------------------------------------------
+LinearRegression
+Accuracy: 0.5226
+------------------------------------------------------------
+classification report:
+
+                   precision    recall  f1-score   support
+
+high: (11, 2935]       0.69      0.45      0.54        92
+     low: (0, 3]       0.50      0.88      0.64       110
+ medium: (3, 11]       0.35      0.14      0.20        85
+
+        accuracy                           0.52       287
+       macro avg       0.52      0.49      0.46       287
+    weighted avg       0.52      0.52      0.48       287
+
+None
+
+ ------------------------------------------------------------
+DecisionTreeClassifier
+Accuracy: 0.4321
+------------------------------------------------------------
+classification report:
+
+                   precision    recall  f1-score   support
+
+high: (11, 2935]       0.51      0.46      0.48        92
+     low: (0, 3]       0.51      0.53      0.52       110
+ medium: (3, 11]       0.26      0.28      0.27        85
+
+        accuracy                           0.43       287
+       macro avg       0.43      0.42      0.42       287
+    weighted avg       0.44      0.43      0.43       287
+
+None
+
+ ------------------------------------------------------------
+SVM
+Accuracy: 0.4878
+------------------------------------------------------------
+classification report:
+
+                   precision    recall  f1-score   support
+
+high: (11, 2935]       0.68      0.37      0.48        92
+     low: (0, 3]       0.46      0.95      0.62       110
+ medium: (3, 11]       0.11      0.01      0.02        85
+
+        accuracy                           0.49       287
+       macro avg       0.42      0.45      0.37       287
+    weighted avg       0.43      0.49      0.40       287
+
+None
+
+ ------------------------------------------------------------
+Random Forest Classifier
+Accuracy: 0.5436
+------------------------------------------------------------
+classification report:
+
+                   precision    recall  f1-score   support
+
+high: (11, 2935]       0.63      0.61      0.62        92
+     low: (0, 3]       0.57      0.72      0.63       110
+ medium: (3, 11]       0.36      0.25      0.29        85
+
+        accuracy                           0.54       287
+       macro avg       0.52      0.52      0.51       287
+    weighted avg       0.52      0.54      0.53       287
+
+None
+
+ ------------------------------------------------------------
+XGB Classifier
+Accuracy: 0.5192
+------------------------------------------------------------
+classification report:
+
+                   precision    recall  f1-score   support
+
+high: (11, 2935]       0.64      0.58      0.61        92
+     low: (0, 3]       0.57      0.69      0.62       110
+ medium: (3, 11]       0.29      0.24      0.26        85
+
+        accuracy                           0.52       287
+       macro avg       0.50      0.50      0.50       287
+    weighted avg       0.51      0.52      0.51       287
+
+None
+       Predicted Likes
+0     high: (11, 2935]
+1     high: (11, 2935]
+2     high: (11, 2935]
+3      medium: (3, 11]
+4     high: (11, 2935]
+...                ...
+1142  high: (11, 2935]
+1143  high: (11, 2935]
+1144       low: (0, 3]
+1145  high: (11, 2935]
+1146  high: (11, 2935]
+
+[1147 rows x 1 columns]
+Feature ranking:
+1. feature 8 (0.121675)
+2. feature 10 (0.081888)
+3. feature 9 (0.081169)
+4. feature 11 (0.068571)
+5. feature 19 (0.063449)
+6. feature 2 (0.062942)
+7. feature 18 (0.057359)
+8. feature 12 (0.053524)
+9. feature 7 (0.050328)
+10. feature 5 (0.050161)
+11. feature 16 (0.043565)
+12. feature 14 (0.036414)
+13. feature 13 (0.036362)
+14. feature 15 (0.035662)
+15. feature 6 (0.035611)
+16. feature 17 (0.033791)
+17. feature 21 (0.026525)
+18. feature 20 (0.025598)
+19. feature 0 (0.024396)
+20. feature 4 (0.010982)
+21. feature 1 (0.000029)
+22. feature 3 (0.000000)
+                           importance       std
+all_photos_avg_likes         0.121675  0.052707
+all_photos_avg_comments      0.081888  0.041661
+all_photos_stdev_likes       0.081169  0.032250
+all_photos_stdev_comments    0.068571  0.028742
+caption_hashtags             0.063449  0.015285
+followers                    0.062942  0.023290
+followees                    0.057359  0.015923
+all_videos_avg_likes         0.053524  0.026326
+photos_count_all             0.050328  0.013197
+total_posts                  0.050161  0.013152
+all_videos_avg_views         0.043565  0.019412
+all_videos_avg_comments      0.036414  0.013215
+all_videos_stdev_likes       0.036362  0.013893
+all_videos_stdev_comments    0.035662  0.013176
+videos_count_all             0.035611  0.010447
+all_videos_stdev_views       0.033791  0.015021
+tagged_users                 0.026525  0.010608
+caption_mentions             0.025598  0.009995
+day_of_the_week              0.024396  0.009513
+owner_viewable_story         0.010982  0.006601
+verified                     0.000029  0.000243
+owner_private                0.000000  0.000000
+
+Process finished with exit code 0
