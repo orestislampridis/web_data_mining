@@ -137,7 +137,7 @@
 
 
     <!-- MAP -->
-    <button class="w3-button w3-block w3-left-align" onclick="myAccFunc(4)"><i class="fas fa-map"></i> Maps <i class="fa fa-caret-down"></i></button>
+    <button class="w3-button w3-block w3-left-align" onclick="myAccFunc(4)"><i class='fas fa-map'></i> Maps <i class="fa fa-caret-down"></i></button>
     <div id="drop_down_menu_4" class="w3-bar-block w3-hide w3-white w3-card-4">
       <form action="/super_map" method="POST">
         <input class="w3-bar-item w3-button w3-hover-black" type="submit" value="Super Map">
@@ -168,7 +168,12 @@
             </div>
           </div>
 
+
+        <div class="w3-container">
           <iframe id="igraph3" scrolling="no" style="border:none;" seamless="seamless" src="{{ i[1] }}" height="525" width="100%"></iframe>
+        </div>
+
+        <hr>
 
     {% endfor %}
 
@@ -214,7 +219,7 @@
 
 
   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-	
+
   <script type="text/javascript">
     // Get the Sidebar
     var mySidebar = document.getElementById("mySidebar");
