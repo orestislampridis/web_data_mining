@@ -43,6 +43,9 @@ def emoji_count(text):
                                "]+", flags=re.UNICODE)
 
     counter = 0
+
+    print(text)
+
     datas = list(text)  # split the text into characters
 
     for word in datas:
@@ -69,16 +72,18 @@ nested_data = json_normalize(data['retweeted_status'])
 data['text'] = nested_data['text']
 data['favorite_count'] = nested_data['favorite_count']
 
-nested_data['user.description'] = nested_data['user.description'].replace([None], [
-    ''])  # replace none values with empty strings
+data['user.description'] = nested_data['user.description'].replace([None], [''])  # replace none values with empty strings
+
+# Filter out extremely famous people that destroy the distribution
+data = data[data['favorite_count'] < 5000]
 
 data["emoji_count"] = ""
 for i in range(0, len(data)):
     data["emoji_count"].iloc[i] = emoji_count(data['text'].iloc[i])
-    data["emoji_count"].iloc[i] += emoji_count(nested_data['user.description'].iloc[i])
+    data["emoji_count"].iloc[i] += emoji_count(data['user.description'].iloc[i])
 
 # clean text using preprocessing.py (clean_Text function)
-data['clean_descr'] = nested_data['user.description'].progress_map(reading.clean_text)
+data['clean_descr'] = data['user.description'].progress_map(reading.clean_text)
 
 # clean text using preprocessing.py (clean_Text function)
 data['clean_text'] = data.text.progress_map(reading.clean_text)
@@ -86,12 +91,12 @@ data['clean_text'] = data.text.progress_map(reading.clean_text)
 '''
 # Read Instagram data
 # data = pd.read_csv("../dataset/test_cleaned.csv", index_col=False)
-
 # clean text using preprocessing.py (clean_Text function)
 data['clean_text'] = data.caption.progress_map(reading.clean_text)
 '''
 
 data.drop(['text'], axis=1, inplace=True)
+data.drop(['user.description'], axis=1, inplace=True)
 data.drop(['retweeted_status'], axis=1, inplace=True)
 
 # further filter stopwords
@@ -115,9 +120,6 @@ data.reset_index(drop=True, inplace=True)  # reset index needed for dataframe ac
 # data['clean_txt_descr'] = data['clean_text'] + data['clean_descr']
 
 print(data)  # use to clean non-english posts
-
-# Filter out extremely famous people that destroy the distribution
-data = data[data['favorite_count'] < 5000]
 
 # Split the favorite counts into 4 quantiles and get the cut-off points
 np.quantile(data.favorite_count, [0, 0.25, 0.5, 0.75, 1])
@@ -184,9 +186,8 @@ xgb_imb_aware = XGBClassifier(learning_rate=0.01, n_estimators=1000, max_depth=4
                               subsample=0.8, colsample_bytree=0.8, reg_alpha=0.005, objective='binary:logistic',
                               nthread=4, random_state=27)
 
-# predictors = [['LinearRegression', lr], ['DecisionTreeClassifier', dt], ['SVM', svm], ['Random Forest Classifier', rfc],
-#              ['XGB Classifier', xgb_imb_aware]]
-predictors = [['Random Forest Classifier', rfc]]
+predictors = [['LinearRegression', lr], ['DecisionTreeClassifier', dt], ['SVM', svm], ['Random Forest Classifier', rfc],
+              ['XGB Classifier', xgb_imb_aware]]
 
 
 # ======================================================================================================================
@@ -202,7 +203,7 @@ def evaluation_scores(test, prediction, classifier_name='', encoding_name=''):
     # Figure comparing best best model performance (Random Forest Classifier is the best)
     # ==================================================================================================================
 
-    if classifier_name == 'Random Forest Classifier' and encoding_name == 'One-hot-encoding':
+    if classifier_name == 'Random Forest Classifier' and encoding_name == 'TF-IDF':
         report = classification_report(y_true=test, y_pred=prediction, output_dict=True)
         accur = 100 * np.round(report['accuracy'], 4)
         precision = 100 * np.round(report['macro avg']['precision'], 4)
@@ -214,14 +215,14 @@ def evaluation_scores(test, prediction, classifier_name='', encoding_name=''):
         colors = ['cyan', 'crimson', 'coral', 'cadetblue']
 
         fig = go.Figure(
-            data=[go.Bar(x=metrics_names, y=metrics_scores, text='One-hot + RFC performance', marker_color=colors)],
+            data=[go.Bar(x=metrics_names, y=metrics_scores, text='TF-IDF + RFC performance', marker_color=colors)],
             layout=go.Layout(
-                title='Twitter - NLP Like Predicition - Best Model Performance (Random Forest Classifier with One-hot-encoding)',
                 yaxis=dict(range=[0, 100],  # sets the range of yaxis
                            constrain="domain")  # meanwhile compresses the yaxis by decreasing its "domain"
             )
             )
 
+        fig.update_layout(title_text='Twitter - NLP Like Predicition - Best Model Performance (Random Forest Classifier with TF-IDF)', title_x=0.5)
         fig.update_yaxes(ticksuffix="%")
 
         py.plot(fig, filename='twitter_nlp_perform.html')
@@ -289,18 +290,22 @@ for name, classifier in predictors:
 # ======================================================================================================================
 
 # Get our original df to apply the trained classifier and get predictions
-predict_df = read_mongo(db='twitter_db', collection='twitter_collection', query={'text': 1, 'user': 1}).sample(1000)
+predict_df = read_mongo(db='twitter_db', collection='twitter_collection', query={'text': 1, 'user': 1})
 predict_df = predict_df.dropna()
+print(predict_df)
 
 # get the nested fields screen_name, description from field user
 nested_data = json_normalize(predict_df['user'])
-print(nested_data.columns.to_list())
+print("2", nested_data.columns.to_list())
+print("3", nested_data)
 
 predict_data = pd.DataFrame()
 
 predict_data['text'] = predict_df['text']
-predict_data['user.description'] = nested_data['description'].replace([None],
-                                                                      [''])  # replace none values with empty strings
+predict_data['user.description'] = nested_data['description'].replace([None], [''])  # replace none values with empty strings
+
+predict_data = predict_data.dropna()
+print(predict_data)
 
 predict_data["emoji_count"] = ""
 for i in range(0, len(predict_data)):
@@ -329,7 +334,7 @@ predict_data.reset_index(drop=True, inplace=True)  # reset index needed for data
 
 print(predict_data)  # use to clean non-english posts
 
-X = predict_data[['clean_text', 'clean_descr', 'emoji_count']]
+X_pred = predict_data[['clean_text', 'clean_descr', 'emoji_count']]
 
 # Fit best performing model on the whole dataset and predict on it
 column_trans = ColumnTransformer(
@@ -338,16 +343,18 @@ column_trans = ColumnTransformer(
     remainder='passthrough')
 
 X = column_trans.fit_transform(X)
+X_pred = column_trans.transform(X_pred)
 
 rfc.fit(X, y)
 
-y_predicted = rfc.predict(X)
+y_predicted = rfc.predict(X_pred)
 y_pred = pd.DataFrame(y_predicted, columns=['y_pred'])
 print(y_pred)
 
 # Save predicted likes to csv to integrate with map
 y_pred.to_csv('predicted_likes.csv')
 
-fig = px.pie(y_pred, names="y_pred", title='Twitter - NLP Like Predicition - Data Distribution on Like count')
+fig = px.pie(y_pred, names="y_pred")
+fig.update_layout(title_text='Twitter - NLP Like Predicition - Data Distribution on Like count', title_x=0.5)
 fig.update_traces(hoverinfo='label+percent', textinfo='value+percent')
 py.plot(fig, filename='twitter_nlp_pred_best_model.html')
