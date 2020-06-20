@@ -292,12 +292,9 @@ for name, classifier in predictors:
 # Get our original df to apply the trained classifier and get predictions
 predict_df = read_mongo(db='twitter_db', collection='twitter_collection', query={'text': 1, 'user': 1})
 predict_df = predict_df.dropna()
-print(predict_df)
 
 # get the nested fields screen_name, description from field user
 nested_data = json_normalize(predict_df['user'])
-print("2", nested_data.columns.to_list())
-print("3", nested_data)
 
 predict_data = pd.DataFrame()
 
@@ -305,7 +302,6 @@ predict_data['text'] = predict_df['text']
 predict_data['user.description'] = nested_data['description'].replace([None], [''])  # replace none values with empty strings
 
 predict_data = predict_data.dropna()
-print(predict_data)
 
 predict_data["emoji_count"] = ""
 for i in range(0, len(predict_data)):
@@ -349,7 +345,6 @@ rfc.fit(X, y)
 
 y_predicted = rfc.predict(X_pred)
 y_pred = pd.DataFrame(y_predicted, columns=['y_pred'])
-print(y_pred)
 
 # Save predicted likes to csv to integrate with map
 y_pred.to_csv('predicted_likes.csv')
