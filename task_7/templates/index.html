@@ -112,8 +112,10 @@
 
   <!-- Sidebar -->
   <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" id="mySidebar" style="display:none">
+
+    <!-- Home -->
     <form action="/" method="POST">
-        <input class="w3-bar-item w3-button w3-hover-black" type="submit" value="Home">
+        <input class="w3-bar-item w3-button w3-text-teal" type="submit" value="Home">
     </form>
 
     <h4><a class="w3-bar-item w3-button w3-hover-black" href="templates/index.html"><i class="fa fa-home"></i> <b>Home</b></a></h4>
@@ -218,6 +220,10 @@
       <div w3-include-html="\\templates\\gender-distribution.html"></div>
 
       <link href="{{ i[1] }}" rel="import" />
+
+      <iframe src="{{ i[1] }}" height="400" width="800"></iframe>
+
+      <iframe src="\\templates\\gender-distribution.html" height="200" width="300"></iframe>
 
     {% endfor %}
 
