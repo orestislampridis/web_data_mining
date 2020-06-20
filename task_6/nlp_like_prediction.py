@@ -164,7 +164,7 @@ one_hot = CountVectorizer(lowercase=False, preprocessor=dummy, tokenizer=dummy, 
 
 # word2vec
 model = gensim.models.Word2Vec(X_train, size=100, min_count=0, sg=1)
-word2vec_vectorizer = dict(zip(model.wv.index2word, model.wv.syn0))
+word2vec_vectorizer = dict(zip(model.wv.index2word, model.wv.vectors))
 
 # ======================================================================================================================
 
@@ -244,8 +244,7 @@ for name, classifier in predictors:
     classifier.fit(X_tfidf_train, y_train)
     y_predicted = classifier.predict(X_tfidf_test)
 
-    print(evaluation_scores(y_test, y_predicted, classifier_name=name,
-                            encoding_name='TF-IDF'))  # , class_names=class_names
+    print(evaluation_scores(y_test, y_predicted, classifier_name=name, encoding_name='TF-IDF'))
 
 # ======================================================================================================================
 # Count Vectorizer
@@ -263,8 +262,7 @@ for name, classifier in predictors:
     classifier.fit(X_tfidf_train, y_train)
     y_predicted = classifier.predict(X_tfidf_test)
 
-    print(evaluation_scores(y_test, y_predicted, classifier_name=name,
-                            encoding_name='One-hot-encoding'))  # , class_names=class_names
+    print(evaluation_scores(y_test, y_predicted, classifier_name=name, encoding_name='One-hot-encoding'))
 
 # ======================================================================================================================
 # Word2vec
@@ -282,8 +280,7 @@ for name, classifier in predictors:
     classifier.fit(X_tfidf_train, y_train)
     y_predicted = classifier.predict(X_tfidf_test)
 
-    print(evaluation_scores(y_test, y_predicted, classifier_name=name,
-                            encoding_name='Word2vec'))  # , class_names=class_names
+    print(evaluation_scores(y_test, y_predicted, classifier_name=name, encoding_name='Word2vec'))
 
 # ======================================================================================================================
 # Plot pie of like distribution
