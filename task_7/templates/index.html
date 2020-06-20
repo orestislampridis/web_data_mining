@@ -9,255 +9,289 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-  <script src="jquery.js"></script>
-  <script>
+<script src="jquery.js"></script>
+<script>
     function includeHTML() {
-      var z, i, elmnt, file, xhttp;
-      /*loop through a collection of all HTML elements:*/
-      z = document.getElementsByTagName("*");
-      for (i = 0; i < z.length; i++) {
-        elmnt = z[i];
-        /*search for elements with a certain atrribute:*/
-        file = elmnt.getAttribute("w3-include-html");
-        if (file) {
-          /*make an HTTP request using the attribute value as the file name:*/
-          xhttp = new XMLHttpRequest();
-          xhttp.onreadystatechange = function() {
-            if (this.readyState == 4) {
-              if (this.status == 200) {elmnt.innerHTML = "Page found.";}
-              if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-              /*remove the attribute, and call this function once more:*/
-              elmnt.removeAttribute("w3-include-html");
-              includeHTML();
+        var z, i, elmnt, file, xhttp;
+        /*loop through a collection of all HTML elements:*/
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("w3-include-html");
+            if (file) {
+                /*make an HTTP request using the attribute value as the file name:*/
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) {
+                            elmnt.innerHTML = "Page found.";
+                        }
+                        if (this.status == 404) {
+                            elmnt.innerHTML = "Page not found.";
+                        }
+                        /*remove the attribute, and call this function once more:*/
+                        elmnt.removeAttribute("w3-include-html");
+                        includeHTML();
+                    }
+                }
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                /*exit the function:*/
+                return;
             }
-          }
-          xhttp.open("GET", file, true);
-          xhttp.send();
-          /*exit the function:*/
-          return;
         }
-      }
-    };
-  </script>
-
-
-
+    }
+</script>
 
 
 <style>
-  h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
-  .navbar {
-    height: 52px;
-    overflow: hidden;
-    background-color: #333;
-    position: fixed; /* Set the navbar to fixed position */
-    top: 0; /* Position the navbar at the top of the page */
-    width: 100%; /* Full width */
-  }
-  .w3-sidebar {
-    top: 52px; /* Stay at the top */
-    height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 250px; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
-    left: 0;
-    background-color: #111; /* Black */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px;
-  }
-  .w3-main{
-      top: 52px; /* begin after the top-bar */
-      text-align: center;
-      max-width: 80%;
-      margin: 1rem auto;
-      overflow: auto;
-      padding: 0 2rem;
-  }
-  #mySidebar{
-    color: white;
-  }
-  * {
-    margin: 0;
-  }
-  html, body {
-    font-family: "Roboto", sans-serif;
-    height: 100%;
-  }
-  #main {
-      min-height: 100%;
-      height: auto !important;
-      height: 100%;
-      margin: 0 auto -4em;
-  }
-  .push {
-      height: 4em;
-  }
-  #myFooter{
-    height: 4em;
-    text-align: center;
-  }
-  .images-size{
-    width: 800px;
-	height: 400px;
-  }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: "Roboto", sans-serif;
+    }
+
+    .navbar {
+        height: 52px;
+        overflow: hidden;
+        background-color: #333;
+        position: fixed; /* Set the navbar to fixed position */
+        top: 0; /* Position the navbar at the top of the page */
+        width: 100%; /* Full width */
+    }
+
+    .w3-sidebar {
+        top: 52px; /* Stay at the top */
+        height: 100%; /* Full-height: remove this if you want "auto" height */
+        width: 250px; /* Set the width of the sidebar */
+        position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+        z-index: 1; /* Stay on top */
+        left: 0;
+        background-color: #111; /* Black */
+        overflow-x: hidden; /* Disable horizontal scroll */
+        padding-top: 20px;
+    }
+
+    .w3-main {
+        top: 52px; /* begin after the top-bar */
+        text-align: center;
+        max-width: 80%;
+        margin: 1rem auto;
+        overflow: auto;
+        padding: 0 2rem;
+    }
+
+    #mySidebar {
+        color: white;
+    }
+
+    * {
+        margin: 0;
+    }
+
+    html, body {
+        font-family: "Roboto", sans-serif;
+        height: 100%;
+    }
+
+    #main {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        margin: 0 auto -4em;
+    }
+
+    .push {
+        height: 4em;
+    }
+
+    #myFooter {
+        height: 4em;
+        text-align: center;
+    }
+
+    .images-size {
+        width: 800px;
+        height: 400px;
+    }
 </style>
 
 
 <body>
 
 
-  <div class="navbar">
-      <button onclick="w3_open_close()" class="w3-button w3-teal w3-xlarge">☰</button>
-  </div>
+<div class="navbar">
+    <button class="w3-button w3-teal w3-xlarge" onclick="w3_open_close()">☰</button>
+</div>
 
-  <!-- Sidebar -->
-  <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" id="mySidebar" style="display:none">
+<!-- Sidebar -->
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" id="mySidebar" style="display:none">
 
     <!-- Home -->
     <form action="/" method="POST">
         <input class="w3-bar-item w3-button w3-text-teal" type="submit" value="Home">
     </form>
 
-    <h4><a class="w3-bar-item w3-button w3-hover-black" href="templates/index.html"><i class="fa fa-home"></i> <b>Home</b></a></h4>
+    <h4><a class="w3-bar-item w3-button w3-hover-black" href="templates/index.html"><i class="fa fa-home"></i>
+        <b>Home</b></a></h4>
 
-    <h4><button class="w3-bar-item w3-button w3-text-teal"><i class="fa fa-home"></i> <b>Home</b></button></h4>
+    <h4>
+        <button class="w3-bar-item w3-button w3-text-teal"><i class="fa fa-home"></i> <b>Home</b></button>
+    </h4>
 
     <!-- Task 3 -->
-    <button class="w3-button w3-block w3-left-align" onclick="myAccFunc(1)"><i class="fa fa-bar-chart"></i> Task 3 <i class="fa fa-caret-down"></i></button>
+    <button class="w3-button w3-block w3-left-align" onclick="myAccFunc(1)"><i class="fa fa-bar-chart"></i> Task 3 <i
+            class="fa fa-caret-down"></i></button>
     <div id="drop_down_menu_1" class="w3-bar-block w3-hide w3-white w3-card-4">
-      <form action="/ner" method="POST">
-        <input class="w3-bar-item w3-button w3-hover-black" type="submit" value="Named Entities Extraction">
-      </form>
+        <form action="/ner" method="POST">
+            <input class="w3-bar-item w3-button w3-hover-black" type="submit" value="Named Entities Extraction">
+        </form>
 
-      <form action="/collocations" method="POST">
-        <input class="w3-bar-item w3-button w3-hover-black" type="submit" value="Collocations">
-      </form>
+        <form action="/collocations" method="POST">
+            <input class="w3-bar-item w3-button w3-hover-black" type="submit" value="Collocations">
+        </form>
 
-      <form action="/emerg_topics" method="POST">
-        <input class="w3-bar-item w3-button w3-hover-black" type="submit" value="Emerging Topics">
-      </form>
+        <form action="/emerg_topics" method="POST">
+            <input class="w3-bar-item w3-button w3-hover-black" type="submit" value="Emerging Topics">
+        </form>
 
-      <form action="/dtm" method="POST">
-        <input class="w3-bar-item w3-button w3-hover-black" type="submit" value="Dynamic Topic Modeling">
-      </form>
+        <form action="/dtm" method="POST">
+            <input class="w3-bar-item w3-button w3-hover-black" type="submit" value="Dynamic Topic Modeling">
+        </form>
 
-      <form action="/affect_analysis" method="POST">
-        <input class="w3-bar-item w3-button w3-hover-black" type="submit" value="Affective Analysis">
-      </form>
+        <form action="/affect_analysis" method="POST">
+            <input class="w3-bar-item w3-button w3-hover-black" type="submit" value="Affective Analysis">
+        </form>
 
-      <form action="/sentim_analysis" method="POST">
-        <input class="w3-bar-item w3-button w3-hover-black" type="submit" value="Sentiment Analysis">
-      </form>
+        <form action="/sentim_analysis" method="POST">
+            <input class="w3-bar-item w3-button w3-hover-black" type="submit" value="Sentiment Analysis">
+        </form>
     </div>
 
     <!-- Task 5 -->
-    <button class="w3-button w3-block w3-left-align" onclick="myAccFunc(2)"><i class="fa fa-bar-chart"></i> Task 5 <i class="fa fa-caret-down"></i></button>
+    <button class="w3-button w3-block w3-left-align" onclick="myAccFunc(2)"><i class="fa fa-bar-chart"></i> Task 5 <i
+            class="fa fa-caret-down"></i></button>
     <div id="drop_down_menu_2" class="w3-bar-block w3-hide w3-white w3-card-4">
-      <form action="/age_detect" method="POST">
-        <input class="w3-bar-item w3-button w3-hover-black" type="submit" value="Age Detection">
-      </form>
+        <form action="/age_detect" method="POST">
+            <input class="w3-bar-item w3-button w3-hover-black" type="submit" value="Age Detection">
+        </form>
 
-      <form action="/gend_detect" method="POST">
-        <input class="w3-bar-item w3-button w3-hover-black" type="submit" value="Gender Detection">
-      </form>
+        <form action="/gend_detect" method="POST">
+            <input class="w3-bar-item w3-button w3-hover-black" type="submit" value="Gender Detection">
+        </form>
 
-      <form action="/person_detect" method="POST">
-        <input class="w3-bar-item w3-button w3-hover-black" type="submit" value="Personality Detection">
-      </form>
+        <form action="/person_detect" method="POST">
+            <input class="w3-bar-item w3-button w3-hover-black" type="submit" value="Personality Detection">
+        </form>
     </div>
 
     <!-- Task 6 -->
-    <button class="w3-button w3-block w3-left-align" onclick="myAccFunc(3)"><i class="fa fa-bar-chart"></i> Task 6 <i class="fa fa-caret-down"></i></button>
+    <button class="w3-button w3-block w3-left-align" onclick="myAccFunc(3)"><i class="fa fa-bar-chart"></i> Task 6 <i
+            class="fa fa-caret-down"></i></button>
     <div id="drop_down_menu_3" class="w3-bar-block w3-hide w3-white w3-card-4">
-      <form action="/base_like" method="POST">
-        <input class="w3-bar-item w3-button w3-hover-black" type="submit" value="Base - Like Prediction Model">
-      </form>
+        <form action="/base_like" method="POST">
+            <input class="w3-bar-item w3-button w3-hover-black" type="submit" value="Base - Like Prediction Model">
+        </form>
 
-      <form action="/nlp_like" method="POST">
-        <input class="w3-bar-item w3-button w3-hover-black" type="submit" value="Natural Language - Like Prediction Model">
-      </form>
+        <form action="/nlp_like" method="POST">
+            <input class="w3-bar-item w3-button w3-hover-black" type="submit"
+                   value="Natural Language - Like Prediction Model">
+        </form>
     </div>
 
-  </div>
+    <!-- Maps -->
+    <button class="w3-button w3-block w3-left-align" onclick="myAccFunc(4)"><i class="fa fa-bar-chart"></i> Maps <i
+            class="fa fa-caret-down"></i></button>
+    <div class="w3-bar-block w3-hide w3-white w3-card-4" id="drop_down_menu_4">
+        <form action="/super_map" method="POST">
+            <input class="w3-bar-item w3-button w3-hover-black" type="submit" value="Super Map">
+        </form>
 
-  <div id="main">
-
-  <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
-  <div class="w3-main">
-    <div class="w3-row w3-padding-64">
-      <div class="w3-container">
-        <h1 class="w3-text-teal">{{ subtask_title }}</h1>
-      </div>
+        <form action="/cluster_map" method="POST">
+            <input class="w3-bar-item w3-button w3-hover-black" type="submit" value="Cluster Map">
+        </form>
     </div>
 
-     {% for i in static_plots %}
 
-      <div class="w3-row w3-padding-64">
-        <div class="w3-container">
-          <h3 class="w3-text-teal">{{ i[0] }}</h3>
-       </div>
+</div>
 
-        <div class="w3-container">
-          <img class="w3-padding-large w3-center images-size" src="{{ i[1] }}" alt="{{ i[1] }}">
+<div id="main">
+
+    <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+    <div class="w3-main">
+        <div class="w3-row w3-padding-64">
+            <div class="w3-container">
+                <h1 class="w3-text-teal">{{ subtask_title }}</h1>
+            </div>
         </div>
-      </div>
 
-      <hr>
+        {% for i in static_plots %}
 
-    {% endfor %}
+        <div class="w3-row w3-padding-64">
+            <div class="w3-container">
+                <h3 class="w3-text-teal">{{ i[0] }}</h3>
+            </div>
 
-    {% for i in dynamic_plots %}
-
-      <div class="w3-row w3-padding-64">
-        <div class="w3-container">
-          <h1 class="w3-text-teal">{{ i[0] }}</h1>
-          <p>Lorem consequat.</p>
+            <div class="w3-container">
+                <img alt="{{ i[1] }}" class="w3-padding-large w3-center images-size" src="{{ i[1] }}">
+            </div>
         </div>
-      </div>
 
-      <div class="w3-container" id="includedHTMLContent" data-include="{{ i[1] }}"></div>
+        <hr>
 
-      <div w3-include-html="\\templates\\gender-distribution.html"></div>
+        {% endfor %}
 
-      <link href="{{ i[1] }}" rel="import" />
+        {% for i in dynamic_plots %}
 
-      <iframe src="{{ i[1] }}" height="400" width="800"></iframe>
+        <div class="w3-row w3-padding-64">
+            <div class="w3-container">
+                <h1 class="w3-text-teal">{{ i[0] }}</h1>
+                <p>Lorem consequat.</p>
+            </div>
+        </div>
 
-      <iframe src="\\templates\\gender-distribution.html" height="200" width="300"></iframe>
+        <div class="w3-container" data-include="{{ i[1] }}" id="includedHTMLContent"></div>
 
-    {% endfor %}
+        <div w3-include-html="\\templates\\gender-distribution.html"></div>
 
-  </div>
+        <link href="{{ i[1] }}" rel="import"/>
+
+        <iframe height="400" src="{{ i[1] }}" width="800"></iframe>
+
+        <iframe height="200" src="\\templates\\gender-distribution.html" width="300"></iframe>
+
+        {% endfor %}
+
+    </div>
 
 
+    <!-- END MAIN -->
+</div>
 
-
-  <!-- END MAIN -->
-  </div>
-
-  <footer id="myFooter">
-      <div class="w3-container w3-theme-l2 w3-padding-14 w3-text-teal">
+<footer id="myFooter">
+    <div class="w3-container w3-theme-l2 w3-padding-14 w3-text-teal">
         <h4>PROJECT for subject Web Data Mining of MSc "Data and Web science"</h4>
         © 2020 Source Code can be found <a href="https://github.com/orestislampridis/web_data_mining" target="_blank">here</a>
-      </div>
+    </div>
 
-      <div class="w3-container w3-theme-l1 w3-text-teal">
+    <div class="w3-container w3-theme-l1 w3-text-teal">
         <h4>Contributors:</h4>
         <p>Kontoulis Chrysovalantis Giorgos | Labridis Orestis | Tzallas Petros</p>
-        <p><a href="mailto:ckontoul@csd.auth.gr" target="_blank">ckontoul@csd.auth.gr</a> | <a href="mailto:lorestis@csd.auth.gr" target="_blank">lorestis@csd.auth.gr</a> | <a href="mailto:ptzallas@csd.auth.gr" target="_blank">ptzallas@csd.auth.gr</a></p>
-      </div>
-    </footer>
+        <p><a href="mailto:ckontoul@csd.auth.gr" target="_blank">ckontoul@csd.auth.gr</a> | <a
+                href="mailto:lorestis@csd.auth.gr" target="_blank">lorestis@csd.auth.gr</a> | <a
+                href="mailto:ptzallas@csd.auth.gr" target="_blank">ptzallas@csd.auth.gr</a></p>
+    </div>
+</footer>
 
-  <script type="text/javascript">
+<script type="text/javascript">
 
     // Load HTML in HTML
     includeHTML();
 
-    $(function(){
+    $(function () {
 
-     document.getElementById("includedHTMLContent").innerHTML='<object type="text/html" data="\\templates\\gender-distribution.html" ></object>';
+        document.getElementById("includedHTMLContent").innerHTML = '<object type="text/html" data="\\templates\\gender-distribution.html" ></object>';
 
-      });
+    });
 
     // Get the Sidebar
     var mySidebar = document.getElementById("mySidebar");
@@ -267,44 +301,47 @@
 
     // Toggle between showing and hiding the sidebar, and add overlay effect
     function w3_open_close() {
-      if(document.getElementById("mySidebar").style.display === "none"){
-        document.getElementById("main").style.marginLeft = "13%";
-        document.getElementById("mySidebar").style.width = "13%";
-        document.getElementById("mySidebar").style.display = "block";
-        document.getElementById("openNav").style.display = 'none';
-      } else {
-        document.getElementById("main").style.marginLeft = "0%";
-        document.getElementById("mySidebar").style.display = "none";
-        document.getElementById("openNav").style.display = "inline-block";
-      }
+        if (document.getElementById("mySidebar").style.display === "none") {
+            document.getElementById("main").style.marginLeft = "13%";
+            document.getElementById("mySidebar").style.width = "13%";
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("openNav").style.display = 'none';
+        } else {
+            document.getElementById("main").style.marginLeft = "0%";
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("openNav").style.display = "inline-block";
+        }
     }
 
     // Close the sidebar with the close button
     function w3_close() {
-      document.getElementById("main").style.marginLeft = "0%";
-      document.getElementById("mySidebar").style.display = "none";
-      document.getElementById("openNav").style.display = "inline-block";
+        document.getElementById("main").style.marginLeft = "0%";
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("openNav").style.display = "inline-block";
     }
 
     function myAccFunc(id) {
-      if(id === 1) {
-        var x = document.getElementById("drop_down_menu_1");
-      } else if(id === 2) {
-        var x = document.getElementById("drop_down_menu_2");
-      } else {
-        var x = document.getElementById("drop_down_menu_3");
-      }
+        if (id === 1) {
+            var x = document.getElementById("drop_down_menu_1");
+        } else if (id === 2) {
+            var x = document.getElementById("drop_down_menu_2");
+        } else if (id === 3) {
+            var x = document.getElementById("drop_down_menu_3");
+        } else {
+            var x = document.getElementById("drop_down_menu_4");
+        }
 
-      if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-        x.previousElementSibling.className += " w3-green";
-      } else {
-        x.className = x.className.replace(" w3-show", "");
-        x.previousElementSibling.className =
-        x.previousElementSibling.className.replace(" w3-green", "");
-      }
+
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+            x.previousElementSibling.className += " w3-green";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+            x.previousElementSibling.className =
+                x.previousElementSibling.className.replace(" w3-green", "");
+        }
     }
-  </script>
+</script>
 
 </body>
 </html>

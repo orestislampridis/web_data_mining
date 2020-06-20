@@ -1,8 +1,8 @@
-import numpy as np
 import os
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, render_template
+import os
 
-
+from flask import Flask, render_template
 
 # http://localhost:5000
 
@@ -318,11 +318,22 @@ def nlp_like():
     print(subtitle_images)
 
     # subtitle_images = [('This is the distribution of gender', '\\static\\apps.png')]
-    #print(os.getcwd() + '\\static\\apps.png')
+    # print(os.getcwd() + '\\static\\apps.png')
 
     subtitle_html = [('HTML HERE', '\\templates\\gender-distribution.html')]
 
-    return render_template('index.html', subtask_title='Emerging Topics', static_plots=subtitle_images, dynamic_plots=subtitle_html)
+    return render_template('index.html', subtask_title='Emerging Topics', static_plots=subtitle_images,
+                           dynamic_plots=subtitle_html)
+
+
+@app.route('/super_map', methods=['POST'])
+def super_map():
+    return render_template('map_1.html')
+
+
+@app.route('/cluster_map', methods=['POST'])
+def cluster_map():
+    return render_template('map_2.html')
 
 
 if __name__ == "__main__":
