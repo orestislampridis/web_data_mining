@@ -162,7 +162,13 @@ def affect_analysis():
         subtitle_images.append((image_name.replace('.png', ''), input_path))
     print(subtitle_images)
 
-    return render_template('index.html', subtask_title='Affective Analysis', static_plots=subtitle_images)
+    # ======================================================================================================================
+
+    subtitle_html = [('Instagram - Emotion per day (One-vs-Rest Linear SVC)', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/dfdbf76953b23ee62b618f52c6e7050d0bc6e13d/task_7/static/results/affective_analysis_html/insta_emotion_per_day.html'),
+                     ('Twitter - Emotion per day (One-vs-Rest Linear SVC)', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/dfdbf76953b23ee62b618f52c6e7050d0bc6e13d/task_7/static/results/affective_analysis_html/twitter_emotion_per_day.html')
+                     ]
+
+    return render_template('index.html', subtask_title='Affective Analysis', static_plots=subtitle_images, dynamic_plots=subtitle_html)
 
 
 
@@ -348,10 +354,10 @@ def nlp_like():
     # ======================================================================================================================
 
     subtitle_html = [('', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/31761ac0fd4a6cf2424f639b2e5601d4df7dc1e7/task_7/static/results/like%20prediction/insta/html_files/nlp/insta_nlp_perform.html'),
-                     ('', ''),
+                     ('', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/61b6e960eedcd516fccf465c4e3440b901787d55/task_7/static/results/like prediction/twitter/nlp/twitter_nlp_perform.html'),
 
                      ('', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/31761ac0fd4a6cf2424f639b2e5601d4df7dc1e7/task_7/static/results/like%20prediction/insta/html_files/nlp/insta_nlp_pred_best_model.html'),
-                     ('', '')
+                     ('', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/61b6e960eedcd516fccf465c4e3440b901787d55/task_7/static/results/like prediction/twitter/nlp/twitter_nlp_pred_best_model.html')
                      ]
 
     return render_template('index.html', subtask_title='Emerging Topics', static_plots=subtitle_images, dynamic_plots=subtitle_html)
