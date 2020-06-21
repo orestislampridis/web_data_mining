@@ -10,7 +10,7 @@ from flask import Flask, request, jsonify, render_template
 app = Flask(__name__)
 
 app.debug = False
-app.secret_key = "SECRET_KEY"
+app.secret_key = "gsjdgsgsdgdsgsdgshdfgsgsdfsrtjkueev"
 
 
 # ======================================================================================================================
@@ -370,16 +370,16 @@ def nlp_like():
 
 @app.route('/super_map', methods=['POST'])
 def super_map():
-    subtitle_html = [('Super Douper Map 1', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/31761ac0fd4a6cf2424f639b2e5601d4df7dc1e7/task_4/map_1.html')]
+    subtitle_html = ['https://rawcdn.githack.com/orestislampridis/web_data_mining/31761ac0fd4a6cf2424f639b2e5601d4df7dc1e7/task_4/map_1.html']
 
-    return render_template('index.html', subtask_title='Analysis Visualization Map', dynamic_plots=subtitle_html)
+    return render_template('index.html', subtask_title='Analysis Visualization - Super Map', map_plots=subtitle_html)
 
 
 @app.route('/cluster_map', methods=['POST'])
 def cluster_map():
-    subtitle_html = [('Super Douper Cluster Map 2', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/31761ac0fd4a6cf2424f639b2e5601d4df7dc1e7/task_4/map_2.html')]
+    subtitle_html = ['https://rawcdn.githack.com/orestislampridis/web_data_mining/31761ac0fd4a6cf2424f639b2e5601d4df7dc1e7/task_4/map_2.html']
 
-    return render_template('index.html', subtask_title='Analysis Visualization Map', dynamic_plots=subtitle_html)
+    return render_template('index.html', subtask_title='Analysis Visualization - Super Cluster Map', map_plots=subtitle_html)
 
 
 # ======================================================================================================================
