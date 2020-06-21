@@ -10,6 +10,10 @@
 
 <style>
   h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+
+
+  /* Top nav bar */
+
   .navbar {
     height: 52px;
     overflow: hidden;
@@ -18,6 +22,10 @@
     top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
   }
+
+
+  /* Side bar menu */
+
   .w3-sidebar {
     top: 52px; /* Stay at the top */
     height: 100%; /* Full-height: remove this if you want "auto" height */
@@ -40,6 +48,10 @@
   #mySidebar{
     color: white;
   }
+
+
+  /* footer formatting and position */
+
   * {
     margin: 0;
   }
@@ -60,6 +72,10 @@
     height: 4em;
     text-align: center;
   }
+
+
+  /* Size formatting for images */
+
   .images-size{
     width: 800px;
 	height: 400px;
@@ -160,6 +176,7 @@
       </div>
     </div>
 
+      <!-- ONLY HTML DYNAMIC PLOTS -->
       {% for i in dynamic_plots %}
 
           <div class="w3-row w3-padding-64">
@@ -178,6 +195,7 @@
     {% endfor %}
 
 
+    <!-- ONLY IMAGES -->
      {% for i in static_plots %}
 
       <div class="w3-row w3-padding-64">
@@ -198,6 +216,18 @@
   </div>
 
 
+    <!-- ONLY FOR MAPS -->
+    {% for i in map_plots %}
+
+      <div class="w3-row w3-padding-64">
+        <div class="w3-container">
+          <iframe id="igraph2" scrolling="no" style="border:none;" seamless="seamless" src="{{ i }}" height="700" width="100%"></iframe>
+        </div>
+      </div>
+
+      <hr>
+
+    {% endfor %}
 
 
   <!-- END MAIN -->
@@ -241,13 +271,7 @@
       }
     }
 
-    // Close the sidebar with the close button
-    function w3_close() {
-      document.getElementById("main").style.marginLeft = "0%";
-      document.getElementById("mySidebar").style.display = "none";
-      document.getElementById("openNav").style.display = "inline-block";
-    }
-
+    // Handle the drop down menu
     function myAccFunc(id) {
       if(id === 1) {
         var x = document.getElementById("drop_down_menu_1");
