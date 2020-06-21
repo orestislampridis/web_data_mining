@@ -188,7 +188,9 @@ def sentim_analysis():
 
     # ======================================================================================================================
 
-    subtitle_html = [('Sentiment Distribution - VADER vs TextBlob', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/31761ac0fd4a6cf2424f639b2e5601d4df7dc1e7/task_7/static/results/sentiment/sentiment-distribution.html')]
+    subtitle_html = [('Instagram - Sentiment Distribution - VADER vs TextBlob', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/188a07f25df3bbaa7f1a3937de8341242d034b9c/task_7/static/results/sentiment/insta-sentiment-distribution.html'),
+                     ('Twitter - Sentiment Distribution - VADER vs TextBlob', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/188a07f25df3bbaa7f1a3937de8341242d034b9c/task_7/static/results/sentiment/twitter-sentiment-distribution.html')
+                     ]
 
     return render_template('index.html', subtask_title='Sentiment Analysis', static_plots=subtitle_images, dynamic_plots=subtitle_html)
 
@@ -232,7 +234,7 @@ def gend_detect():
 
     subtitle_html = [('', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/31761ac0fd4a6cf2424f639b2e5601d4df7dc1e7/task_7/static/results/gender%20detection/html_files/gender-distribution.html')]
 
-    return render_template('index.html', subtask_title='Sentiment Analysis', static_plots=subtitle_images, dynamic_plots=subtitle_html)
+    return render_template('index.html', subtask_title='Gender Detection', static_plots=subtitle_images, dynamic_plots=subtitle_html)
 
 
 @app.route('/person_detect', methods=['POST'])
@@ -249,7 +251,7 @@ def person_detect():
         subtitle_images.append((image_name.replace('.png', ''), input_path))
     print(subtitle_images)
 
-    return render_template('index.html', subtask_title='Sentiment Analysis', static_plots=subtitle_images)
+    return render_template('index.html', subtask_title='Personality Detection', static_plots=subtitle_images)
 
 
 # ======================================================================================================================
@@ -307,7 +309,7 @@ def base_like():
                      ('', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/31761ac0fd4a6cf2424f639b2e5601d4df7dc1e7/task_7/static/results/like%20prediction/twitter/html_files/base/twitter_base_model_perform.html')
                      ]
 
-    return render_template('index.html', subtask_title='Emerging Topics', static_plots=subtitle_images, dynamic_plots=subtitle_html)
+    return render_template('index.html', subtask_title='Base Model - Like Prediction', static_plots=subtitle_images, dynamic_plots=subtitle_html)
 
 
 
@@ -360,7 +362,7 @@ def nlp_like():
                      ('', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/61b6e960eedcd516fccf465c4e3440b901787d55/task_7/static/results/like prediction/twitter/nlp/twitter_nlp_pred_best_model.html')
                      ]
 
-    return render_template('index.html', subtask_title='Emerging Topics', static_plots=subtitle_images, dynamic_plots=subtitle_html)
+    return render_template('index.html', subtask_title='Natural Language Model - Like Prediction', static_plots=subtitle_images, dynamic_plots=subtitle_html)
 
 
 
