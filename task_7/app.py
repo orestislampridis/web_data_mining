@@ -18,8 +18,8 @@ app.secret_key = "gsjdgsgsdgdsgsdgshdfgsgsdfsrtjkueev"
 # ======================================================================================================================
 @app.route('/')
 def index():
-    subtitle_html = [('Instagram - Posts per date', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/31761ac0fd4a6cf2424f639b2e5601d4df7dc1e7/task_7/static/results/html_post_per_day/insta_posts_per_day.html'),
-                     ('Twitter - Posts per date', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/31761ac0fd4a6cf2424f639b2e5601d4df7dc1e7/task_7/static/results/html_post_per_day/twitter_posts_per_day.html')
+    subtitle_html = [('Instagram - Posts per date published', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/31761ac0fd4a6cf2424f639b2e5601d4df7dc1e7/task_7/static/results/html_post_per_day/insta_posts_per_day.html'),
+                     ('Twitter - Posts per date published', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/31761ac0fd4a6cf2424f639b2e5601d4df7dc1e7/task_7/static/results/html_post_per_day/twitter_posts_per_day.html')
                      ]
 
     return render_template('index.html', subtask_title='This is the Main Page. Welcome', dynamic_plots=subtitle_html)
@@ -27,8 +27,8 @@ def index():
 
 @app.route('/home', methods=['POST'])
 def home():
-    subtitle_html = [('Instagram - Posts per date', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/31761ac0fd4a6cf2424f639b2e5601d4df7dc1e7/task_7/static/results/html_post_per_day/insta_posts_per_day.html'),
-                     ('Twitter - Posts per date', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/31761ac0fd4a6cf2424f639b2e5601d4df7dc1e7/task_7/static/results/html_post_per_day/twitter_posts_per_day.html')
+    subtitle_html = [('Instagram - Posts per date published', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/31761ac0fd4a6cf2424f639b2e5601d4df7dc1e7/task_7/static/results/html_post_per_day/insta_posts_per_day.html'),
+                     ('Twitter - Posts per date published', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/31761ac0fd4a6cf2424f639b2e5601d4df7dc1e7/task_7/static/results/html_post_per_day/twitter_posts_per_day.html')
                      ]
 
     return render_template('index.html', subtask_title='This is the Main Page. Welcome', dynamic_plots=subtitle_html)
@@ -260,45 +260,6 @@ def person_detect():
 
 @app.route('/base_like', methods=['POST'])
 def base_like():
-
-    twitter_path = "static/results/emerging topics/twitter/imgs/all_topics"
-    twitter_path2 = "static/results/emerging topics/twitter/imgs/emerg_topics"
-
-    insta_path = "static/results/emerging topics/insta/imgs/all_topics"
-    insta_path2 = "static/results/emerging topics/insta/imgs/emerg_topics"
-
-    # ======================================================================================================================
-
-    subtitle_images = []
-
-    # ======================================================================================================================
-
-    for image_name in os.listdir(twitter_path):
-        # create the full input path and read the file
-        input_path = os.path.join("static/results/emerging topics/twitter/imgs/all_topics", image_name)
-        subtitle_images.append((image_name.replace('.png', ''), input_path))
-
-    for image_name in os.listdir(twitter_path2):
-        input_path2 = os.path.join("static/results/emerging topics/twitter/imgs/emerg_topics", image_name)
-        subtitle_images.append((image_name.replace('.png', ''), input_path2))
-
-    # ======================================================================================================================
-
-    for image_name in os.listdir(insta_path):
-        # create the full input path and read the file
-        input_path = os.path.join("static/results/emerging topics/insta/imgs/all_topics", image_name)
-        subtitle_images.append((image_name.replace('.png', ''), input_path))
-
-    for image_name in os.listdir(insta_path2):
-        input_path2 = os.path.join("static/results/emerging topics/insta/imgs/emerg_topics", image_name)
-        subtitle_images.append((image_name.replace('.png', ''), input_path2))
-
-    # ======================================================================================================================
-
-    print(subtitle_images)
-
-    # ======================================================================================================================
-
     subtitle_html = [('', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/31761ac0fd4a6cf2424f639b2e5601d4df7dc1e7/task_7/static/results/like%20prediction/insta/html_files/base/insta_base_model_data_distrib.html'),
                      ('', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/31761ac0fd4a6cf2424f639b2e5601d4df7dc1e7/task_7/static/results/like%20prediction/twitter/html_files/base/twitter_base_model_pred_best_model.html'),
 
@@ -309,52 +270,13 @@ def base_like():
                      ('', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/31761ac0fd4a6cf2424f639b2e5601d4df7dc1e7/task_7/static/results/like%20prediction/twitter/html_files/base/twitter_base_model_perform.html')
                      ]
 
-    return render_template('index.html', subtask_title='Base Model - Like Prediction', static_plots=subtitle_images, dynamic_plots=subtitle_html)
+    return render_template('index.html', subtask_title='Base Model - Like Prediction', dynamic_plots=subtitle_html)
 
 
 
 
 @app.route('/nlp_like', methods=['POST'])
 def nlp_like():
-
-    twitter_path = "static/results/emerging topics/twitter/imgs/all_topics"
-    twitter_path2 = "static/results/emerging topics/twitter/imgs/emerg_topics"
-
-    insta_path = "static/results/emerging topics/insta/imgs/all_topics"
-    insta_path2 = "static/results/emerging topics/insta/imgs/emerg_topics"
-
-    # ======================================================================================================================
-
-    subtitle_images = []
-
-    # ======================================================================================================================
-
-    for image_name in os.listdir(twitter_path):
-        # create the full input path and read the file
-        input_path = os.path.join("static/results/emerging topics/twitter/imgs/all_topics", image_name)
-        subtitle_images.append((image_name.replace('.png', ''), input_path))
-
-    for image_name in os.listdir(twitter_path2):
-        input_path2 = os.path.join("static/results/emerging topics/twitter/imgs/emerg_topics", image_name)
-        subtitle_images.append((image_name.replace('.png', ''), input_path2))
-
-    # ======================================================================================================================
-
-    for image_name in os.listdir(insta_path):
-        # create the full input path and read the file
-        input_path = os.path.join("static/results/emerging topics/insta/imgs/all_topics", image_name)
-        subtitle_images.append((image_name.replace('.png', ''), input_path))
-
-    for image_name in os.listdir(insta_path2):
-        input_path2 = os.path.join("static/results/emerging topics/insta/imgs/emerg_topics", image_name)
-        subtitle_images.append((image_name.replace('.png', ''), input_path2))
-
-    # ======================================================================================================================
-
-    print(subtitle_images)
-
-    # ======================================================================================================================
-
     subtitle_html = [('', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/31761ac0fd4a6cf2424f639b2e5601d4df7dc1e7/task_7/static/results/like%20prediction/insta/html_files/nlp/insta_nlp_perform.html'),
                      ('', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/61b6e960eedcd516fccf465c4e3440b901787d55/task_7/static/results/like prediction/twitter/nlp/twitter_nlp_perform.html'),
 
@@ -362,7 +284,7 @@ def nlp_like():
                      ('', 'https://rawcdn.githack.com/orestislampridis/web_data_mining/61b6e960eedcd516fccf465c4e3440b901787d55/task_7/static/results/like prediction/twitter/nlp/twitter_nlp_pred_best_model.html')
                      ]
 
-    return render_template('index.html', subtask_title='Natural Language Model - Like Prediction', static_plots=subtitle_images, dynamic_plots=subtitle_html)
+    return render_template('index.html', subtask_title='Natural Language Model - Like Prediction', dynamic_plots=subtitle_html)
 
 
 
