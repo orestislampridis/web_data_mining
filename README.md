@@ -11,9 +11,9 @@ This project is an analysis performed on Twitter and Instagram data on the topic
 - [x] (task_6) Like Prediction
 - [x] (task_7) Web Application with Flask to showcase the visualization analysis
 
-Website with analysis results hosted on HEROKU at: https://web-data-mining.herokuapp.com
+Website with analysis results hosted on HEROKU at: https://web-data-mining.herokuapp.com (up to 30sec. loading time)
 
-Made by: [Chrysovalantis Kontoulis](https://github.com/valantiskon), [Orestis Lampridis](https://github.com/orestislampridis) and [Petros Tzallas](https://github.com/ptzallas)
+Created by: [Chrysovalantis Kontoulis](https://github.com/valantiskon), [Orestis Lampridis](https://github.com/orestislampridis) and [Petros Tzallas](https://github.com/ptzallas)
 
 ### How to read big json file into database: twitter_db and collection: twitter_collection of mongoDB (file: tweets_full.json)
 mongoimport --db twitter_db --collection twitter_collection --file tweets_full.json --batchSize 1
